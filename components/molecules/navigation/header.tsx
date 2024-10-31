@@ -8,13 +8,44 @@ import { Input } from "@/components/atoms/ui/input";
 import { HeartIcon, UserIcon } from "@heroicons/react/24/outline";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { RootState } from "@/redux/features/root-reducer";
 import { generateInitials } from "@/lib/utils";
+import { useGetProductsForBuyersQuery } from "@/redux/services/product/productAPIs/productApi";
 
 export default function Header() {
+  type Product = {
+    id: string;
+    name: string;
+  };
   const userInfo = useSelector((state: RootState) => state.auth);
 
-  console.log(userInfo);
+  const [query, setQuery] = useState<string>("");
+
+  // Fetch products from the API using Redux Toolkit Query
+  const {
+    data: productsData,
+    error,
+    isLoading,
+  } = useGetProductsForBuyersQuery(null);
+
+  // Handle the filtered products based on the search query from input field
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value.trim();
+    setQuery(input);
+
+    if (productsData?.data) {
+      // Filter the products based on the search query from the input field.
+      const filtered = productsData.data.filter((product: Product) =>
+        product.name.toLowerCase().includes(input.toLowerCase())
+      );
+      console.log("filtered:", filtered);
+      setFilteredProducts(filtered);
+    }
+  };
+
   return (
     <div>
       <TopBar />
@@ -34,20 +65,43 @@ export default function Header() {
               <span className="absolute left-4 top-3 text-lg text-gray-400">
                 <i className="fas fa-search"></i>
               </span>
-              <Input type="text" placeholder="search" />
+              <Input
+                type="text"
+                placeholder="search"
+                value={query}
+                onChange={handleSearch}
+              />
               <button className="bg-primary border border-primary text-white px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">
                 Search
               </button>
             </div>
-            {/* be-stuff */}
-            {/* {showSearchResult && (
-                            <div className="mx-0">
-                                <Search item={searchItem} setSearch={setSearchItem} />
-                            </div>
-                        )} */}
+
+            {query && (
+              <div className="absolute left-0 top-full z-50 border border-gray-300 bg-white text-slate-500 rounded-md p-2 w-48">
+                <h3 className="font-bold">All Products</h3>
+                {isLoading ? (
+                  <p>Loading...</p>
+                ) : error ? (
+                  <p>Error loading products</p>
+                ) : filteredProducts.length > 0 ? (
+                  filteredProducts.map((product: Product) => (
+                    <a
+                      key={product.id}
+                      href={`#product-${product.id}`}
+                      className="block py-1 text-neutral-500 hover:underline"
+                    >
+                      {product.name}
+                    </a>
+                  ))
+                ) : (
+                  <p>No products found</p>
+                )}
+              </div>
+            )}
           </div>
+
+          {/* Wishlist, Cart, and Account sections remain unchanged */}
           <div className="flex items-center space-x-5">
-            {/* these were commented out in the old code */}
             <Link
               href="/wishlist"
               className="text-center text-gray-700 hover:text-primary group transition relative"
@@ -56,11 +110,6 @@ export default function Header() {
                 <HeartIcon className="size-7 text-secondary group-hover:text-primary" />
               </div>
               <div className="hidden md:block text-xs leading-3">Wish list</div>
-              {/* {wishlist?.data?.length > 0 && (
-                <span className="absolute -right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                  {wishlist?.data?.length}
-                </span>
-              )} */}
             </Link>
             <Link
               href="/cart"
@@ -70,12 +119,6 @@ export default function Header() {
                 <ShoppingCartIcon className="size-7 text-secondary group-hover:text-primary" />
               </div>
               <div className="hidden md:block text-xs leading-3">Cart</div>
-              {/* be stuff */}
-              {/* {cartItems?.data?.length > 0 && (
-                                <span className="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-                                    {cartItems?.data?.length}
-                                </span>
-                            )} */}
             </Link>
             <div className="cursor-pointer relative group">
               <div className="text-center text-gray-700 hover:text-primary group transition relative">
@@ -83,18 +126,19 @@ export default function Header() {
                   <UserIcon className="size-7 text-secondary group-hover:text-primary" />
                 </p>
                 <p className="hidden md:block text-xs leading-3">
-                  {/* {userInfo?.name || "Account"} */}
-                  {/* const initials = generateInitials("John Doe"); */}
-                  {userInfo?.first_name ? generateInitials(`${userInfo.first_name} ${userInfo.last_name}`) : "Account"}
+                  {userInfo?.first_name
+                    ? generateInitials(
+                        `${userInfo.first_name} ${userInfo.last_name}`
+                      )
+                    : "Account"}
                 </p>
               </div>
               <div className="absolute w-[15rem] right-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-50">
                 {userInfo ? (
-                                    <p className="px-6 py-3">{`Welcome, ${userInfo.first_name}`}</p>
-                                ) : (
-                                    ""
-                                )}
-
+                  <p className="px-6 py-3">{`Welcome, ${userInfo.first_name}`}</p>
+                ) : (
+                  ""
+                )}
                 <Link
                   href="/manage-account"
                   className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
@@ -115,17 +159,6 @@ export default function Header() {
                   />
                   <span className="ml-6 text-gray-600 text-sm">My Order</span>
                 </Link>
-                {/* {userInfo && stores?.data?.length > 0 && (
-                                    <div>
-                                        <Link
-                                            href="/login?redirect=dashboard"
-                                            className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
-                                        >
-                                            <i className="far fa-user"></i>
-                                            <span className="ml-6 text-gray-600 text-sm">Admin</span>
-                                        </Link>
-                                    </div>
-                                )} */}
                 <div className="flex items-center px-6 py-3 hover:bg-gray-100 transition">
                   <Image
                     src="/images/power-off.png"
@@ -136,9 +169,13 @@ export default function Header() {
                   />
                   <span className="ml-6 text-gray-600 text-sm">
                     {userInfo ? (
-                      <span onClick={()=> {
-                        // todo: handle logout
-                      }}>Sign Out</span>
+                      <span
+                        onClick={() => {
+                          // todo: handle logout
+                        }}
+                      >
+                        Sign Out
+                      </span>
                     ) : (
                       <Link href="/login">Sign In</Link>
                     )}
