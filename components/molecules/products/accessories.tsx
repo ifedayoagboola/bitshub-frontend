@@ -1,83 +1,66 @@
 "use client";
 import React from "react";
-import { useGetCategoryQuery } from "@/redux/services/product/category/categoryApi"; 
-import { Swiper, SwiperSlide } from 'swiper/react'; 
-import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-export default function Accessories() {
+import { categories } from "@/lib/data/categoryData";
 
-    const { data: response, error, isLoading } = useGetCategoryQuery(null);
-    if (isLoading) {
-      return <p>Loading categories...</p>;
-    }
-  
+interface CategoryItem {
+  name: string;
+  icon: string;
+}
 
-    if (error) {
-      let errorMessage: string = "Unknown error occurred";
-  
-      if ("status" in error) {
-        errorMessage = `Error: ${error.status}`;
-      } else if ("message" in error) {
-        errorMessage = error.message ?? "Error occurred with no message";
-      }
-  
-      return <p>{errorMessage}</p>;
-    }
-  
+interface Category {
+  title: string;
+  items: CategoryItem[];
+}
 
-    console.log("Categories response:", response);
-  
+export default function Accesories() {
+  const freeTime: Category | undefined = categories.find(
+    (category) => category.title === "Free Time"
+  );
 
-    const categories = response?.data || [];
-  
+  if (!freeTime) {
+    return <p>No top categories found!</p>;
+  }
 
-    if (!Array.isArray(categories) || categories.length === 0) {
-      return <p>No categories available!</p>;
-    }
-  
-   
-    const baseURL = 'https://api.bitshub.africa/v1/dev'; 
-  
-    return (
-      <Swiper
-        navigation
-        pagination
-        modules={[Navigation, Pagination]}
-        className="mySwiper"
-        slidesPerView={3} // Set the number of slides to show at once
-        spaceBetween={30} // Optional: Adjust the space between slides
-        breakpoints={{
-          640: {
-            slidesPerView: 2, // Show 2 slides on small screens
-          },
-          768: {
-            slidesPerView: 3, // Show 3 slides on medium screens
-          },
-          1024: {
-            slidesPerView: 4, // Show 4 slides on larger screens
-          },
-        }}
-      >
-        {categories.map((category) => {
-          // Construct the full image URL
-          const imgUrl = `${baseURL}${category.img_url}`; // Combine base URL with the image path
-  
-          return (
-            <SwiperSlide key={category.id}>
-              <div className="category-card p-4 border rounded-lg shadow-lg">
-                <img
-                  src={imgUrl} // Use the constructed URL for the image
-                  alt={category.category} // Use the correct field for category title
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-                <h3 className="text-lg font-semibold mt-4">{category.category}</h3> {/* Use the correct field for title */}
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    );
+  const { items } = freeTime;
+
+  return (
+    <Swiper
+      navigation
+      pagination
+      modules={[Navigation, Pagination]}
+      className="mySwiper"
+      slidesPerView={3}
+      spaceBetween={30}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      }}
+    >
+      {items.map((item: CategoryItem, index: number) => (
+        <SwiperSlide key={index}>
+          <div className="category-card p-4 border rounded-lg shadow-lg">
+            <img
+              src={item.icon}
+              alt={item.name}
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <h3 className="text-lg font-semibold mt-4">{item.name}</h3>{" "}
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 }
