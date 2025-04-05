@@ -1,0 +1,66 @@
+<div class="card dashboard-table mt-0">
+  <div class="card-body">
+    <div class="top-sec">
+        <h3>{{ 'downloads' | translate }}</h3>
+    </div>
+    <div class="download-detail dashboard-bg-box">
+        <form>
+            <div class="input-group download-form">
+                <input type="text" class="form-control" placeholder="{{ 'search_download' | translate }}" [formControl]="term">
+                <button class="btn" type="button" (click)="search()">{{ 'search' | translate }}</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="download-table dashboard-bg-box">
+      @if((download$ | async)?.data?.length){
+        <div class="table-responsive">
+            <table class="table user-download-table">
+                <thead>
+                    <tr>
+                        <th>{{ 'image' | translate }}</th>
+                        <th class="table-name">{{ 'name' | translate }}</th>
+                        <th>{{ 'action' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @for(data of (download$ | async)?.data; track data.id; let i = $index){
+                    <tr>
+                        <td>
+                            <img src="{{ data.item_image }}" class="img-fluid table-image" alt="image">
+                        </td>
+                        <td class="table-name">{{ data.item_name }}</td>
+                        <td>
+                            <div ngbDropdown class="d-inline-block download-dropdown-box" container="body" placement="bottom-end">
+                                <button type="button" class="btn dropdown-toggle" ngbDropdownToggle>
+                                    {{ 'download' | translate }}
+                                </button>
+                                <div ngbDropdownMenu class="download-dropdown-menu">
+                                  @if(data.can_download_file){
+                                    <button ngbDropdownItem (click)="downloadFiles(data.id)">{{ 'all_files_document' | translate }}</button>
+                                  }
+
+                                  @if(data.can_download_license){
+                                    <button ngbDropdownItem (click)="downloadLicense(data.id)">{{ 'license_pdf' | translate }}</button>
+                                  }
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                  }
+                </tbody>
+            </table>
+        </div>
+      }
+  </div>
+
+    @if(!(download$ | async)?.data?.length){
+      <app-no-data
+          [class]="'no-data-added'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_item_found'"
+          [description]="'no_order_yet'">
+      </app-no-data>
+    }
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    <div class="home-skeleton">
+      <div class="skeleton-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-sm-8 col-11">
+              <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                <span class="col-7">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-6">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Service Start -->
+@if(data?.content?.services){
+  <section class="banner-padding absolute-banner pb-0">
+    <div class="container">
+      <div class="absolute-bg">
+        <div class="service p-0">
+          <app-theme-services [services]="data?.content?.services?.banners || []"></app-theme-services>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Service End -->
+
+<!-- product section start-->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+  <section class="section-b-space ratio_square">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-theme-title [title]="data?.content?.products_list_1" [type]="'premium'"></app-theme-title>
+
+          <div class="product-5 product-m">
+            <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="options"></app-theme-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- product section end-->
+
+<!-- Full Banner Start -->
+@if(data?.content?.full_banner?.status){
+  <section class="p-0">
+    <app-image-link [image]="data?.content?.full_banner" [placeholder]="'assets/images/full_column_banner.png'" [bgImage]="false"></app-image-link>
+  </section>
+}
+<!-- Full Banner End -->
+
+<!-- product section start-->
+ @if(data?.content?.products_list_2?.status && data?.content?.products_list_2?.product_ids){
+   <section class="section-b-space ratio_square">
+     <div class="full-box">
+       <div class="container">
+         <app-theme-title [title]="data?.content?.products_list_2" [type]="'premium'"></app-theme-title>
+   
+         <div class="product-5 product-m">
+           <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="options"></app-theme-product>
+         </div>
+       </div>
+     </div>
+   </section>
+ }
+<!-- product section end-->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status && data?.content?.featured_blogs?.blog_ids){
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-title [title]="data?.content?.featured_blogs" [type]="'premium'"></app-theme-title>
+      </div>
+    </div>
+  </div>
+
+  <section class="blog section-b-space pt-0 ratio2_3 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

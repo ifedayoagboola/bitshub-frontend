@@ -1,0 +1,173 @@
+<!-- Home Section -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    <div class="home-skeleton">
+      <div class="skeleton-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-sm-8 col-11">
+              <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                <span class="col-7">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-6">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home Section end -->
+
+<!-- category section -->
+@if(data?.content?.categories_1?.status){
+  <section>
+    <div class="container container-lg">
+      <app-categories [categoryIds]="data?.content?.categories_1?.category_ids || []" [style]="'gradient'"></app-categories>
+    </div>
+  </section>
+}
+<!-- category section end -->
+
+<!-- Banner Section Start -->
+@if(filteredBanners.length){
+  <section class="pb-0 ratio2_1">
+    <div class="container container-lg">
+      <div class="row g-sm-4 g-3">
+        @for(banner of filteredBanners; track banner.redirect_link; let i = $index){
+          @if(filteredBanners.length >= 2){
+            <div [ngClass]="(i == 0 || i == 1) ? 'col-6' : (i > 1 && filteredBanners.length % 2 == 0) ? 'col-6' : (i > 1 && filteredBanners.length == 5 ) ? 'col-lg-4 col-6' : 'col-12'">
+              <div class="position-relative">
+                <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+                <div class="banner-skeleton">
+                  <div class="skeleton-content">
+                    <p class="card-text placeholder-glow row g-lg-3 g-0">
+                      <span class="col-lg-7 col-9">
+                        <span class="placeholder"></span>
+                      </span>
+                      <span class="col-lg-9 col-12">
+                        <span class="placeholder"></span>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }@else {
+            <div class="col-12">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- Banner Section end -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status){
+  <app-theme-title [title]="data?.content?.category_product" [type]="'basic'" [class]="'title-gradient'"></app-theme-title>
+  <section class="pt-0">
+    <div class="container container-lg">
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [showItems]="5" [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'" [style]="'vertical'"></app-theme-product-tab-section>
+    </div>
+  </section>
+}
+<!-- Tab product End-->
+
+<!-- Product Start -->
+@if(data?.content?.products_list?.status){
+  <section class="gradient-slider pt-0">
+    <div class="container container-lg">
+      <div class="row">
+        <div class="col-12">
+          <app-theme-title [title]="data?.content?.products_list" [type]="'basic'" [class]="'title-gradient'"></app-theme-title>
+        </div>
+        <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'" [options]="productSlider5" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </section>
+}
+<!-- Product end -->
+
+<!-- deal zone section start -->
+<section class="section-b-space">
+  <div class="container-lg container">
+    <owl-carousel-o [options]="options">
+      @for(coupon of (coupon$ |async)?.data; track coupon; let i = $index){
+        <ng-template carouselSlide>
+        <a href="javascript:void(0)">
+          <div class="deal-category">
+            <img [src]="images[i % images.length]" class="img-fluid w-100" [alt]="coupon?.title">
+            <div class="deal-content">
+              <div>
+                <h2>{{ coupon?.title }}</h2>
+                <h2>#{{ coupon?.code }}</h2>
+              </div>
+            </div>
+          </div>
+        </a>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  </div>
+</section>
+
+<!-- Parallax Banner Start -->
+@if(data?.content?.parallax_banner?.banner_1?.status){
+  <section class="p-0 pet-parallax">
+    <app-theme-parallax-banner [banners]="data?.content?.parallax_banner?.banner_1" [text_right]="true"></app-theme-parallax-banner>
+  </section>
+}
+<!-- Parallax Banner End -->
+
+<!-- Parallax Banner Start -->
+@if(data?.content?.parallax_banner?.banner_2?.status){
+  <section class="p-0 pet-parallax">
+    <app-theme-parallax-banner [banners]="data?.content?.parallax_banner?.banner_2"></app-theme-parallax-banner>
+  </section>
+}
+<!-- Parallax Banner End -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-title [title]="data?.content?.featured_blogs" [type]="'basic'" [class]="'title-gradient'"></app-theme-title>
+      </div>
+    </div>
+  </div>
+
+  <section class="blog left-blog pt-0 ratio_115">
+    <div class="container container-lg">
+      <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []" [option]="blogSlider4" [blogEffect]="'basic-effect'"></app-theme-blog>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square gym-parallax">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container-fluid'" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

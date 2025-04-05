@@ -1,0 +1,8 @@
+<div class="rating">
+  <ngb-rating [(rate)]="store.rating_count">
+    <ng-template let-fill="fill" let-index="index">
+      <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+    </ng-template>
+  </ngb-rating>
+  <h6>({{ store.reviews_count }} {{ 'review' | translate }})</h6>
+</div>

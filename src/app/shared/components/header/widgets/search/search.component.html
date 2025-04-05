@@ -1,0 +1,41 @@
+@if(style == 'simple'){
+  <form class="form_search" role="form" (clickOutside)="closeSearch()">
+    <input type="search" class="nav-search nav-search-field" [placeholder]="typedText+'|'" [formControl]="term"  (click)="focusInput(true)" (keydown.enter)="onEnterKey()" autocomplete="false">
+    <button type="submit" name="nav-submit-button" class="btn-search">
+      <i class="ri-search-line"></i>
+    </button>
+    <app-search-dropdown
+      [term]="term.value || ''"
+      [selectedCategory]="selectedCategory.value || ''"
+      [products]="filteredResults"
+      [categories]="filteredCategory"
+      [selectedResultIndex]="selectedResultIndex"
+      [isOpenResult]="isOpenResult">
+    </app-search-dropdown>
+  </form>
+}
+@else {
+  <div (click)="openSearchModal()">
+    <i class="ri-search-line"></i>
+  </div>
+
+  <div class="search-full" [class.open]="menuService.isOpenSearch">
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="ri-search-line font-light"></i>
+      </span>
+      <input type="text" class="form-control search-type" [placeholder]="typedText+'|'" [formControl]="term"  (click)="focusInput(true)" (keydown.enter)="onEnterKey()" autocomplete="false">
+      <span class="input-group-text close-search" (click)="closeSearch()">
+        <i class="ri-close-line"></i>
+      </span>
+    </div>
+    <app-search-dropdown
+      [term]="term.value || ''"
+      [selectedCategory]="selectedCategory.value || ''"
+      [products]="filteredResults"
+      [categories]="filteredCategory"
+      [selectedResultIndex]="selectedResultIndex"
+      [isOpenResult]="isOpenResult">
+    </app-search-dropdown>
+  </div>
+}

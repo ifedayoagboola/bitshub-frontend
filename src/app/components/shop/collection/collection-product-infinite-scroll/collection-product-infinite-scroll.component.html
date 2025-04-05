@@ -1,0 +1,23 @@
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 collection-filter" [ngStyle]="{ 'left' : attributeService.offCanvasMenu ? '0' : ''}">
+          <app-collection-sidebar [filter]="filter"></app-collection-sidebar>
+        </div>
+        <div class="collection-content col-lg-9">
+          <div class="page-main-content">
+            @if(bannerImageUrl){
+              <div class="top-banner-wrapper">
+                <app-collection-category-banner [imageUrl]="bannerImageUrl"></app-collection-category-banner>
+              </div>
+            }
+             <div class="collection-product-wrapper">
+               <app-collection-products [filter]="filter" [infiniteScroll]="true"></app-collection-products>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

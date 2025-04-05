@@ -1,0 +1,257 @@
+{
+    "id": 9,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                15,
+                14,
+                13,
+                11
+            ]
+        },
+        "grid_banner": {
+            "status": true,
+            "banners": [
+                {
+                    "tag": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_banner_2.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": null,
+                        "link_type": null
+                    }
+                },
+                {
+                    "tag": "new products",
+                    "title": "zipper storage bag",
+                    "status": true,
+                    "image_url": null,
+                    "button_text": "-80% off",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_banner_3.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": "new products",
+                    "title": "zipper storage bag",
+                    "status": true,
+                    "image_url": null,
+                    "button_text": "-80% off",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_banner_3.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_one/furniture_one_5.png",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/furniture_two/furniture_two_banner_1.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/furniture_two/furniture_two_banner_1.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/furniture_two/furniture_two_banner_1.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            41,
+            40,
+            37,
+            28,
+            35,
+            36,
+            32,
+            31
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_two/furniture_two_insta_8.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "product_list_2": {
+            "status": true,
+            "products": {
+                "product_item": {
+                    "product_ids": [
+                        37,
+                        36,
+                        35,
+                        32
+                    ]
+                },
+                "product_banner": {
+                    "banner_1": {
+                        "status": true,
+                        "image_url": "/images/theme/furniture_two/product-list-1.png",
+                        "redirect_link": {
+                            "link": "classic-furnishings",
+                            "link_type": "collection"
+                        }
+                    },
+                    "banner_2": {
+                        "status": true,
+                        "image_url": "/images/theme/furniture_two/product-list-1.png",
+                        "redirect_link": {
+                            "link": "classic-furnishings",
+                            "link_type": "collection"
+                        }
+                    }
+                }
+            },
+            "right_panel": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    28,
+                    31,
+                    32,
+                    36
+                ]
+            }
+        },
+        "products_list_1": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "Find Various types of quality chairs, and international standards. only with this one website you can see and buy quality chairs. immediately order the best seat.",
+            "product_ids": [
+                41,
+                40,
+                37,
+                28,
+                35
+            ]
+        },
+        "categories_icon_list": {
+            "status": true,
+            "category_ids": [
+                19,
+                20,
+                21,
+                22,
+                23
+            ]
+        }
+    },
+    "slug": "furniture_two"
+}

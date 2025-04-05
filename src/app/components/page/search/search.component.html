@@ -1,0 +1,62 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<!--section start-->
+<section class="authentication-page">
+  <div class="container">
+    <section class="search-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <form class="form-header">
+              <div class="input-group form-box">
+                <input type="text" class="form-control" placeholder="{{ 'search_product' | translate }}" [formControl]="search">
+                <div class="input-group-append">
+                  <app-button
+                        [class]="'btn btn-solid'"
+                        [type]="'button'"
+                        [id]="'search-btn'"
+                        [spinner]="false"
+                        [iconClass]="'ri-search-line'"
+                        (click)="searchProduct()">
+                        {{ 'search' | translate }}
+                      </app-button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<!-- section end -->
+
+<!-- product section start -->
+<section class="section-b-space">
+  <div class="container">
+    <div class="row search-product">
+      @if(productService.skeletonLoader){
+        @for(item of skeletonItems; track item){
+          <div class="col-xl-3 col-md-4 col-6">
+            <app-skeleton-product-box [style]="'vertical'"></app-skeleton-product-box>
+          </div>
+        }
+      }@else {
+        @for(product of products | slice:0:8 ; track product.id){
+          <div class="col-xl-3 col-md-4 col-6">
+            <app-product-box [product]="product" [style]="'vertical'"></app-product-box>
+          </div>
+        }
+      }
+
+      @if(products && !products.length && !productService.skeletonLoader){
+        <app-no-data
+          [class]="'no-data-added collection-no-data'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_product'"
+          [description]="'no_product_desc'">
+        </app-no-data>
+      }
+    </div>
+  </div>
+</section>

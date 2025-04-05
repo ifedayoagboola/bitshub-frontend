@@ -1,0 +1,161 @@
+{
+    "id": 1,
+    "content": {
+      "brand": {
+        "status": true,
+        "brand_ids": [8, 7, 6, 10, 9]
+      },
+      "banner": {
+        "status": true,
+        "image_url": "/images/theme/fashion_one/fashion_one_5.png",
+        "redirect_link": {
+          "link": 19,
+          "link_type": "product",
+          "product_ids": 19
+        }
+      },
+      "services": {
+        "banners": [
+          {
+            "title": "free shipping",
+            "status": true,
+            "image_url": "/images/theme/fashion_one/service.png",
+            "description": "free shipping world wide"
+          },
+          {
+            "title": "24 X 7 service",
+            "status": true,
+            "image_url": "/images/theme/fashion_one/service.png",
+            "description": "online service for new customer"
+          },
+          {
+            "title": "festival offer",
+            "status": true,
+            "image_url": "/images/theme/fashion_one/service.png",
+            "description": "new online special festival offer"
+          }
+        ]
+      },
+      "home_banner": {
+        "banners": [
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_9.png",
+            "redirect_link": {
+              "link": "fashion",
+              "link_type": "collection"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_2.png",
+            "redirect_link": {
+              "link": "fashion",
+              "link_type": "collection"
+            }
+          }
+        ]
+      },
+      "offer_banner": {
+        "banner_1": {
+          "status": true,
+          "image_url": "/images/theme/fashion_one/fashion_one_8.png",
+          "redirect_link": {
+            "link": "fashion",
+            "link_type": "collection"
+          }
+        },
+        "banner_2": {
+          "status": true,
+          "image_url": "/images/theme/fashion_one/fashion_one_7.png",
+          "redirect_link": {
+            "link": "fashion",
+            "link_type": "collection"
+          }
+        }
+      },
+      "products_ids": [21, 16, 15, 12, 19],
+      "social_media": {
+        "title": "#WHOWEARWHAT",
+        "status": true,
+        "banners": [
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_7.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_6.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_5.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_4.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_3.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_2.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          },
+          {
+            "status": true,
+            "image_url": "/images/theme/fashion_one/fashion_one_insta_1.png",
+            "redirect_link": {
+              "link": "https://instagram.com/",
+              "link_type": "external_url"
+            }
+          }
+        ]
+      },
+      "products_list": {
+        "tag": "special offer",
+        "title": "Latest Drops",
+        "status": true,
+        "description": "Looking for the latest trends in clothing, shoes and accessories? Welcome to our 'Latest Drops' edit, bringing you all the latest styles from all your fave brands.",
+        "product_ids": [21, 16, 15, 12]
+      },
+      "featured_blogs": {
+        "tag": "From the Blog",
+        "title": "From the Blog",
+        "status": true,
+        "blog_ids": [3, 2, 1]
+      },
+      "category_product": {
+        "tag": "exclusive products",
+        "title": "everyday casual",
+        "status": true,
+        "category_ids": [8, 9, 10]
+      }
+    },
+    "slug": "fashion_one"
+  }

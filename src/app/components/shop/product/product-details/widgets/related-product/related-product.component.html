@@ -1,0 +1,16 @@
+@if(relatedProducts.length){
+  <div class="container">
+    <div class="row">
+      <div class="col-12 product-related">
+        <h2>{{ 'related_products' | translate }}</h2>
+      </div>
+    </div>
+    <div class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 g-sm-4 g-3">
+      @for(product of relatedProducts; track product.id){
+        <div class="col">
+          <app-product-box [product]="product" [style]="'vertical'"></app-product-box>
+        </div>
+      }
+    </div>
+  </div>
+}

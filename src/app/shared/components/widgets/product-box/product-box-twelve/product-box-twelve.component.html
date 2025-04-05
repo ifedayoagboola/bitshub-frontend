@@ -1,0 +1,57 @@
+<div class="basic-product theme-product-11">
+  <div class="img-wrapper">
+    <app-image-variant
+    [thumbnail]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_thumbnail!"
+    [gallery_images]="product.product_galleries!"
+    [product]="product!"></app-image-variant>
+    <div class="cart-info">
+        <app-product-hover-action [product]="product"></app-product-hover-action>
+    </div>
+
+    @if(product.is_trending || product.is_sale_enable || product.is_featured){
+      <label class="trending-label-product11">{{ (product.is_sale_enable ? 'sale' : product.is_featured ? 'featured' : product.is_trending ? 'trending' : '' ) | translate }}</label>
+    }
+  </div>
+  <div class="product-detail">
+      @if(product.brand){
+        <a class="product-title" [routerLink]="['/brand', product.brand.slug]">
+            {{ product.brand.name }}
+        </a>
+      }
+      <h6>{{ product.name }}</h6>
+      <h4 class="price">{{(selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol}}
+        @if(selectedVariation ? selectedVariation.discount : product.discount){
+          <del>  {{(selectedVariation ? selectedVariation.price : product.price) | currencySymbol}} </del>
+          <span class="discounted-price"> {{selectedVariation ? selectedVariation.discount : product.discount}} % {{ 'off' | translate }} </span>
+        }
+      </h4>
+      <div class="rating-w-count mb-0 mt-2">
+          <div class="rating">
+            <ngb-rating [(rate)]="product.rating_count">
+                <ng-template let-fill="fill" let-index="index">
+                  <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+                </ng-template>
+              </ngb-rating>
+          </div>
+          <span>({{ product.reviews_count }})</span>
+      </div>
+  </div>
+  <div class="abs-product">
+      <div class="product-detail mt-0">
+            @if(product.brand){
+                <a class="product-title mb-2" [routerLink]="['/brand', product.brand.slug]">
+                    {{ product.brand.name }}
+                </a>
+            }
+          <h4 class="price">{{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+            @if(selectedVariation ? selectedVariation.discount : product.discount){
+              <del> {{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }} </del>
+              <span class="discounted-price"> {{ selectedVariation ? selectedVariation.discount : product.discount }}% Off </span>
+            }
+          </h4>
+      </div>
+      <app-product-box-variant-attributes [product]="product" [attributes]="product.attributes || []"  (selectVariation)="selectedVariant($event)"></app-product-box-variant-attributes>
+      <app-cart-button [text]="'Add To Cart'" [iconClass]="' '" [product]="product" [class]="'add-cart-btn'" [selectedVariation]="selectedVariation" [enableModal]="true"></app-cart-button>
+
+  </div>
+</div>

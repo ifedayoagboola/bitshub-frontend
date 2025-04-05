@@ -1,0 +1,59 @@
+<div class="slide-3">
+  <owl-carousel-o [options]="option">
+    @if(blogService.skeletonLoader){
+      @for(item of skeletonItems; track item) {
+        <ng-template carouselSlide>
+          <app-skeleton-blog></app-skeleton-blog>
+        </ng-template>
+      }
+    } @else {
+      @for(blog of blogs; track blog.id){
+        <ng-template carouselSlide>
+          @if(type == 'simple'){
+            <div>
+              <div class="blog-wrap">
+                <a href="javascript:void(0)" [routerLink]="['/blog/', blog?.slug]">
+                  <div class="blog-image">
+                    <img [src]="blog.blog_thumbnail.original_url" class="img-fluid" alt="">
+                  </div>
+                  <div class="blog-details text-start p-0">
+                    <h4>{{ blog?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h4>
+                    <a href="javascript:void(0)" [routerLink]="['/blog/', blog?.slug]">
+                      <p>{{ blog.title }}</p>
+                    </a>
+                    <h6>{{ 'by' | translate }}: {{ blog.created_by.name }}</h6>
+                  </div>
+                </a>
+              </div>
+            </div>
+          }@else {
+            <div class="col-md-12">
+              <a href="javascript:void(0)" [routerLink]="['/blog/', blog?.slug]">
+                <div [ngClass]="blogEffect ? blogEffect : 'classic-effect'">
+                  <div class="bg-size" [ngStyle]="{ 'background-image': 'url(' + blog.blog_thumbnail.original_url + ')' }">
+                    <img [src]="blog.blog_thumbnail.original_url" class="img-fluid bg-img" alt="blog-image">
+                  </div>
+                  <span></span>
+                </div>
+              </a>
+              <div class="blog-details">
+                <h4>{{ blog?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h4>
+                <a href="javascript:void(0)" [routerLink]="['/blog/', blog?.slug]">
+                  <p>{{ blog.title }}</p>
+                </a>
+                <hr class="style1">
+                <h6>{{ 'by' | translate }}: {{ blog.created_by.name }} </h6>
+              </div>
+            </div>
+          }
+        </ng-template>
+      }
+    }
+  </owl-carousel-o>
+</div>
+@if(!blogs.length){
+  <app-no-data
+  [class]="'no-data-added'"
+  [text]="'no_blog'">
+  </app-no-data>
+}

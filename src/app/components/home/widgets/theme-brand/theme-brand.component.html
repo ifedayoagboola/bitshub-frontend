@@ -1,0 +1,36 @@
+
+<div class="container">
+    @if(brands.length){
+    <div class="row" [class.bg-light]="bgLight">
+      <div class="brand-slider-box">
+        <owl-carousel-o [options]="options">
+          @for(brand of brands; track brand.id){
+          <ng-template carouselSlide>
+            <div>
+              <div class="logo-block">
+                <a href="javascript:void(0)" [routerLink]="['/brand', brand.slug]">
+                  @if(brand?.brand_image?.original_url){
+                    <img
+                      [src]="brand?.brand_image?.original_url"
+                      alt="brand-logo" class="img-fluid"
+                    />
+                  } @else {
+                    <h4>{{ brand.name }}</h4>
+                  }
+                </a>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    </div>
+     }
+    @if(!brands.length){
+      <app-no-data
+        [class]="'no-data-added'"
+        [text]="'no_brand'">
+      </app-no-data>
+    }
+</div>
+

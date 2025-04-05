@@ -1,0 +1,126 @@
+{
+    "id": 48,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                24,
+                23,
+                22
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_1.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_7.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_6.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_4.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_3.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_5.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/pets/pets_2.png",
+                    "redirect_link": {
+                        "link": "pet-paradise",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            106,
+            104,
+            105,
+            103,
+            100,
+            99,
+            98,
+            97
+        ],
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                15,
+                14,
+                13
+            ]
+        },
+        "parallax_banner": {
+            "title": "GET UP TO 70% OFF",
+            "status": true,
+            "image_url": "/images/theme/pets/pets_8.png",
+            "main_title": "CHOOSE WHAT YOU LOVE",
+            "description": "Indulge your pets with top-tier products at up to 70% off. Treat them to quality and savings they deserve!"
+        },
+        "products_list_1": {
+            "tag": "special offer",
+            "title": "Top collection",
+            "status": true,
+            "product_ids": [
+                106,
+                104,
+                105,
+                103
+            ]
+        },
+        "products_list_2": {
+            "title": "save and extera",
+            "status": true,
+            "product_ids": [
+                100,
+                99,
+                98,
+                97
+            ]
+        }
+    },
+    "slug": "pets"
+}

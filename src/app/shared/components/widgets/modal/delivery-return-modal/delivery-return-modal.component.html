@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h3 class="fw-semibold">{{ 'delivery_return' | translate }}</h3>
+  <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modal.close()">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+<div>
+  <div class="modal-body policy-body">
+    <p [innerHTML]="policy"></p>
+  </div>
+</div>

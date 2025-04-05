@@ -1,0 +1,43 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<div class="section-b-space section-t-space offer-section">
+    <div class="container">
+      <div class="row g-md-4 g-3">
+        @if(couponService.skeletonLoader){
+          @for(item of skeletonItems; track item){
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+              <app-skeleton-offer></app-skeleton-offer>
+            </div>
+          }
+        } @else {
+          @for(coupon of (coupon$ |async)?.data; track coupon.id){
+            <div class="col-xxl-4 col-lg-4 col-sm-6">
+              <div class="coupon-box">
+                <div class="coupon-name">
+                  <h5 class="fw-semibold dark-text">{{ coupon?.title }}</h5>
+                </div>
+                <div class="coupon-content">
+                  <p>{{ coupon.description }}</p>
+                  <div class="coupon-apply">
+                    <h6 class="coupon-code success-color">#{{ coupon?.code }}</h6>
+                    @if(coupon?.code){
+                      <a href="javascript:void(0)" class="btn theme-btn border-btn copy-btn mt-0"
+                        (click)="copyFunction(coupon.code)">
+                        {{ 'copy_code' | translate }}
+                      </a>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          }@empty {
+            <app-no-data
+              [class]="'no-data-added collection-no-data'" [image]="'assets/svg/empty-items.svg'"
+              [text]="'no_offer'"
+              [description]="'no_offer_desc'">
+            </app-no-data>
+          }
+        }
+      </div>
+    </div>
+  </div>

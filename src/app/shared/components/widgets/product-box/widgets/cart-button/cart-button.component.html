@@ -1,0 +1,62 @@
+@if(product && !product.is_external){
+  @if (quantity) {
+    @if(product.stock_status == 'in_stock'){
+    <app-button [id]="'add-to-cart'+product.id" [class]="'add-button add_cart'" [spinner]="false" (click)="addToCart(product, 1)">
+      {{ text | translate }}
+    </app-button>
+    }@else {
+    <app-button [id]="'add-to-cart'+product.id" [class]="'add-button add_cart'" [spinner]="false" [disabled]="true">
+      {{ 'out_of_stock' | translate }}
+    </app-button>
+    }
+    @if(cartItem && cartItem.quantity > 0){
+    <div class="qty-box" [class.open]="cartItem && cartItem.quantity > 0">
+      <div class="input-group">
+        <app-button
+          [id]="'quantity-left-minus'+product.id"
+          [class]="'btn quantity-left-minus'"
+          [spinner]="false"
+          (click)="updateQuantity(product, -1)">
+        @if(cartItem.quantity > 1){
+          <i class="ri-subtract-line"></i>
+        }
+        @if(cartItem.quantity <= 1){ 
+          <i class="ri-delete-bin-line"></i>
+        }
+        </app-button>
+
+        <input type="text" name="quantity" class="form-control input-number qty-input" value="{{cartItem && cartItem.quantity ? cartItem.quantity : cartItem}}">
+
+        <app-button [id]="'quantity-left-plus'+product.id" [class]="'btn quantity-right-plus'" [iconClass]="'ri-add-fill'" [spinner]="false" (click)="updateQuantity(product, 1)">
+        </app-button>
+      </div>
+    </div>
+    }
+  }@else {
+    @if(product.stock_status == 'in_stock'){
+        <app-button
+            [id]="'add-to-cart'+product.id"
+            [spinner]="false"
+            [class]="class + ' ' +(cartItem && cartItem.quantity > 0 ? 'active' : '')"
+            [iconClass]="iconClass ? iconClass : 'ri-shopping-cart-line'"
+            (click)="enableModal ? product.type === 'classified' ? openModal(product) : addToCart(product, 1) : addToCart(product, 1)">
+            <span> {{ (!(cartItem && cartItem.quantity > 0) ? text : 'Added') | translate  }}</span>
+        </app-button>
+    } @else {
+        <app-button [id]="'out-of-stock'+product.id"
+            [iconClass]="iconClass ? iconClass : 'ri-shopping-cart-line'"
+            [class]="class"
+            [disabled]="true">
+            {{ (text ? 'out_of_stock' : '') | translate  }}
+        </app-button>
+    }
+  }
+} @else {
+    <app-button [id]="'add-to-cart'+product.id"
+        [class]="class + 'btn btn-add-cart addcart-button'"
+        [iconClass]="'ri-add-line'"
+        [spinner]="false"
+        (click)="externalProductLink(product.external_url)">
+        {{ (product.external_button_text ? product.external_button_text : 'buy_now') | translate }}
+    </app-button>
+}

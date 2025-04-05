@@ -1,0 +1,87 @@
+<!-- Home Section Start -->
+@if(data?.content?.home_banner){
+  <section class="p-0">
+    <div class="home-slider">
+      <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    </div>
+  </section>
+}
+<!-- Home Section End -->
+
+<!-- category section start -->
+@if(data?.content?.categories?.status){
+<section class="section-b-space pt-0">
+  <div class="container">
+    <app-theme-title [title]="data?.content?.categories" [type]="'basic'"></app-theme-title>
+
+    <app-categories [style]="'basic'" [categoryIds]="data?.content?.categories?.category_ids || []" [slider]="true"></app-categories>
+  </div>
+</section>
+}
+<!-- category section end -->
+
+<!--  tab section  -->
+@if(data?.content?.products_list?.status){
+  <section class="p-0">
+    <div class="tab-bg tab-grey-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <app-theme-title [title]="data?.content?.products_list" [type]="'basic'" [space]="false"></app-theme-title>
+            <app-theme-product [options]="productSlider5" [productIds]="data?.content?.products_list?.product_ids || []" [options]="productSlider4"  [style]="'vertical'" [slider]="true"></app-theme-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!--  tab section end -->
+
+<!-- Banner section -->
+@if(banners && banners.length){
+<section class="banner-6 ratio2_1 section-t-space section-b-space">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+      <div class="col-6">
+        <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- Banner section end-->
+
+<!--  tab section  -->
+@if(data?.content?.category_product?.status){
+  <section class="p-0">
+    <div class="tab-bg tab-grey-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <app-theme-title [title]="data?.content?.category_product" [type]="'basic'" [space]="false"></app-theme-title>
+            <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'"></app-theme-product-tab-section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!--  tab section end -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container'" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+    <section class="section-b-space">
+      <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+    </section>
+}
+<!-- Brand Section End -->

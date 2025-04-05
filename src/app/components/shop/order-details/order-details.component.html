@@ -1,0 +1,261 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="dashboard-section section-b-space user-dashboard-section">
+  <div class="faq-content">
+    <div class="tab-pane">
+      <div class="container">
+        <div class="row">
+          <div class="col-xxl-12 col-lg-12">
+            @if(order){
+              <div class="dashboard-right-sidebar">
+                <div>
+                  <div class="title-header mb-3">
+                    <div class="d-flex  align-items-center w-100 justify-content-between">
+                      <h5><a (click)="back()"><i class="ri-arrow-left-line"></i></a>{{ 'order_number' | translate }}: #{{ order.order_number }}</h5>
+                    </div>
+                  </div>
+                  <div class="mb-4 mt-2">
+                    <div class="tracking-panel">
+
+                      @if(order && !order.sub_orders.length){
+                        <ul>
+                            @for(orderStatus of (orderStatus$ | async)?.data; track orderStatus.id){
+                              <li [class.active]="orderStatus?.sequence! <= order.order_status.sequence!" [ngClass]="{
+                                                          'd-none': (orderStatus?.sequence! >= order.order_status.sequence!
+                                                          && (order.order_status && order.order_status.slug == 'cancelled')) ||
+                                                          orderStatus?.slug == 'cancelled' || (order.is_digital_only && (orderStatus?.slug == 'shipped' || orderStatus?.slug == 'out-for-delivery'))
+                                                      }">
+                                <div class="panel-content">
+                                  <div class="icon">
+                                    <img src="assets/svg/tracking/{{orderStatus?.slug}}.svg" class="img-fluid" alt="image">
+                                  </div>
+                                  <div class="status">{{ orderStatus?.name?.replaceAll('_', ' ') | titlecase }}</div>
+                                </div>
+                              </li>
+                            }
+
+                          @if(order && order.order_status && order.order_status.slug == 'cancelled'){
+                            <li class="active cancelled-box">
+                              @if(order && order.order_status){
+                                <div class="panel-content">
+                                  <div class="icon">
+                                    <img src="assets/svg/tracking/{{order.order_status.slug}}.svg" class="img-fluid" alt="image">
+                                  </div>
+                                  <div class="status">{{ order.order_status.name.replaceAll('_', ' ')! | titlecase }}</div>
+                                </div>
+                              }
+                            </li>
+                          }
+                        </ul>
+                      }
+                    </div>
+                  </div>
+
+                  @if(order && order.products.length){
+                    <div class="card dashboard-table">
+                      <div class="card-body">
+                        <div class="wallet-table">
+                          <div class="tracking-wrapper table-responsive">
+                            <table class="table product-table order-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">{{ 'image' | translate }}</th>
+                                  <th scope="col">{{ 'name' | translate }}</th>
+                                  <th scope="col">{{ 'price' | translate }}</th>
+                                  <th scope="col">{{ 'quantity' | translate }}</th>
+                                  <th scope="col">{{ 'subtotal' | translate }}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                @for(product of order.products; track product.id){
+                                  <tr>
+                                    <td class="product-image">
+                                      <img [src]="product?.pivot?.variation && product?.pivot?.variation?.variation_image
+                                                                                    ? product?.pivot?.variation?.variation_image?.original_url
+                                                                                    : product?.product_thumbnail
+                                                                                    ? product?.product_thumbnail?.original_url
+                                                                                    : 'assets/images/placeholder/product.png'" class="img-fluid" alt="product">
+                                    </td>
+                                    <td>
+                                      <h6>{{ product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>{{ product?.pivot?.single_price | currencySymbol }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>{{ product?.pivot?.quantity }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>{{ product?.pivot?.subtotal | currencySymbol }}</h6>
+                                    </td>
+                                  </tr>
+                                }
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  }
+
+                  <div class="summary-details my-3">
+                    <div class="row g-4">
+                      <div class="col-xxl-8 col-lg-12 col-md-7">
+                        <div class="card">
+                          <div class="card-body">
+                            <h3 class="order-title">{{ 'consumer_details' | translate }}</h3>
+                            <div class="customer-detail tracking-wrapper">
+                              <ul class="row g-3">
+                                @if(order && order.billing_address){
+                                  <li class="col-sm-6">
+                                    <label>{{ 'billing_address' | translate }}:</label>
+                                    <h4>
+                                      {{ order.billing_address.street }}
+                                      {{ order.billing_address.city }} {{ getStateName(order.billing_address.state_id) }} {{ getCountryName(order.billing_address.country_id) }}
+                                      {{ order.billing_address.pincode }} <br>
+                                      {{ 'phone' | translate }} : +{{ order.billing_address.country_code }} {{ order.billing_address.phone }}
+                                    </h4>
+                                  </li>
+                                }
+
+                                @if(order && order.shipping_address && !order.is_digital_only){
+                                  <li class="col-sm-6">
+                                    <label>{{ 'shipping_address' | translate }}:</label>
+                                    <h4>
+                                      {{ order.shipping_address.street }}
+                                      {{ order.shipping_address.city }} {{ getStateName(order.shipping_address.state_id) }} {{ getCountryName(order.shipping_address.country_id) }}
+                                      {{ order.shipping_address.pincode }} <br>
+                                      {{ 'phone' | translate }} : +{{ order.shipping_address.country_code }} {{ order.shipping_address.phone }}
+                                    </h4>
+                                  </li>
+                                }
+
+                                @if(order && order.delivery_description && !order.is_digital_only){
+                                  <li class="col-sm-6">
+                                    <label>{{ 'delivery_slot' | translate }}:</label>
+                                    <h4>{{ order.delivery_description }}</h4>
+                                  </li>
+                                }
+
+                                @if(order && order.payment_method){
+                                  <li class="col-sm-3">
+                                    <label>{{ 'payment_mode' | translate }}:</label>
+                                    <div class="d-flex align-items-center gap-2">
+                                      <h4>{{ order.payment_method | uppercase }}</h4>
+                                    </div>
+                                  </li>
+
+                                  <li class="col-sm-3">
+                                    <label>{{ 'payment_status' | translate }}:</label>
+                                    <div class="d-flex align-items-center gap-2">
+                                      <h4>{{ order.payment_status | uppercase }}</h4>
+                                    </div>
+                                  </li>
+                                }
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xxl-4 col-lg-12 col-md-5">
+                        <div class="card h-m30">
+                          <div class="card-body">
+                            <h3 class="fw-semibold mb-3 order-title">
+                              {{ 'summary' | translate }}
+                            </h3>
+                            <div class="tracking-total tracking-wrapper">
+                              <ul>
+                                <li>{{ 'subtotal' | translate }} <span>{{ (order.amount ? order.amount : 0) | currencySymbol }}</span></li>
+
+                                @if(order && !order.is_digital_only){
+                                  <li>{{ 'shipping'| translate }} <span>{{ (order.shipping_total ? order.shipping_total : 0) | currencySymbol }}</span></li>
+                                }
+                                <li>{{ 'tax'| translate }} <span>{{ (order.tax_total ? order.tax_total : 0) | currencySymbol }}</span></li>
+
+                                @if(order.points_amount != 0){
+                                  <li class="txt-primary fw-bold">{{ 'points'| translate }} <span>{{ order.points_amount | currencySymbol }}</span></li>
+                                }
+
+                                @if(order.wallet_balance != 0){
+                                  <li class="txt-primary fw-bold">{{ 'wallet_balance'| translate }} <span>{{ order.wallet_balance | currencySymbol }}</span></li>
+                                }
+
+                                @if(order.coupon_total_discount != 0){
+                                  <li class="txt-primary fw-bold">{{ 'coupon_discount'| translate }} <span>{{ order.coupon_total_discount | currencySymbol }}</span></li>
+                                }
+                                <li>{{ 'total'| translate }} <span>{{ (order.total ? order.total : 0) | currencySymbol }}</span></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  @if(order && order.sub_orders.length){
+                    <div class="card dashboard-table">
+                      <div class="card-body">
+                        <div class="wallet-table">
+                          <div class="tracking-wrapper table-responsive">
+                            <table class="table product-table order-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">{{ 'order_number' | translate }}</th>
+                                  <th scope="col">{{ 'order_date' | translate }}</th>
+                                  <th scope="col">{{ 'total_amount' | translate }}</th>
+                                  <th scope="col">{{ 'status' | translate }}</th>
+                                  <th scope="col">{{ 'action' | translate }}</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                @for(subOrder of order.sub_orders; track subOrder.id){
+                                  <tr>
+                                    <td>
+                                      <h6>{{ '#'+subOrder.order_number }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>{{ subOrder.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>{{ subOrder.amount | currencySymbol }}</h6>
+                                    </td>
+                                    <td>
+                                      <h6>
+                                        <div class="status-{{subOrder.order_status.slug}}">
+                                          <span>{{ subOrder.order_status.name }}</span>
+                                        </div>
+                                      </h6>
+                                    </td>
+                                    <td>
+                                      <a href="javascript:void(0)" [routerLink]="['/order/details']" [queryParams]="{order_number: subOrder.order_number, email_or_phone: email_or_phone}">
+                                        <i [class]="'ri-eye-line'"></i>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                }
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+
+            @if(!order){
+              <app-no-data
+                [class]="'no-data-added'"
+                [image]="'assets/svg/empty-items.svg'"
+                [text]="'no_order_found'">
+              </app-no-data>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

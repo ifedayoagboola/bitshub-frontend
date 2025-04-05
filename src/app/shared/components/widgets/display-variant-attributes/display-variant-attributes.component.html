@@ -1,0 +1,115 @@
+
+@for(attribute of attributes; track attribute.id; let i = $index){
+
+      @if(attribute?.style == 'dropdown' || isAllVariantStyleDropdown && showVariableType.includes('dropdown')){
+        <select id="input-state-{{i}}" class="form-control form-select" #selectedValue (change)="setVariant(product.variations, attribute.attribute_values[$any($event.target).value])">
+          <option selected disabled>{{ 'choose' | translate }} {{ attribute?.name }}</option>
+            @for(value of attribute.attribute_values; let indexx = $index; track value.id){
+              @if(attributeValues.includes(value.id)){
+                <option [selected]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)" [value]="indexx" [disabled]="soldOutAttributesIds.includes(value.id)">
+                  {{ value?.value }}
+                </option>
+              }
+            }
+        </select>
+      }@else {
+
+        @if(attribute?.style == 'radio' && showVariableType.includes('radio')){
+          <div class="d-flex digital-price">
+            @for(value of attribute.attribute_values; track value.id; let indexx = $index){
+              @if(attributeValues.includes(value.id)){
+                <div class="form-check">
+                  <input type="radio" class="form-check-input"
+                    [id]="'radio-' + i + '-' + indexx"
+                    [name]="'radio-group-' + i"
+                    [value]="indexx"
+                    [checked]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+                    [disabled]="soldOutAttributesIds.includes(value.id)"
+                    [ngClass]="{ '': soldOutAttributesIds.includes(value.id) }"
+                    (change)="setVariant(product.variations, attribute.attribute_values[$any($event.target).value])" />
+
+                  <label [for]="'radio-' + i + '-' + indexx" class="form-check-label">{{ value?.value }} </label>
+
+                  @if(showPrice){
+                    <h5 class="sold text-content ms-auto">
+                      <span class="theme-color price">{{ value.sale_price | currencySymbol }}</span>
+                      @if(product.discount){
+                        <del>{{ value.price }}</del>
+                      }
+                    </h5>
+                  }
+                </div>
+              }
+            }
+          </div>
+        }
+
+        @else if(attribute.style == 'color' && showVariableType.includes('color')){
+          <ul class="color-variant">
+            @for(value of attribute.attribute_values; track value.id){
+              @if(attributeValues.includes(value.id)){
+                <li
+                  (mouseleave)="removeVariation()"
+                  [ngStyle]="{ 'background-color': value.hex_color }"
+                  [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+                  [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }"
+                  (click)="setVariant(product.variations, value)" (mouseover)="setVariant(product.variations, value, 'hover')"
+                  >
+                </li>
+              }
+            }
+          </ul>
+        }
+        @else if(attribute.style == 'circle' && showVariableType.includes('circle')){
+          <div class="size-box" >
+            <h6 class="product-title size-text">{{'select_size' | translate}}
+              @if(product.size_chart_image){
+                <span> <a href="javascript:void(0)" (click)="openSizeChartModal(product.size_chart_image)">{{'size_chart' | translate}}</a></span>
+              }
+            </h6>
+
+            <ul class="{{attribute?.style}}">
+              @for(value of attribute.attribute_values; track value.id){
+                @if(attributeValues.includes(value.id)){
+                  <li
+                  (mouseleave)="removeVariation()"
+                  [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+                  [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }">
+                    <a href="javascript:void(0)" (click)="setVariant(product.variations, value)" (mouseover)="setVariant(product.variations, value, 'hover')">{{ value.value}}</a></li>
+                }
+              }
+            </ul>
+          </div>
+        }
+
+        @else {
+            @if(showVariableType.includes('rectangle') || showVariableType.includes('image')){
+              @if(showVariableType.includes(attribute?.style!)){
+                <ul [ngClass]="attribute?.style" [class.quantity-variant]="attribute?.style != 'image'" [class.image-swatch]="attribute?.style == 'image'">
+                  @for(value of attribute.attribute_values; track value.id){
+                    @if(attributeValues.includes(value.id)){
+                      <li class="bg-light" (mouseleave)="removeVariation()" [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+                          [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }">
+
+                          @if(attribute?.style == 'image'){
+                            <a>
+                              <img [src]="value?.variation_image ? value?.variation_image?.original_url : 'assets/images/placeholder/product.png'" (click)="setVariant(product.variations, value)" (mouseover)="setVariant(product.variations, value, 'hover')">
+                            </a>
+                          }@else {
+                            <app-button
+                              [id]="'value_btn'"
+                              [type]="'button'"
+                              [spinner]="false"
+                              (click)="setVariant(product.variations, value)" (mouseover)="setVariant(product.variations, value, 'hover')">
+                              {{ value?.value }}
+                            </app-button>
+                          }
+                      </li>
+                    }
+                  }
+                </ul>
+              }
+            }
+        }
+    }
+  }

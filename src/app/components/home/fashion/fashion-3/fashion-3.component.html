@@ -1,0 +1,54 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- box layout start -->
+<div class="container box-layout bg-image">
+  <!-- Product slider Start -->
+  @if(data?.content?.products_list?.status && data?.content?.products_list?.product_ids){
+
+  <section class="section-b-space pt-0">
+    <div class="container p-0">
+      <app-theme-title [title]="data?.content?.products_list" [type]="'basic'"></app-theme-title>
+      <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [slider]="true"
+        [options]="productSlider4" [style]="'vertical'"></app-theme-product>
+    </div>
+  </section>
+  }
+  <!-- Product slider end -->
+
+  <!-- Parallax Banner Start -->
+  @if(data?.content?.full_banner?.status){
+  <section class="p-0 banner-sale">
+    <app-image-link [image]="data?.content?.full_banner" [placeholder]="'assets/images/full_column_banner.png'"
+      [bgImage]="false"></app-image-link>
+  </section>
+
+  }
+  <!-- Parallax Banner End -->
+
+  <!-- Tab product Start-->
+  @if(data?.content?.category_product?.status && data?.content?.category_product?.category_ids){
+  <app-theme-title [title]="data?.content?.category_product" [type]="'basic'"></app-theme-title>
+  <section class="pt-0">
+    <div class="container p-0">
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids"
+        [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"
+        [style]="'vertical'"></app-theme-product-tab-section>
+    </div>
+  </section>
+  }
+  <!-- Tab product End-->
+
+  <!-- Brand Section Start -->
+  @if(data?.content?.brand?.status){
+  <section class="section-b-space brand-section">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+  }
+  <!-- Brand Section End -->
+</div>

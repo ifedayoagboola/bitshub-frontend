@@ -1,0 +1,109 @@
+<!-- Home Section Start -->
+<section class="p-0 layout-7">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- category section -->
+@if(data?.content?.categories_1?.status){
+  <section class="vector-category">
+    <div class="container">
+      <div class="vector-slide-8 category-slide ratio_square">
+        <app-categories [categoryIds]="data?.content?.categories_1?.category_ids || []" [style]="'books'"></app-categories>
+      </div>
+    </div>
+  </section>
+}
+<!-- category section end -->
+
+<!-- Product slider Start -->
+@if(data?.content?.category_product?.status){
+  <section class="tools_product section-b-space">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.category_product" [type]="'standard'"></app-theme-title>
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'" [slider]="false" [showItems]="5" [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"></app-theme-product-tab-section>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- category  -->
+@if(data?.content?.categories_2?.status){
+  <div class="container category-button">
+    <section class="section-b-space border-section border-bottom-0">
+      <app-categories [categoryIds]="data?.content?.categories_2?.category_ids || []" [style]="'bag'" [slider]="true"></app-categories>
+    </section>
+  </div>
+}
+<!-- category end -->
+
+<!-- Parallax banner -->
+@if(data?.content?.slider_products?.status){
+  <section class="card-white-bg bg-size" [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.slider_products?.image_url +')'}">
+    <div class="ratio_square">
+      <div class="container">
+        <app-theme-title [title]="data?.content?.slider_products" [type]="'standard'"></app-theme-title>
+        <app-theme-four-column-product [data]="data?.content?.slider_products" [style]="'horizontal'"></app-theme-four-column-product>
+        <div class="row">
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Parallax banner -->
+ 
+<!-- Banner Section Start -->
+<section class="pb-0 ratio2_1 banner-section">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @if(data?.content?.offer_banner?.banner_1?.status){
+        <div class="{{ data?.content?.offer_banner?.banner_2?.status ? 'col-md-6' : 'col-12' }}">
+          <app-image-link [image]="data?.content?.offer_banner?.banner_1" [bgImage]="true"></app-image-link>
+        </div>
+      }
+
+      @if(data?.content?.offer_banner?.banner_2?.status){
+        <div class="{{ data?.content?.offer_banner?.banner_1?.status ? 'col-md-6' : 'col-12' }}">
+          <app-image-link [image]="data?.content?.offer_banner?.banner_2" [bgImage]="true"></app-image-link>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list?.status){
+  <section class="section-b-space tools_product ratio_asos">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.products_list" [type]="'standard'"></app-theme-title>
+      <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <section class="blog ratio3_2 pt-0 section-b-space">
+    <div class="container border-section border-bottom-0">
+      <div class="row section-t-space">
+        <div class="col-md-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'standard'"></app-theme-title>
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

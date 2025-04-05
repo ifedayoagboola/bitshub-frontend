@@ -1,0 +1,127 @@
+{
+    "id": 35,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                27,
+                26,
+                25,
+                29
+            ]
+        },
+        "services": {
+            "status": true,
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/tools/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/tools/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/tools/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/tools/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "categories": {
+            "title": "welcome to tool store",
+            "status": true,
+            "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            "category_ids": [
+                119,
+                120,
+                121,
+                122
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/tools/tools_1.png",
+                    "redirect_link": {
+                        "link": "beauty"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            386,
+            385,
+            379,
+            384,
+            383,
+            382,
+            381,
+            377,
+            380,
+            373
+        ],
+        "products_list_1": {
+            "title": "popular products",
+            "status": true,
+            "product_ids": [
+                386,
+                385,
+                379,
+                384
+            ]
+        },
+        "products_list_2": {
+            "status": true,
+            "image_url": "/images/theme/tools/tools_2.png",
+            "product_ids": [
+                383,
+                382,
+                381,
+                377
+            ]
+        },
+        "category_product": {
+            "status": true,
+            "left_panel": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    382,
+                    380,
+                    373
+                ]
+            },
+            "right_panel": {
+                "product_banner": {
+                    "status": true,
+                    "image_url": "/images/theme/tools/tools_3.png",
+                    "redirect_link": {
+                        "link_type": "collection"
+                    }
+                },
+                "product_category": {
+                    "status": true,
+                    "category_ids": [
+                        120,
+                        122
+                    ]
+                }
+            }
+        }
+    },
+    "slug": "tools"
+}

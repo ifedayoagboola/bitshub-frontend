@@ -1,0 +1,54 @@
+<div class="basic-product theme-product-9">
+  <div class="img-wrapper overflow-visible">
+    @if (product.is_trending || product.is_sale_enable || product.is_featured) {
+      <div class="ribbon-outer" [ngClass]="product.is_sale_enable ? 'sale-tag' : product.is_featured ? 'featured-tag' : product.is_trending ?
+      'trending-tag' : '' ">{{ (product.is_sale_enable ? 'sale' : product.is_featured ? 'featured' : product.is_trending ? 'trending' : '' ) | translate }}</div>
+    }
+
+    @if(product.is_sale_enable){
+      <div class="ribbon-outer" [class.level2]="product.is_featured">{{ 'on_sale' | translate }}</div>
+    }
+    <app-image-variant [thumbnail]="product.product_thumbnail!" [gallery_images]="product.product_galleries!" [product]="product!"></app-image-variant>
+    <div class="cart-info">
+      <app-wishlist [product]="product" [class]="'wishlist-icon'"></app-wishlist>
+
+      <app-product-hover-action [product]="product" [showAction]="['view', 'compare']">
+        <app-cart-button [product]="product"></app-cart-button>
+      </app-product-hover-action>
+
+    </div>
+  </div>
+  <div class="product-detail">
+    @if(product.brand){
+      <a [routerLink]="['/brand', product.brand.slug]">
+        <h6>{{ product.brand.name }}</h6>
+      </a>
+    }
+
+    <a href="javascript:void(0)" class="product-title" [routerLink]="['/product/', product.slug]">
+      {{ product.name }}
+    </a>
+
+    <div class="bottom-details">
+      <div class="rating-label">
+        <div><span>{{ product.rating_count ? product.rating_count : 0 }}</span><i class="ri-star-fill"></i></div>
+        <span class="review-count">({{ product.reviews_count }} {{ 'reviews' | translate }})</span>
+      </div>
+
+      <div class="price-vertical">
+        @if(product.discount){
+        <del> {{ (product.price) | currencySymbol }} </del>
+        }
+        <h4>{{ (product.sale_price) | currencySymbol }}</h4>
+      </div>
+
+    </div>
+
+    @if(product.discount){
+      <div class="discount-value">
+        <span class="offer-icon me-2"><i class="ri-discount-percent-fill"></i>
+        </span>{{ 'save_up_to' | translate }} {{ product.discount }}% {{ 'off' | translate }}
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,76 @@
+@if((option?.product?.encourage_view && product.encourage_view)){
+<div class="trending-text">
+  <img src="assets/images/trending.gif" class="img-fluid" alt="">
+  <h5>{{ 'selling_fast' | translate }}! {{ viewsCount }} {{ 'people_in_this_cart' | translate }}.</h5>
+</div>
+}
+
+<!-- Product name -->
+<a [routerLink]="['/product', product.slug]">
+  <h2 class="main-title"> 
+    {{ selectedVariation ? selectedVariation.name : product.name }}
+  </h2>
+</a>
+
+<!-- Review -->
+@if(!product.is_external){
+<div class="product-rating">
+  <div class="rating-list">
+    <ngb-rating [(rate)]="product.rating_count">
+      <ng-template let-fill="fill" let-index="index">
+        <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+      </ng-template>
+    </ngb-rating>
+  </div>
+  <span class="divider">|</span>
+  <a href="javascript:void(0)">{{ product.reviews_count }} {{ 'review' | translate }}</a>
+</div>
+}
+
+<!-- Price -->
+<div class="price-text">
+  <h3>
+    <span class="text-dark fw-normal">{{ 'mrp' | translate }}:</span> {{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+
+    @if(selectedVariation ? selectedVariation.discount : product.discount){
+      <del>{{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }}</del>
+    }
+
+    @if(selectedVariation ? selectedVariation.discount : product.discount){
+      <span class="discounted-price">{{ (selectedVariation ? selectedVariation.discount : product.discount) }}% {{ 'off' | translate }}</span>
+    }
+  </h3>
+  <span>{{ 'inclusive_text' | translate }} </span>
+</div>
+
+<!-- Description -->
+@if(product.short_description){
+  <p class="description-text">
+    {{ product.short_description }}
+  </p>
+}
+
+<!-- Action -->
+@if((product.size_chart_image || policy && product.is_return)){
+  <div class="size-delivery-info">
+    @if(product.size_chart_image && product.size_chart_image.original_url){
+      <a href="javascript:void(0)" class="" (click)="openModal('sizeChart',product.size_chart_image)">
+        <i class="ri-ruler-line"></i> {{ 'size_chart' | translate }}
+      </a>
+    }
+    <span></span>
+
+    @if(policy && product.is_return){
+      <a href="javascript:void(0)" class="" (click)="openModal('delivery',policy)">
+        <i class="ri-truck-line"></i> {{ 'delivery_return' | translate }}
+      </a>
+
+      <span></span>
+
+      <a href="javascript:void(0)" class="" (click)="openModal('question',product)">
+        <i class="ri-questionnaire-line"></i>{{ 'ask_a_question' | translate }}
+      </a>
+    }
+
+  </div>
+}

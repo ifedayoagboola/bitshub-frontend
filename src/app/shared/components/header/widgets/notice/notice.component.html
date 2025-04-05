@@ -1,0 +1,15 @@
+@if(isBrowser) {
+  <div #swiperContainer class="vertical-slider no-arrow swiper height-vh">
+    <div class="swiper-wrapper">
+      @for(item of content; track item.content) {
+        <div class="swiper-slide">
+          @if(item.content){
+            <div>
+              <span [innerHtml]="item.content"></span>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+}

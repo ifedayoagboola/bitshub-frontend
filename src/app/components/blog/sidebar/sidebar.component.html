@@ -1,0 +1,25 @@
+@if(blogService.skeletonLoader){
+  <app-skeleton-blog [type]="'sidebar'" ></app-skeleton-blog>
+} @else {
+  <div class="theme-card">
+    <h4>{{ 'recent_blog' | translate }}</h4>
+    <app-blog-recent-post [blogs]="(resentBlog$ | async) || []"></app-blog-recent-post>
+    @if(!(resentBlog$ | async)?.length){
+      <app-no-data [class]="'no-data-added'" [text]="'Recent Blog'"></app-no-data>
+    }
+  </div>
+  <div class="theme-card">
+    <h4>{{ 'categories' | translate }}</h4>
+    <app-blog-category [data]="category || []"></app-blog-category>
+    @if(category && !category.length){
+      <app-no-data [class]="'no-data-added'" [text]="'no_category'"></app-no-data>
+    }
+  </div>
+  <div class="theme-card">
+    <h4>{{ 'tags' | translate }}</h4>
+    <app-blog-tag [tags]="(tag$ | async)?.data || []"></app-blog-tag>
+    @if(!(tag$ | async)?.data?.length){
+      <app-no-data [class]="'no-data-added'" [text]="'No Tag'"></app-no-data>
+    }
+  </div>
+}

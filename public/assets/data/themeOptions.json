@@ -1,0 +1,461 @@
+{
+    "id": 1,
+    "options": {
+        "seo": {
+            "og_title": "MultiKart Marketplace: Uniting Vendors for Shopping Excellence",
+            "meta_tags": "Multikart Marketplace: Where Vendors Shine Together",
+            "meta_title": "Online Marketplace, Vendor Collaboration, E-commerce Platform",
+            "og_image_id": 107,
+            "og_description": "Experience a unique shopping journey at MultiKart Marketplace, where vendors collaborate to provide a vast array of products. Explore, shop, and connection in one convenient destination.",
+            "meta_description": "Discover MultiKart Marketplace – a vibrant online platform where vendors unite to showcase their products, creating a diverse shopping experience. Explore a wide range of offerings and connect with sellers on a single platform.",
+            "og_image": {
+                "id": 107,
+                "name": "fashion_two_1",
+                "file_name": "fashion_two_1.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-05-06T03:56:14.000000Z",
+                "asset_url": "/storage/107/fashion_two_1.png",
+                "original_url": "/images/placeholder/fashion_two_1.png"
+            }
+        },
+        "blog": {
+            "blog_style": "grid_view",
+            "read_more_enable": true,
+            "blog_sidebar_type": "left_sidebar",
+            "blog_author_enable": true
+        },
+        "logo": {
+            "footer_logo_id": 3950,
+            "header_logo_id": 3939,
+            "favicon_icon_id": 3946,
+            "favicon_icon": {
+                "id": 3946,
+                "name": "favicon",
+                "file_name": "favicon.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-06-25T10:28:25.000000Z",
+                "asset_url": "/storage/3946/favicon.png",
+                "original_url": "assets/images/settings/favicon.png"
+            },
+            "header_logo": {
+                "id": 3939,
+                "name": "logo (1)",
+                "file_name": "logo-(1).png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-06-25T10:19:57.000000Z",
+                "asset_url": "/storage/3939/logo-(1).png",
+                "original_url": "assets/images/settings/logo-dark.png"
+            },
+            "footer_logo": {
+                "id": 3950,
+                "name": "f6",
+                "file_name": "f6.png",
+                "mime_type": "image/png",
+                "disk": "public",
+                "created_by_id": "1",
+                "created_at": "2024-06-25T11:42:51.000000Z",
+                "asset_url": "/storage/3950/f6.png",
+                "original_url": "assets/images/settings/footer-logo.png"
+            }
+        },
+        "popup": {
+            "auth": {
+                "image_url": "/images/placeholder/auth.png"
+            },
+            "exit": {
+                "title": "WAIT",
+                "image_url": "/images/placeholder/auth.png",
+                "is_enable": true,
+                "sub_title": "Sorry to see you leaving...",
+                "description": "Enter your email address to receive 10% off your first order"
+            },
+            "sale": {
+                "text": "SALE",
+                "is_enable": true
+            },
+            "news_letter": {
+                "offer": "80% off",
+                "title": "NEWSLETTER",
+                "image_url": "/images/placeholder/auth.png",
+                "is_enable": true,
+                "description": "plus, early access to new arrivals, exclusive sales, & lots more?"
+            }
+        },
+        "footer": {
+            "title": "KNOW IT ALL FIRST!",
+            "twitter": "https://twitter.com/",
+            "bg_color": "#212121",
+            "bg_image": "/images/footer/christmas.jpg",
+            "facebook": "https://facebook.com/",
+            "instagram": "https://instagram.com/",
+            "pinterest": "https://pinterest.com/",
+            "sub_title": "Never Miss Anything From Store By Signing Up To Our Newsletter.",
+            "about_email": "Support@Multikart.com",
+            "help_center": [
+                {
+                    "id": 1,
+                    "name": "My Account",
+                    "value": "account/dashboard"
+                },
+                {
+                    "id": 2,
+                    "name": "My Orders",
+                    "value": "account/order"
+                },
+                {
+                    "id": 4,
+                    "name": "Wishlist",
+                    "value": "wishlist"
+                },
+                {
+                    "id": 6,
+                    "name": "FAQ's",
+                    "value": "faq"
+                },
+                {
+                    "id": 7,
+                    "name": "Contact Us",
+                    "value": "contact-us"
+                }
+            ],
+            "useful_link": [
+                {
+                    "id": 1,
+                    "name": "Home",
+                    "value": ""
+                },
+                {
+                    "id": 2,
+                    "name": "Collections",
+                    "value": "collections"
+                },
+                {
+                    "id": 3,
+                    "name": "About Us",
+                    "value": "about-us"
+                },
+                {
+                    "id": 4,
+                    "name": "Blogs",
+                    "value": "blogs"
+                },
+                {
+                    "id": 5,
+                    "name": "Offers",
+                    "value": "offers"
+                },
+                {
+                    "id": 6,
+                    "name": "Search",
+                    "value": "search"
+                }
+            ],
+            "footer_about": "Discover the latest trends and enjoy seamless shopping with our exclusive collections.",
+            "footer_style": "footer_three",
+            "about_address": "Multikart Demo Store, Demo Store India 345-659",
+            "app_store_url": "https://www.apple.com/in/app-store/",
+            "support_email": "support@gmail.com",
+            "play_store_url": "https://play.google.com/store/apps",
+            "support_number": "123-456-7898",
+            "footer_copyright": true,
+            "copyright_content": "2023-24 themeforest powered by pixelstrap",
+            "footer_categories": [
+                74,
+                41,
+                98,
+                107,
+                12,
+                55
+            ],
+            "social_media_enable": true,
+            "payment_option_image_url": "/images/theme/data/payments.png"
+        },
+        "header": {
+            "today_deals": [],
+            "category_ids": [
+                74,
+                41,
+                98,
+                107
+            ],
+            "header_options": "header_one",
+            "support_number": "123 - 456 - 7890",
+            "top_bar_content": [
+                {
+                    "content": "<i class=\"ri-truck-line\"></i> Free Shipping on Orders $100+"
+                },
+                {
+                    "content": "<i class=\"ri-megaphone-line\"></i> Buy One Get Two Free"
+                },
+                {
+                    "content": "<i class=\"ri-gift-line\"></i> Gift Card for all the season"
+                }
+            ],
+            "page_top_bar_enable": true,
+            "sticky_header_enable": true
+        },
+        "seller": {
+            "about": {
+                "title": "Start Your Business With Multikart & Reach Customers Across The World...",
+                "status": true,
+                "image_url": "/images/placeholder/seller/seller_banner.png",
+                "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\n\nOn the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+            },
+            "steps": {
+                "title": "Doing Business On Multikart Is Really Easy",
+                "status": true,
+                "step_1": {
+                    "title": "List your products & Get support service provider",
+                    "description": "Register your business for free and create a product catalogue. Sell under your own private label or sell an existing brand. Get your documentation & cataloging done with ease from our Professional Services network."
+                },
+                "step_2": {
+                    "title": "Receive Orders & Schedule A Pickup",
+                    "description": "Once listed, your products will be available to millions of users.Get orders and manage your online business via our Seller Panel and Seller Zone Mobile App."
+                },
+                "step_3": {
+                    "title": "Receive Quick Payment & Grow Your Business",
+                    "description": "Receive quick and hassle-free payments in your account once your orders are fulfilled. Expand your business with low interest & collateral-free loans."
+                }
+            },
+            "services": {
+                "title": "WHY SELL ON MULTIKART?",
+                "status": true,
+                "service_1": {
+                    "title": "lowest cost",
+                    "image_url": "/images/placeholder/seller/seller_service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                "service_2": {
+                    "title": "high growth rate",
+                    "image_url": "/images/placeholder/seller/seller_service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text"
+                },
+                "service_3": {
+                    "title": "dedicated pickup",
+                    "image_url": "/images/placeholder/seller/seller_service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text"
+                },
+                "service_4": {
+                    "title": "most approachable",
+                    "image_url": "/images/placeholder/seller/seller_service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text"
+                }
+            },
+            "start_selling": {
+                "title": "Start Selling",
+                "status": true,
+                "description": "Multikart marketplace is India’s leading platform for selling online. Be it a manufacturer, vendor or supplier, simply sell your products online on Multikart and become a top ecommerce player with minimum investment. Through a team of experts offering exclusive seller workshops, training, seller support and convenient seller portal, Multikart focuses on educating and empowering sellers across India. Selling on Multikart.com is easy and absolutely free. All you need is to register, list your catalogue and start selling your products."
+            }
+        },
+        "general": {
+            "mode": "light",
+            "taglines": [
+                "⚡ Come Back !!",
+                "🎉 Offers for you..."
+            ],
+            "cart_style": "cart_sidebar",
+            "site_title": "Multikart Marketplace: Where Vendors Shine Together",
+            "site_tagline": "Shop Unique, Sell Exceptional – Multikart Multi-Vendor Universe.",
+            "primary_color": "#ec8951",
+            "secondary_color": null,
+            "back_to_top_enable": true,
+            "celebration_effect": true,
+            "language_direction": "ltr",
+            "exit_tagline_enable": true,
+            "seller_register_url": "https://angular.pixelstrap.net/multikart-rest"
+        },
+        "product": {
+            "services": {
+                "banners": [
+                    {
+                        "title": "Free Shipping",
+                        "status": true,
+                        "image_url": "/images/theme/fashion_one/service.png",
+                        "description": "Free Shipping World Wide"
+                    },
+                    {
+                        "title": "24 X 7 Service",
+                        "status": true,
+                        "image_url": "/images/theme/fashion_one/service.png",
+                        "description": "Online Service For 24 X 7"
+                    },
+                    {
+                        "title": "Festival Offer",
+                        "status": true,
+                        "image_url": "/images/theme/fashion_one/service.png",
+                        "description": "Super Sale Upto 50% Off"
+                    }
+                ]
+            },
+            "social_share": true,
+            "image_variant": "image_thumbnail",
+            "safe_checkout": true,
+            "encourage_view": true,
+            "product_layout": "product_column_thumbnail",
+            "sticky_product": true,
+            "encourage_order": true,
+            "secure_checkout": true,
+            "sticky_checkout": true,
+            "banner_image_url": null,
+            "is_trending_product": true,
+            "product_box_variant": "product_box_two",
+            "safe_checkout_image": "/images/theme/data/payments.png",
+            "shipping_and_return": "<p>Shipping and Returns are integral parts of your shopping experience, and we aim to make them as smooth as possible. We prioritize efficient shipping, striving to deliver your orders promptly within the estimated delivery window, typically ranging from 5 to 7 days. We understand that sometimes your purchase may not meet your expectations, so we offer a straightforward return policy. If you find yourself unsatisfied with your order, eligible items can be returned within 30 days of purchase, ensuring you have ample time to make a decision. Our commitment is to ensure your satisfaction and convenience throughout your shopping journey with us, and we're here to assist you every step of the way.</p><p><strong>Our Shipping Commitment:</strong></p><ul><li><p>Timely and reliable delivery within 5-7 days.</p></li><li><p>Real-time tracking for your orders.</p></li><li><p>Exceptional packaging to ensure your items arrive in perfect condition.</p></li><li><p></p></li></ul><p><strong>Our Hassle-Free Returns:</strong></p><ul><li><p>Eligible items can be returned within 30 days.</p></li><li><p>Easy return initiation through our website.</p></li><li><p>Prompt processing of returns for a hassle-free experience.</p></li><li><p>&nbsp;</p></li></ul><p>We understand that your shopping needs may vary, and we are here to accommodate them while providing exceptional service.</p>",
+            "secure_checkout_image": "/images/theme/data/payments.png",
+            "encourage_max_view_count": 5,
+            "encourage_max_order_count": 50
+        },
+        "about_us": {
+            "team": {
+                "title": "Multikart Team Member",
+                "status": true,
+                "members": [
+                    {
+                        "name": "Hileri Keol",
+                        "twitter": "https://twitter.com/",
+                        "facebook": "https://www.facebook.com/",
+                        "instagram": "https://instagram.com/",
+                        "pinterest": "https://pinterest.com/",
+                        "designation": "CEo & Founder At Company",
+                        "profile_image_url": "/images/placeholder/about-us/member.png"
+                    },
+                    {
+                        "name": "Constance K. Whang",
+                        "twitter": "https://twitter.com/",
+                        "facebook": "https://www.facebook.com/",
+                        "instagram": "https://instagram.com/",
+                        "pinterest": "https://pinterest.com/",
+                        "designation": "Jr. Project Manager",
+                        "profile_image_url": "/images/placeholder/about-us/member.png"
+                    },
+                    {
+                        "name": "Betty J. Turner",
+                        "twitter": "https://twitter.com/",
+                        "facebook": "https://www.facebook.com/",
+                        "instagram": "https://instagram.com/",
+                        "pinterest": "https://pinterest.com/",
+                        "designation": "CEO, Company",
+                        "profile_image_url": "/images/placeholder/about-us/member.png"
+                    },
+                    {
+                        "name": "Alfredo S. Rocha",
+                        "twitter": "https://twitter.com/",
+                        "facebook": "https://www.facebook.com/",
+                        "instagram": "https://instagram.com/",
+                        "pinterest": "https://pinterest.com/",
+                        "designation": "Sr. Project Manager",
+                        "profile_image_url": "/images/placeholder/about-us/member.png"
+                    }
+                ],
+                "sub_title": "Our Creative Team Multikart"
+            },
+            "about": {
+                "title": "Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium",
+                "status": true,
+                "futures": [
+                    {
+                        "icon": "/images/theme/fashion_one/service.png",
+                        "title": "Free Shipping",
+                        "description": "Free Shipping World Wide"
+                    },
+                    {
+                        "icon": "/images/theme/fashion_one/service.png",
+                        "title": "24 X 7 Service",
+                        "description": "Online Service For New Customer"
+                    },
+                    {
+                        "icon": "/images/theme/fashion_one/service.png",
+                        "title": "Festival Offer",
+                        "description": "New Online Special Festival Offer"
+                    }
+                ],
+                "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\n\nOn the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+                "content_bg_image_url": "/images/placeholder/about-us/about_banner.png",
+                "content_left_image_url": null,
+                "content_right_image_url": null
+            },
+            "testimonial": {
+                "title": "What People Say",
+                "status": true,
+                "reviews": [
+                    {
+                        "name": "Alfredo S. Rocha",
+                        "title": "Alfredo S. Rocha",
+                        "review": "\"I bought this product on a budget, and it exceeded my expectations. The quality is impressive for the price. I'm delighted with my purchase.\"",
+                        "designation": "CEO, Company",
+                        "profile_image_url": "/images/placeholder/about-us/testimonial.png"
+                    },
+                    {
+                        "name": "Betty J. Turner",
+                        "title": "Betty J. Turner",
+                        "review": "\"I had high hopes for this product, but it fell short of my expectations. It constantly crashes and lacks essential features. I wouldn't recommend it.\"",
+                        "designation": "Sr. Project Manager",
+                        "profile_image_url": "/images/placeholder/about-us/testimonial.png"
+                    },
+                    {
+                        "name": "Gwen J. Geiger",
+                        "title": "Gwen J. Geiger",
+                        "review": "\"I encountered a minor issue with my purchase, and the customer service team was quick to resolve it. Their prompt and friendly support made me a happy customer!\"",
+                        "designation": "Designer",
+                        "profile_image_url": "/images/placeholder/about-us/testimonial.png"
+                    }
+                ],
+                "sub_title": "Latest Testimonials"
+            }
+        },
+        "collection": {
+            "collection_layout": "collection_category_slider",
+            "collection_categories_ids": [
+                74,
+                41,
+                107,
+                12,
+                7,
+                28,
+                157,
+                136,
+                118,
+                79,
+                70,
+                64
+            ],
+            "collection_banner_image_url": "/images/placeholder/collection_banner.png"
+        },
+        "contact_us": {
+            "title": "Get In Touch",
+            "detail_1": {
+                "icon": "ri-phone-fill",
+                "text": "+91 123 - 456 - 7890",
+                "label": "Contact Us"
+            },
+            "detail_2": {
+                "icon": "ri-map-pin-fill",
+                "text": "ABC Complex,Near xyz, New York",
+                "label": "Address"
+            },
+            "detail_3": {
+                "icon": "ri-mail-fill",
+                "text": "support@multikart.com",
+                "label": "Email"
+            },
+            "detail_4": {
+                "icon": "ri-cellphone-fill",
+                "text": "support@multikart.com",
+                "label": "Fax"
+            },
+            "imageUrl": null,
+            "description": "We're here to help! Reach out to us with any questions, feedback, or inquiries, and we'll get back to you as soon as possible."
+        },
+        "error_page": {
+            "back_button_text": "back to home",
+            "back_button_enable": true,
+            "error_page_content": "page not found"
+        }
+    }
+}

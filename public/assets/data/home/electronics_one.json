@@ -1,0 +1,71 @@
+{
+    "id": 11,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                17,
+                16,
+                18,
+                75
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/electronic_one/electronic_one_1.png",
+                    "redirect_link": {
+                        "link": 389,
+                        "link_type": "product"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/electronic_one/electronic_one_2.png",
+                    "redirect_link": {
+                        "link": 90,
+                        "link_type": "product"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/electronic_one/electronic_one_3.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/electronic_one/electronic_one_4.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/electronic_one/electronic_one_5.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [],
+        "category_product": {
+            "tag": "new collection",
+            "title": "trending products",
+            "status": true,
+            "category_ids": [
+                26,
+                27
+            ]
+        }
+    },
+    "slug": "electronics_one"
+}

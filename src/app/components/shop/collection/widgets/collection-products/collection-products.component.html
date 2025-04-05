@@ -1,0 +1,45 @@
+<div class="product-top-filter">
+  <app-collection-sort [filter]="filter" [gridCol]="gridCol" (setGridClass)="setGridClass($event)" [products]="(product$ | async)?.total"
+    [topFilter]="topFilter" ></app-collection-sort>
+</div>
+
+<div class="product-wrapper-grid" [class.list-view]="listView" [class.product-load-more]="infiniteScroll">
+  <div class="row margin-res g-4">
+    @if(productService.skeletonLoader){
+      @for(item of skeletonItems; track item){
+        <div class="col-6 col-lg-4">
+          <app-skeleton-product-box></app-skeleton-product-box>
+        </div>
+      }
+    } @else {
+        @for(product of filter['layout'] == 'collection_product_infinite_scroll' ? (moreProduct$ | async) : paginateProduct; track product.id){
+          <div [class]="gridClass">
+            @if(listView){
+              <app-product-box-eleven [product]="product" [style]="'vertical'"></app-product-box-eleven>
+            }@else{
+            <app-product-box [product]="product" [style]="'vertical'"></app-product-box>
+            }
+          </div>
+        }
+        @if(!(moreProduct$ | async)?.length && !(product$ | async)?.data?.length && !productService.skeletonLoader){
+          <app-no-data [class]="'no-data-added'" [image]="'assets/svg/empty-items.svg'" [text]="'no_product'" [description]="'no_product_desc'"></app-no-data>
+        }
+    }
+  </div>
+</div>
+
+@if(infiniteScroll && !productService.skeletonLoader && (moreProduct$ | async)?.length){
+  <div class="load-more-sec">
+    <a href="javascript:void(0)" class="loadMore" [class.disabled]="products == total_product" (click)="onScroll(1)">
+      @if(button_loader){
+        <img src="assets/images/loader.gif">
+      }@else {
+        {{ (finished ? 'no_more_product' : 'load_more') | translate }}
+      }
+    </a>
+  </div>
+}
+
+@if((product$ | async)?.data?.length && !productService.skeletonLoader && !infiniteScroll){
+  <app-collection-paginate [filter]="filter"></app-collection-paginate>
+}

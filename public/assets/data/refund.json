@@ -1,0 +1,212 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "reason": "Item was damaged . also fabric was not good as expected",
+            "amount": 7.7,
+            "quantity": 1,
+            "store_id": 4,
+            "order_id": 26,
+            "product_id": 16,
+            "consumer_id": 2,
+            "variation_id": null,
+            "refund_image_id": null,
+            "payment_type": "wallet",
+            "status": "rejected",
+            "is_used": "0",
+            "created_at": "2024-06-21T12:08:56.000000Z",
+            "user": {
+                "id": 2,
+                "name": "john due",
+                "email": "john.customer@example.com",
+                "role": {
+                    "id": 2,
+                    "name": "consumer",
+                    "guard_name": "web",
+                    "system_reserve": "1"
+                },
+                "profile_image": null,
+                "wallet": {
+                    "id": 2,
+                    "consumer_id": 2,
+                    "balance": 8.46
+                },
+                "point": {
+                    "id": 3,
+                    "consumer_id": 2,
+                    "balance": 1970
+                }
+            },
+            "store": {
+                "id": 4,
+                "store_name": "Trendy Fashion",
+                "slug": "trendy-fashion",
+                "store_logo_id": null,
+                "product_images": [
+                    "assets/images/placeholder/product.png",
+                    "assets/images/placeholder/product.png",
+                    "assets/images/placeholder/product.png"
+                ],
+                "order_amount": 281,
+                "rating_count": 4.5,
+                "store_logo": null,
+                "store_cover": null,
+                "vendor": null,
+                "country": null,
+                "state": null,
+                "reviews": [
+                    {
+                        "id": 1,
+                        "product_id": 16,
+                        "consumer_id": 2,
+                        "store_id": 4,
+                        "review_image_id": null,
+                        "rating": 5,
+                        "description": "\"Wow! This fashion product exceeded all my expectations! From the moment I opened the package, I could tell it was something special. The quality of the materials is outstanding, and the attention to detail in the craftsmanship is truly impressive. Not only does it look fabulous, but it feels incredibly comfortable too. I've received so many compliments whenever I wear it!",
+                        "created_at": "2024-06-21T10:07:31.000000Z",
+                        "review_image": null,
+                        "consumer": {
+                            "id": 2,
+                            "name": "john due",
+                            "email": "john.customer@example.com",
+                            "profile_image_id": null,
+                            "role": {
+                                "id": 2,
+                                "name": "consumer",
+                                "guard_name": "web",
+                                "system_reserve": "1"
+                            },
+                            "profile_image": null,
+                            "wallet": {
+                                "id": 2,
+                                "consumer_id": 2,
+                                "balance": 8.46
+                            },
+                            "point": {
+                                "id": 3,
+                                "consumer_id": 2,
+                                "balance": 1970
+                            }
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "product_id": 15,
+                        "consumer_id": 34,
+                        "store_id": 4,
+                        "review_image_id": null,
+                        "rating": 4,
+                        "description": "Product Quality Is Good As Expexpected",
+                        "created_at": "2024-06-25T10:22:38.000000Z",
+                        "review_image": null,
+                        "consumer": {
+                            "id": 34,
+                            "name": "Rhoda Mayer",
+                            "email": "rhoda@mail.com",
+                            "profile_image_id": null,
+                            "role": {
+                                "id": 2,
+                                "name": "consumer",
+                                "guard_name": "web",
+                                "system_reserve": "1"
+                            },
+                            "profile_image": null,
+                            "wallet": {
+                                "id": 5,
+                                "consumer_id": 34,
+                                "balance": 0
+                            },
+                            "point": {
+                                "id": 6,
+                                "consumer_id": 34,
+                                "balance": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            "order": {
+                "id": 26,
+                "order_number": 1000,
+                "order_status": null,
+                "order_status_activities": [
+                    {
+                        "id": 1,
+                        "status": "pending",
+                        "order_id": 26,
+                        "changed_at": "2024-06-21T15:34:56.110110+0530",
+                        "created_at": "2024-06-21T09:30:55.000000Z",
+                        "updated_at": "2024-06-21T10:04:56.000000Z",
+                        "deleted_at": null
+                    },
+                    {
+                        "id": 12,
+                        "status": "processing",
+                        "order_id": 26,
+                        "changed_at": "2024-06-21T15:34:56.110110+0530",
+                        "created_at": "2024-06-21T10:04:56.000000Z",
+                        "updated_at": "2024-06-21T10:04:56.000000Z",
+                        "deleted_at": null
+                    },
+                    {
+                        "id": 13,
+                        "status": "shipped",
+                        "order_id": 26,
+                        "changed_at": "2024-06-21T15:34:56.110110+0530",
+                        "created_at": "2024-06-21T10:04:56.000000Z",
+                        "updated_at": "2024-06-21T10:04:56.000000Z",
+                        "deleted_at": null
+                    },
+                    {
+                        "id": 14,
+                        "status": "out_for_delivery",
+                        "order_id": 26,
+                        "changed_at": "2024-06-21T15:34:56.110110+0530",
+                        "created_at": "2024-06-21T10:04:56.000000Z",
+                        "updated_at": "2024-06-21T10:04:56.000000Z",
+                        "deleted_at": null
+                    },
+                    {
+                        "id": 15,
+                        "status": "delivered",
+                        "order_id": 26,
+                        "changed_at": "2024-06-21T15:34:56.110110+0530",
+                        "created_at": "2024-06-21T10:04:56.000000Z",
+                        "updated_at": "2024-06-21T10:04:56.000000Z",
+                        "deleted_at": null
+                    }
+                ],
+                "store": null
+            },
+            "refund_image": null
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+}

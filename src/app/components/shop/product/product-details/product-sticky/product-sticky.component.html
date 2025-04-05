@@ -1,0 +1,94 @@
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="container-fluid p-0">
+            <div class="row g-4">
+              <div class="col-lg-6">
+                <div class="sticky-top-custom">
+                  @if(product.is_sale_enable || product.is_trending || product.is_featured){
+                    <ul class="product-detail-label">
+                      @if(product.is_sale_enable){
+                        <li class="soldout">{{ 'sale' | translate }}</li>
+                      }
+                      @if(product.is_trending){
+                        <li class="trending">{{ 'trending' | translate }}</li>
+                      }
+                      @if(product.is_featured){
+                        <li class="featured">{{ 'featured' | translate }}</li>
+                      }
+                    </ul>
+                  }
+                  <div class="row">
+                    <div class="col-12 product_img_scroll image-scroll">
+                      @if(product.product_galleries?.length || selectedVariation && selectedVariation.variation_galleries.length){
+                        @for(image of (selectedVariation && selectedVariation.variation_galleries.length ? selectedVariation && selectedVariation.variation_galleries : product.product_galleries); track image.id){
+                          <div class="sticky-product-height">
+                            @if(videType.includes(image?.mime_type!)){
+                              <video class="w-100" controls>
+                                <source [src]="image ? image.original_url : ''" [type]="image?.mime_type">
+                              </video>
+                            }@else if(audioType.includes(image?.mime_type!)){
+                              <audio controls>
+                                <source [src]="image ? image.original_url : ''" [type]="image?.mime_type">
+                              </audio>
+                            }@else {
+                            <img [src]="image ?
+                                  image.original_url :
+                                  'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+                            }
+                          </div>
+                        }
+                      }@else {
+                        <div>
+                            @if(product.product_thumbnail && videType.includes(product.product_thumbnail.mime_type!)){
+                              <video class="w-100" controls>
+                                <source [src]="product.product_thumbnail ? product.product_thumbnail.original_url : ''" [type]="product.product_thumbnail.mime_type">
+                              </video>
+                            }@else if(audioType.includes(product.product_thumbnail?.mime_type!)){
+                              <audio controls>
+                                <source [src]="product.product_thumbnail ? product.product_thumbnail.original_url : ''" [type]="product.product_thumbnail?.mime_type">
+                              </audio>
+                            }@else {
+                            <img [src]="product.product_thumbnail ?
+                                 product.product_thumbnail.original_url :
+                                 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+                            }
+                        </div>
+                      }
+                    </div>
+                  </div>
+
+                  @if(product.product_type == 'digital'){
+                    <app-product-digital-options [product]="product"></app-product-digital-options>
+                  }
+                  
+                </div>
+              </div>
+              <div class="col-lg-6 rtl-text">
+                <div class="position-sticky-top">
+                  <div class="product-page-details">
+                    <app-product-details [option]="option" [product]="product" [selectedVariation]="selectedVariation"></app-product-details>
+                    <app-product-content [product]="product" [option]="option" (selectedVariant)="selectedVariant($event)"></app-product-content>
+                    <app-product-information [product]="product"></app-product-information>
+                    <app-product-delivery-information [product]="product"></app-product-delivery-information>
+                    <app-payment-option [product]="product" [option]="option"></app-payment-option>
+
+                    @if(product.cross_sell_products && product.cross_sell_products.length){
+                      <app-product-bundle [product]="product"></app-product-bundle>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tab-product section-b-space pt-0 m-0 product-details-contain">
+  <app-product-details-tab [product]="product"></app-product-details-tab>
+</section>

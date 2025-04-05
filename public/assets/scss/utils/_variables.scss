@@ -1,0 +1,94 @@
+/* fonts */
+$font_0: Lato;
+$font_1: sans-serif;
+$font_3: Cormorant;
+$font-themify: themify;
+$font-serif: sans-serif;
+
+:root {
+  --theme-color: #ec8951;
+}
+
+/* colors */
+$white: #ffffff;
+$white-dark: #eeeeee;
+$black: #000000;
+$grey01: #111111;
+$dark-font: #222222;
+$grey-dark: #2d2a25;
+$font-color: #333333;
+$grey: #777777;
+$grey-light: #a1a1a1;
+$border: #dddada;
+$round-border: #dddddd;
+$dark-grey: #565656;
+$dark-silver: #909090;
+$grey-lighter: #f9f9f9;
+$theme-default: #ff4c3b;
+$grey-darken: #393230;
+$grey-link: #948e8c;
+$grey-font: #afafaf;
+$form-bg: #f5f2f2;
+$grey-shade: #adadad;
+$darker-footer: #25221e;
+$border-color: #38352f;
+$border-grey: #f1f5f4;
+$font-grey: #aaaaaa;
+$star-yellow: #ffa200;
+$top-header: #f8f8f8;
+$header-font: #999999;
+$grey-about: #f7f7f7;
+$grey2: #555555;
+$grey3: #efefef;
+$grey4: #444444;
+$grey5: #888888;
+$grey6: #6f6f6f;
+$grey7: #40494f;
+$sidebar-color: #938d8c;
+$icon: #6f6f6f;
+$color-red: #ff4c3b;
+$gray: #bbbbbb;
+$left-sidebar: #2b2b2b;
+
+/*  dark layout variable  */
+$dark-body: $left-sidebar;
+$dark-top: #232323;
+$dark-border: #404040;
+$dark-link: #cecece;
+$dark-span: #929292;
+$white-1: #f1f3f5;
+$white-2: #eaedef;
+$white-3: #e7eaec;
+$white-4: #dee2e6;
+$white-5: #cfd4da;
+
+/*  Theme colors variables */
+$success-color: #81ba00;
+$light : #f6f6f6;
+
+//Break Points settings
+$min-breakpoints: (xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1400px,
+);
+
+$max-breakpoints: (2xs: 360px,
+  xs: 480px,
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  2xl: 1399px,
+);
+
+/**=====================
+    mixins scss
+==========================**/
+@mixin font {
+  font-family: remixicon;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}

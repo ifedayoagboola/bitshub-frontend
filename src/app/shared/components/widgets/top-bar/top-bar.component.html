@@ -1,0 +1,31 @@
+<div class="top-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="header-contact">
+          <ul>
+            <li>{{ 'welcome_to' | translate }} {{ (setting$ | async)?.general?.site_name }}</li>
+            <li>
+              <i class="ri-phone-fill">
+
+              </i> {{ 'call_us' | translate }}: {{ data?.header?.support_number }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 text-end">
+        <ul class="right-nav-about">
+          <li class="right-nav-list">
+            <div class="dropdown theme-form-select">
+              <app-language></app-language>
+            </div>
+          </li>
+          <li class="right-nav-list">
+            <div class="dropdown theme-form-select select-arrow">
+              <app-currency></app-currency>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

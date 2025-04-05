@@ -1,0 +1,191 @@
+<!-- Home slider -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home slider end -->
+
+<!-- Banner Section Start -->
+@if(banners.length){
+<section class="banner-padding banner-section absolute-banner pb-0 ratio2_1">
+  <div class="container">
+    <div class="absolute-bg">
+      <div class="row g-lg-4 g-3">
+        @for(banner of banners; track banner.redirect_link; let i = $index){
+        @if(banner?.status){
+        <div class="{{ banners.length === 3 ? 'col-md-4 col-6' : banners.length === 2 ? 'col-6' : 'col-12' }}">
+          <div class="position-relative">
+            <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            <div class="banner-skeleton">
+              <div class="skeleton-content">
+                <p class="card-text placeholder-glow row g-lg-3 g-0">
+                  <span class="col-lg-7 col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-lg-9 col-12">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+        }
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Banner Section End -->
+
+<!-- category start -->
+@if(data?.content?.categories_icon_list?.status){
+<div class="container">
+  <section class="category-style-1">
+    <app-categories [style]="'simple'" [categoryIds]="data?.content?.categories_icon_list?.category_ids || []"
+      [slider]="true"></app-categories>
+  </section>
+</div>
+}
+<!-- category end -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+<app-theme-title [title]="data?.content?.products_list_1" [type]="'basic'"></app-theme-title>
+<section class="section-b-space pt-0 ratio_asos">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [options]="productSlider5" [style]="'vertical'"
+          [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Product slider end -->
+
+<!-- category -->
+@if(data?.content?.grid_banner?.status){
+<div class="category-bg ratio3_2">
+  <div class="container-fluid p-0">
+    <div class="row order-section">
+      @for(banner of data?.content?.grid_banner?.banners; track banner){
+        @if(banner.image_url){
+          @if(videoType.includes(banner.image_url.substring(banner.image_url.lastIndexOf('.') + 1))){
+            <div class="col-sm-8 p-0">
+              <a href="javascript:void(0)" class="image-block">
+                <div id="block" class="video-sec">
+                  <div>
+                    <video autoplay="true" loop="true">
+                      <source [src]="StorageURL + banner?.image_url" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </a>
+            </div>
+          }@else {
+          <div class="col-sm-4 p-0">
+            <app-image-link [image]="banner"></app-image-link>
+          </div>
+        }
+      }@else {
+        <div class="col-sm-4 p-0">
+          <div class="contain-block even">
+            <div>
+              <h6>{{ banner.tag}}</h6>
+              <a href="javascript:void(0)">
+                <h2>{{ banner.title }}</h2>
+              </a>
+              <a href="javascript:void(0)" class="btn btn-solid category-btn">{{ banner.button_text }}</a>
+              <a href="javascript:void(0)">
+                <h6><span>{{'shop_now' | translate}}</span></h6>
+              </a>
+            </div>
+          </div>
+        </div>
+        }
+      }
+    </div>
+  </div>
+</div>
+}
+<!-- category end -->
+
+<!-- product section start -->
+@if(data?.content?.product_list_2?.status){
+<section class="">
+  <div class="container">
+    <div class="row g-4">
+      <div
+        [ngClass]="data?.content?.product_list_2?.right_panel?.status ? 'col-xl-9 col-lg-8 col-md-12' : 'col-xl-12 col-lg-8 col-md-12'">
+        <div class="theme-tab">
+          <div class="tab-content-cls ratio_asos">
+            <app-theme-product [productIds]="data?.content?.product_list_2?.products?.product_item?.product_ids || []"
+              [style]="'vertical'" [slider]="true">
+            </app-theme-product>
+          </div>
+          @if(data?.content?.product_list_2?.products?.product_banner?.banner_1?.status ||
+          data?.content?.product_list_2?.products?.product_banner?.banner_2?.status){
+          <div class="banner-tools border-0 product_banner banner-section">
+            <div class="ratio2_1">
+              <div class="container p-0">
+                <div class="row g-4">
+                  @if(data?.content?.product_list_2?.products?.product_banner?.banner_1?.status){
+                  <div
+                    [ngClass]="data?.content?.product_list_2?.products?.product_banner?.banner_2?.status ? 'col-md-6' : 'col-md-12'">
+                    <app-image-link [image]="data?.content?.product_list_2?.products?.product_banner?.banner_1"
+                      [bgImage]="true"></app-image-link>
+                  </div>
+                  }
+                  @if(data?.content?.product_list_2?.products?.product_banner?.banner_2?.status){
+                  <div
+                    [ngClass]="data?.content?.product_list_2?.products?.product_banner?.banner_1?.status ? 'col-md-6' : 'col-md-12'">
+                    <app-image-link [image]="data?.content?.product_list_2?.products?.product_banner?.banner_2"
+                      [bgImage]="true"></app-image-link>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+
+        </div>
+      </div>
+
+      @if(data?.content?.product_list_2?.right_panel?.status){
+      <div class="col-xl-3 col-lg-4 col-md-12 mb-0 images">
+        <div class="theme-card">
+          <h5 class="title-border">{{ data?.content?.product_list_2?.right_panel?.title }}</h5>
+          <div class="offer-slider ">
+            <app-theme-product [productIds]="data?.content?.product_list_2?.right_panel?.product_ids || []"
+              [style]="'horizontal'">
+            </app-theme-product>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- product section end -->
+
+<!-- logo section -->
+@if(data?.content?.brand?.status){
+<section class="tools-brand">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []" [bgLight]="true"></app-theme-brand>
+</section>
+}
+<!-- logo section end -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+<section class="instagram ratio_square">
+  <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'"></app-theme-social-media>
+</section>
+}
+<!-- Social Media Section End -->

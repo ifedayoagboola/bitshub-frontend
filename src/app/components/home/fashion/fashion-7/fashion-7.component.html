@@ -1,0 +1,221 @@
+<!-- Home slider -->
+<section class="p-0 xs-responsive bg-white">
+  <div class="home-slider">
+    <app-image-link [image]="data?.content?.home_banner" [class]="'home'" [bgImage]="false"></app-image-link>
+    <div class="home-skeleton">
+      <div class="skeleton-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-sm-8 col-11">
+              <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                <span class="col-7">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-6">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home slider end -->
+
+<!-- banner section start -->
+<section class="banner-padding bg-white">
+  <div class="container-fluid">
+    <div class="row">
+      @if(data?.content?.featured_banners?.banner_1?.status){
+      <div class="col-md-6 ratio_40">
+        <div class="position-relative">
+          <app-image-link [image]="data?.content?.featured_banners?.banner_1" [class]="'img-part'" [bgImage]="true">
+          </app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      @if(data?.content?.featured_banners?.banner_2?.status){
+      <div class="col-md-3 col-6 ratio3_2 h-auto">
+        <div class="position-relative h-100">
+          <app-image-link [image]="data?.content?.featured_banners?.banner_2" [class]="'img-part h-100'"
+            [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      @if(data?.content?.featured_banners?.banner_2?.status){
+      <div class="col-md-3 col-6 ratio3_2 h-auto">
+        <div class="position-relative h-100">
+          <app-image-link [image]="data?.content?.featured_banners?.banner_3" [class]="'img-part h-100'"
+            [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- banner section end -->
+
+<!-- Product section start -->
+@if(data?.content?.products_list_1?.status && paginateProducts && paginateProducts.length){
+<section class="section-b-space pt-0 ratio_asos bg-white">
+  <app-theme-title [title]="data?.content?.products_list_1" [type]="'basic'"></app-theme-title>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 m-product infinite-product g-sm-4 g-3">
+          @for(product of paginateProducts; track product){
+          <div class="d-block">
+            <app-product-box [style]="'vertical'" [product]="product"></app-product-box>
+          </div>
+          }
+        </div>
+      </div>
+      @if(data?.content?.products_list_1?.more_button){
+      <div class="col-12">
+        <div class="load-more-button text-center mt-4">
+          <a href="javascript:void(0)" class="load-product btn btn-outline" [class.loading]="button_loader"
+          [class.disabled]="finished" (click)="loadMore()">
+            @if(finished){
+              {{ 'no_more_product' | translate }}
+            }@else if (data?.content?.products_list_1?.button_text) {
+              {{ data?.content?.products_list_1?.button_text }}
+            }
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+
+<!-- Parallax banner -->
+@if(data?.content?.product_banner?.status){
+<section class="product-parallax" [ngClass]="paginateProducts && paginateProducts.length ? 'p-0' : 'section-t-space'">
+  <div class="section-b-space section-t-space bg-size"
+    [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.product_banner?.image_url +')'}">
+    <img [src]="StorageURL+data?.content?.product_banner?.image_url" [alt]="data?.content?.product_banner?.image_url"
+      class="bg-img  ">
+    <div class="ratio_square">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 ms-auto">
+            <div class="theme-card card-border">
+              <div class="offer-slider">
+                <app-theme-product [productIds]="data?.content?.product_banner?.product_ids || []"
+                  [style]="'horizontal'"></app-theme-product>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Parallax banner end -->
+
+<!-- product section start -->
+@if(data?.content?.products_list_2?.status){
+<section class="ratio_asos">
+  <div class="container">
+    <div class="row">
+      @if(data?.content?.products_list_2?.left_panel?.status){
+      <div class="col-xl-3 col-lg-4 left-panel">
+        <div class="product-left-title">
+          <div>
+            <h3>{{ data?.content?.products_list_2?.left_panel?.title }}</h3>
+            <p>{{ data?.content?.products_list_2?.left_panel?.description }}</p>
+            @if(data?.content?.products_list_2?.left_panel?.more_button){
+              <app-button 
+                [data]="data?.content?.products_list_2?.left_panel"
+                [type]="'button_link'"
+                [class]="'btn btn-outline btn-sm'"
+                >
+              </app-button>
+            }
+          </div>
+        </div>
+      </div>
+      }
+      <div [ngClass]="data?.content?.products_list_2?.left_panel?.status ? 'col-xl-9 col-lg-8' : 'col-xl-12 col-lg-8'">
+        <app-theme-product [productIds]="data?.content?.products_list_2?.products?.product_ids || []"
+          [style]="'vertical'" [slider]="true" [options]="options">
+        </app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product section end -->
+
+<!-- Banner Section Start -->
+<section class="pb-0 ratio2_1">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @if(data?.content?.offer_banner?.banner_1?.status){
+      <div class="{{ data?.content?.offer_banner?.banner_2?.status ? 'col-6' : 'col-12' }}">
+        <app-image-link [image]="data?.content?.offer_banner?.banner_1" [class]="'img-part h-100'" [bgImage]="true">
+        </app-image-link>
+      </div>
+      }
+      @if(data?.content?.offer_banner?.banner_2?.status){
+      <div class="{{ data?.content?.offer_banner?.banner_1?.status ? 'col-6' : 'col-12' }}">
+        <app-image-link [image]="data?.content?.offer_banner?.banner_2" [class]="'img-part h-100'" [bgImage]="true">
+        </app-image-link>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

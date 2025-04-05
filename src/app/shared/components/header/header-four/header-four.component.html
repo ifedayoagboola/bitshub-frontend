@@ -1,0 +1,46 @@
+<header [class]="'header-5 overlay-style'" [ngClass]="stick && sticky ? 'sticky fixed' : ''">
+  @if(data?.header?.page_top_bar_enable){
+    <app-top-bar [data]="data"></app-top-bar>
+  }
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="main-menu">
+          <div class="menu-left">
+            <div class="toggle-nav" (click)="mainMenuOpen()">
+              <i class="ri-menu-line sidebar-bar">
+              </i>
+            </div>
+            <div class="brand-logo">
+              <app-header-logo [logo]="logo"></app-header-logo>
+            </div>
+          </div>
+          <div class="menu-right pull-right">
+            <app-menu></app-menu>
+            <div>
+              <div class="icon-nav">
+                <ul>
+                  <li class="onhover-div">
+                    <app-search></app-search>
+                  </li>
+                  <li class="onhover-div">
+                    <a href="javascript:void(0)" [routerLink]="['/wishlist']">
+                      <i class="ri-heart-line">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="onhover-div">
+                    <app-cart></app-cart>
+                  </li>
+                  <li class="onhover-div onhover-dropdown mobile-cart">
+                    <app-user-profile></app-user-profile>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

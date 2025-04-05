@@ -1,0 +1,50 @@
+@if(paginate.pages && paginate.pages.length){
+  <ul class="pagination">
+    <li class="page-item" [ngClass]="{disabled:paginate.currentPage === 1}">
+      <a class="page-link" href="javascript:void(0)" (click)="pageSet(paginate.currentPage - 1)">
+        <span><i class="ri-arrow-left-s-line"></i></span>
+      </a>
+    </li>
+    @if(paginate.currentPage > 3 && paginate.totalPages >= 3){
+      <li class="page-item" [ngClass]="{disabled: paginate.currentPage === 1}">
+        <a class="page-link" href="javascript:void(0)" (click)="pageSet(1)">
+          1
+        </a>
+      </li>
+    }
+    @if(paginate.currentPage > 3 && paginate.totalPages > 4){
+      <li class="page-item" class="disabled">
+        <a class="page-link">
+          ...
+        </a>
+      </li>
+    }
+    @for(page of paginate.pages; track page){
+      <li class="page-item" [ngClass]="{ 'active disabled': paginate.currentPage == page }">
+        <a class="page-link" href="javascript:void(0)" (click)="pageSet(page)">{{ page }}</a>
+      </li>
+    }
+    @if(paginate.currentPage + 2 < paginate.totalPages && paginate.totalPages > 4){
+      <li class="page-item" class="disabled">
+        <a class="page-link">
+          ...
+        </a>
+      </li>
+    }
+    @if(paginate.currentPage + 1 < paginate.totalPages && paginate.totalPages > 4){
+      <li class="page-item" [ngClass]="{disabled: paginate.currentPage == paginate.totalPages}">
+        <a class="page-link" href="javascript:void(0)" (click)="pageSet(paginate.totalPages)">
+          <span class="sr-only">{{paginate.totalPages}}</span>
+        </a>
+      </li>
+    }
+
+    <li class="page-item" [ngClass]="{ disabled: paginate.currentPage == paginate.totalPages }">
+      <a class="page-link" href="javascript:void(0)" (click)="pageSet(+paginate.currentPage + 1)">
+        <span>
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+      </a>
+    </li>
+  </ul>
+}

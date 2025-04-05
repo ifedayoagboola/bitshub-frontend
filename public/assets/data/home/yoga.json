@@ -1,0 +1,188 @@
+{
+    "id": 30,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                29,
+                28,
+                25,
+                27,
+                26
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "image_url": "/images/theme/yoga/yoga_1.png",
+            "redirect_link": {
+                "link": "fit-gear-central",
+                "link_type": "collection"
+            }
+        },
+        "products_ids": [
+            308,
+            291,
+            290,
+            289,
+            307,
+            305,
+            292,
+            302,
+            300,
+            276,
+            297,
+            275
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/yoga/yoga_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "featured_blogs": {
+            "tag": "latest blog",
+            "title": "get inspired",
+            "status": true,
+            "blog_ids": [
+                30,
+                29,
+                28
+            ]
+        },
+        "offer_banner_1": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/yoga/yoga_2.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/yoga/yoga_3.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/yoga/yoga_4.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_2": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/yoga/yoga_5.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/yoga/yoga_6.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": false,
+                "image_url": null,
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_list_1": {
+            "tag": "about us",
+            "title": "welcome to multi store",
+            "status": true,
+            "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            "product_ids": [
+                308,
+                291,
+                290,
+                289
+            ]
+        },
+        "products_list_2": {
+            "tag": "Multikart",
+            "title": "limited period offer",
+            "status": true,
+            "product_ids": [
+                307,
+                305,
+                292,
+                302,
+                300,
+                276,
+                297,
+                275
+            ]
+        }
+    },
+    "slug": "yoga"
+}

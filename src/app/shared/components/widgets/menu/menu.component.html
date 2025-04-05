@@ -1,0 +1,177 @@
+<div [class]="class ? class : 'main-navbar'">
+  <div id="mainnav">
+    <div class="header-nav-middle">
+      <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky">
+        <div class="offcanvas offcanvas-collapse order-xl-2" [class.show]="menuService.mainMenuToggle">
+          <div class="offcanvas-header navbar-shadow">
+            <h5>{{'menu' | translate}}</h5>
+            <button class="btn-close lead" id="toggle_menu_btn" type="button" (click)="mainMenuClose()">
+              <div>
+                <i class="ri-close-fill">
+                </i>
+              </div>
+            </button>
+          </div>
+          <div class="offcanvas-body">
+            @if(menuService.skeletonLoader){
+              <ul class="skeleton-menu navbar-nav">
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+              </ul>
+            } @else {
+              <ul class="navbar-nav">
+                <div *ngTemplateOutlet="recursiveMenu; context: { $implicit: (menu$ |async)?.data }"></div>
+                <ng-template #recursiveMenu let-menus>
+                  <ng-container>
+                    @for(menu of menus; track menu.id){
+                      <li [ngClass]="[menu.link_type == 'sub' && menu.child ? 'nav-item dropdown' : 'nav-item', menu.mega_menu ? 'dropdown-mega' : '']" [class.new-nav-item]="menu.badge_text">
+                        @if(menu.link_type === 'sub'){
+                          <a class="nav-link dropdown-toggle" (click)="toggle(menu)">
+                            {{ menu.title | translate }}
+
+                            @if(menu.badge_text){
+                              <label class="new-dropdown">{{ menu.badge_text | translate }}</label>
+                            }
+                          </a>
+                        }
+
+                        @if(menu.link_type === 'link' && menu.is_target_blank === 0){
+                          <a class="dropdown-item" [class.show]="menu.active" (click)="redirect(menu.path)">
+                            {{ menu.title | translate }}
+
+                            @if(menu.badge_text){
+                              <label class="menu-label {{ menu.badge_color }}">{{ menu.badge_text | translate }}</label>
+                            }
+                          </a>
+                        }
+
+                        @if(menu.is_target_blank === 1){
+                          <a class="dropdown-item" [class.show]="menu.active" target="_blank"  href="{{ menu.path }}">
+                            {{ menu.title | translate }}
+
+                            @if(menu.badge_text){
+                              <label class="new-dropdown menu-label {{ menu.badge_color }}">{{ menu.badge_text | translate }}</label>
+                            }
+                          </a>
+                        }
+
+                        @if(menu.mega_menu === 1 && menu?.child?.length && menu.mega_menu_type !== 'link_with_image'){
+                          <div class="dropdown-menu dropdown-menu-2" [class.show]="menu.active">
+                            <div class="row g-4">
+                              @if(menu.mega_menu_type === 'side_banner'){
+                                <div class="col-9">
+                                  <div class="row">
+                                     @for(megaMenu of menu.child; track megaMenu.id){
+                                        <div class="dropdown-column col-xl-4 mb-4">
+                                           <app-link-box [menu]="megaMenu"></app-link-box>
+                                        </div>
+                                     }
+                                  </div>
+                               </div>
+                              }@else {
+                                @for(megaMenu of menu.child; track megaMenu.id){
+                                   <div class="dropdown-column col-xl-3 mb-4">
+                                      <app-link-box [menu]="megaMenu"></app-link-box>
+                                   </div>
+                                }
+                             }
+
+                              @if(menu.mega_menu_type === 'product_box'){
+                                <div class="dropdown-column col-xl-6 d-xl-block d-none">
+                                  @if(menu.product_ids.length){
+                                    <div class="ratio_asos">
+                                      <div class="row">
+                                        @for(product of products; track product.id){
+                                          <div class="col-6">
+                                              <app-product-box [product]="product"  [style]="'vertical'"></app-product-box>
+                                          </div>
+                                        }
+                                      </div>
+                                    </div>
+                                  }@else {
+                                    <app-no-data [class]="'menu-no-data'" [text]="'no_product'"></app-no-data>
+                                  }
+                                </div>
+                              }
+
+                              @if(menu.mega_menu_type === 'side_banner'){
+                                <div class="dropdown-column col-xl-3 d-xl-block d-none">
+                                  @if(menu && menu.banner_image){
+                                    <div class="menu-img-banner">
+                                      <a href="javascript:void(0)" class="text-title">
+                                        <img [src]="menu?.banner_image?.original_url" alt="banner" class="img-fluid">
+                                      </a>
+                                    </div>
+                                  }
+                                </div>
+                              }
+
+                              @if(menu.mega_menu_type === 'bottom_banner'){
+                                <div class="dropdown-column col-xl-12 d-xl-block d-none">
+                                  @if(menu && menu.banner_image){
+                                    <div class="menu-img-banner rounded overflow-hidden mx-0 mt-3 mb-0">
+                                      <img [src]="menu?.banner_image?.original_url" class="img-fluid">
+                                    </div>
+                                  }
+                                </div>
+                              }
+
+                              @if(menu.mega_menu_type === 'blog_box'){
+                                <div class="dropdown-column col-xl-9 d-xl-block d-none">
+                                  <div class="row">
+                                    @for(blog of blogs; track blog.id){
+                                      <div class="col-6">
+                                        <div class="blog-box sticky-blog">
+                                          <div class="blog-box-image">
+                                            <a [routerLink]="['/blog/', blog?.slug]" class="blog-image">
+                                              <img [src]="blog.blog_thumbnail ? blog?.blog_thumbnail?.original_url : 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="blog.title">
+                                            </a>
+                                          </div>
+
+                                          <a [routerLink]="['/blog/', blog?.slug]" class="blog-detail" >
+                                            <h6>{{ blog.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h6>
+                                            <h5>{{ blog.title }}</h5>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    }
+                                  </div>
+                                  @if(blogs && !blogs.length){
+                                    <!-- <app-no-data [class]="'menu-no-data'" [text]="'No Blog Found'"></app-no-data> -->
+                                  }
+                                </div>
+                              }
+                            </div>
+                          </div>
+                        }
+
+                        @if(menu.mega_menu && menu.mega_menu_type === 'link_with_image'){
+                          <div class="dropdown-menu dropdown-menu-2 dropdown-image" [class.show]="menu.active">
+                            <div class="dropdown-column">
+                              @for(imageMenu of menu.child; track imageMenu.id){
+                                <a href="javascript:void(0)" class="dropdown-item text-center" (click)="redirect(imageMenu.path)">
+                                  @if(imageMenu.item_image){
+                                    <img [src]="imageMenu.item_image.original_url" class="img-fluid" [alt]="imageMenu.title">
+                                  }
+                                  <span>{{ imageMenu.title | translate }}</span>
+                                </a>
+                              }
+                            </div>
+                          </div>
+                        }
+
+                        @if(menu.child && !menu.mega_menu){
+                          <ul class="dropdown-menu" [class.show]="menu.active">
+                            <ng-container *ngTemplateOutlet="recursiveMenu; context: { $implicit: menu.child }"></ng-container>
+                          </ul>
+                        }
+                      </li>
+                    }
+                  </ng-container>
+                </ng-template>
+              </ul>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+@if(image?.redirect_link?.link_type === 'external_url'){
+  @if(image?.redirect_link?.link){
+    <a href="{{ image?.redirect_link?.link }}" target="_blank" class="banner-contain d-block ">
+      @if(bgImage){
+        <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}"></div>
+      }@else{
+        <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+      }
+    </a>
+  } @else {
+    <div class="banner-contain">
+      @if(bgImage){
+        <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}"></div>
+      }@else{
+        <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+      }
+    </div>
+  }
+}
+
+@else if(image?.redirect_link?.link_type === 'collection'){
+  @if(image?.redirect_link?.link){
+    <a [routerLink]="['/category', image?.redirect_link?.link]" >
+      @if(bgImage){
+        <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}">
+          @if(banner_details){
+            <div class="absolute-contain">
+              <h3>{{ image.tag }}</h3>
+              <h4>{{ image.title }}</h4>
+            </div>
+          }
+        </div>
+      }@else {
+        <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+      }
+    </a>
+  } @else {
+    @if(bgImage){
+      <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}">
+        @if(banner_details){
+          <div class="absolute-contain">
+            <h3>{{ image.tag }}</h3>
+            <h4>{{ image.title }}</h4>
+          </div>
+        }
+      </div>
+    }@else {
+      <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+    }
+  }
+}
+
+@else if (image?.redirect_link?.link_type === 'product') {
+   @if(image?.product_slug){
+    <a [routerLink]="['/product/', image?.product_slug]">
+      @if(bgImage){
+        <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}">
+        <ng-content></ng-content>
+      </div>
+      }@else {
+        <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+      }
+    </a>
+  } @else {
+    @if(bgImage){
+      <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}">
+      <ng-content></ng-content>
+    </div>
+    }@else {
+      <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+    }
+  }
+}
+
+@else {
+  @if(bgImage){
+    <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}"></div>
+  }@else {
+    <img [src]="image?.image_url ? StorageURL+image?.image_url : placeholder" class="bg-img w-100" alt="banner">
+    <ng-content></ng-content>
+  }
+}

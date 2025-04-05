@@ -1,0 +1,35 @@
+<ng-template #loginModal let-modal>
+  <div class="modal-body">
+    <div class="modal-content open">
+      <div class="d-flex">
+        <div class="right-content w-lg-50 w-100">
+          
+          @if(activeForm === 'login'){
+            <app-login (activeForm)="nextForm($event)"></app-login>
+          }
+          @if(activeForm === 'email'){
+            <app-forgot-password (activeForm)="nextForm($event)"></app-forgot-password>
+          }
+          @if(activeForm === 'otp'){
+            <app-otp (activeForm)="nextForm($event)" [type]="'email'"></app-otp>
+          }
+          @if(activeForm === 'updatePassword'){
+            <app-update-password (activeForm)="nextForm($event)"></app-update-password>
+          }
+          @if(activeForm === 'register'){
+            <app-register (activeForm)="nextForm($event)"></app-register>
+          }
+          @if(activeForm === 'withNumber'){
+            <app-login-with-number (activeForm)="nextForm($event)"></app-login-with-number>
+          }
+          @if(activeForm === 'numberOtp'){
+            <app-otp (activeForm)="nextForm($event)" [type]="'number'"></app-otp>
+          }
+        </div>
+        <div class="left-img w-lg-50 d-lg-block d-none">
+          <img [src]="themeOption.popup.auth.image_url ? storageURL+themeOption.popup.auth.image_url : 'assets/images/placeholder/auth.png'">
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

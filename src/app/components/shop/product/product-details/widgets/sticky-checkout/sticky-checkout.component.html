@@ -1,0 +1,78 @@
+<div class="sticky-bottom-cart container">
+  <div class="container p-0">
+    <div class="cart-content">
+      <div class="product-image d-md-inline-flex d-none">
+        <img [src]="selectedVariation && selectedVariation.variation_image
+                                ? selectedVariation.variation_image.original_url
+                                : product.product_thumbnail
+                                ? product.product_thumbnail.original_url
+                                : 'assets/images/placeholder/product.png'" class="img-fluid" alt="product">
+        <div class="content d-lg-block d-none">
+          <h5>{{ selectedVariation ? selectedVariation.name : product.name }}</h5>
+          <h6>{{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+            @if(selectedVariation ? selectedVariation.discount : product.discount){
+            <del>{{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }}</del>
+            }
+            @if(selectedVariation ? selectedVariation.discount : product.discount){
+            <span>{{ (selectedVariation ? selectedVariation.discount : product.discount) }}%
+              {{ 'off' | translate }}</span>
+            }
+          </h6>
+        </div>
+      </div>
+
+      <div class="middle-value">
+        @if(product.variations && product.variations.length > 0 && product.attributes.length > 0){
+          <div class="selection-section">
+            <h4 class="d-xl-inline-block d-none">{{'variants' | translate}}:</h4>
+            <div class="form-group mb-0">
+              <app-dropdown-variant [product]="product" (selectedOption)="selectVariation($event)"></app-dropdown-variant>
+            </div>
+          </div>
+        }
+        @if(!product.is_external){
+        <div class="qty-box d-sm-inline-block d-none">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <app-button [id]="'quantity-left-minus'+product.id" [class]="'btn quantity-left-minus'"
+                [iconClass]="'ri-arrow-left-s-line'" [spinner]="false" (click)="updateQuantity(-1)">
+              </app-button>
+            </span>
+            <input type="text" name="quantity" class="form-control input-number" value="{{ productQty }}" readonly>
+            <span class="input-group-prepend">
+              <app-button [id]="'quantity-left-minus'+product.id" [class]="'btn quantity-left-plus'"
+                [iconClass]="'ri-arrow-right-s-line'" [spinner]="false" (click)="updateQuantity(1)">
+              </app-button>
+            </span>
+          </div>
+        </div>
+        }
+      </div>
+      <div>
+
+
+        <div class="add-btn">
+          @if(!product.is_external){
+          @if(((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty ) ||
+          (!selectedVariation && product.quantity >= productQty))){
+          <app-button [id]="'addcartbtnVariationsticky'+product.id" [class]="'btn btn-solid hover-solid btn-animation'"
+            [iconClass]="'ri-shopping-cart-line me-1'" [spinner]="false" (click)="addToCart(product)">
+            {{ 'add_to_cart' | translate }}
+          </app-button>
+          }@else {
+          <app-button [class]="'btn btn-solid hover-solid btn-animation'" [id]="'soldoutbtncheckout'" [disabled]="true"
+            [spinner]="false">
+            {{ ((selectedVariation && selectedVariation.status && selectedVariation.quantity < productQty) || (!selectedVariation && product.quantity < productQty) ? 'out_of_stock' : 'add_to_cart') | translate }}
+          </app-button>
+          }
+          }@else {
+          <app-button [id]="'externalBtn'+product.id" [class]="'btn btn-solid hover-solid btn-animation'"
+            (click)="externalProductLink(product.external_url)" [spinner]="false">
+            {{ product.external_button_text ? product.external_button_text : 'buy_now' | translate }}
+          </app-button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="setting-contant">
+  <div class="row row-cols-2 g-sm-4 g-3 demo-section">
+    @for(data of productBox; track data){
+      <div class="text-center demo-effects">
+        <div class="set-position">
+          <a href="javascript:void(0)" class="layout-container"  [class.active]="variant === 'product_box_'+data" (click)="selectProductBox(data)">
+            <img src="assets/images/product_box/{{data}}.png" class="img-fluid bg-img bg-top" [alt]="">
+          </a>
+          <a href="javascript:void(0)" class="demo-text">
+            <h4>Style {{data}}</h4>
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</div>

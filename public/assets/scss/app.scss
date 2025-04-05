@@ -1,0 +1,16 @@
+/* Bootstrap */
+@import '../scss/utils/bootstrap/bootstrap.scss';
+
+/* Toastr */
+@import "../../../node_modules/ngx-toastr/toastr-bs5-alert";
+
+/* Ngx Owl Carousel */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+/* Swiper */
+@import 'swiper/swiper.scss';
+
+
+/* Style */
+@import '../../assets/scss/style.scss';

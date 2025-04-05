@@ -1,0 +1,18 @@
+<div class="preview-box">
+  @if(product.preview_type == 'video' && product.preview_video_file?.original_url){
+  <div class="media-btn" (click)="openModal(product.preview_video_file?.original_url || '', 'video')">
+    <i class="ri-play-fill"></i>
+  </div>
+  }
+  @else if(product.preview_type == 'audio' && product.preview_audio_file?.original_url){
+  <div class="media-btn" (click)="openModal(product.preview_audio_file?.original_url || '', 'audio')">
+    <i class="ri-music-2-line"></i>
+  </div>
+  }@else if(product.preview_type == 'url' && product.preview_url){
+  <div class="preview-btn">
+    <a href="{{ product.preview_url }}" target="_blank">
+      <span><i class="ri-share-box-line"></i> {{'live_preview'| translate}} </span>
+    </a>
+  </div>
+  }
+</div>

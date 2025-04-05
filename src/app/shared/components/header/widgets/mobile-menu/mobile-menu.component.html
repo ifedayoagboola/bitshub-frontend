@@ -1,0 +1,34 @@
+<div class="mobile-menu d-md-none d-block mobile-cart">
+  <ul>
+    <li [class.active]="'/' === active">
+      <a href="javascript:void(0)" [routerLink]="['/']" (click)="activeMenu('/')">
+        <i class="ri-home-2-line"></i>
+        <span>{{ 'home' | translate }}</span>
+      </a>
+    </li>
+    <li [class.active]="'search' === active">
+      <a href="javascript:void(0)" [routerLink]="['/search']" (click)="activeMenu('search')">
+        <i class="ri-search-2-line"></i>
+        <span>{{ 'search' | translate }}</span>
+      </a>
+    </li>
+    <li [class.active]="'cart' === active">
+      <a href="javascript:void(0)" (click)="cartToggle(true)">
+        <i class="ri-shopping-bag-line"></i>
+        <span>{{ 'cart' | translate }}</span>
+      </a>
+    </li>
+    <li [class.active]="'wishlist' === active">
+      <a href="javascript:void(0)" (click)="reDirectWishlist()">
+        <i class="ri-heart-3-line"></i>
+        <span>{{ 'wishlist' | translate }}</span>
+      </a>
+    </li>
+    <li [class.active]="'user' === active">
+      <a href="javascript:void(0)" [routerLink]="['/account/dashboard']" (click)="activeMenu('user')">
+        <i class="ri-user-line"></i>
+        <span>{{ 'user' | translate }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,198 @@
+{
+    "id": 6,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_1.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "status": true,
+            "banner_1": {
+                "image_url": "/images/theme/fashion_six/fashion_six_2.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "image_url": "/images/theme/fashion_six/fashion_six_3.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "image_url": "/images/theme/fashion_six/fashion_six_4.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_4": {
+                "image_url": "/images/theme/fashion_six/fashion_six_5.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_5": {
+                "image_url": "/images/theme/fashion_six/fashion_six_7.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_6": {
+                "image_url": "/images/theme/fashion_six/fashion_six_6.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            27,
+            20,
+            21,
+            17,
+            13,
+            12,
+            14,
+            23,
+            11,
+            9
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_six/fashion_six_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent story",
+            "title": "trending Blogs",
+            "status": true,
+            "blog_ids": [
+                2,
+                1,
+                3
+            ]
+        },
+        "product_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_six/fashion_six_8.png",
+            "product_slider_1": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    13,
+                    12
+                ]
+            }
+        },
+        "products_list_1": {
+            "tag": "recent story",
+            "title": "trending products",
+            "status": true,
+            "product_ids": [
+                27,
+                20,
+                21,
+                17
+            ]
+        },
+        "products_list_2": {
+            "status": true,
+            "products": {
+                "tag": "recent story",
+                "title": "trending products",
+                "product_ids": [
+                    14,
+                    23,
+                    11,
+                    9
+                ]
+            },
+            "right_panel": {
+                "status": true,
+                "image_url": "/images/theme/fashion_six/fashion_six_9.png"
+            }
+        }
+    },
+    "slug": "fashion_six"
+}

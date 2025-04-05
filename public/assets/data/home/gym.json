@@ -1,0 +1,154 @@
+{
+    "id": 34,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                26,
+                25,
+                22,
+                16,
+                18
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_1.png",
+                    "redirect_link": {
+                        "link": "beverages"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/gym/gym_2.png",
+                "redirect_link": {
+                    "link": 284,
+                    "link_type": "product",
+                    "product_ids": 284
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/gym/gym_3.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            284,
+            304,
+            299,
+            271,
+            295,
+            293,
+            285,
+            281,
+            269,
+            279,
+            345,
+            286,
+            301
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gym/gym_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": null,
+            "product_ids": [
+                304,
+                299,
+                271,
+                295,
+                293,
+                285,
+                281,
+                269
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                31,
+                32,
+                30
+            ]
+        },
+        "parallax_product": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "image_url": "/images/theme/gym/gym_4.png",
+            "description": "Gym protein powder is a popular supplement for those looking to build muscle and improve their workout performance. Made from various sources.",
+            "product_ids": [
+                279,
+                345,
+                286,
+                301
+            ]
+        }
+    },
+    "slug": "gym"
+}

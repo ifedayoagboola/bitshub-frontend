@@ -1,0 +1,54 @@
+<header class="full-scroll-menu">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="main-menu">
+          <div class="menu-left">
+            <div class="navbar white-navbar">
+              <div class="bar-style" (click)="toggleMenu(true)">
+                <i class="ri-menu-line sidebar-bar">
+                </i>
+              </div>
+              <div id="mySidenav" class="sidenav" [class.open-side]="menuService.mainMenuToggle" [ngStyle]="{ 'left' : menuService.mainMenuToggle ? '0' : ''}">
+                <nav>
+                  <div (click)="toggleMenu(false)">
+                    <div class="sidebar-back text-start">{{ 'back' | translate }}</div>
+                  </div>
+                  @if(menuService.mainMenuToggle){
+                    <app-menu></app-menu>
+                  }
+                </nav>
+              </div>
+            </div>
+            <div class="brand-logo">
+              <app-header-logo [logo]="logo"></app-header-logo>
+            </div>
+          </div>
+          <div class="menu-right pull-right">
+            <div>
+              <div class="icon-nav white-icon">
+                <ul>
+                  <li class="onhover-div">
+                    <app-search></app-search>
+                  </li>
+                  <li class="onhover-div">
+                    <a href="javascript:void(0)" [routerLink]="['/wishlist']">
+                      <i class="ri-heart-line">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="onhover-div">
+                    <app-cart></app-cart>
+                  </li>
+                  <li class="onhover-div onhover-dropdown mobile-cart">
+                    <app-user-profile></app-user-profile>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

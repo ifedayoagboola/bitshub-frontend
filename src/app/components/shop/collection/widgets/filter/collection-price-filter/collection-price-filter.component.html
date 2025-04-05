@@ -1,0 +1,16 @@
+@for(price of prices; track price.id){
+<div class="form-check collection-filter-checkbox">
+  <input type="checkbox" class="form-check-input"
+    id="price-filter{{price?.id}}"
+    [value]="price?.value"
+    [checked]="checked(price?.value!)"
+    (change)="applyFilter($event)">
+  <label class="form-check-label" for="price-filter{{price?.id}}">
+    @if(price?.price){
+      <span class="name">{{ price?.text }} {{ price?.price | currencySymbol }}</span>
+    }@else {
+      <span class="name">{{ price?.minPrice | currencySymbol }} - {{ price?.maxPrice | currencySymbol }}</span>
+    }
+  </label>
+</div>
+}

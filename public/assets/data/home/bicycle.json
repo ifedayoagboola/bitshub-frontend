@@ -1,0 +1,122 @@
+{
+    "id": 32,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                29,
+                27,
+                25,
+                26
+            ]
+        },
+        "banner": {
+            "status": true,
+            "image_url": "/images/theme/bicycle/bicycle_1.png",
+            "redirect_link": []
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_2.png",
+                    "redirect_link": {
+                        "link": "hybrid-bicycle",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/bicycle/bicycle_4.png",
+                "redirect_link": {
+                    "link": "hybrid-bicycle",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/bicycle/bicycle_3.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            545,
+            544,
+            543,
+            542
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bicycle/bicycle_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "recent story",
+            "title": "trending products",
+            "status": true,
+            "product_ids": [
+                545,
+                544,
+                543,
+                542
+            ]
+        },
+        "category_product": {
+            "tag": "recent story",
+            "title": "trending products",
+            "status": true,
+            "category_ids": [
+                158,
+                160
+            ]
+        }
+    },
+    "slug": "bicycle"
+}

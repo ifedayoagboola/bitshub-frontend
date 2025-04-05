@@ -1,0 +1,12 @@
+@if(relatedProducts && relatedProducts.length){
+  <div class="theme-card">
+    <h5 class="title-border">{{ 'trending_products' | translate  }}</h5>
+    <div class="offer-slider ">
+      <div>
+        @for(product of relatedProducts | slice:0:4; track product.id){
+          <app-product-box [product]="product" [style]="'horizontal'"></app-product-box>
+        }
+      </div>
+    </div>
+  </div>
+}

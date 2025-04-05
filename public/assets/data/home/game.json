@@ -1,0 +1,130 @@
+{
+    "id": 39,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                78,
+                76,
+                77
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/game/game_1.png",
+                    "redirect_link": {
+                        "link": "virual-games",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            404,
+            402,
+            403,
+            401,
+            399,
+            398,
+            411,
+            407,
+            392,
+            393,
+            394,
+            395
+        ],
+        "products_list": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "Pay-to-play games have revolutionized the gaming industry by offering players a diverse array of experiences that go beyond traditional gameplay.",
+            "product_ids": [
+                392,
+                393,
+                394,
+                395
+            ]
+        },
+        "offer_banner_1": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/game/game_3.png",
+                "redirect_link": {
+                    "link": "virual-games",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/game/game_2.png",
+                "redirect_link": {
+                    "link": "virual-games",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_2": {
+            "status": true,
+            "image_url": "/images/theme/game/game_4.png",
+            "redirect_link": {
+                "link": "virual-games",
+                "link_type": "collection"
+            }
+        },
+        "parallax_banner": {
+            "title": "xbox games",
+            "status": true,
+            "image_url": "/images/theme/game/game_5.png",
+            "sub_title": "special offer",
+            "main_title": "2019"
+        },
+        "slider_products": {
+            "status": true,
+            "product_slider_1": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    404,
+                    402
+                ]
+            },
+            "product_slider_2": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    403,
+                    401
+                ]
+            },
+            "product_slider_3": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    399,
+                    398
+                ]
+            },
+            "product_slider_4": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    411,
+                    407
+                ]
+            }
+        },
+        "category_product": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "Pay-to-play games have revolutionized the gaming industry by offering players a diverse array of experiences that go beyond traditional gameplay.",
+            "category_ids": [
+                124,
+                125
+            ]
+        }
+    },
+    "slug": "game"
+}

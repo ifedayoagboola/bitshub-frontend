@@ -1,0 +1,285 @@
+{
+    "id": 17,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                27,
+                26,
+                25,
+                29,
+                28,
+                22
+            ]
+        },
+        "services": {
+            "status": null,
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_1.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            15,
+            16,
+            17,
+            20,
+            21,
+            140,
+            139,
+            138,
+            137,
+            136,
+            297,
+            178,
+            222,
+            221,
+            219,
+            218,
+            217,
+            239,
+            254,
+            247,
+            321,
+            311,
+            325,
+            438,
+            439,
+            440,
+            441,
+            443,
+            156,
+            155,
+            146,
+            130
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list_1": {
+            "title": "deals of the day",
+            "status": true,
+            "product_ids": [
+                15,
+                16,
+                17,
+                20,
+                21
+            ]
+        },
+        "products_list_2": {
+            "title": "Don't Miss These",
+            "status": true,
+            "product_ids": [
+                222,
+                221,
+                219,
+                218,
+                217
+            ]
+        },
+        "products_list_3": {
+            "title": "big savings",
+            "status": true,
+            "product_ids": [
+                156,
+                155,
+                146,
+                130,
+                217
+            ]
+        },
+        "slider_products": {
+            "status": true,
+            "image_url": "/images/theme/marketplace_four/marketplace_four_3.png",
+            "product_slider_1": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    297,
+                    178
+                ]
+            }
+        },
+        "product_banner_1": {
+            "status": true,
+            "left_panel": {
+                "status": "/images/theme/marketplace_four/marketplace_four_2.png",
+                "image_url": "/images/theme/marketplace_four/marketplace_four_2.png",
+                "redirect_link": {
+                    "link": "bag-emporium",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            },
+            "right_panel": {
+                "title": null,
+                "status": true,
+                "product_ids": [
+                    140,
+                    139,
+                    138,
+                    137,
+                    136
+                ]
+            }
+        },
+        "product_banner_2": {
+            "status": true,
+            "left_panel": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    239,
+                    254,
+                    247
+                ]
+            },
+            "right_panel": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    321,
+                    311,
+                    325
+                ]
+            },
+            "center_panel": {
+                "banner_1": {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_4.png",
+                    "redirect_link": {
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                },
+                "banner_2": {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_four/marketplace_four_5.png",
+                    "redirect_link": {
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                }
+            }
+        },
+        "product_banner_3": {
+            "status": true,
+            "left_panel": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_four/marketplace_four_6.png",
+                "redirect_link": {
+                    "link": "surfboard",
+                    "link_type": "collection",
+                    "product_ids": null
+                }
+            },
+            "right_panel": {
+                "title": null,
+                "status": true,
+                "product_ids": [
+                    438,
+                    439,
+                    440,
+                    441,
+                    443
+                ]
+            }
+        }
+    },
+    "slug": "marketplace_four"
+}

@@ -1,0 +1,135 @@
+<!-- Home Section Start -->
+<section class="p-0 bg-white">
+  <div class="home-slider">
+    <div id="img-bg">
+      <app-image-link [image]="data?.content?.home_banner" [bgImage]="false"></app-image-link>
+       <div class="home-skeleton">
+        <div class="skeleton-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 col-sm-8 col-11">
+                <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                  <span class="col-7">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-6">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Banner Section Start -->
+@if(banners.length){
+<section class="banner-padding banner-section ratio2_3">
+  <div class="container-fluid">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+        @if(banner?.status){
+          <div class="col-6" [ngClass]="banners.length == 4 ? 'col-lg-3 col-6' : banners.length == 3 ? 'col-lg-4 col-6' : banners.length == 2 ? 'col-6' : 'col-12'">
+            <div class="position-relative">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- Banner Section End -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status){
+<section class="pt-0 ratio_asos section-b-space">
+  <div class="container">
+    <app-theme-title [title]="data?.content?.category_product" [type]="'digital'"></app-theme-title>
+    <app-theme-product-tab-section [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"
+      [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'">
+    </app-theme-product-tab-section>
+  </div>
+</section>
+}
+<!-- Tab product End-->
+
+<!-- Parallax banner -->
+@if(data?.content?.collection_banner?.status){
+<section [ngClass]="!banners.length || !data?.content?.category_product?.status ? 'section-t-space' : 'p-0'">
+  <img [src]="StorageURL + data?.content?.collection_banner?.image_url" [alt]="data?.content?.collection_banner?.image_url"
+    class="img-fluid">
+</section>
+}
+<!-- Parallax banner end -->
+
+<!-- product section start -->
+@if(data?.content?.product_list?.status){
+<section class="ratio_asos">
+  <div class="container">
+    <div class="row">
+      @if(data?.content?.product_list?.left_panel?.status){
+      <div class="col-xl-3 col-lg-4 order-lg-1">
+        <div class="product-left-title right-content">
+          <div>
+            <h3>{{ data?.content?.product_list?.left_panel?.title }}</h3>
+            <p>{{ data?.content?.product_list?.left_panel?.description }}</p>
+            @if(data?.content?.product_list?.left_panel?.more_button){
+              <app-button 
+                  [data]="data?.content?.product_list?.left_panel"
+                  [type]="'button_link'"
+                  [class]="'btn btn-outline btn-sm'"
+                  ></app-button>
+            }
+          </div>
+        </div>
+      </div>
+      }
+      <div [ngClass]="data?.content?.product_list?.left_panel?.status ? 'col-xl-9 col-lg-8' : 'col-xl-12 col-lg-8'">
+        <app-theme-product [productIds]="data?.content?.product_list?.products?.product_ids || []" [style]="'vertical'"
+          [slider]="true" [options]="options">
+        </app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product section end -->
+
+<!-- banner section start -->
+@if(data?.content?.offer_banner_2?.status){
+<section>
+  <div class="container">
+    <img [src]="StorageURL + data?.content?.offer_banner_2?.image_url" alt="offer" class="img-fluid">
+  </div>
+</section>
+}
+<!-- banner section end -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space blog-wo-bg" [ngStyle]="{ 'margin-bottom': themeOptionService.footer_height + 'px'}">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

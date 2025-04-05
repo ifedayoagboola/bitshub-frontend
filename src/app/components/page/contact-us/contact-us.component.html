@@ -1,0 +1,167 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+@if(contactData) {
+  <section class="contact-page section-b-space">
+    <div class="container">
+      <div class="row g-sm-4 g-3">
+        <div class="col-lg-5">
+          <div class="contact-title">
+            <h2>{{ contactData.title }}</h2>
+            <p>{{ contactData.description }}</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <form class="theme-form contact-form" [formGroup]="form">
+            <div class="row g-4">
+              <div class="col-12">
+                <div class="form-box">
+                  <label for="name" class="form-label">{{ 'name' | translate }}</label>
+                  <input type="text" class="form-control" id="name" placeholder="{{ 'name' | translate }}" formControlName="name">
+                  @if(form.controls['name'].touched && form.controls['name'].errors?.['required']){
+                    <div class="invalid-feedback">
+                      {{ 'name_is_required' | translate }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-box">
+                  <label for="email">{{ 'email' | translate }}</label>
+                  <input type="text" class="form-control" id="email" placeholder="{{ 'email' | translate }}" formControlName="email">
+                  @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                    <div class="invalid-feedback">
+                      {{ 'email_is_required' | translate }}
+                    </div>
+                  }
+
+                  @if(form.controls['email'].errors?.['email']){
+                    <div class="invalid-feedback">
+                      {{ 'invalid_email' | translate }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-box">
+                  <label for="review">{{ 'phone' | translate }}</label>
+                <input type="text" class="form-control" id="review" placeholder="{{ 'enter_phone' | translate }}" formControlName="phone">
+                @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+                  <div class="invalid-feedback">
+                    {{ 'phone_number_is_required' | translate }}
+                  </div>
+                }
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-box">
+                  <label for="email">{{ 'subject' | translate }}</label>
+                  <input type="text" class="form-control" id="last-name" placeholder="{{ 'subject' | translate }}" formControlName="subject">
+                  @if(form.controls['subject'].touched && form.controls['subject'].errors?.['required']){
+                    <div class="invalid-feedback">
+                      {{ 'subject_is_required' | translate }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-box">
+                  <label for="review">{{ 'write_message' | translate }}</label>
+                  <textarea class="form-control" placeholder="{{ 'write_message' | translate }}" rows="6" formControlName="message"></textarea>
+                  @if(form.controls['message'].touched && form.controls['message'].errors?.['required']){
+                    <div class="invalid-feedback">
+                      {{ 'message_is_required' | translate }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-box">
+                  <app-button
+                      [class]="'btn btn-solid'"
+                      [type]="'button'"
+                      [id]="'send_message'"
+                      [spinner]="true"
+                      (click)="submit()">
+                        {{ 'send_message' | translate }}
+                    </app-button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12">
+          <div class="contact-right">
+            <ul>
+              @if(contactData.detail_1.text){
+                <li>
+                  <div class="contact-icon">
+                    @if(contactData.detail_1.icon){
+                      <i [class]="contactData.detail_1.icon"></i>
+                    }
+                  </div>
+                  <div class="media-body">
+                    <h6>{{ contactData.detail_1.label }}</h6>
+                    <p>{{ contactData.detail_1.text }}</p>
+                  </div>
+                </li>
+              }
+
+              @if(contactData.detail_2.text){
+                <li>
+                  <div class="contact-icon">
+                    @if(contactData.detail_2.icon){
+                      <i [class]="contactData.detail_2.icon"></i>
+                    }
+                  </div>
+                  <div class="media-body">
+                    <h6>{{ contactData.detail_2.label }}</h6>
+                    <p>{{ contactData.detail_2.text }}</p>
+                  </div>
+                </li>
+              }
+
+              @if(contactData.detail_3.text){
+                <li>
+                  <div class="contact-icon">
+                    @if(contactData.detail_3.icon){
+                      <i [class]="contactData.detail_3.icon"></i>
+                    }
+                  </div>
+                  <div class="media-body">
+                    <h6>{{ contactData.detail_3.label }}</h6>
+                    <p>{{ contactData.detail_3.text }}</p>
+                  </div>
+                </li>
+              }
+
+              @if(contactData.detail_4.text){
+                <li>
+                  <div class="contact-icon">
+                    @if(contactData.detail_4.icon){
+                      <i [class]="contactData.detail_4.icon"></i>
+                    }
+                  </div>
+                  <div class="media-body">
+                    <h6>{{ contactData.detail_4.label }}</h6>
+                    <p>{{ contactData.detail_4.text }}</p>
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+
+<section class="contact-page pt-0">
+  <div class="container-fluid p-0">
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1605.811957341231!2d25.45976406005396!3d36.3940974010114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1550912388321"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>

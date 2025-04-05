@@ -1,0 +1,15 @@
+@if((product$ | async)?.data?.length){
+  <div class="product-pagination">
+    <div class="theme-pagination-block">
+
+      <nav aria-label="Page navigation">
+        <app-pagination
+          [total]="totalItems"
+          [currentPage]="+filter['page']"
+          [pageSize]="+filter['paginate']"
+          (setPage)="setPaginate($event)">
+        </app-pagination>
+      </nav>
+    </div>
+  </div>
+}

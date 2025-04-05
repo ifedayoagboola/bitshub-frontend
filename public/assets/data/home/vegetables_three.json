@@ -1,0 +1,135 @@
+{
+    "id": 20,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                29,
+                27,
+                26,
+                25,
+                24,
+                23
+            ]
+        },
+        "banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/vegetables_three_2.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/vegetables_three_3.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/vegetables_three_4.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_three/vegetables_three_1.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            53,
+            69,
+            56,
+            68,
+            55
+        ],
+        "products_list": {
+            "tag": "recent story",
+            "title": "trending products",
+            "status": true,
+            "product_ids": [
+                53,
+                69,
+                56,
+                68,
+                55
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent story",
+            "title": "trending products",
+            "status": true,
+            "blog_ids": [
+                9,
+                7,
+                8
+            ]
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                134,
+                135
+            ]
+        },
+        "sidebar_category": {
+            "status": true,
+            "category_ids": [
+                6,
+                170,
+                171,
+                172,
+                173,
+                174
+            ]
+        }
+    },
+    "slug": "vegetables_three"
+}

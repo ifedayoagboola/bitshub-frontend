@@ -1,0 +1,43 @@
+@if(crossSellProducts.length){
+  <div class="border-product">
+    <h6 class="product-title">{{ 'frequently_bought_together' | translate }}</h6>
+    <div class="bundle">
+      <div class="bundle-image-box row g-3">
+        @for(crossSellProduct of crossSellProducts; track crossSellProduct.id){
+          <div class="col-xl-6 col-lg-12 col-sm-6">
+            <div class="bundle-box">
+              <div class="form-check">
+                <input class="form-check-input checkbox_animated" type="checkbox" [checked]="isChecked(crossSellProduct?.id )" id="crosssell-{{ crossSellProduct?.id }}"  value="{{( selectedVariation && selectedVariation.product_id === crossSellProduct.id && crossSellProductsIds.includes(selectedVariation.product_id)) ? selectedVariation.id : crossSellProduct?.id}}" (change)="select($event, crossSellProduct.id)">
+              </div>
+              <div class="bundle-image">
+                <a [routerLink]="['/product',crossSellProduct.slug]">
+                <img [src]=" crossSellProduct.selected_variant ? crossSellProduct.selected_variant.variation_image.original_url : crossSellProduct?.product_thumbnail?.original_url " class="img-fluid" [alt]="crossSellProduct.name" class="img-fluid"  >
+                </a>
+              </div>
+                <div class="bundle-content">
+                  <div>
+                    <a [routerLink]="['/product',crossSellProduct.slug]">
+                      <h4>{{ crossSellProduct.selected_variant  ? crossSellProduct.selected_variant.name : crossSellProduct?.name }}</h4>
+                    </a>
+                  </div>
+                  @if(crossSellProduct.variations && crossSellProduct.variations.length > 0 && crossSellProduct.attributes.length > 0){
+                    <app-dropdown-variant [product]="crossSellProduct!" (selectedOption)="getSelectedVariant($event, crossSellProduct)"></app-dropdown-variant>
+                  }
+                  <h3>{{ (crossSellProduct.selected_variant  ? crossSellProduct.selected_variant.sale_price : crossSellProduct?.sale_price) | currencySymbol }}</h3>
+                </div>
+            </div>
+          </div>
+        }
+      </div>
+      <h5 class="bundle-title">{{ 'product_selected_for' | translate }}</h5>
+      <h4 class="theme-color total-price">{{ total | currencySymbol }}</h4>
+      <app-button
+        [class]="'btn btn-solid bundle-btn mt-sm-2 mt-0'"
+        [id]="'addcartAllbtn'"
+        [disabled]="!total"
+        (click)="addToCartAll()">
+        {{ 'buy_this_bundle' | translate }}
+      </app-button>
+    </div>
+  </div>
+}

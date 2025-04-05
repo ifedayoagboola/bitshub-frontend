@@ -1,0 +1,72 @@
+<div class="modal-header">
+  <h3 class="fw-semibold">{{ 'write_a_review' | translate }}</h3>
+  <app-button
+    [class]="'btn btn-close'"
+    [id]="'profile_modal_close_btn'"
+    (click)="modal.dismiss('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+
+<div class="modal-body">
+  @if(form){
+    <form class="product-review-form" [formGroup]="form">
+      <div class="product-wrapper">
+        <div class="product-image">
+          <img [src]="product.product_thumbnail ?
+                  product.product_thumbnail.original_url :
+                  'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+        </div>
+        <div class="product-content">
+          <h5 class="name">{{ product.name }}</h5>
+          <div class="product-review-rating">
+            <label>{{ 'rating' | translate }}</label>
+            <div class="product-rating">
+              <ngb-rating [(rate)]="product.rating_count">
+                <ng-template let-fill="fill" let-index="index">
+                  <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+                </ng-template>
+              </ngb-rating>
+              @if(product.rating_count){
+                <h6 class="rating-number">({{ product.rating_count.toFixed(2) || 0 }})</h6>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-box">
+        <div class="product-review-rating">
+          <label>{{ 'rating' | translate }}</label>
+          <div class="product-rating">
+            <ngb-rating [(rate)]="currentRate" formControlName="rating" [readonly]="false"></ngb-rating>
+          </div>
+          @if(form.controls['rating'].touched && form.controls['rating'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'rating_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="review-box form-box">
+        <label class="form-label" for="content">{{ 'review_content' | translate }}</label>
+        <textarea placeholder="{{ 'write_something' | translate }}" class="form-control" formControlName="description" rows="3"></textarea>
+      </div>
+    </form>
+  }
+
+  <div class="modal-footer">
+    <app-button
+      [class]="'btn btn-outline btn-md fw-bold'"
+      [type]="'button'"
+      [id]="'cancel_profile_btn'"
+      [spinner]="false"
+      (click)="modal.dismiss('Cancel')">{{ 'cancel' | translate }}</app-button>
+    <app-button
+      [class]="'btn btn-solid'"
+      [id]="'submit_profile_btn'"
+      (click)="submit()">
+      {{ 'submit' | translate }}
+    </app-button>
+  </div>
+</div>

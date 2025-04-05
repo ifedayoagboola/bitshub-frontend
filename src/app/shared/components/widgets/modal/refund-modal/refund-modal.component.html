@@ -1,0 +1,58 @@
+<div class="modal-header">
+  <h3 class="fw-semibold">{{ 'refund' | translate }}</h3>
+  <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modalService.close('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+
+<div class="modal-body">
+  <form class="product-review-form">
+    <div class="product-wrapper">
+      <div class="product-image">
+        <img [src]="productDetails && productDetails.product_thumbnail ?
+                productDetails.product_thumbnail.original_url :
+                'assets/images/placeholder/product.png'" class="img-fluid" [alt]="productDetails.name">
+      </div>
+      <div class="product-content">
+        <h5 class="name">{{ productDetails.name }}</h5>
+        <div class="product-review-rating">
+          <div class="product-rating">
+            <h6 class="price-number">{{ productDetails.pivot?.single_price | currencySymbol }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <form [formGroup]="form">
+        <label class="form-label" for="content">{{ 'reason' | translate }} *</label>
+        <textarea placeholder="{{ 'enter_reason' | translate }}" class="form-control" id="content" rows="3" formControlName="reason"></textarea>
+        @if(form.controls['reason'].touched && form.controls['reason'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ 'reason_is_required' | translate }}
+          </div>
+        }
+      </form>
+    </div>
+    <div class="review-box">
+      <label class="form-label" for="payment_option">{{ 'payment_option' | translate }}</label>
+      <select2 class="custom-select"
+          [data]="option ? option : []"
+          [placeholder]="'select_payment_option' | translate"
+          formControlName="payment_type"
+          resettable>
+        </select2>
+        @if(form.controls['payment_type'].touched && form.controls['payment_type'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ 'payment_type_is_required' | translate }}
+          </div>
+        }
+    </div>
+  </form>
+  <div class="modal-footer">
+    <app-button [class]="'btn btn-md btn-outline fw-bold'" [type]="'button'" [spinner]="false" [id]="'cancel_profile_btn'" (click)="modalService.close('Cancel')">{{ 'cancel' | translate }}</app-button>
+    <app-button [class]="'btn btn-solid'" [id]="'submit_profile_btn'" (click)="sendRequest()">
+      {{ 'submit' | translate }}
+    </app-button>
+  </div>
+</div>

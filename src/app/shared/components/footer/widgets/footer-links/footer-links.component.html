@@ -1,0 +1,7 @@
+<ul>
+  @for(link of links; track link.id){
+    <li>
+      <a routerLink="/{{link.value}}" class="text-content">{{ link.name | titlecase }}</a>
+    </li>
+  }
+</ul>

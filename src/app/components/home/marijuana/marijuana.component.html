@@ -1,0 +1,126 @@
+<!-- Home Section Start -->
+<section class="p-0 service_slide">
+  <div class="home-slider text-white">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+
+  @if(data?.content?.services){
+    <div class="service-home">
+      <div class="container">
+        <section class="service small-section pb-0">
+          <app-theme-services [services]="data?.content?.services?.banners" [type]="'simple'" [class]="'col-lg-3'"></app-theme-services>
+        </section>
+      </div>
+    </div>
+  }
+</section>
+<!-- Home Section End -->
+
+<!-- About section start -->
+@if(data?.content?.offer_banner?.status){
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <app-theme-title [title]="data?.content?.offer_banner" [type]="'luxury'"></app-theme-title>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-0 section-b-space banner-section ratio_45 banner-section">
+    <div class="container">
+      <div class="row g-sm-4 g-3">
+      @if(data?.content?.offer_banner?.banner?.banner_1?.status){
+        <div class="{{ data?.content?.offer_banner?.banner?.banner_2?.status ? 'col-md-6' : 'col-md-12' }}">
+          <app-image-link [image]="data?.content?.offer_banner?.banner?.banner_1" [bgImage]="true"></app-image-link>
+        </div>
+      }
+      @if(data?.content?.offer_banner?.banner?.banner_2?.status){
+        <div class="{{ data?.content?.offer_banner?.banner?.banner_1?.status ? 'col-md-6' : 'col-md-12' }}">
+          <app-image-link [image]="data?.content?.offer_banner?.banner?.banner_2" [bgImage]="true"></app-image-link>
+        </div>
+      }
+    </div>
+    </div>
+  </section>
+}
+<!-- About section end -->
+
+<!-- details section start-->
+@if(filteredBanners.length){
+  <section class="section-b-space detail-cannabis bg-grey">
+    <div class="container">
+      <div class="row">
+        @for(details of filteredBanners; track details.redirect_link){
+          @if(details.status){
+            <div [class]="filteredBanners.length == 3 ? 'col-md-4' : filteredBanners.length == 2 ? 'col-md-6' : 'col-12'">
+              <div class="detail_section">
+                <div>
+                  <img [src]="StorageURL+details.image_url">
+                  <h4>{{ details.title }}</h4>
+                  <p>{{ details.description }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- details section end-->
+
+<!-- Product slider -->
+@if(data?.content?.products_list?.status){
+  <section class="section-b-space ratio_asos metro-section portfolio-section">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.products_list" [type]="'luxury'"></app-theme-title>
+      <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="productSlider4"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- Product Slider end -->
+
+<!-- parallax product section start -->
+@if(data?.content?.category_product?.status){
+  <section class="parallax large-section tab-left border-box"
+    [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.category_product?.image_url +')'}">
+
+    <div class="container">
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids || []" [style]="'vertical'" [tab_style]="'premium'" [showItems]="3" [class]="'row row-cols-md-3 row-cols-2 g-sm-4 g-3'" [title]="data?.content?.category_product"></app-theme-product-tab-section>
+    </div>
+  </section>
+}
+<!-- parallax product section end -->
+
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <div class="container" [class.section-t-space]="data?.content?.category_product?.status">
+    <div class="row">
+      <div class="col">
+        <app-theme-title [title]="data?.content?.featured_blogs" [type]="'luxury'"></app-theme-title>
+      </div>
+    </div>
+  </div>
+
+  <section class="blog pt-0 section-b-space ratio3_2 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []" [blogEffect]="'basic-effect'"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="bg-grey section-b-space small-section">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

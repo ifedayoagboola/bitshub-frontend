@@ -1,0 +1,24 @@
+<div class="card mt-0">
+  <div class="card-body">
+    <div class="top-sec">
+      <h3>{{ 'notifications' | translate }}</h3>
+    </div>
+    @if((notification$ | async)?.length){
+      <ul class="notification-list">
+        @for(notification of (notification$ | async); track notification.id){
+          <li [class.unread]="!notification.read_at">
+            <h4>{{ notification?.data?.message }}</h4>
+            <h5><i class="ri-time-line"></i> {{ notification?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h5>
+          </li>
+        }
+      </ul>
+    }@else {
+      <app-no-data
+        [class]="'no-data-added'"
+        [image]="'assets/svg/empty-items.svg'"
+        [text]="'no_notification'"
+        [description]="'no_notification_description'">
+      </app-no-data>
+    }
+  </div>
+</div>

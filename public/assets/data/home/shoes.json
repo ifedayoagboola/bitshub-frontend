@@ -1,0 +1,227 @@
+{
+    "id": 36,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                27,
+                28,
+                29,
+                26,
+                25
+            ]
+        },
+        "services": {
+            "status": null,
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/shoes/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/shoes/service.png",
+                    "description": "online service for new customer"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/shoes/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "attribute": {
+            "status": true,
+            "attribute_id": 18
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_1.png",
+                    "redirect_link": {
+                        "link": "shoes",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "about_banner": {
+            "tag": "about us",
+            "title": "welcome to multi store",
+            "status": true,
+            "description": "Step into comfort and style with our latest collection of shoes, perfect for any occasion. From sleek sneakers to elegant dress shoes, our curated selection features top brands known for quality and durability. Experience unparalleled comfort with our innovative designs and cushioned soles. Whether you're hitting the gym, going to the office, or enjoying a night out, we have the perfect pair for you. Shop now and elevate your footwear game with our exclusive offers and new arrivals.",
+            "collection_banner": {
+                "banner_1": {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_3.png",
+                    "redirect_link": {
+                        "link": "shoes",
+                        "link_type": "collection"
+                    }
+                },
+                "banner_2": {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_2.png",
+                    "redirect_link": {
+                        "link": "shoes",
+                        "link_type": "collection"
+                    }
+                }
+            }
+        },
+        "categories_1": {
+            "status": true,
+            "category_ids": [
+                113,
+                114,
+                115,
+                116,
+                117
+            ]
+        },
+        "categories_2": {
+            "status": true,
+            "category_ids": [
+                114,
+                115,
+                116
+            ]
+        },
+        "products_ids": [
+            458,
+            457,
+            454,
+            451,
+            460,
+            456,
+            452,
+            463,
+            353,
+            352,
+            446,
+            447,
+            444,
+            445
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/shoes/shoes_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "our collection",
+            "title": "special products",
+            "status": true,
+            "product_ids": [
+                458,
+                457,
+                454,
+                451,
+                460
+            ]
+        },
+        "featured_blogs": {
+            "tag": "our collection",
+            "title": "special products",
+            "status": true,
+            "blog_ids": [
+                24,
+                23,
+                22
+            ]
+        },
+        "slider_products": {
+            "status": true,
+            "product_slider_1": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    456,
+                    452,
+                    463
+                ]
+            },
+            "product_slider_2": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    353,
+                    352,
+                    446
+                ]
+            },
+            "product_slider_3": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    447,
+                    444,
+                    445
+                ]
+            },
+            "product_slider_4": {
+                "title": "on sale",
+                "status": true,
+                "product_ids": [
+                    457,
+                    451,
+                    460
+                ]
+            }
+        },
+        "category_product": {
+            "status": true,
+            "category_ids": [
+                113,
+                114
+            ]
+        }
+    },
+    "slug": "shoes"
+}

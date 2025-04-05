@@ -1,0 +1,146 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="blog-wo-bg watch-brand">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->
+
+<!-- banner start -->
+@if(data?.content?.offer_banner_1?.status){
+  <section>
+    <div class="container">
+      <div class="position-relative">
+        <app-image-link [image]="data?.content?.offer_banner_1" [class]="'banner-text'"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+}
+<!-- banner end -->
+
+<!-- category start-->
+@if(data?.content?.categories?.status){
+  <section class="section-b-space ratio_portrait">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="slide-4 category-m">
+            <app-categories [categoryIds]="data?.content?.categories?.category_ids || []" [style]="'one'" [slider]="true" [options]="options"></app-categories>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- category end -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status){
+  <section class="p-0 tab-bg-section">
+    <div class="tab-bg">
+      <div class="container-fluid p-0">
+      <app-theme-title [title]="data?.content?.category_product" [type]="'premium'"></app-theme-title>
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [product_box_style]="'horizontal'" [style]="'horizontal'"></app-theme-product-tab-section>
+    </div>
+  </div>
+  </section>
+}
+<!-- Tab product End-->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_1?.status){
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-theme-title [title]="data?.content?.products_list_1" [type]="'premium'"></app-theme-title>
+          <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="productSlider4"></app-theme-product>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Banner Section Start -->
+@if(banners.length){
+<section class="ratio_45 banner-section">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+        @if(banner?.status){
+        <div [ngClass]="banners.length == 3 ? 'col-md-4 col-sm-6' : banners.length == 2 ? 'col-sm-6' : 'col-12'">
+          <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+        </div>
+        }
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- Banner Section End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_2?.status){
+  <section class="section-b-space">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-theme-title [title]="data?.content?.products_list_2" [type]="'premium'"></app-theme-title>
+          <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <section class="blog blog-bg section-b-space ratio2_3 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'premium'"></app-theme-title>
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Service Start -->
+@if(data?.content?.services){
+  <div class="container">
+    <section class="service section-b-space wo-box border-section border-top-0">
+      <app-theme-services [services]="data?.content?.services?.banners" [type]="'simple'"></app-theme-services>
+    </section>
+  </div>
+}
+<!-- Service End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square section-b-space">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container'" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->

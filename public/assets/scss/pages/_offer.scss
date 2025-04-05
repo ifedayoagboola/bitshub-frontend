@@ -1,0 +1,63 @@
+/**=====================
+   Offer page css
+==========================**/
+.coupon-box {
+  position: relative;
+  padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+  background: #f8f8f8;
+  border-radius: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+
+  .coupon-name {
+    display: block;
+
+    h5 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: calc(17px + (18 - 17) * ((100vw - 320px) / (1920 - 320)));
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  .coupon-content {
+    margin-top: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+
+    p {
+      color: #777;
+      line-height: 1.6;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      font-weight: 500;
+      -webkit-box-orient: vertical;
+      font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+      margin-bottom: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .coupon-apply {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
+      border-top: 1px dashed rgba(0, 0, 0, 0.12);
+
+      h6 {
+        font-weight: 600;
+        color: #232323;
+        line-height: 1.3;
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .copy-btn {
+        border: unset;
+        color: var(--theme-color);
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 collection-filter" [ngStyle]="{ 'left' : attributeService.offCanvasMenu ? '0' : ''}">
+          <app-collection-categories [style]="'classic_vertical'">
+          </app-collection-categories>
+        </div>
+        <div class="collection-content col-lg-9">
+          <div class="page-main-content">
+            <div class="collection-product-wrapper">
+              <app-collection-products [filter]="filter"></app-collection-products>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

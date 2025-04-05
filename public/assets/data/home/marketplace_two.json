@@ -1,0 +1,270 @@
+{
+    "id": 15,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                27,
+                26,
+                28,
+                29,
+                25
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_two/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_two/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_two/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_two/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_two/marketplace_two_1.png",
+                    "redirect_link": {
+                        "link": 89,
+                        "link_type": "product"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            90,
+            162,
+            184,
+            158,
+            154,
+            291,
+            92,
+            207,
+            91,
+            89,
+            88,
+            140,
+            139,
+            138,
+            136,
+            135,
+            24,
+            23,
+            22,
+            11,
+            9,
+            148,
+            147,
+            146,
+            216,
+            186,
+            185,
+            247,
+            254,
+            257,
+            426,
+            425,
+            424,
+            142,
+            141,
+            164,
+            163,
+            159,
+            423,
+            422
+        ],
+        "offer_banner_1": {
+            "status": true,
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_5.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_4.png",
+                "redirect_link": {
+                    "link": "shoes",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_3.png",
+                "redirect_link": {
+                    "link": 90,
+                    "link_type": "product",
+                    "product_ids": 90
+                }
+            },
+            "banner_4": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_2.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_2": {
+            "status": true,
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_7.png",
+                "redirect_link": {
+                    "link": 88,
+                    "link_type": "product",
+                    "product_ids": 88
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_two/marketplace_two_6.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_3": {
+            "status": true,
+            "image_url": "/images/theme/marketplace_two/marketplace_two_8.png",
+            "redirect_link": {
+                "link": "fashion",
+                "link_type": "collection"
+            }
+        },
+        "products_list_1": {
+            "title": "top collection",
+            "status": true,
+            "sub_title": null,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "product_ids": [
+                162,
+                184,
+                158,
+                154,
+                291
+            ]
+        },
+        "products_list_2": {
+            "title": "top collection",
+            "status": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "product_ids": [
+                92,
+                207,
+                91,
+                89,
+                88
+            ]
+        },
+        "products_list_3": {
+            "title": "Don't Miss These",
+            "status": true,
+            "product_ids": [
+                140,
+                139,
+                138,
+                136,
+                135
+            ]
+        },
+        "products_list_4": {
+            "title": "Trending Offers",
+            "status": true,
+            "product_ids": [
+                24,
+                23,
+                22,
+                11,
+                9
+            ]
+        },
+        "products_list_5": {
+            "title": "Big Savings",
+            "status": true,
+            "product_ids": [
+                142,
+                141,
+                164,
+                163,
+                159
+            ]
+        },
+        "products_list_6": {
+            "title": "Top Rated For You",
+            "status": true,
+            "product_ids": [
+                426,
+                425,
+                424,
+                423,
+                422
+            ]
+        },
+        "slider_products": {
+            "status": true,
+            "product_slider_1": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    148,
+                    147,
+                    146
+                ]
+            },
+            "product_slider_2": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    216,
+                    186,
+                    185
+                ]
+            },
+            "product_slider_3": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    247,
+                    254,
+                    257
+                ]
+            },
+            "product_slider_4": {
+                "title": "on sale",
+                "status": true,
+                "product_ids": [
+                    426,
+                    425,
+                    424
+                ]
+            }
+        }
+    },
+    "slug": "marketplace_two"
+}

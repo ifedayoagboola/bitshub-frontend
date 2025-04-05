@@ -1,0 +1,27 @@
+<div class="collection-filter-block" ngbAccordion>
+  <div class="collection-mobile-back">
+    <span class="filter-back" (click)="closeFilter()">
+      <i class="ri-arrow-left-s-line"></i>
+      {{ 'back' | translate }}
+    </span>
+  </div>
+
+  @if(brandService.skeletonLoader){
+    <app-skeleton-product-sidebar></app-skeleton-product-sidebar>
+ }@else {
+   <div class="open" ngbAccordionItem [collapsed]="false">
+     <button ngbAccordionButton>{{ 'brand' | translate }}</button>
+     <div ngbAccordionCollapse>
+       <div ngbAccordionBody>
+         <app-product-brand-filter [brands]="brands"></app-product-brand-filter>
+       </div>
+     </div>
+   </div>
+ }
+</div>
+
+<app-product-sidebar-services [services]="(themeOptions$ | async)?.product?.services?.banners || []"></app-product-sidebar-services>
+
+@if((themeOptions$ | async)?.product?.is_trending_product){
+  <app-trending-product class="product-details-box"></app-trending-product>
+}

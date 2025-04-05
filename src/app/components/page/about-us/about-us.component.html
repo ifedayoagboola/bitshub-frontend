@@ -1,0 +1,98 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<!-- about section start -->
+@if((aboutUs?.about?.content_bg_image_url)){
+<section class="about-page section-b-space">
+  <div class="container">
+    <div class="banner-section">
+      <img [src]="StorageURL + aboutUs?.about?.content_bg_image_url" class="img-fluid lazyload" alt="">
+    </div>
+    <div class="mt-4">
+      <h3>{{ aboutUs?.about?.title }}</h3>
+      <p>{{ aboutUs?.about?.description }}</p>
+    </div>
+  </div>
+</section>
+}
+<!-- about section end -->
+
+<!--Testimonial start-->
+@if(aboutUs?.testimonial?.status && aboutUs?.testimonial?.reviews?.length){
+<section class="testimonial small-section">
+  <div class="container">
+    <div class="title1">
+      <h4>{{ aboutUs?.testimonial?.sub_title }}</h4>
+      <h2 class="title-inner1">{{ aboutUs?.testimonial?.title }}</h2>
+    </div>
+    <div class="slide-2 testimonial-slider">
+      <owl-carousel-o [options]="testimonialOptions">
+        @for(team of aboutUs?.testimonial?.reviews; track team.name){
+        <ng-template carouselSlide>
+          <div>
+            <div class="media">
+              <div class="text-center">
+                <img [src]="StorageURL + team?.profile_image_url" alt="image">
+                <h5>{{ team?.name }}</h5>
+                <h6>{{ team?.designation }}</h6>
+              </div>
+              <div class="media-body">
+                <p>{{ team?.review }}</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+}
+<!--Testimonial ends-->
+
+<!--Team start-->
+@if(aboutUs?.team?.status && aboutUs?.team?.members?.length){
+<section id="team" class="team section-b-space">
+  <div class="container">
+    <div class="title1">
+      <h2 class="title-inner1 border-0">{{ aboutUs?.team?.title }}</h2>
+    </div>
+    <div class="team-4">
+      <owl-carousel-o [options]="teamOptions">
+        @for(team of aboutUs?.team?.members; track team.name){
+        <ng-template carouselSlide>
+          <img [src]="StorageURL + team?.profile_image_url" class="img-fluid" [alt]="team?.name">
+          <h4>{{ team?.name }}</h4>
+          <h6>{{ team?.designation }}</h6>
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+}
+
+<!-- Service Start -->
+@if(aboutUs?.about?.futures){
+<div class="container about-cls section-b-space">
+  <section class="service border-section small-section">
+    <div class="row g-sm-4 g-3">
+      @for(service of aboutUs?.about?.futures; track service.title){
+      <div class="service-block"
+        [ngClass]="aboutUs?.about?.futures?.length == 4 ? 'col-xl-3 col-sm-6' : aboutUs?.about?.futures?.length == 3 ? 'col-md-4' : aboutUs?.about?.futures?.length == 2 ? 'col-md-6' : 'col-12'">
+        <div class="media">
+          <img [src]="StorageURL+service.icon" [alt]="service.title">
+          <div class="skeleton-img-box"></div>
+          <div class="media-body">
+            <h4>{{ service.title }}</h4>
+            <h4 class="skeleton-content-h4"></h4>
+            <p>{{ service.description }}</p>
+            <p class="skeleton-content-p"></p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+</div>
+}
+<!-- Service End -->

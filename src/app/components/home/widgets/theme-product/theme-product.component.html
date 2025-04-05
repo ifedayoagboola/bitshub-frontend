@@ -1,0 +1,95 @@
+@if(style == 'horizontal'){
+  @if(slider){
+    @if(products.length){
+      <owl-carousel-o [options]="horizontalSliderOption">
+        @for(product of products; track product.id){
+          <ng-template carouselSlide>
+            <div class="theme-card center-align">
+              <div class="offer-slider">
+                <div class="sec-1">
+                  <div class="product-box2">
+                    <app-product-box [product]="product" [style]="style"></app-product-box>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        }
+      </owl-carousel-o>
+    }@else {
+      <app-no-data [text]="'no_product'">
+      </app-no-data>
+    }
+  }@else {
+    @if(product_box_style == 'single_product') {
+      @for(product of products; track product.id) {
+        <app-product-box [product]="product" [style]="style" [product_box_style]="product_box_style"></app-product-box>
+      }
+    }
+    @else if(product_box_style == 'horizontal'){
+      <div class="row g-3">
+        @for(product of products; track product.id){
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <div class="theme-card">
+              <div class="offer-slider">
+                <div class="">
+                  <div class="product-box2 product-box">
+                    <app-product-box [product]="product" [style]="style"></app-product-box>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }@empty {
+          <app-no-data [text]="'no_product'">
+          </app-no-data>
+        }
+      </div>
+    }@else {
+      <div>
+        @for(product of products; track product.id){
+          <app-product-box [product]="product" [style]="style"></app-product-box>
+        }@empty {
+          <app-no-data
+            [text]="'no_product'">
+          </app-no-data>
+        }
+      </div>
+    }
+  }
+}@else if(style == 'vertical'){
+  @if(slider){
+    <div class="product-4 product-m">
+      @if(products.length){
+        <owl-carousel-o [options]="options">
+          @for(product of products; track product.id){
+            <ng-template carouselSlide>
+              <div [ngClass]="class">
+                <app-product-box [product]="product" [style]="style"></app-product-box>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      }@else {
+        <app-no-data
+          [class]="'no-data-added'"
+          [text]="'no_product'">
+        </app-no-data>
+      }
+    </div>
+  }@else{
+    <div [ngClass]="class">
+      @for(product of products; track product.id){
+        <div >
+          <app-product-box [product]="product" [style]="style"></app-product-box>
+        </div>
+      }
+    </div>
+    @if(!products.length){
+      <app-no-data
+        [class]="'no-data-added bag-category-not-found'"
+        [text]="'no_product'">
+      </app-no-data>
+    }
+  }
+}

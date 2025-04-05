@@ -1,0 +1,15 @@
+<div class="breadcrumb-section">
+  <div class="container">
+    <h2>{{ breadcrumb.title }}</h2>
+    <nav aria-label="breadcrumb" class="theme-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="javascript:void(0)" [routerLink]="['/']">{{ 'home' | translate }}</a>
+        </li>
+        @for(item of breadcrumb.items; track item.label){
+          <li class="breadcrumb-item" [class.active]="item.active">{{ item.label }}</li>
+        }
+      </ol>
+    </nav>
+  </div>
+</div>

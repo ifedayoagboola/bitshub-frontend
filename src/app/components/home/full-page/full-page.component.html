@@ -1,0 +1,15 @@
+@if(isBrowser) {
+    <div class="home-slider fullpage full-slider">
+      @if(filteredBanners && filteredBanners.length){
+        <div #swiperContainer class="swiper height-vh">
+          <div class="swiper-wrapper">
+            @for(item of filteredBanners; track item.redirect_link; let i = $index) {
+              <div class="swiper-slide">
+                <app-image-link [image]="item"></app-image-link>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+}

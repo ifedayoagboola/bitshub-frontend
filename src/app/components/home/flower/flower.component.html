@@ -1,0 +1,136 @@
+<!-- Home flower -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home flower end -->
+
+<!-- collection banner -->
+<section class="banner-padding pb-0">
+  <div class="container">
+    <div class="row g-4">
+      @if(data?.content?.offer_banner?.banner_1?.status){
+        <div [ngClass]="data?.content?.offer_banner?.banner_2?.status ? 'col-md-4' : 'col-md-12'">
+          <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_1" [bgImage]="false"></app-image-link>
+            <div class="banner-skeleton">
+              <div class="skeleton-content">
+                <p class="card-text placeholder-glow row g-lg-3 g-0">
+                  <span class="col-lg-7 col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-lg-9 col-12">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+      @if(data?.content?.offer_banner?.banner_2?.status){
+        <div [ngClass]="data?.content?.offer_banner?.banner_1?.status ? 'col-md-8' : 'col-md-12'">
+          <div class="position-relative">
+            <app-image-link [image]="data?.content?.offer_banner?.banner_2" [bgImage]="false"></app-image-link>
+            <div class="banner-skeleton">
+              <div class="skeleton-content">
+                <p class="card-text placeholder-glow row g-lg-3 g-0">
+                  <span class="col-lg-7 col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-lg-9 col-12">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- collection banner end -->
+
+<!-- product-box slider -->
+@if(data?.content?.products_list_1?.status){
+  <section class="section-b-space">
+    <div class="full-box">
+      <div class="container">
+        <app-theme-title [title]="data?.content?.products_list_1" [type]="'premium'"></app-theme-title>
+        <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </section>
+}
+<!-- product-box slider end -->
+
+<!-- Product slider Start -->
+@if(data?.content?.category_product?.status){
+  <div class="bg-block">
+    <section class="p-0">
+      <div class="container-fluid">
+        <app-theme-title [title]="data?.content?.category_product" [type]="'premium'"></app-theme-title>
+        <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'horizontal'" [product_box_style]="'horizontal'"></app-theme-product-tab-section>
+      </div>
+    </section>
+  </div>
+}
+<!-- Product slider end -->
+
+<!-- product section -->
+<section class="section-b-space ratio_square">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-title [title]="data?.content?.products_list_2" [type]="'premium'"></app-theme-title>
+        <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- product section end -->
+
+<!-- blog section -->
+@if(data?.content?.featured_blogs?.status){
+  <section class="blog flower-bg section-b-space ratio3_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'premium'"></app-theme-title>
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []" [blogEffect]="'basic-effect'"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- blog section end-->
+
+<!-- service layout -->
+@if(data?.content?.services){
+  <div class="container">
+    <section class="service wo-box border-section section-b-space border-top-0">
+      <app-theme-services [services]="data?.content?.services?.banners" [type]="'simple'"></app-theme-services>
+    </section>
+  </div>
+}
+<!-- service layout end-->
+
+<!-- instagram section -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square section-b-space">
+    <div class="container">
+      <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container-fluid'" [type]="'borderless'"></app-theme-social-media>
+    </div>
+  </section>
+}
+<!-- instagram section end -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space pt-0">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

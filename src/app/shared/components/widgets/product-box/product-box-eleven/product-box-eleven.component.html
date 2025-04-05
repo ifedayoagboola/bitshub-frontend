@@ -1,0 +1,31 @@
+<div class="basic-product theme-product-10" [class.sold-out]="selectedVariation ? (selectedVariation.stock_status == 'out_of_stock' || !(selectedVariation.status)) : (product.stock_status === 'out_of_stock') ">
+  <div class="img-wrapper">
+    <app-image-variant [thumbnail]="selectedVariation ? selectedVariation.variation_image! : product.product_thumbnail!" [gallery_images]="product.product_galleries!" [product]="product!"></app-image-variant>
+    <app-cart-button [product]="product" [class]="'addto-cart-bottom'" [text]="'Add to cart'" [enableModal]="!selectedVariation ? true : false" [selectedVariation]="selectedVariation"></app-cart-button>
+    <div class="cart-info">
+      <app-product-hover-action [product]="product"></app-product-hover-action>
+    </div>
+
+  </div>
+  <div class="product-detail">
+    @if(product.brand){
+      <a class="product-title" [routerLink]="['/brand', product.brand.slug]">
+       {{ product.brand.name }}
+      </a>
+    }
+
+    <a class="product-title" [routerLink]="['/product', product.slug]">
+     <h6>{{ selectedVariation ? selectedVariation.name : product.name }}</h6>
+    </a>
+
+    <h4 class="price">{{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+      @if(selectedVariation ? selectedVariation.discount : product.discount){
+      <del> {{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }} </del><span class="discounted-price"> {{ selectedVariation ? selectedVariation.discount : product.discount }}% {{'Off' | translate}} </span>
+      }
+    </h4>
+
+    @if(product.variations && product.variations.length > 0 && product.attributes.length > 0){
+      <app-dropdown-variant [product]="product" (selectedOption)="getSelectedVariant($event)"></app-dropdown-variant>
+    }
+  </div>
+</div>

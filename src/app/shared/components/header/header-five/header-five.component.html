@@ -1,0 +1,51 @@
+<header class="header-2" [class]="!  (stick && sticky) ? class : ''" [ngClass]="stick && sticky ? 'sticky fixed' : ''">
+  <div class="mobile-fix-option"></div>
+  @if(data?.header?.page_top_bar_enable){
+    <app-top-bar [data]="data"></app-top-bar>
+  }
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="main-menu border-section border-top-0">
+          <div class="menu-left">
+            <div class="toggle-nav" (click)="mainMenuOpen()">
+              <i class="ri-menu-line sidebar-bar">
+              </i>
+            </div>
+          </div>
+          <div class="brand-logo layout2-logo">
+            <app-header-logo [logo]="logo"></app-header-logo>
+          </div>
+          <div class="menu-right pull-right">
+            <div class="icon-nav">
+              <ul>
+                <li class="onhover-div">
+                  <app-search></app-search>
+                </li>
+                <li class="onhover-div">
+                  <a href="javascript:void(0)" [routerLink]="['/wishlist']">
+                    <i class="ri-heart-line">
+                    </i>
+                  </a>
+                </li>
+                <li class="onhover-div">
+                  <app-cart></app-cart>
+                </li>
+                <li class="onhover-div onhover-dropdown mobile-cart">
+                  <app-user-profile></app-user-profile>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <app-menu [class]="'main-navbar main-nav-center'"></app-menu>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,125 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- About section start -->
+@if(data?.content?.about_us?.status){
+  <section class="section-b-space beauty-about" [class.pb-0]="!data?.content?.products_list_1?.status">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-12 offset-xl-1 text-center position-relative">
+          <img [src]="StorageURL + data?.content?.about_us?.image_url" [alt]="data?.content?.about_us?.title" class="img-fluid lazyload">
+          <div class="skeleton-loader-img"></div>
+        </div>
+
+        <div class="col-xl-5 col-lg-6 col-md-12">
+          <div class="about-section">
+            <div>
+              <h2>{{ data?.content?.about_us?.title }}</h2>
+              <div class="about-text">
+                <p>{{ data?.content?.about_us?.description }}</p>
+                <p class="skeleton-text-p">
+                  <span></span>
+                  <span></span>
+                </p>
+              </div>
+
+              @if(data?.content?.about_us?.services){
+                <div class="service small-section pb-0">
+                  <app-theme-services [services]="data?.content?.about_us?.services?.banners" [type]="'simple'"></app-theme-services>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- About section  end -->
+
+<!-- Product section start -->
+@if(data?.content?.products_list_1?.status){
+  <app-theme-title [title]="data?.content?.products_list_1" [type]="'basic'" [space]="false"></app-theme-title>
+
+  <section class="pt-0">
+    <div class="container">
+      <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="productSlider5"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- Product section end -->
+
+<!-- Video section start -->
+@if(data?.content?.product_video?.status){
+  <section class="video-section section-b-space pt-0">
+    <app-theme-title [title]="data?.content?.product_video" [type]="'basic'"></app-theme-title>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <a href="javascript:void(0)">
+            <div class="video-img">
+              <img [src]="StorageURL + data?.content?.product_video?.image_url" [alt]="data?.content?.product_video?.title" class="img-fluid lazyload">
+
+              @if(data?.content?.product_video?.video_url){
+                <div class="play-btn" (click)="openModal(StorageURL + data?.content?.product_video?.video_url || '', 'video')"><span><i class="ri-play-fill"></i></span></div>
+              }
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Video section end -->
+
+<!-- Product section start -->
+@if(data?.content?.products_list_2?.status){
+  <app-theme-title [title]="data?.content?.products_list_2" [type]="'basic'" [space]="false"></app-theme-title>
+
+  <section class="pt-0">
+    <div class="container">
+      <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="productSlider5"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- Product section end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <div class="container">
+    <app-theme-title [title]="data?.content?.featured_blogs" [type]="'basic'"></app-theme-title>
+  </div>
+
+  <section class="blog pt-0 ratio3_2" [class.section-b-space]="!data?.content?.social_media?.status">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram section-b-space ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container'" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

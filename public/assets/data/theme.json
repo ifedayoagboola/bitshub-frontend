@@ -1,0 +1,491 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Fashion",
+            "slug": "fashion_one",
+            "image": "/images/themes/fashion-1.png",
+            "status": 1,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 2,
+            "name": "Fashion 2",
+            "slug": "fashion_two",
+            "image": "/images/themes/fashion-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 3,
+            "name": "Fashion 3",
+            "slug": "fashion_three",
+            "image": "/images/themes/fashion-3.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 4,
+            "name": "Fashion 4",
+            "slug": "fashion_four",
+            "image": "/images/themes/fashion-4.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 5,
+            "name": "Fashion 5",
+            "slug": "fashion_five",
+            "image": "/images/themes/fashion-5.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 6,
+            "name": "Fashion 6",
+            "slug": "fashion_six",
+            "image": "/images/themes/fashion-6.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 7,
+            "name": "Fashion 7",
+            "slug": "fashion_seven",
+            "image": "/images/themes/fashion-7.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 8,
+            "name": "Single Product",
+            "slug": "single_product",
+            "image": "/images/themes/single_product.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 9,
+            "name": "Furniture",
+            "slug": "furniture_one",
+            "image": "/images/themes/furniture-1.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 10,
+            "name": "Furniture 2",
+            "slug": "furniture_two",
+            "image": "/images/themes/furniture-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 11,
+            "name": "Furniture Dark",
+            "slug": "furniture_dark",
+            "image": "/images/themes/furniture-dark.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 12,
+            "name": "Electronics",
+            "slug": "electronics_one",
+            "image": "/images/themes/electronic-1.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 13,
+            "name": "Electronics 2",
+            "slug": "electronics_two",
+            "image": "/images/themes/electronic-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 14,
+            "name": "Electronics 3",
+            "slug": "electronics_three",
+            "image": "/images/themes/electronic-3.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 15,
+            "name": "Marketplace",
+            "slug": "marketplace_one",
+            "image": "/images/themes/marketplace-1.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 16,
+            "name": "Marketplace 2",
+            "slug": "marketplace_two",
+            "image": "/images/themes/marketplace-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 17,
+            "name": "Marketplace 3",
+            "slug": "marketplace_three",
+            "image": "/images/themes/marketplace-3.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 18,
+            "name": "Marketplace 4",
+            "slug": "marketplace_four",
+            "image": "/images/themes/marketplace-4.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 19,
+            "name": "Vegetables",
+            "slug": "vegetables_one",
+            "image": "/images/themes/vegetable-1.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 20,
+            "name": "Vegetables 2",
+            "slug": "vegetables_two",
+            "image": "/images/themes/vegetable-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 21,
+            "name": "Vegetables 3",
+            "slug": "vegetables_three",
+            "image": "/images/themes/vegetable-3.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 22,
+            "name": "Vegetables 4",
+            "slug": "vegetables_four",
+            "image": "/images/themes/vegetable-4.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 23,
+            "name": "Jewellery",
+            "slug": "jewellery_one",
+            "image": "/images/themes/jewellery-1.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 24,
+            "name": "Jewellery 2",
+            "slug": "jewellery_two",
+            "image": "/images/themes/jewellery-2.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 25,
+            "name": "Jewellery 3",
+            "slug": "jewellery_three",
+            "image": "/images/themes/jewellery-3.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 26,
+            "name": "Bag",
+            "slug": "bag",
+            "image": "/images/themes/bag.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 27,
+            "name": "Watch",
+            "slug": "watch",
+            "image": "/images/themes/watch.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 28,
+            "name": "Medical",
+            "slug": "medical",
+            "image": "/images/themes/medical.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 29,
+            "name": "Perfume",
+            "slug": "perfume",
+            "image": "/images/themes/perfume.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 30,
+            "name": "Yoga",
+            "slug": "yoga",
+            "image": "/images/themes/yoga.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 31,
+            "name": "Christmas",
+            "slug": "christmas",
+            "image": "/images/themes/christmas.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 32,
+            "name": "Bicycle",
+            "slug": "bicycle",
+            "image": "/images/themes/bicycle.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 33,
+            "name": "Marijuana",
+            "slug": "marijuana",
+            "image": "/images/themes/marijuna.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 34,
+            "name": "Gym",
+            "slug": "gym",
+            "image": "/images/themes/gym.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 35,
+            "name": "Tools",
+            "slug": "tools",
+            "image": "/images/themes/tools.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 36,
+            "name": "Shoes",
+            "slug": "shoes",
+            "image": "/images/themes/shoes.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 37,
+            "name": "Books",
+            "slug": "books",
+            "image": "/images/themes/books.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 38,
+            "name": "Kids",
+            "slug": "kids",
+            "image": "/images/themes/kids.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 39,
+            "name": "Game",
+            "slug": "game",
+            "image": "/images/themes/games.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 40,
+            "name": "Beauty",
+            "slug": "beauty",
+            "image": "/images/themes/beauty.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 41,
+            "name": "Surf Board",
+            "slug": "surfboard",
+            "image": "/images/themes/surfboard.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 42,
+            "name": "Video Slider",
+            "slug": "video_slider",
+            "image": "/images/themes/vedio_slider.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 43,
+            "name": "Goggles",
+            "slug": "goggles",
+            "image": "/images/themes/goggles.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 44,
+            "name": "Flower",
+            "slug": "flower",
+            "image": "/images/themes/flowers.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 45,
+            "name": "Nursery",
+            "slug": "nursery",
+            "image": "/images/themes/nursery.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 46,
+            "name": "Pets",
+            "slug": "pets",
+            "image": "/images/themes/pets.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 47,
+            "name": "Video",
+            "slug": "video",
+            "image": "/images/themes/vedio.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 48,
+            "name": "Full Page",
+            "slug": "full_page",
+            "image": "/images/themes/full_page.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 49,
+            "name": "Parallax",
+            "slug": "parallax",
+            "image": "/images/themes/parallax.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 50,
+            "name": "Gradient",
+            "slug": "gradient",
+            "image": "/images/themes/gradient.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        },
+        {
+            "id": 51,
+            "name": "Digital Download",
+            "slug": "digital_download",
+            "image": "/images/themes/digital_download.png",
+            "status": 0,
+            "created_at": "2024-06-20T07:06:59.000000Z",
+            "updated_at": "2024-07-09T07:54:27.000000Z"
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 51,
+    "prev_page_url": null,
+    "to": 51,
+    "total": 51
+}

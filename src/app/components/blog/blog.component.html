@@ -1,0 +1,102 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<section class="blog-page section-b-space ratio2_3">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      <div [class.order-lg-1]="sidebar === 'right_sidebar'"
+        [class]="sidebar === 'no_sidebar' ?
+                              'col-xxl-12 col-xl-12 col-lg-12 no-sidebar' : 'col-xxl-9 col-lg-8 order-lg-2'">
+        @if(blogService.skeletonLoader){
+          <div class="row g-4">
+            @for(item of skeletonItems; track item){
+              <div [class]="style === 'list_view' ? 'col-12 list_view' : 'col-xxl-4 col-sm-6'">
+                <app-skeleton-blog></app-skeleton-blog>
+              </div>
+            }
+          </div>
+        }@else if(paginateBlog.length){
+            <div class="row g-4" [class.ratio_65]="style === 'list_view'">
+              @for(blog of paginateBlog; track blog.id){
+                <div [class]="style === 'list_view' ? 'col-12' : 'col-xxl-4 col-sm-6'">
+                  <div class="blog-box" [class.blog-list]="style === 'list_view'" [ngClass]="blog?.is_sticky === 1 ? 'sticky-blog-box' : ''">
+                    <div class="blog-image">
+                      @if(blog?.is_featured){
+                        <div class="blog-featured-tag">
+                          <span>{{ 'featured' | translate }}</span>
+                        </div>
+                      }
+                      @if(blog?.is_sticky){
+                        <div class="blog-label-tag">
+                          <i class="ri-pushpin-fill"></i>
+                        </div>
+                      }
+                      <a [routerLink]="['/blog/', blog?.slug]">
+                        <img [src]="blog?.blog_thumbnail ? blog?.blog_thumbnail?.original_url : 'assets/images/blog.png'" [alt]="blog?.title">
+                      </a>
+                    </div>
+                    <div class="blog-contain blog-contain-2" [class.blog-contain-2]="style === 'list_view'">
+                      <a [routerLink]="['/blog/', blog?.slug]">
+                        <h3>{{ blog?.title }}</h3>
+                      </a>
+                      <div class="blog-label">
+                        <span class="time">
+                          <i class="ri-time-line"></i>
+                          <span>{{ blog?.created_at | date: 'dd MMM yyyy'}}</span>
+                        </span>
+                        @if((themeOption$ | async)?.blog?.blog_author_enable){
+                          <span class="super">
+                            <i class="ri-user-line"></i>
+                            <span>{{ blog?.created_by?.name }}</span>
+                          </span>
+                        }
+                      </div>
+                      @if(blog?.description){
+                        <p [innerHTML]="blog.description"></p>
+                      }
+                      @if((themeOption$ | async)?.blog?.read_more_enable){
+                        <a [routerLink]="['/blog/', blog?.slug]" class="blog-button">
+                          {{ 'read_more' | translate }} <i class="ri-arrow-right-line"></i>
+                        </a>
+                      }
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          }@else {
+          <app-no-data
+            [class]="'no-data-added'"
+            [text]="'no_blog'"
+            [description]="'no_blog_desc'">
+          </app-no-data>
+          }
+        @if(paginateBlog.length && !blogService.skeletonLoader){
+          <nav class="custome-pagination">
+            <div class="product-pagination">
+              <div class="theme-pagination-block">
+                <div class="row">
+                  <div class="col-xl-6 col-md-6 col-sm-12">
+                    <nav aria-label="Page navigation">
+                      <app-pagination
+                        [total]="totalItems"
+                        [currentPage]="+filter['page']"
+                        [pageSize]="+filter['paginate']"
+                        (setPage)="setPaginate($event)">
+                      </app-pagination>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        }
+      </div>
+      <div class="col-xxl-3 col-lg-4"
+        [class.order-lg-2]="sidebar === 'right_sidebar'"
+        [class]="sidebar === 'no_sidebar' ? 'd-none' : ''">
+        <div class="blog-sidebar">
+          <app-sidebar></app-sidebar>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+ <div class="theme-settings" (click)="openSetting(true)">
+  <i class="ri-sound-module-line"></i> {{'customize' | translate}}
+</div>
+<div class="scroll-setting-box">
+  <div id="product_box" class="setting-box" [class.open-setting]="open">
+  <a href="javascript:void(0)" class="overlay" (click)="openSetting(false)"></a>
+    <div class="setting_box_body">
+      <div class="setting-title">
+        <h4>{{'theme_setting' | translate}}</h4>
+        <div class="close-icon" (click)="openSetting(false)"><i class="ri-close-large-line"></i></div>
+      </div>
+      <div class="setting-body">
+        <div ngbAccordion [closeOthers]="true">
+            <div ngbAccordionItem [collapsed]="false">
+              <h2 ngbAccordionHeader>
+                <button ngbAccordionButton>
+                  <span class="setting-description-text">
+                    <span> {{'50_demo' | translate}}</span>
+                    <span class="setting-content">Explore 50+ demos</span>
+                  </span>
+                </button>
+              </h2>
+              <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                  <ng-template>
+                    <div class="setting-contant">
+                      <div class="row row-cols-2 g-sm-4 g-3 demo-section">
+                         @for(theme of (theme$ | async)?.data; track theme.id){
+                            <div class="text-center demo-effects">
+                              <div class="set-position">
+                                <a href="javascript:void(0)" class="layout-container" (click)="openSetting(false)" [routerLink]="['/']" [queryParams]="{theme: theme.slug }">
+                                  <img [src]="StorageURL+theme.image" class="img-fluid bg-img bg-top" [alt]="">
+                                </a>
+                                <a href="javascript:void(0)" class="demo-text" [routerLink]="['/']" [queryParams]="{theme: theme.slug }">
+                                  <h4>{{ theme.name }}</h4>
+                                </a>
+                              </div>
+                            </div>
+
+                          }
+                       </div>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+            <div ngbAccordionItem [collapsed]="true">
+              <h2 ngbAccordionHeader>
+                <button ngbAccordionButton>
+                  <span class="setting-description-text">
+                    <span>{{"10_product_box" | translate}}</span>
+                    <span class="setting-content">Discover more product variations</span>
+                  </span>
+                </button>
+              </h2> 
+              <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                  <ng-template>
+                     <app-demo-product-box></app-demo-product-box>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+            <div class="setting-section">
+                <div class="setting-inner-title">
+                  <h5>{{'rtl_mode' | translate}} </h5>
+                  <p>{{'change_language_direction' | translate}}</p>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="languageDirection" (click)="layoutType()" role="switch" id="rtlmode">
+                </div>
+              </div>
+              <div class="setting-section">
+                <div class="setting-inner-title">
+                  <h5>{{"dark_mode" | translate}} </h5>
+                  <p>{{'light_dark_mode' | translate}}</p>
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch"  [(ngModel)]="mode" (click)="layoutMode()" id="darkmode">
+              </div>
+          </div>
+          <div class="setting-section">
+            <div class="setting-inner-title">
+              <a target="_blank" href="javascript:void(0)">{{ 'admin' | translate }}</a>
+              <p>{{"backend_admin_panel" | translate}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

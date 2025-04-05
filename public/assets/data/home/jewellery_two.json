@@ -1,0 +1,276 @@
+{
+    "id": 24,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                26,
+                25,
+                27,
+                28,
+                29
+            ]
+        },
+        "banner": {
+            "status": true,
+            "image_url": "/images/theme/jewellery_two/jewellery_two_7.png",
+            "redirect_link": {
+                "link": "radiant-ornaments",
+                "link_type": "collection",
+                "product_ids": null
+            }
+        },
+        "services": {
+            "status": null,
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "categories": {
+            "status": true,
+            "category_ids": [
+                65,
+                66,
+                67,
+                68,
+                69
+            ]
+        },
+        "home_banner": {
+            "status": false,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_1.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "categories_2": {
+            "title": "top collection",
+            "status": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "category_ids": [
+                65,
+                66,
+                67,
+                68,
+                69
+            ]
+        },
+        "products_ids": [
+            215,
+            214,
+            210,
+            202,
+            209,
+            208,
+            206,
+            203,
+            204,
+            200,
+            196,
+            213
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "offer_banner_1": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_2.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_3.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_4.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_5.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_6.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner_2": {
+            "status": true,
+            "image_url": "/images/theme/jewellery_two/jewellery_two_10.png",
+            "redirect_link": {
+                "link_type": "collection"
+            }
+        },
+        "product_banner": {
+            "status": true,
+            "left_panel": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    209,
+                    208,
+                    206
+                ]
+            },
+            "right_panel": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    203,
+                    204,
+                    200
+                ]
+            },
+            "center_panel": {
+                "banner_1": {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_8.png",
+                    "redirect_link": {
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                },
+                "banner_2": {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_two/jewellery_two_9.png",
+                    "redirect_link": {
+                        "link": null,
+                        "link_type": null,
+                        "product_ids": null
+                    }
+                }
+            }
+        },
+        "products_list_1": {
+            "title": "top collection",
+            "status": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "product_ids": [
+                215,
+                214,
+                210,
+                202
+            ]
+        },
+        "products_list_2": {
+            "status": true,
+            "product_ids": [
+                196,
+                215,
+                213,
+                204
+            ]
+        }
+    },
+    "slug": "jewellery_two"
+}

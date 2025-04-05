@@ -1,0 +1,81 @@
+<div class="collection-filter-block" [class.row]="filter['layout'] === 'collection_top_filter'" ngbAccordion>
+  <div class="collection-mobile-back" [class.col-12]="filter['layout'] === 'collection_top_filter'">
+    <span class="filter-back" (click)="closeCanvasMenu()">
+      <i class="ri-arrow-left-s-line"></i> {{ 'back' | translate }}
+    </span>
+  </div>
+
+  <ng-content></ng-content>
+  <div class="shop-filter-category">
+    <app-collection-filter [filter]="filter"></app-collection-filter>
+  </div>
+
+  @if(attributeService.skeletonLoader){
+    <app-skeleton-collection-sidebar></app-skeleton-collection-sidebar>
+ }@else {
+   @if(hideFilter && !hideFilter.includes('category')){
+     <div class="open" [class.col-lg-3]="filter['layout'] === 'collection_top_filter'" ngbAccordionItem [collapsed]="false">
+       <button ngbAccordionButton>{{ 'categories' | translate }}</button>
+       <div ngbAccordionCollapse>
+         <div ngbAccordionBody>
+           <app-collection-category-filter [filter]="filter"></app-collection-category-filter>
+         </div>
+       </div>
+     </div>
+   }
+ 
+   @if(hideFilter && !hideFilter.includes('brand')){
+     <div class="open" [class.col-lg-3]="filter['layout'] === 'collection_top_filter'" ngbAccordionItem [collapsed]="false">
+       <button ngbAccordionButton>{{ 'brand' | translate }}</button>
+       <div ngbAccordionCollapse>
+         <div ngbAccordionBody>
+           <app-collection-brand-filter [filter]="filter"></app-collection-brand-filter>
+         </div>
+       </div>
+     </div>
+   }
+ 
+   @if(hideFilter && !filter['store_slug'] && !hideFilter.includes('attribute')){
+     @for(attribute of (attribute$ | async)?.data; track attribute.id){
+       @if(attribute.style === 'image'){
+         <div class="open" [class.col-lg-3]="filter['layout'] === 'collection_top_filter'" ngbAccordionItem [collapsed]="false">
+           <button ngbAccordionButton>{{ attribute.name }}</button>
+           <div ngbAccordionCollapse>
+             <div ngbAccordionBody>
+               <div class="custom-sidebar-height">
+                 <app-collection-attribute-filter [filter]="filter" [attribute]="attribute"></app-collection-attribute-filter>
+               </div>
+             </div>
+           </div>
+         </div>
+       }
+     }
+   }
+ 
+   @if(hideFilter && !hideFilter.includes('rating')){
+     <div class="open" [class.col-lg-3]="filter['layout'] === 'collection_top_filter'" ngbAccordionItem [collapsed]="false">
+       <button ngbAccordionButton>{{ 'price' | translate }}</button>
+       <div ngbAccordionCollapse>
+         <div ngbAccordionBody>
+           <div class="custom-sidebar-height">
+             <app-collection-price-filter [filter]="filter"></app-collection-price-filter>
+           </div>
+         </div>
+       </div>
+     </div>
+   }
+ 
+   @if(hideFilter && !hideFilter.includes('price')){
+     <div class="open" [class.col-lg-3]="filter['layout'] === 'collection_top_filter'" ngbAccordionItem [collapsed]="false">
+       <button ngbAccordionButton>{{ 'rating' | translate }}</button>
+       <div ngbAccordionCollapse>
+         <div ngbAccordionBody>
+           <div class="custom-sidebar-height">
+             <app-collection-rating-filter [filter]="filter"></app-collection-rating-filter>
+           </div>
+         </div>
+       </div>
+     </div>
+   }
+ }
+</div>

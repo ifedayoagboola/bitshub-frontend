@@ -1,0 +1,158 @@
+{
+    "id": 19,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                28,
+                27,
+                29,
+                26,
+                25
+            ]
+        },
+        "banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_3.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_2.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_4.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_5.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_6.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_two/vegetables_two_1.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "status": true,
+            "image_url": "/images/theme/vegetables_two/vegetables_two_7.png",
+            "redirect_link": {
+                "link": "vegetables-fruits",
+                "link_type": "collection"
+            }
+        },
+        "products_ids": [
+            70,
+            65,
+            58,
+            69,
+            53,
+            55,
+            61,
+            52,
+            56
+        ],
+        "featured_blogs": {
+            "title": "featured recipes",
+            "status": true,
+            "blog_ids": [
+                9,
+                8,
+                7
+            ],
+            "sub_title": null
+        },
+        "products_list_1": {
+            "title": "deals of the day",
+            "status": true,
+            "product_ids": [
+                70,
+                65,
+                58,
+                69,
+                53
+            ]
+        },
+        "products_list_2": {
+            "title": "recently viewd",
+            "status": true,
+            "product_ids": [
+                55,
+                61,
+                52,
+                53,
+                56
+            ]
+        },
+        "category_product": {
+            "title": "RECOMMENDATIONS FOR YOU",
+            "status": true,
+            "category_ids": [
+                134,
+                135
+            ]
+        }
+    },
+    "slug": "vegetables_two"
+}

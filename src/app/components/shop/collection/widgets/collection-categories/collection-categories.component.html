@@ -1,0 +1,7 @@
+<app-categories
+  [style]="style"
+  [image]="image"
+  [title]="title"
+  [categoryIds]="(themeOption$ | async)?.collection?.collection_categories_ids || []"
+  [options]="sliderOption">
+</app-categories>

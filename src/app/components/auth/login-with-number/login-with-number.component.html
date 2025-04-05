@@ -1,0 +1,40 @@
+
+<div class="auth-title">
+    <h3>{{ 'login_with_number' | translate }}</h3>
+    <p>{{ 'mobile_login_text' | translate }}</p>
+</div>
+
+<app-alert></app-alert>
+
+<div class="auth-form-box" [formGroup]="form">
+    <div class="col-12 phone-field mb-3">
+        <div class="form-box">
+            <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="country_code">
+                <ng-template #template let-data="data">
+                    <div class="country">
+                        <div class="flag-box">
+                            <div class="iti-flag {{data?.class}}"></div>
+                        </div>
+                        <span class="dial-code">{{data.code}}</span>
+                    </div>
+                </ng-template>
+            </select2>
+            <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone">
+            @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+            <div class="invalid-feedback">
+                {{ 'phone_number_is_required' | translate }}
+            </div>
+            }
+
+            @if(form.controls['phone'].touched && form.controls['phone'].errors?.['pattern']){
+            <div class="invalid-feedback">
+                {{ 'phone_number_is_invalid' | translate }}
+            </div>
+            }
+        </div>
+    </div>
+    <app-button [class]="'btn'" [id]="'send_otp'" (click)="sendOtp()" [spinner]="true">{{ 'send_otp' | translate }}</app-button>
+</div>
+<a href="javascript:void(0)" class="modal-back" (click)="backForm()">
+    <i class="ri-arrow-left-line"></i>
+</a>

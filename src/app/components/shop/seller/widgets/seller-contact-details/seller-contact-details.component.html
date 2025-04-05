@@ -1,0 +1,17 @@
+<ul>
+  @if(!store.hide_vendor_phone && store.vendor){
+  <li>
+    <i class="ri-smartphone-line"></i>
+    <h5>+{{ store.vendor.country_code }} {{ store.vendor.phone }}</h5>
+  </li>
+  }
+
+  @if(!store.hide_vendor_email && store.vendor){
+  <li>
+    <i class="ri-mail-line"></i>
+    <h5>
+      <a href="mailto:{{store.vendor.email}}">{{ store.vendor.email }}</a>
+    </h5>
+  </li>
+  }
+</ul>

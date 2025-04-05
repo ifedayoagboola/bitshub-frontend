@@ -1,0 +1,96 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="compare-section section-b-space ratio_asos">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        @if((compareItems$ | async)?.length){
+          <div class="slide-4 compare-box">
+            <owl-carousel-o [options]="options">
+              @for(product of (compareItems$ | async); track product.id){
+                @if(product){
+                  <ng-template carouselSlide>
+                    <div>
+                      <div class="compare-part">
+                        <button type="button" class="close-btn" (click)="removeCompare(product.id)">
+                          <span>×</span>
+                        </button>
+                        <div class="img-section">
+                          <div>
+                            <img [src]="product?.product_thumbnail ? product?.product_thumbnail?.original_url : 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product?.name">
+                          </div>
+                          <a href="javascript:void(0)">
+                            <h5>{{ product?.name }}</h5>
+                          </a>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'price' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <p>{{ product.sale_price | currencySymbol}}</p>
+                          </div>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'discount' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <p>{{ product.discount ? product.discount : '-' }}</p>
+                          </div>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'availability' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <p>{{ product.stock_status | translate  }}</p>
+                          </div>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'rating' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <ngb-rating [rate]="product?.rating_count || 0"></ngb-rating>
+                            <span class="text-content rating-text">({{ product.reviews_count }} {{ 'review' | translate }})</span>
+                          </div>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'weight' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <p>{{ product.weight ? product.weight : "-" }}</p>
+                          </div>
+                        </div>
+                        <div class="detail-part">
+                          <div class="title-detail">
+                            <h5>{{ 'availability' | translate }}</h5>
+                          </div>
+                          <div class="inner-detail">
+                            <p>{{ product.stock_status | translate }}</p>
+                          </div>
+                        </div>
+                        <div class="btn-part">
+                          <a href="javascript:void(0)" class="btn btn-solid" (click)="moveToCart(product)">{{ 'add_to_cart' | translate }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                }
+              }
+            </owl-carousel-o>
+          </div>
+        }@else {
+          <app-no-data
+            [class]="'no-data-added'"
+            [image]="'assets/svg/empty-items.svg'"
+            [text]="'no_item'"
+            [description]="'no_compare_desc'" >
+          </app-no-data>
+        }
+      </div>
+    </div>
+  </div>
+</section>

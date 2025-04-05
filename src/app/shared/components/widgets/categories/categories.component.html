@@ -1,0 +1,452 @@
+@if(categories && categories.length){
+  @if(style == 'vertical'){
+    @if(categories.length){
+      <ul id="sub-menu" class="sm pixelstrap  sm-vertical ">
+        @for(category of categories; track category.id){
+          <li><a href="javascript:void(0)" [routerLink]="['/category', category.slug]">{{ category.name }}</a></li>
+        }
+      </ul>
+    }
+  }
+
+  <!-- Category Classic Vertical -->
+  @if(style == 'classic_vertical'){
+    <div class="shop-left-sidebar">
+
+      <div class="collection-mobile-back">
+        <span class="filter-back" (click)="closeCanvasMenu()">
+          <i class="ri-arrow-left-s-line"></i> {{ 'back' | translate }}
+        </span>
+      </div>
+
+      @if(categories.length){
+        <ul class="nav nav-pills mb-3 custom-nav-tab">
+          @for(category of categories; track category.id){
+            <li class="nav-item">
+              <app-button [class]="selectedCategorySlug.length && selectedCategorySlug.includes(category.slug!) ? 'nav-link active' : 'nav-link'" [id]="'nav_link_btn'" [spinner]="false" (click)="redirectToCollection(category.slug!)">
+                {{ category.name }}
+                <img [src]="category?.category_icon ? category?.category_icon?.original_url : 'assets/images/placeholder/category.png'" [alt]="category?.name">
+              </app-button>
+            </li>
+          }
+        </ul>
+      }@else {
+        <app-no-data [class]="'no-data-added'" [text]="'no_category'">
+        </app-no-data>
+      }
+    </div>
+  }
+
+  <!-- Category Style Horizontal -->
+  @if(style == 'horizontal'){
+    <div class="product-wrapper" [class]="'category-slider'">
+      <owl-carousel-o [options]="options">
+        @for(category of categories; track category.id){
+          <ng-template carouselSlide>
+            <div>
+              <a href="javascript:void(0)" (click)="redirectToCollection(category.slug!)" class="category-box category-dark" [class.active]="selectedCategorySlug.length && selectedCategorySlug.includes(category.slug!)">
+                <img [src]="category?.category_icon ? category?.category_icon?.original_url : 'assets/images/placeholder/category.png'" [alt]="category?.name">
+                <h5>{{ category.name }}</h5>
+              </a>
+            </div>
+          </ng-template>
+        }
+      </owl-carousel-o>
+      @if(!categories.length){
+        <app-no-data [class]="'no-data-added'" [text]="'no_category'">
+        </app-no-data>
+      }
+    </div>
+  }
+
+  @if(style == 'basic'){
+    <div class="row g-4 ratio_square">
+      @if(!slider){
+        @for(category of categories; track category.id){
+        <div class="col-xl-2 col-sm-3 col-4">
+          <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+            <div class="img-category">
+              <div class="img-sec bg-size" [ngStyle]="{ 'background-image': 'url(' + (category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png') + ')'}">
+                <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid bg-img" [alt]="category.name">
+              </div>
+              <h4>
+                <a [routerLink]="['/category', category.slug]">
+                  {{ category.name }}
+                </a>
+              </h4>
+            </div>
+          </a>
+        </div>
+        }
+      }@else {
+        <div class="col-12">
+          <owl-carousel-o [options]="options">
+            @for(category of categories; track category.id){
+            <ng-template carouselSlide>
+                <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                  <div class="img-category">
+                    <div class="img-sec bg-size" [ngStyle]="{ 'background-image': 'url(' + (category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png') + ')'}">
+                      <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid bg-img" [alt]="category.name">
+                    </div>
+                    <h4>
+                      <a [routerLink]="['/category', category.slug]">
+                        {{ category.name }}
+                      </a>
+                    </h4>
+                  </div>
+                </a>
+            </ng-template>
+            }
+          </owl-carousel-o>
+        </div>
+      }
+    </div>
+  }
+
+  @if(style == 'simple'){
+    <div class="row">
+      @if(slider){
+        <div class="col">
+          <div class="category-5 ">
+            <owl-carousel-o [options]="options">
+              @for(category of categories; track category.id){
+                <ng-template carouselSlide>
+                  <div class="category-block">
+                    <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                      <div class="category-image">
+                        <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                      </div>
+                    </a>
+                    <div class="category-details">
+                      <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                        <h5>{{ category.name }}</h5>
+                      </a>
+                    </div>
+                  </div>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+        </div>
+      }@else {
+        @for(category of categories; track category.id){
+        <div class="col-xl-2 col-sm-3 col-4">
+          <div class="category-block">
+            <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+              <div class="category-image">
+                <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+              </div>
+            </a>
+            <div class="category-details">
+              <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                <h5>{{ category.name }}</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        }
+      }
+    </div>
+  }
+
+  @if(style == 'classic'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+      <ng-template carouselSlide>
+        <div>
+          <a href="javascript:void(0)" class="btn btn-outline btn-block" [routerLink]="['/category', category.slug]">
+            <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+            {{ category.name }}
+          </a>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'standard'){
+    <div class="row">
+      @if(slider){
+        <div class="col">
+          <div class="">
+            <owl-carousel-o [options]="options">
+              @for(category of categories; track category.id){
+              <ng-template carouselSlide>
+                <div class="category-block">
+                  <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                    <div class="category-image svg-image">
+                      <div class="img-sec">
+                        <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                      </div>
+                    </div>
+                  </a>
+                  <div class="category-details">
+                    <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                      <h5>{{ category.name }}</h5>
+                    </a>
+                  </div>
+                </div>
+              </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+        </div>
+      }@else {
+        @for(category of categories; track category.id){
+          <div class="col-xl-2 col-sm-3 col-4">
+            <div class="category-block">
+              <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                <div class="category-image svg-image">
+                  <div class="img-sec">
+                    <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                  </div>
+                </div>
+              </a>
+              <div class="category-details">
+                <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                  <h5>{{ category.name }}</h5>
+                </a>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  }
+
+  @if(style == 'premium'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+      <ng-template carouselSlide>
+        <div>
+          <div class="category-wrapper">
+            <div>
+              <h4 class="text-theme">{{ category.name }}</h4>
+              <ul class="category-link">
+                <li><a href="javascript:void(0)" [routerLink]="['/category', category.slug]">{{ category.name }}</a></li>
+              </ul>
+              <div>
+                <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid lazyload" alt="category-image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'bag'){
+    @if(slider){
+      <div class="row">
+        <owl-carousel-o [options]="options">
+          @for(category of categories; track category.id){
+            <ng-template carouselSlide>
+              <div class="col">
+                <a href="javascript:void(0)" class="btn btn-outline btn-block" [routerLink]="['/category', category.slug]">{{ category.name }}</a>
+              </div>
+            </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    }@else {
+      <div class="row row-cols-md-4 row-cols-2 g-sm-4 g-2">
+        @for(category of categories; track category.id){
+        <div class="col">
+          <a href="javascript:void(0)" class="btn btn-outline btn-block" [routerLink]="['/category', category.slug]">{{ category.name }}</a>
+        </div>
+        }
+      </div>
+    }
+  }
+
+  @if(style == 'digital'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+      <ng-template carouselSlide>
+        <div class="category-block">
+          <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+            <div class="category-image">
+              <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+            </div>
+          </a>
+          <div class="category-details">
+            <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+              <h5>{{ category.name }}</h5>
+            </a>
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'one'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+      <ng-template carouselSlide>
+        <div>
+          <div class="category-wrapper">
+            <div>
+              @if(category?.category_image){
+                <div>
+                  <img [src]="category?.category_image?.original_url" class="img-fluid" [alt]="category.name">
+                </div>
+              }@else {
+                <div>
+                  <img [src]="'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                </div>
+              }
+              <h4>
+                <a [routerLink]="['/category', category.slug]">
+                  {{ category.name }}
+                </a>
+              </h4>
+              <ul class="category-link">
+                @if(category.subcategories){
+                  @for(categories of category.subcategories | slice: 0:5; track categories.id){
+                    <li><a href="javascript:void" [routerLink]="['/category', categories.slug]">{{categories.name }}</a></li>
+                  }
+                }
+              </ul>
+              <a href="javascript:void" class="btn btn-classic btn-outline" [routerLink]="['/category', category.slug]">{{ 'view_more' | translate }}</a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'shoes'){
+    <div class="row g-sm-4 g-3 category-border">
+      @for(category of categories; track category.id){
+        <div class="col-lg-4 col-sm-6 border-padding">
+          <div class="category-banner">
+            <div class="bg-size" [ngStyle]="{ 'background-image': 'url('+ (category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png') +')'}">
+              <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid lazyload bg-img" [alt]="category.name">
+            </div>
+            <div class="category-box">
+              <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+                <h2>{{ category.name }}</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if(style == 'shoes-size'){
+    <div class="row background">
+      @for(category of categories; track category.id){
+        <div class="col">
+          <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+            <div class="contain-bg">
+              <h4 data-hover="size 06">{{ category.name }}</h4>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  }
+
+  @if(style == 'vegetable'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+        <ng-template carouselSlide>
+          <div class="">
+            <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+              <div class="category-boxes">
+                <div class="img-sec">
+                  <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                  <div class="skeleton-img-sec"></div>
+                </div>
+                <h4>{{ category.name }}</h4>
+              </div>
+            </a>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'books'){
+    <owl-carousel-o [options]="options">
+      @for(category of categories; track category.id){
+      <ng-template carouselSlide>
+        <div class="">
+          <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+            <div class="img-category">
+              <div class="img-sec">
+                <img [src]="category.category_icon ? category.category_icon.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+              </div>
+              <h4>{{ category.name }}</h4>
+            </div>
+          </a>
+        </div>
+      </ng-template>
+      }
+    </owl-carousel-o>
+  }
+
+  @if(style == 'gradient'){
+    <div class="row g-sm-4 g-3">
+      @for(category of categories; track category.id; let i = $index){
+          <div class="col-xl-2 col-md-3 col-sm-4 col-6">
+            <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+              <div class="gradient-category" [class.hover-effect]="i == 1">
+                <div class="gradient-border">
+                  <div class="img-sec">
+                    <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+                  </div>
+                </div>
+                <h4>{{ category.name }}</h4>
+              </div>
+            </a>
+          </div>
+        }
+    </div>
+  }
+}@else {
+  <app-no-data [class]="'no-data-added'" [text]="'no_category'">
+  </app-no-data>
+}
+
+@if(style == 'digital_download'){
+  <owl-carousel-o [options]="options">
+    @for(category of categories; track category.id; let i = $index){
+      <ng-template carouselSlide>
+        <div>
+          <div class="category-nft">
+            <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+              <div class="category-image">
+                <img [src]="category.category_image ? category?.category_image?.original_url : 'assets/images/placeholder/category.png'" class="img-fluid" [alt]="category.name">
+              </div>
+
+              <div class="category-details">
+                  <h5>{{ category.name }}</h5>
+              </div>
+          </a>
+          </div>
+        </div>
+      </ng-template>
+    }
+  </owl-carousel-o>
+}
+
+@if(style == 'sidebar'){
+  <ul id="sub-menu" class="sm pixelstrap sm-vertical">
+    @for(category of categories; track category.id){
+    <li>
+      <a href="javascript:void(0)" [routerLink]="['/category', category.slug]">
+        <img [alt]="category?.name" class="img-fluid me-2 rounded-0 rounded-0" alt=""
+          [src]="category?.category_icon ? category?.category_icon?.original_url : 'assets/images/placeholder/category.png'">
+        <div class="skeleton-category-img"></div>
+        <span>{{ category.name }}</span>
+        <span class="skeleton-category-text"></span>
+      </a>
+    </li>
+    }
+  </ul>
+}

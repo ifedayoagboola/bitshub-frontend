@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row g-0 outer-border">
+    <div class="col-12">
+      <ul class="nav nav-tabs nav-material" ngbNav #nav="ngbNav" [(activeId)]="active">
+        <li ngbNavItem="description">
+          <a ngbNavLink>{{ 'description' | translate }}</a>
+          <div class="material-border"></div>
+        </li>
+        @if(!product?.is_external){
+          <li ngbNavItem="review">
+            <a ngbNavLink>{{ 'review' | translate }}</a>
+            <div class="material-border"></div>
+          </li>
+        }
+        <li ngbNavItem="questions_answers">
+          <a ngbNavLink>{{ 'q_a' | translate }}</a>
+          <div class="material-border"></div>
+        </li>
+      </ul>
+      <div class="tab-content nav-material">
+        <div class="tab-pane fade show active">
+          @if(active == 'description'){
+            <div class="product-tab-description">
+              @if(product?.description){
+                <div class="part ckeditor-content" [innerHTML]="getTrustedHtml(product?.description)"></div>
+              }
+            </div>
+          }@if (active == 'review') {
+            <div class="single-product-tables">
+              <app-product-review [product]="product" [reviews]="(review$ | async)?.data || []"></app-product-review>
+            </div>
+          }@if (active == 'questions_answers') {
+            <div class="single-product-tables">
+              <app-questions-answers [product]="product!" [questionAnswers]="(question$ | async)?.data || []"></app-questions-answers>
+            </div>
+          }
+        </div>
+        <div [ngbNavOutlet]="nav" class="custom-tab"></div>
+      </div>
+    </div>
+  </div>
+</div>

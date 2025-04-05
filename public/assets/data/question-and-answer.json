@@ -1,0 +1,332 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 10,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "Does the dress offer any UV protection?",
+            "answer": "Yes, the dress offers UV protection. It blocks harmful UV rays, providing an additional layer of sun safety.",
+            "product_id": 151,
+            "created_at": "2024-06-21T07:23:40.000000Z",
+            "product": {
+                "id": 151,
+                "name": "Sport Set",
+                "product_thumbnail_id": 891,
+                "product_thumbnail": {
+                    "id": 891,
+                    "name": "Sport_933",
+                    "file_name": "Sport_933.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-10T08:11:46.000000Z",
+                    "asset_url": "/storage/891/Sport_933.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 9,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "Are there any pockets, and if so, how many and where are they located?",
+            "answer": "Yes, there are pockets. There are two pockets, one on each side of the garment.",
+            "product_id": 151,
+            "created_at": "2024-06-21T07:23:00.000000Z",
+            "product": {
+                "id": 151,
+                "name": "Sport Set",
+                "product_thumbnail_id": 891,
+                "product_thumbnail": {
+                    "id": 891,
+                    "name": "Sport_933",
+                    "file_name": "Sport_933.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-10T08:11:46.000000Z",
+                    "asset_url": "/storage/891/Sport_933.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 8,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "Is the fabric breathable and quick-drying?",
+            "answer": "Yes, the fabric is breathable, allowing for excellent airflow. Additionally, it is quick-drying, ensuring comfort during and after activities.",
+            "product_id": 151,
+            "created_at": "2024-06-21T07:22:45.000000Z",
+            "product": {
+                "id": 151,
+                "name": "Sport Set",
+                "product_thumbnail_id": 891,
+                "product_thumbnail": {
+                    "id": 891,
+                    "name": "Sport_933",
+                    "file_name": "Sport_933.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-10T08:11:46.000000Z",
+                    "asset_url": "/storage/891/Sport_933.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 7,
+            "reaction": null,
+            "total_likes": 1,
+            "total_dislikes": 0,
+            "question": "What colors or patterns does the crop top come in?",
+            "answer": "The crop top is available in solid colors like black, white, red, and blue, as well as patterns such as floral, stripes, and polka dots.",
+            "product_id": 19,
+            "created_at": "2024-06-21T07:21:14.000000Z",
+            "product": {
+                "id": 19,
+                "name": "Chic Crop Top",
+                "product_thumbnail_id": 84,
+                "product_thumbnail": {
+                    "id": 84,
+                    "name": "fashion_1611",
+                    "file_name": "fashion_1611.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T12:24:57.000000Z",
+                    "asset_url": "/storage/84/fashion_1611.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 6,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "Is the crop top machine washable or hand wash only?",
+            "answer": "The crop top is machine washable. However, for best results, use a gentle cycle and cold water.",
+            "product_id": 19,
+            "created_at": "2024-06-21T07:21:00.000000Z",
+            "product": {
+                "id": 19,
+                "name": "Chic Crop Top",
+                "product_thumbnail_id": 84,
+                "product_thumbnail": {
+                    "id": 84,
+                    "name": "fashion_1611",
+                    "file_name": "fashion_1611.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T12:24:57.000000Z",
+                    "asset_url": "/storage/84/fashion_1611.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 5,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "What type of neckline does the crop top have?",
+            "answer": "The crop top has a scoop neckline, which is flattering and versatile for various outfits and styles.",
+            "product_id": 19,
+            "created_at": "2024-06-21T07:20:52.000000Z",
+            "product": {
+                "id": 19,
+                "name": "Chic Crop Top",
+                "product_thumbnail_id": 84,
+                "product_thumbnail": {
+                    "id": 84,
+                    "name": "fashion_1611",
+                    "file_name": "fashion_1611.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T12:24:57.000000Z",
+                    "asset_url": "/storage/84/fashion_1611.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 4,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "What sizes are available?",
+            "answer": "Sizes typically range from small to extra-large, catering to various needs and preferences.",
+            "product_id": 19,
+            "created_at": "2024-06-21T07:19:12.000000Z",
+            "product": {
+                "id": 19,
+                "name": "Chic Crop Top",
+                "product_thumbnail_id": 84,
+                "product_thumbnail": {
+                    "id": 84,
+                    "name": "fashion_1611",
+                    "file_name": "fashion_1611.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T12:24:57.000000Z",
+                    "asset_url": "/storage/84/fashion_1611.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 3,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "What colors is the dress available in?",
+            "answer": "The dress is available in black, red, blue, and green, catering to various preferences and occasions.",
+            "product_id": 24,
+            "created_at": "2024-06-21T07:17:44.000000Z",
+            "product": {
+                "id": 24,
+                "name": "Strapless Short Dress",
+                "product_thumbnail_id": 167,
+                "product_thumbnail": {
+                    "id": 167,
+                    "name": "fashion_0111",
+                    "file_name": "fashion_0111.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-06T10:31:17.000000Z",
+                    "asset_url": "/storage/167/fashion_0111.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 2,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "Does the dress have any stretch or elasticity?",
+            "answer": "Yes, the dress does have stretch and elasticity, allowing for comfortable movement and fit adjustments.",
+            "product_id": 24,
+            "created_at": "2024-06-21T07:17:32.000000Z",
+            "product": {
+                "id": 24,
+                "name": "Strapless Short Dress",
+                "product_thumbnail_id": 167,
+                "product_thumbnail": {
+                    "id": 167,
+                    "name": "fashion_0111",
+                    "file_name": "fashion_0111.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-06T10:31:17.000000Z",
+                    "asset_url": "/storage/167/fashion_0111.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        },
+        {
+            "id": 1,
+            "reaction": null,
+            "total_likes": 0,
+            "total_dislikes": 0,
+            "question": "What is the material composition of the dress?",
+            "answer": "The dress is made of 70% cotton and 30% polyester.",
+            "product_id": 24,
+            "created_at": "2024-06-21T07:15:33.000000Z",
+            "product": {
+                "id": 24,
+                "name": "Strapless Short Dress",
+                "product_thumbnail_id": 167,
+                "product_thumbnail": {
+                    "id": 167,
+                    "name": "fashion_0111",
+                    "file_name": "fashion_0111.jpg",
+                    "mime_type": "image/jpeg",
+                    "disk": "public",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-06T10:31:17.000000Z",
+                    "asset_url": "/storage/167/fashion_0111.jpg",
+                    "original_url": "assets/images/placeholder/product.png"
+                }
+            },
+            "consumer": {
+                "id": 2,
+                "name": "john due"
+            }
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}

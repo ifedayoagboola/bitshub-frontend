@@ -1,0 +1,34 @@
+<div class="row product-accordion">
+  <div class="col-sm-12">
+    <div class="accordion theme-accordion" ngbAccordion [closeOthers]="true">
+      @if(product.short_description){
+        <div class="" ngbAccordionItem [collapsed]="false">
+          <div class="" ngbAccordionHeader>
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" ngbAccordionButton>{{ 'product_description' | translate }}</button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" ngbAccordionCollapse>
+            <div class="" ngbAccordionBody>
+              <p>{{ product.short_description }}</p>
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="" ngbAccordionItem [collapsed]="true">
+        <div class="" ngbAccordionHeader>
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" ngbAccordionButton>{{ 'information' | translate }}</button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" ngbAccordionCollapse>
+          <div class="" ngbAccordionBody>
+            <app-product-information [product]="product"></app-product-information>
+            <app-product-delivery-information [product]="product"></app-product-delivery-information>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

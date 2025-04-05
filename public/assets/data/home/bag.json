@@ -1,0 +1,289 @@
+{
+    "id": 26,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                26,
+                25,
+                28,
+                29,
+                27
+            ]
+        },
+        "category": {
+            "status": true,
+            "category_ids": [
+                42,
+                43,
+                44,
+                45
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/bag/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/bag/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/bag/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/bag/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                }
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/bag/bag_2.png",
+            "redirect_link": {
+                "link": "bag-emporium",
+                "link_type": "collection"
+            }
+        },
+        "grid_banner": {
+            "banners": [
+                {
+                    "tag": null,
+                    "offer": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/bag/bags-grid-1.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": "new products",
+                    "offer": "80% off",
+                    "title": "zipper storage bag",
+                    "status": true,
+                    "image_url": null,
+                    "button_text": "Shop Now",
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": null,
+                    "offer": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/bag/bags-grid-1.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": "on sale",
+                    "offer": "save 30% off",
+                    "title": "tucker bag",
+                    "status": true,
+                    "image_url": null,
+                    "button_text": "Shop Now",
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": null,
+                    "offer": null,
+                    "title": null,
+                    "status": true,
+                    "image_url": "/images/theme/bag/bags-grid-1.png",
+                    "button_text": null,
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "tag": "summer sale",
+                    "offer": "minimum 50% off",
+                    "title": "gate check bag",
+                    "status": true,
+                    "image_url": null,
+                    "button_text": "Shop Now",
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag_1.png",
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            119,
+            121,
+            124,
+            126,
+            107,
+            115,
+            109,
+            111,
+            113,
+            117,
+            132,
+            133
+        ],
+        "social_media": {
+            "title": "# Instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/bag/bag-insta.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "trend",
+            "title": "exclusive bag",
+            "status": true,
+            "product_ids": [
+                119,
+                117,
+                132,
+                133
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent story",
+            "title": "latest blog",
+            "status": true,
+            "blog_ids": [
+                51,
+                50,
+                49
+            ]
+        },
+        "product_banner": {
+            "status": true,
+            "left_content": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    119,
+                    121,
+                    124,
+                    126
+                ]
+            },
+            "right_content": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    109,
+                    111,
+                    113,
+                    115
+                ]
+            },
+            "center_content": {
+                "tag": "on sale",
+                "title": "season sale",
+                "status": true,
+                "product_ids": [
+                    107,
+                    115,
+                    121
+                ]
+            }
+        },
+        "category_product": {
+            "tag": "new collection",
+            "title": "trending products",
+            "status": true,
+            "category_ids": [
+                42,
+                43,
+                44
+            ]
+        }
+    },
+    "slug": "bag"
+}

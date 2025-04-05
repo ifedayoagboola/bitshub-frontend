@@ -1,0 +1,42 @@
+{
+    "id": 51,
+    "content": {
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/full_page/full_page_1.png",
+                    "redirect_link": {
+                        "link": "beverages",
+                        "link_type": null
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/full_page/full_page_2.png",
+                    "redirect_link": {
+                        "link": "beverages",
+                        "link_type": null
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/full_page/full_page_3.png",
+                    "redirect_link": {
+                        "link": "beverages",
+                        "link_type": null
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/full_page/full_page_4.png",
+                    "redirect_link": {
+                        "link": "beverages",
+                        "link_type": null
+                    }
+                }
+            ]
+        }
+    },
+    "slug": "full_page"
+}

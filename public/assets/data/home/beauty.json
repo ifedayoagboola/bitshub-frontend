@@ -1,0 +1,160 @@
+{
+    "id": 40,
+    "content": {
+        "brand": {
+            "brand_ids": []
+        },
+        "about_us": {
+            "title": "about us",
+            "status": true,
+            "services": {
+                "banners": [
+                    {
+                        "title": "free shipping",
+                        "status": true,
+                        "image_url": "/images/theme/beauty/service.png",
+                        "description": null
+                    },
+                    {
+                        "title": "24 X 7 service",
+                        "status": true,
+                        "image_url": "/images/theme/beauty/service.png",
+                        "description": null
+                    },
+                    {
+                        "title": "festival offer",
+                        "status": true,
+                        "image_url": "/images/theme/beauty/service.png",
+                        "description": null
+                    }
+                ]
+            },
+            "image_url": "/images/theme/beauty/beauty_2.png",
+            "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.sit voluptatem accusantium doloremque laudantium,totam rem aperiam."
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_1.png",
+                    "redirect_link": {
+                        "link": "serene-beauty",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            129,
+            128,
+            116,
+            123,
+            122,
+            84,
+            120,
+            118
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/beauty/beauty_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "product_video": {
+            "tag": "special offer",
+            "title": "product tutorial",
+            "status": true,
+            "image_url": "/images/theme/beauty/beauty_3.png",
+            "video_url": ""
+        },
+        "featured_blogs": {
+            "tag": "Recent Story",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                12,
+                11,
+                10
+            ]
+        },
+        "products_list_1": {
+            "tag": "special offer",
+            "title": "new product",
+            "status": true,
+            "product_ids": [
+                129,
+                128,
+                116,
+                123
+            ]
+        },
+        "products_list_2": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "product_ids": [
+                122,
+                84,
+                120,
+                118
+            ]
+        }
+    },
+    "slug": "beauty"
+}

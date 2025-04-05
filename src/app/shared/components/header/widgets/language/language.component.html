@@ -1,0 +1,17 @@
+<div (clickOutside)="hideDropdown()">
+  <app-button [class]="'btn dropdown-toggle'" [type]="'button'" [id]="'open_dropdown_basic_btn'" [spinner]="false" (click)="openDropDown()">
+    <span>
+      <div class="iti-flag {{ selectedLanguage.icon }}"></div> {{ selectedLanguage.language }}
+    </span>
+  </app-button>
+  <ul class="dropdown-menu dropdown-menu-end language-dropdown" [class.show]="active">
+    @for(language of languages; track language.language){
+      <li>
+        <a href="javascript:void(0)" class="dropdown-item" (click)="selectLanguage(language)" [class.active]="language.code == selectedLanguage.code">
+          <div class="iti-flag {{ language.icon }}"></div>
+          {{ language.language }}
+        </a>
+      </li>
+    }
+  </ul>
+</div>

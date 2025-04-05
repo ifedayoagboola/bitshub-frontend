@@ -1,0 +1,112 @@
+{
+    "id": 29,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                27,
+                28,
+                29,
+                26, 
+                24
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "image_url": "/images/theme/perfume/perfume_1.png",
+            "redirect_link": {
+                "link": "perfume",
+                "link_type": "collection"
+            }
+        },
+        "product_list": {
+            "status": true,
+            "products": {
+                "status": true,
+                "product_ids": [
+                    238,
+                    232,
+                    227,
+                    226
+                ]
+            },
+            "left_panel": {
+                "title": "Biggest offer of the sale",
+                "status": true,
+                "button_text": "view all product",
+                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo totam officiis nisi neque non ex, odio atque digniss ab suscipit? Iste",
+                "more_button": true,
+                "redirect_link": {
+                    "link": "perfume",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            238,
+            232,
+            227,
+            226
+        ],
+        "offer_banner_1": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/perfume/perfume_5.png",
+                "redirect_link": {
+                    "link": "perfume",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/perfume/perfume_4.png",
+                "redirect_link": {
+                    "link": "perfume",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/perfume/perfume_3.png",
+                "redirect_link": {
+                    "link": "perfume",
+                    "link_type": "collection"
+                }
+            },
+            "banner_4": {
+                "status": true,
+                "image_url": "/images/theme/perfume/perfume_2.png",
+                "redirect_link": {
+                    "link": "perfume",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_2": {
+            "status": true,
+            "image_url": "/images/theme/perfume/perfume_7.png",
+            "redirect_link": {
+                "link": "perfume",
+                "link_type": "collection"
+            }
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                71,
+                72
+            ]
+        },
+        "collection_banner": {
+            "status": true,
+            "image_url": "/images/theme/perfume/perfume_6.png",
+            "redirect_link": {
+                "link": "perfume",
+                "link_type": "collection"
+            }
+        }
+    },
+    "slug": "perfume"
+}

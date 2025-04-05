@@ -1,0 +1,165 @@
+{
+    "id": 45,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                59
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/flower/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/flower/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/flower/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/flower/service.png",
+                    "description": "Contrary to popular belief, Lorem Ipsum is not simply random text."
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_1.png",
+                    "redirect_link": {
+                        "link": "flowers",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/flower/flower_2.png",
+                "redirect_link": {
+                    "link": "flowers",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/flower/flower_3.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            319,
+            322,
+            317,
+            315,
+            316,
+            312,
+            320,
+            325
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/flower/flower_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "featured_blogs": {
+            "tag": "our story",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                36,
+                35,
+                34
+            ]
+        },
+        "products_list_1": {
+            "title": "best selling products",
+            "status": true,
+            "product_ids": [
+                319,
+                322,
+                317,
+                315
+            ]
+        },
+        "products_list_2": {
+            "tag": null,
+            "title": "trending items",
+            "status": true,
+            "product_ids": [
+                316,
+                312,
+                320,
+                325
+            ]
+        },
+        "category_product": {
+            "tag": null,
+            "title": "trending products",
+            "status": true,
+            "category_ids": [
+                95,
+                96
+            ]
+        }
+    },
+    "slug": "flower"
+}

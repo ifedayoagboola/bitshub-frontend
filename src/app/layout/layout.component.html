@@ -1,0 +1,37 @@
+<!-- Top Progress Loader -->
+<ngx-loading-bar class="loader-bg" [includeSpinner]="true" [height]="'3px'"></ngx-loading-bar>
+
+<!-- Main Loader -->
+@if(themeOptionService.preloader){
+  <app-loader></app-loader>
+}
+
+<app-header [logo]="setLogo().header_logo"></app-header>
+<router-outlet></router-outlet>
+<app-footer [logo]="setLogo().footer_logo"></app-footer>
+
+@if ((themeOption$ | async)?.product?.sticky_product) {
+  <app-recent-purchase-popup></app-recent-purchase-popup>
+}
+
+<app-theme-customizer></app-theme-customizer>
+
+<div class="compare-tap-top-box">
+  <app-sticky-compare></app-sticky-compare>
+
+  @if((themeOption$ | async)?.general?.back_to_top_enable && show){
+    <app-back-to-top></app-back-to-top>
+  }
+</div>
+
+@if((themeOption$ | async)?.popup?.news_letter?.is_enable){
+  <app-newsletter-modal #newsletterModal></app-newsletter-modal>
+}
+
+@if(!themeOptionService.newsletterModal && exit && (themeOption$ | async)?.popup?.exit?.is_enable){
+  <app-exit-modal it-modal #exitModal></app-exit-modal>
+}
+
+@if(authService.isLogin){
+  <app-login-modal #loginModal></app-login-modal>
+}

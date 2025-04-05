@@ -1,0 +1,111 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Multikart - Online Marketplace, Vendor Collaboration, E-commerce Platform
+    Template URI: https://themes.pixelstrap.net/multikart
+    Description: Online Marketplace, Vendor Collaboration, E-commerce Platform
+    Author: Pixelstrap
+    Author URL: https://themeforest.net/user/pixelstrap
+
+----------------------------------------------------------------------------------- */
+///* Utils Files  *////
+/* 1.1 Variable css  */
+/* 1.2 Animate css  */
+/* 1.3 Breakpoints css  */
+
+////* Base Files  *////
+/* 2.1 Typography css  */
+/* 2.2 Reset css */
+
+////* Components Files  *////
+/* 3.1 Animation css  */
+/* 3.2 Country-flag css  */
+/* 3.3 Form css  */
+/* 3.4 Button css  */
+/* 3.5 Ratio css  */
+/* 3.6 Timer css */
+/* 3.7 Title css */
+/* 3.8 Theme-tab css */
+
+////* Layout Files  *////
+/* 4.1 Ajax-search css */
+/* 4.2 Banner css */
+/* 4.3 Blog css */
+/* 4.4 Cart css */
+/* 4.5 Category css */
+/* 4.6 Demo css */
+/* 4.7 Footer css */
+/* 4.8 Header css */
+/* 4.9 Home-slider css */
+/* 4.10 Instagram css */
+/* 4.11 Loader css */
+/* 4.12 Menu-2 css */
+/* 4.13 Menu css */
+/* 4.14 Modal css */
+/* 4.15 Other css */
+/* 4.16 Portfolio css */
+/* 4.17 Product-box css */
+/* 4.18 Service css */
+/* 4.19 Slider css */
+/* 4.21 Tap-top css */
+
+////* Pages Files  *////
+/* 5.1 Inner-page css */
+/* 5.2 Offer css */
+
+////* Themes Files  *////
+/* 6.1 Theme-setting css */
+/* 6.2 Rtl css */
+/* 6.3 Dark css */
+/* 6.4 Theme setting css */
+
+/*  utils */
+@import "utils/variables";
+@import "utils/animate";
+@import "utils/breakpoints";
+
+/* base */
+@import "base/reset";
+@import "base/typography";
+
+/*  components */
+@import "components/animation";
+@import "components/country-flag";
+@import "components/form";
+@import "components/button";
+@import "components/ratio";
+@import "components/timer";
+@import "components/confetti";
+@import "components/title";
+@import "components/theme-tab";
+
+/* layout */
+@import "layout/ajax-search";
+@import "layout/banner";
+@import "layout/blog";
+@import "layout/cart";
+@import "layout/category";
+@import "layout/demo";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/home-slider";
+@import "layout/instagram";
+@import "layout/loader";
+@import "layout/menu-2";
+@import "layout/menu";
+@import "layout/modal";
+@import "layout/other";
+@import "layout/portfolio";
+@import "layout/product-box";
+@import "layout/service";
+@import "layout/slider";
+@import "layout/tap-top";
+
+/* pages */
+@import "pages/inner-page";
+@import "pages/offer";
+
+/*  themes */
+@import "themes/theme-setting";
+@import "themes/responsive";
+@import "themes/rtl";
+@import "themes/dark";

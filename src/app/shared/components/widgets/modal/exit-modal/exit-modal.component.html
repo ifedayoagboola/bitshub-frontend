@@ -1,0 +1,16 @@
+<ng-template #exitModal let-modal>
+  <div class="modal-body">
+    <div class="modal-content">
+      <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modal.dismiss()">
+        <i class="ri-close-line"></i>
+      </app-button>
+      <div class="right-content">
+        <div class="auth-title">
+          <h2>{{ themeOption.popup.exit.title }}</h2>
+          <h4>{{ themeOption.popup.exit.sub_title }}</h4>
+          <h5>{{ themeOption.popup.exit.description }}</h5>
+        </div>
+      </div> 
+    </div>
+  </div>
+</ng-template>

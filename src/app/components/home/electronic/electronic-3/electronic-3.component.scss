@@ -1,0 +1,20 @@
+.left-header{
+  .menu-left{
+    li{
+      display: flex;
+      a{
+        padding: 10px 0 20px 0;
+        background-color: #fff;
+        color: #222;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        text-align: right;
+        width: 100%;
+      }
+    }
+  }
+}

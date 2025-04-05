@@ -1,0 +1,47 @@
+<div class="modal-header">
+  <h3 class="fw-semibold">{{ 'ask_a_question' | translate }}</h3>
+  <app-button
+    [class]="'btn btn-close'"
+    [id]="'profile_modal_close_btn'"
+    (click)="modal.close('Cross click')"
+    [iconClass]="'ri-close-line'">
+  </app-button>
+</div>
+
+<div class="modal-body">
+  <form class="product-review-form">
+    <div class="product-wrapper">
+      <div class="product-image">
+        <img [src]="product.product_thumbnail ?
+                product.product_thumbnail.original_url :
+                'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+      </div>
+      <div class="product-content">
+        <h5 class="name">{{ product.name }}</h5>
+        <div class="product-review-rating">
+          <div class="product-rating">
+            <h6 class="price-number">{{ product.sale_price | currencySymbol }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-box form-box">
+      <label class="form-label" for="content">{{ 'your_questions' | translate }} *</label>
+      <textarea placeholder="{{ 'your_questions' | translate }}" class="form-control" id="content" rows="3" [formControl]="question"></textarea>
+    </div>
+  </form>
+  <div class="modal-footer">
+    <app-button
+      [class]="'btn btn-outline'"
+      [type]="'button'"
+      [id]="'cancel_profile_btn'"
+      (click)="modal.dismiss('Cancel')"
+      [spinner]="false">
+      {{ 'cancel' | translate }}
+    </app-button>
+    <app-button [class]="'btn btn-solid'" [id]="'submit_profile_btn'" (click)="submit()">
+      {{ 'submit' | translate }}
+    </app-button>
+  </div>
+</div>

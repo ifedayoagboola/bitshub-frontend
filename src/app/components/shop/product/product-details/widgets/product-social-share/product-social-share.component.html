@@ -1,0 +1,24 @@
+  <div class="modal-header">
+    <h3 class="fw-semibold">{{ 'share_it' | translate }}</h3>
+    <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modalService.dismissAll('Cancel')">
+      <i class="ri-close-line"></i>
+    </app-button>
+  </div>
+  <div class="modal-body">
+    <div class="bordered-box">
+      <ul class="product-social">
+        <li><a href="javascript:void(0)" (click)="shareOnFacebook(product.slug)"><i class="ri-facebook-line"></i></a></li>
+        <li><a href="javascript:void(0)" (click)="shareOnTwitter(product.slug)"><i class="ri-twitter-line"></i></a></li>
+        <li><a href="javascript:void(0)" (click)="shareOnLinkedIn(product.slug)"><i class="ri-linkedin-line"></i></a></li>
+        <li><a href="javascript:void(0)" (click)="shareOnWhatsApp(product.slug)"><i class="ri-whatsapp-line"></i></a></li>
+        <li><a href="javascript:void(0)" (click)="shareViaEmail(product.slug)"><i class="ri-mail-line"></i></a></li>
+      </ul>
+
+      <form>
+        <div class="gap-3 input-group form-box">
+          <input type="email" class="form-control" id="exampleInputEmail1" [value]="shareText" name="email" [(ngModel)]="shareText">
+          <button class="btn btn-solid buy-button" type="button" id="button-addon1" [disabled]="!shareText" (click)="copyLink()">{{"copy_link" | translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>

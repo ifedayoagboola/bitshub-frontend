@@ -1,0 +1,74 @@
+<div class="bg-white">
+  <!-- Home Slider -->
+  <section class="p-0">
+    <div class="home-slider">
+      <div class="home-slider">
+        <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+      </div>
+    </div>
+  </section>
+  <!-- Home slider end -->
+
+  <!-- product section -->
+  @if(data?.content?.products_list?.status){
+  <section class="section-b-space">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <app-theme-title [title]="data?.content?.products_list" [type]="'premium'"></app-theme-title>
+          <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'"
+            [slider]="true"></app-theme-product>
+        </div>
+      </div>
+    </div>
+  </section>
+  }
+  <!-- product section end -->
+
+  <!--  tab section Start -->
+  @if(data?.content?.category_product?.status){
+  <section class="p-0 nursery-product">
+    <div class="tab-bg tab-grey-bg">
+      <div class="container-fluid">
+        <app-theme-title [title]="data?.content?.category_product" [type]="'premium'"></app-theme-title>
+        <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids"
+          [style]="'horizontal'" [product_box_style]="'horizontal'"
+          [class]="'row row-cols-2 row-cols-lg-3 row-cols-xl-4 g-md-4 g-3'"></app-theme-product-tab-section>
+      </div>
+    </div>
+  </section>
+  }
+  <!--  tab section end -->
+
+  <!-- blog section start -->
+  @if(data?.content?.featured_blogs?.status){
+  <section class="blog ratio2_3 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'premium'"></app-theme-title>
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+  }
+  <!-- blog section end-->
+
+  <!-- Brand Section Start -->
+  @if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+  }
+  <!-- Brand Section End -->
+
+  <!-- instagram section Start -->
+  @if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container-fluid'"
+      [type]="'borderless'"></app-theme-social-media>
+  </section>
+  }
+  <!-- instagram section end -->
+</div>

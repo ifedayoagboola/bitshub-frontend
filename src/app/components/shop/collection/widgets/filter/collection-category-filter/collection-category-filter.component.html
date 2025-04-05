@@ -1,0 +1,41 @@
+@if(categories.length > 5){
+  <div class="theme-form search-box">
+    <input type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" class="form-control">
+  </div>
+}
+@if(categories.length){
+  <ul class="shop-category-list custom-sidebar-height">
+    <div *ngTemplateOutlet="recursiveCategories; context: { $implicit: categories }"></div>
+      <ng-template #recursiveCategories let-categories>
+        @for(category of categories | filter: searchText:'subcategories'; track category.id){
+          <li>
+            <div class="form-check collection-filter-checkbox">
+              <input type="checkbox" class="form-check-input"
+                id="category-{{category?.id}}"
+                [value]="category?.slug"
+                [checked]="checked(category?.slug!)"
+                (change)="applyFilter($event)">
+              <label class="form-check-label" for="category-{{category?.id}}">{{ category?.name }}</label>
+            </div>
+            @if(category?.subcategories.length){
+              <ul class="sub-category-list">
+                <ng-container *ngTemplateOutlet="recursiveCategories; context: { $implicit: category.subcategories }"></ng-container>
+              </ul>
+            }
+          </li>
+        }
+    </ng-template>
+  </ul>
+  @if((categories | filter: searchText:'subcategories')?.length === 0){
+    <div class="search-not-found-box">
+      <h5>{{ 'no_category'  | translate }}</h5>
+    </div>
+  }
+}
+<!-- No Data -->
+@if(!categories.length){
+  <app-no-data
+    [class]="'no-data-added'"
+    [text]="'no_category'">
+  </app-no-data>
+}

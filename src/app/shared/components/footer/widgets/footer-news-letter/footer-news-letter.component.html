@@ -1,0 +1,100 @@
+@if(newsLetterStyle == 'basic'){
+  <div class="light-layout">
+    <div class="container">
+      <section class="small-section border-section border-top-0">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="subscribe">
+              <div>
+                <h4>{{ ((themeOption$ | async)?.footer?.title) }}</h4>
+                <p>{{ ((themeOption$ | async)?.footer?.sub_title) }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form class="form-inline subscribe-form auth-form needs-validation" [formGroup]="newsLetterForm" (ngSubmit)="submit()">
+              <div class="form-group mx-sm-3">
+                <input type="email" class="form-control" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email">
+                @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['required']){
+                  <div class="invalid-feedback">
+                    {{ 'email_is_required' | translate }}
+                  </div>
+                }
+
+                @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['email']){
+                  <div class="invalid-feedback">
+                    {{ 'invalid_email' | translate }}
+                  </div>
+                }
+              </div>
+
+              <app-button [class]="'btn btn-solid'" [id]="'subscribe'" [spinner]="true" [type]="'submit'">
+                {{ 'subscribe' | translate }}
+              </app-button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+}
+
+@else if (newsLetterStyle == 'simple') {
+  <div class="subscribe-block">
+    <h2>{{ 'newsletter' | translate }}</h2>
+    <form [formGroup]="newsLetterForm" (ngSubmit)="submit()">
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email">
+        @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ 'email_is_required' | translate }}
+          </div>
+        }
+
+        @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['email']){
+          <div class="invalid-feedback">
+            {{ 'invalid_email' | translate }}
+          </div>
+        }
+
+        <app-button [class]="'btn btn-solid'" [id]="'subscribe'" [spinner]="true" [type]="'submit'">
+          {{ 'subscribe' | translate }}
+        </app-button>
+
+      </div>
+    </form>
+  </div>
+}
+
+@else if(newsLetterStyle == 'classic'){
+  <div class="sub-title">
+    <div class="footer-title" (click)="toggle()" [class.show]="show">
+      <h4>{{'follow_us' | translate}}</h4>
+    </div>
+    <div class="footer-content">
+      <p class="mb-cls-content">{{ ((themeOption$ | async)?.footer?.sub_title) }}</p>
+      <form class="form-inline" [formGroup]="newsLetterForm" (ngSubmit)="submit()">
+        <div class="form-group me-sm-3 mb-2">
+          <input type="email" class="form-control" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email">
+          @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'email_is_required' | translate }}
+            </div>
+          }
+
+          @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['email']){
+            <div class="invalid-feedback">
+              {{ 'invalid_email' | translate }}
+            </div>
+          }
+        </div>
+
+        <app-button [class]="'btn btn-solid mb-2'" [id]="'subscribe'" [spinner]="true" [type]="'submit'">
+          {{ 'subscribe' | translate }}
+        </app-button>
+
+      </form>
+      <ng-content></ng-content>
+    </div>
+  </div>
+}

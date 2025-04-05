@@ -1,0 +1,13 @@
+<div class="modal-body">
+  <i class="ri-question-line icon-box"></i>
+  <h5 class="modal-title">{{ 'confirmation' | translate }}</h5>
+  <p>{{ 'are_you_sure_you_want_to_proceed' | translate }}?</p>
+  <div class="button-box">
+    <app-button [class]="'btn btn-md fw-bold btn-outline'" [spinner]="false" [id]="'confirm_no_btn'" (click)="modal.dismissAll('Cancel')">
+      {{ 'no' | translate }}
+    </app-button>
+    <app-button [class]="'btn btn-solid'" [id]="'confirm_yes_btn'" (click)="confirmation()">
+      {{ 'yes' | translate }}
+    </app-button>
+  </div>
+</div>

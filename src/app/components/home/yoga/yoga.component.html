@@ -1,0 +1,142 @@
+<!-- Home slider -->
+<section class="pt-0">
+  <div class="home-slider">
+    <app-image-link [image]="data?.content?.home_banner" [bgImage]="false" [class]="'home'"></app-image-link>
+    <div class="home-skeleton">
+      <div class="skeleton-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-sm-8 col-11">
+              <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                <span class="col-7">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-6">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home slider end -->
+
+<!-- banner section start -->
+@if(banners.length){
+  <section class="container-fluid banner-padding">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+        @if(banner?.status){
+        <div [ngClass]="banners.length === 3 ? 'col-md-4 col-6' : banners.length === 2 ? 'col-6' : 'col-12'">
+          <div class="position-relative">
+            <app-image-link [image]="banner" [bgImage]="false"></app-image-link>
+            <div class="banner-skeleton">
+              <div class="skeleton-content">
+                <p class="card-text placeholder-glow row g-lg-3 g-0">
+                  <span class="col-lg-7 col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-lg-9 col-12">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      }
+    </div>
+  </section>
+}
+<!-- banner section end -->
+
+<!-- about section-->
+@if(data?.content?.products_list_1?.status){
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <app-theme-title [title]="data?.content?.products_list_1" [type]="'luxury'"></app-theme-title>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- about section end -->
+
+<!-- category section-->
+@if(data?.content?.products_list_1?.status){
+  <section class="category-img-wrapper ratio_asos pt-0">
+    <div class="container">
+      <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- category section-->
+
+<!-- collection banner -->
+@if(banners2.length){
+  <section class="ratio2_1 banner-section">
+    <div class="container">
+      <div class="row g-sm-4 g-3">
+        @for(banner of banners2; track banner.redirect_link; let i = $index){
+          @if(banner?.status){
+          <div [ngClass]="banners2.length === 3 ? 'col-md-4 col-sm-6' : banners2.length === 2 ? 'col-sm-6' : 'col-12'">
+            <app-image-link [image]="banner" [bgImage]="false"></app-image-link>
+          </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- collection banner end -->
+
+<!-- product section start -->
+@if(data?.content?.products_list_2?.status){
+  <section>
+    <div class="container">
+      <app-theme-title [title]="data?.content?.products_list_2" [type]="'luxury'"></app-theme-title>
+          <app-theme-product [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'" [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="false"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- product section end -->
+
+<!-- blog section -->
+@if(data?.content?.featured_blogs?.status){
+  <section class="blog ratio2_1 left-blog pt-0 ">
+    <div class="container">
+      <div class="row section-t-space">
+        <div class="col-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'luxury'" [space]="false"></app-theme-title>
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- blog section end-->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram section-b-space ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'" [class]="'container'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

@@ -1,0 +1,68 @@
+<div class="modal-header">
+  <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'profile_modal_close_btn'" (click)="modal.dismiss('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+<div class="modal-body">
+  <div class="product-right product-page-details variation-title">
+    <h2 class="main-title">
+      <a [routerLink]="['/product', product.slug ]">
+        {{ selectedVariation ? selectedVariation.name : product.name }}
+      </a>
+    </h2>
+    <h3 class="price-detail">
+      {{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+        @if(selectedVariation ? selectedVariation.discount : product.discount){
+          <span>{{ (selectedVariation ? selectedVariation.discount : product.discount) }}% {{ 'off' | translate }}</span>
+        }
+      </h3>
+    </div>
+      <app-variant-attributes
+        [product]="variation.product"
+        [attributes]="variation.product.attributes || []"
+        (selectVariation)="selectVariation($event!)">
+      </app-variant-attributes>
+
+    <div class="variation-qty-button">
+      <div class="qty-section">
+        <div class="qty-box">
+          <div class="input-group">
+            <span class="input-group-prepend">
+              <app-button
+                [id]="'quantity-left-minus'+product.id"
+                [class]="'btn quantity-left-minus'"
+                [iconClass]="'ri-subtract-line'"
+                [spinner]="false"
+                (click)="updateQuantity(-1)">
+              </app-button>
+            </span>
+            <input type="text" name="quantity" class="form-control input-number" value="{{ productQty }}" readonly>
+            <span class="input-group-prepend">
+              <app-button
+                [id]="'quantity-left-plus'+product.id"
+                [class]="'btn quantity-left-plus'"
+                [iconClass]="'ri-add-line'"
+                [spinner]="false"
+                (click)="updateQuantity(1)">
+              </app-button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-buttons">
+        @if(((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty ) || (!selectedVariation && product.quantity >= productQty))){
+          <app-button
+            [id]="'replacecartbtnVariation'+variation.product.id"
+            [class]="'btn btn-solid hover-solid btn-animation scroll-button'"
+            (click)="replaceCart(variation.product)">
+            <i class="ri-shopping-cart-line me-1"></i> {{ 'update_item' | translate }}
+          </app-button>
+        }@else {
+          <app-button [class]="'btn btn-solid hover-solid btn-animation scroll-button'" [id]="'soldoutbtnreplaceproduct'" [spinner]="false" [disabled]="true">
+            {{ ((selectedVariation && selectedVariation.status && selectedVariation.quantity < productQty) || (!selectedVariation && product.quantity < productQty) ? 'out_of_stock' : 'add_to_cart') | translate }}
+          </app-button>
+        }
+      </div>
+    </div>
+  </div>

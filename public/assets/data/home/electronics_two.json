@@ -1,0 +1,83 @@
+{
+    "id": 12,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                29,
+                27,
+                26,
+                24,
+                22
+            ]
+        },
+        "home_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_1.png",
+                "redirect_link": {
+                    "link": 88,
+                    "link_type": "product",
+                    "product_ids": 88
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_2.png",
+                "redirect_link": {
+                    "link": 83,
+                    "link_type": "product",
+                    "product_ids": 83
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_3.png",
+                "redirect_link": {
+                    "link": 90,
+                    "link_type": "product",
+                    "product_ids": 90
+                }
+            }
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_4.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_5.png",
+                "redirect_link": {
+                    "link": 91,
+                    "link_type": "product",
+                    "product_ids": 91
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/electronic_two/electronic_two_6.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            88,
+            83,
+            90,
+            91
+        ],
+        "category_product": {
+            "status": true,
+            "category_ids": [
+                51,
+                52
+            ]
+        }
+    },
+    "slug": "electronics_two"
+}

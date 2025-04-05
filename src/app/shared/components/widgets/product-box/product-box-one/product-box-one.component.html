@@ -1,0 +1,45 @@
+<div class="basic-product"  [class.sold-out]="product.stock_status === 'out_of_stock'">
+  <div class="img-wrapper owl-slider">
+    <app-image-variant
+      [thumbnail]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_thumbnail!"
+      [gallery_images]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_galleries!"
+      [product]="product!"></app-image-variant>
+
+    <div class="rating-label"><i class="ri-star-s-fill"></i> <span>{{ product.reviews_count }}</span></div>
+      <div class="cart-info">
+          <app-cart-button [product]="product" [selectedVariation]="selectedVariation"></app-cart-button>
+          <app-product-hover-action [product]="product"></app-product-hover-action>
+      </div>
+      <ul class="trending-label">
+        @if(product.stock_status === 'out_of_stock'){
+          <li class="out_of_stock">{{ 'sold_out' | translate }}</li>
+        }
+        @if(product.is_sale_enable){
+          <li>{{ 'sale' | translate }}</li>
+        }
+        @if(product.is_featured){
+          <li>{{ 'featured' | translate }}</li>
+        }
+        @if(product.is_trending){
+          <li>{{ 'trending' | translate }}</li>
+        }
+      </ul>
+    </div>
+    <div class="product-detail">
+        @if(product.brand){
+          <a class="product-title"  [routerLink]="['/brand', product.brand.slug]">
+            {{ product.brand.name }}
+          </a>
+        }
+        <a [routerLink]="['/product', product.slug]">
+          <h6>{{ selectedVariation ? selectedVariation.name  : product.name }}</h6>
+        </a>
+        <h4 class="price">{{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+          @if(selectedVariation ? selectedVariation.discount : product.discount){
+            <del> {{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }} </del>
+            <span class="discounted-price"> {{ selectedVariation ? selectedVariation.discount : product.discount }}% {{ 'off' | translate }} </span>
+          }
+        </h4>
+        <app-product-box-variant-attributes [product]="product" [attributes]="product.attributes || []"  (selectVariation)="selectedVariant($event)"></app-product-box-variant-attributes>
+    </div>
+</div>

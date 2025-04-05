@@ -1,0 +1,125 @@
+<!-- Home Section Start -->
+<section class="p-0 layout-7">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Banner Section Start -->
+@if(banners.length){
+<section class="banner-padding banner-section ratio2_1">
+  <div class="container-fluid">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+      @if(banner?.status){
+      <div
+        [ngClass]="banners.length == 4 ? 'col-lg-3 col-6' : banners.length == 3 ? 'col-lg-4 col-6' : banners.length == 2 ? 'col-6' : 'col-12'">
+        <div class="position-relative">
+          <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- Banner Section End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.product_list_1?.status && data?.content?.product_list_1?.product_ids){
+<app-theme-title [title]="data?.content?.product_list_1" [type]="'basic'"></app-theme-title>
+
+<section class="pt-0 section-b-space">
+  <div class="container">
+    <div>
+      <app-theme-product [productIds]="data?.content?.product_list_1?.product_ids || []"
+        [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'" [style]="'vertical'"
+        [slider]="false"></app-theme-product>
+    </div>
+  </div>
+</section>
+}
+<!-- Product slider end -->
+
+<!-- Parallax banner -->
+@if(data?.content?.offer_banner_2?.status){
+  <section class="p-0">
+    <app-image-link [image]="data?.content?.offer_banner_2" [bgImage]="false"></app-image-link>
+  </section>
+}
+<!-- Parallax banner end -->
+
+<!-- product section start -->
+@if(data?.content?.category_product?.status){
+<section class="tools_product bg-title section-b-space">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @if(data?.content?.category_product?.left_panel?.status){
+      <div class="col-xl-4 col-lg-4 col-md-12">
+        <div class="theme-card">
+          <h5 class="title-border">{{ data?.content?.category_product?.left_panel?.title }}</h5>
+          <div class="offer-slider ">
+            <app-theme-product [productIds]="data?.content?.category_product?.left_panel?.product_ids || []"
+              [style]="'horizontal'">
+            </app-theme-product>
+          </div>
+        </div>
+      </div>
+      }
+
+      <div [ngClass]="data?.content?.category_product?.left_panel?.status ? 'col-xl-8 col-lg-8 col-md-12' : 'col-12'">
+        <app-theme-product-tab-section
+          [categoryIds]="data?.content?.category_product?.right_panel?.product_category?.category_ids"
+          [style]="'vertical'" [tab_style]="'classic'"
+          [title]="data?.content?.category_product?.right_panel?.product_category" [slider]="true"
+          [class]="'product-m'">
+        </app-theme-product-tab-section>
+
+        <div class="banner-tools">
+          <app-image-link [image]="data?.content?.category_product?.right_panel?.product_banner" [bgImage]="false"></app-image-link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product section end -->
+
+<!-- service start -->
+@if(data?.content?.services){
+<div class="container">
+  <section class="service border-section small-section">
+    <app-theme-services [services]="data?.content?.services?.banners"></app-theme-services>
+  </section>
+</div>
+}
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+<section class="instagram ratio_square">
+  <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'"></app-theme-social-media>
+</section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

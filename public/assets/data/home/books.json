@@ -1,0 +1,142 @@
+{
+    "id": 37,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                27,
+                25,
+                28,
+                29,
+                26
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/book/book_1.png",
+                    "redirect_link": {
+                        "link": "books",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "categories_1": {
+            "status": true,
+            "category_ids": [
+                99,
+                100,
+                101,
+                147,
+                148,
+                149
+            ]
+        },
+        "categories_2": {
+            "status": true,
+            "category_ids": [
+                99,
+                100,
+                101,
+                147,
+                148,
+                149
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/book/book_3.png",
+                "redirect_link": {
+                    "link": 424,
+                    "link_type": "product",
+                    "product_ids": 424
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/book/book_2.png",
+                "redirect_link": {
+                    "link": 420,
+                    "link_type": "product",
+                    "product_ids": 420
+                }
+            }
+        },
+        "products_ids": [
+            412,
+            424,
+            420,
+            413,
+            415,
+            416,
+            421,
+            313,
+            310,
+            309
+        ],
+        "products_list": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "product_ids": [
+                421,
+                420,
+                313,
+                310,
+                309
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "latest blog",
+            "status": true,
+            "blog_ids": [
+                31,
+                32,
+                33
+            ]
+        },
+        "slider_products": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "image_url": "/images/theme/book/book_4.png",
+            "product_slider_1": {
+                "title": "best sellers",
+                "status": true,
+                "product_ids": [
+                    412,
+                    424
+                ]
+            },
+            "product_slider_2": {
+                "title": "new arrivals",
+                "status": true,
+                "product_ids": [
+                    420,
+                    413
+                ]
+            },
+            "product_slider_3": {
+                "title": "pre orders",
+                "status": true,
+                "product_ids": [
+                    415,
+                    416
+                ]
+            }
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                99,
+                100
+            ]
+        }
+    },
+    "slug": "books"
+}

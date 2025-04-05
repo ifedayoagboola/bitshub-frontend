@@ -1,0 +1,86 @@
+{
+    "id": 52,
+    "content": {
+        "home_banner": {
+            "tag": null,
+            "title": "Modern Themes & Website Template for any project",
+            "status": true,
+            "description": "Discover thousands of digital product & downloads",
+            "sub_image_1": "/images/theme/digital_download/digital_download-sub_banner_1.png",
+            "sub_image_2": "/images/theme/digital_download/digital_download-sub_banner_2.png",
+            "background_image": "/images/theme/digital_download/middle-bg.jpg"
+        },
+        "products_ids": [
+            527,
+            528,
+            515,
+            530,
+            523,
+            525
+        ],
+        "products_list": {
+            "tag": "exclusive products",
+            "title": "Featured Templates",
+            "status": true,
+            "product_ids": [
+                527,
+                528,
+                515
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "Tips, Tricks, And Trends",
+            "status": true,
+            "blog_ids": [
+                55,
+                56,
+                57
+            ]
+        },
+        "products_list_2": {
+            "status": true,
+            "products": {   
+                "product_ids": [
+                    530,
+                    523,
+                    525
+                ]
+            },
+            "image_url": "/images/theme/digital_download/middle-bg.jpg",
+            "left_panel": {
+                "title": "Featured Templates",
+                "status": true,
+                "button_text": "Shop Now",
+                "description": "Every week, our staff personally hand-pick some of the best new website themes from our collection.",
+                "more_button": true,
+                "redirect_link": {
+                    "link": "baby-essentials",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "category_product": {
+            "tag": "new collection",
+            "title": "Newest Items",
+            "status": true,
+            "category_ids": [
+                150,
+                152,
+                154
+            ]
+        },
+        "categories_icon_list": {
+            "status": true,
+            "category_ids": [
+                151,
+                152,
+                153,
+                154,
+                155,
+                156
+            ]
+        }
+    },
+    "slug": "digital_download"
+}

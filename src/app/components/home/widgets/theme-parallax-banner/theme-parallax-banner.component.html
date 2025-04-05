@@ -1,0 +1,39 @@
+<div class="full-banner parallax text-center bg-size" [ngClass]="text_right ? 'p-right' : 'p-left'" [class]="class" [ngStyle]="{ 'background-image' : 'url('+ StorageURL + banners?.image_url +')'}">
+  <img [src]="StorageURL + banners?.image_url" alt="" class="bg-img">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="banner-contain">
+          <h2>{{ banners?.main_title }}</h2>
+          <h3>{{ banners?.title }}</h3>
+          <h4>{{ banners?.sub_title }}</h4>
+          @if(banners?.button_text){
+            <a href="javascript:void(0)" class="btn btn-solid">{{ banners.button_text }}</a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-skeleton">
+    <div class="skeleton-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-sm-8 col-11">
+            <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+              <span class="col-7">
+                <span class="placeholder"></span>
+              </span>
+              <span class="col-9">
+                <span class="placeholder"></span>
+              </span>
+              <span class="col-6">
+                <span class="placeholder"></span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

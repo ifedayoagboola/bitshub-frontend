@@ -1,0 +1,129 @@
+{
+    "id": 5,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+            ]
+        },
+        "categories": {
+            "title": "Shop By Category",
+            "status": true,
+            "category_ids": [
+                164,
+                165,
+                166,
+                167,
+                168,
+                169
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_five/fashion_five_1.png",
+            "redirect_link": {
+                "link": "lingerie",
+                "link_type": "collection"
+            }
+        },
+        "deals_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_five/fashion_five_2.png",
+            "redirect_link": {
+                "link": 550,
+                "link_type": "product",
+                "product_ids": 550
+            }
+        },
+        "offer_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_five/fashion_five_3.png",
+            "redirect_link": {
+                "link": "lingerie",
+                "link_type": "collection"
+            }
+        },
+        "products_ids": [
+            550
+        ],
+        "social_media": {
+            "title": "Insta Shop",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_five/fashion_five_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_five/fashion_five_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_five/fashion_five_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_five/fashion_five_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_five/fashion_five_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "category_product": {
+            "title": "Everyday Casual",
+            "status": true,
+            "category_ids": [
+                165,
+                166,
+                169
+            ]
+        }
+    },
+    "slug": "fashion_five"
+}

@@ -1,0 +1,20 @@
+<ul class="hover-action">
+  <li>
+    <ng-content></ng-content>
+  </li>
+  <li>
+    @if(showAction.includes('wishlist')){
+      <app-wishlist [product]="product" [class]="class"></app-wishlist>
+    }
+  </li>
+  <li>
+    @if(showAction.includes('view')) {
+      <app-quick-view [product]="product"></app-quick-view>
+    }
+  </li>
+  <li>
+    @if(showAction.includes('compare')) {
+      <app-compare [product]="product"></app-compare>
+    }
+  </li>
+</ul>

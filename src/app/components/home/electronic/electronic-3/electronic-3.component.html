@@ -1,0 +1,190 @@
+<!-- Home Section Start -->
+<section class="small-section pt-res-0">
+  <div class="container">
+    <div class="home-slider">
+      <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    </div>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- service section start -->
+@if(data?.content?.services){
+<section class="service-w-bg pt-0 tools-service">
+  <div class="container">
+    <app-theme-services [services]="data?.content?.services?.banners"
+      [class]="'col-xl-3 col-sm-6'"></app-theme-services>
+  </div>
+</section>
+}
+<!-- service layout  end -->
+
+<!-- product deal section start -->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+<section class="ratio_square">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-basic">
+          <h2 class="title">
+            <i class="ri-flashlight-line"></i>
+            {{data?.content?.products_list_1?.title}}
+          </h2>
+          <h2 class="skeleton-text-h2 title"></h2>
+        </div>
+        <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [options]="options"
+          [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product deal section start -->
+
+<!-- banner section start -->
+<section class="banner-style-1">
+  <div class="full-box">
+    <div class="container">
+      <div class="row ratio2_1">
+        @if(data?.content?.banner?.main_banner?.status){
+        <div class="col-lg-5 col-md-7 card-margin">
+          <div class="banner-padding pt-0">
+            <a href="javascript:void(0)">
+              <div class="collection-banner tl-content">
+                <app-image-link [image]="data?.content?.banner?.main_banner" [bgImage]="true"
+                  [class]="'img-part custom-height'"></app-image-link>
+              </div>
+            </a>
+          </div>
+        </div>
+        }
+        <div class="col-lg-4 col-md-5">
+          <div class="banner-padding pt-0 ratio2_1">
+            <div class="container p-0">
+              <div class="row">
+                @if(data?.content?.banner?.grid_banner_1?.status){
+                <div class="col-12 mb-4">
+                  <a href="javascript:void(0)">
+                    <div class="collection-banner">
+                      <app-image-link [image]="data?.content?.banner?.grid_banner_1" [bgImage]="true"
+                        [class]="'img-part'"></app-image-link>
+                    </div>
+                  </a>
+                </div>
+                }
+                @if(data?.content?.banner?.grid_banner_2?.status){
+                <div class="col-12">
+                  <a href="javascript:void(0)">
+                    <div class="collection-banner">
+                      <app-image-link [image]="data?.content?.banner?.grid_banner_2" [bgImage]="true"
+                        [class]="'img-part'"></app-image-link>
+                    </div>
+                  </a>
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        @if(data?.content?.banner?.grid_banner_3?.status){
+        <div class="col-lg-3 col-12 d-lg-block d-none">
+          <div class="banner-padding pt-0">
+            <a href="javascript:void(0)">
+              <div class="collection-banner tl-content">
+                <app-image-link [image]="data?.content?.banner?.grid_banner_3" [bgImage]="true"
+                  [class]="'img-part custom-height'"></app-image-link>
+              </div>
+            </a>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<!-- banner section end -->
+
+<!-- slider and product -->
+@if(data?.content?.category_product_1?.status && data?.content?.category_product_1?.categories?.category_ids){
+<section class="container">
+  <div class="row">
+    @if(data?.content?.category_product_1?.categories?.status){
+    <!-- category start -->
+    <div class="col-xl-2 d-xl-inline-block d-none">
+      <header class="left-header left-header-relative">
+        <div class="metro">
+          <div class="main-menu">
+            <div class="menu-left">
+              <app-categories [categoryIds]="data?.content?.category_product_1?.categories?.category_ids || []"
+                [style]="'vertical'"></app-categories>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- category end -->
+    }
+
+    <div [ngClass]="data?.content?.category_product_1?.categories?.status ? 'col-xl-10' : 'col-xl-12'">
+      <app-theme-product [productIds]="data?.content?.category_product_1?.products?.product_ids || []"
+        [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'" [style]="'vertical'"
+        [slider]="false"></app-theme-product>
+    </div>
+  </div>
+</section>
+}
+
+<!-- banner section start -->
+@if(data?.content?.offer_banner_1?.status){
+<section class="container">
+  <app-image-link [image]="data?.content?.offer_banner_1" [bgImage]="false"></app-image-link>
+</section>
+}
+<!-- banner section end -->
+
+<!-- collection banner start-->
+@if(data?.content?.offer_banner_2?.banner_1?.status && data?.content?.offer_banner_2?.banner_2?.status){
+<section class="ratio2_1 banner-padding">
+  <div class="container">
+    <div class="row g-4">
+      @if(data?.content?.offer_banner_2?.banner_1?.status){
+      <div [ngClass]="data?.content?.offer_banner_2?.banner_2?.status ? 'col-md-6' : 'col-md-12'">
+        <app-image-link [image]="data?.content?.offer_banner_2?.banner_1" [bgImage]="true"
+          [class]="'img-part'"></app-image-link>
+      </div>
+      }
+      @if(data?.content?.offer_banner_2?.banner_2?.status){
+      <div [ngClass]="data?.content?.offer_banner_2?.banner_1?.status ? 'col-md-6' : 'col-md-12'">
+        <app-image-link [image]="data?.content?.offer_banner_2?.banner_2" [bgImage]="true"
+          [class]="'img-part'"></app-image-link>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- collection banner end-->
+
+<!-- Tab product start-->
+@if(data?.content?.category_product_2?.status){
+<section class="ratio_square bg-title section-b-space  wo-bg category-tab-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-product-tab-section [categoryIds]="data?.content?.category_product_2?.category_ids"
+          [style]="'vertical'" [tab_style]="'simple'" [showItems]="5" [title]="data?.content?.category_product_2"
+          [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"></app-theme-product-tab-section>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Tab Product end -->
+
+<!--  logo section -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space bg-light blog-wo-bg">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Logo End -->

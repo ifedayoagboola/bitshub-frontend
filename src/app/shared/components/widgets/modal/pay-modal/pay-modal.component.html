@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h3 class="fw-semibold">{{ 'pay_now' | translate }}</h3>
+  <app-button
+    [class]="'btn btn-close'"
+    [spinner]="false"
+    [id]="'profile_modal_close_btn'"
+    (click)="modalService.dismiss('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+
+<div class="modal-body">
+  <div class="checkout-box">
+    <div class="checkout-detail">
+      <div class="row g-3">
+        @for(payment of (setting$ |async)?.payment_methods; track payment.name; let i = $index){
+          @if(payment.status){
+            <div class="col-md-6">
+              <div class="payment-option">
+                <div class="payment-category w-100">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment_method" [value]="payment.name" [id]="payment.name" [formControl]="paymentType">
+                    <label class="form-check-label" for="{{payment.name}}">
+                      {{ (payment.title ? payment.title : payment.name) | uppercase }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        }
+
+        @if(paymentType.touched && paymentType.errors?.['required']){
+          <div class="invalid-feedback">
+            {{ 'select_payment_method_is_required' | translate }}
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <app-button
+      [class]="'btn btn-outline'"
+      [type]="'button'"
+      [spinner]="false"
+      [id]="'cancel_profile_btn'"
+      (click)="modalService.dismiss('Cancel')">
+      {{ 'cancel' | translate }}
+    </app-button>
+    <app-button [class]="'btn btn-solid'" [id]="'submit_profile_btn'" (click)="submit()">
+      {{ 'submit' | translate }}
+    </app-button>
+  </div>
+</div>

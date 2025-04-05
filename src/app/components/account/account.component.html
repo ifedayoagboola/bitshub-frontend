@@ -1,0 +1,23 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<section class="dashboard-section section-b-space user-dashboard-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-lg-9 position-relative">
+        <div class="faq-content tab-content" id="top-tabContent">
+          @if((loadingStatus$ | async)){
+          <div class="box-loader">
+            <app-loader [loaderClass]="'loader-wrapper blur-bg'"></app-loader>
+          </div>
+          }
+          <button class="show-btn btn" (click)="openMenu()"> {{ 'show_menu' | translate }} </button>
+          <div class="tab-pane fade show active" id="info">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

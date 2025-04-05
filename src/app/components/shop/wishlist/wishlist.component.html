@@ -1,0 +1,101 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="wishlist-section section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 table-responsive">
+        @if(wishlistService.skeletonLoader){
+          <div class="box-loader">
+            <app-loader [loaderClass]="'loader-wrapper blur-bg'"></app-loader>
+          </div>
+        } @else {
+          @if(wishlistItems && wishlistItems.length){
+            <table class="table cart-table">
+              <thead>
+                <tr class="table-head">
+                  <th scope="col">{{ 'image' | translate }}</th>
+                  <th scope="col">{{ 'product_name' | translate }}</th>
+                  <th scope="col">{{ 'price' | translate }}</th>
+                  <th scope="col">{{ 'availability' | translate }}</th>
+                  <th scope="col">{{ 'action' | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(product of wishlistItems; track product.id){
+                  <tr>
+                    <td>
+                      <a href="javascript:void(0)" [routerLink]="['/product/', product.slug]">
+                        <img [src]="product.product_thumbnail ? product.product_thumbnail.original_url : 'assets/images/placeholder/product.png'" [alt]="product.name">
+                      </a>
+                    </td>
+                    <td>
+                      <a href="javascript:void(0)" class="name" [routerLink]="['/product/', product.slug]">{{ product.name }}</a>
+                      <div class="mobile-cart-content row">
+                        <div class="col">
+                          <p>{{ (product.stock_status) | translate }}</p>
+                        </div>
+                        <div class="col">
+                          <h2 class="td-color">
+                            @if(product.discount){
+                              {{ product.sale_price | currencySymbol }}
+                              <del>{{ product.price | currencySymbol }}</del>
+                            }@else{
+                              {{ product.price | currencySymbol }}
+                            }
+                          </h2>
+                        </div>
+                        <div class="col">
+                          <div class="remove-icon-box">
+                            <h2 class="td-color">
+                              <a href="javascript:void(0)" class="icon" (click)="removeWishlist(product.id)">
+                                <i class="ri-close-line"></i>
+                              </a>
+                              @if(product.stock_status == 'in_stock'){
+                                <app-product-cart-button [product]="product" [type]="'wishlist'"></app-product-cart-button>
+                              }
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h2>@if(product.discount){
+                        {{ product.sale_price | currencySymbol }}
+                        <del>{{ product.price | currencySymbol }}</del>
+                        }@else{
+                          {{ product.price | currencySymbol }}
+                        }
+                    </h2>
+                    </td>
+                    <td>
+                      <p>{{ (product.stock_status) | translate }}</p>
+                    </td>
+                    <td>
+                      <div class="icon-box d-flex gap-2 justify-content-center">
+                        <a href="javascript:void(0)" class="icon" (click)="removeWishlist(product.id)">
+                          <i class="ri-close-line"></i>
+                        </a>
+
+                        @if(product.stock_status == 'in_stock'){
+                          <app-product-cart-button [product]="product" [type]="'wishlist'"></app-product-cart-button>
+                        }
+                      </div>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          }
+          @if(!wishlistItems.length && !wishlistService.skeletonLoader){
+            <app-no-data
+              [class]="'no-data-added'"
+              [image]="'assets/svg/empty-items.svg'"
+              [text]="'no_item'"
+              [description]="'no_wishlist_item'" >
+            </app-no-data>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>

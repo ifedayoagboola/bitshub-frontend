@@ -1,0 +1,13 @@
+@if(filters.length){
+  <div class="filter-title">
+    <h2>{{ 'filters' | translate }}</h2>
+    <a href="javascript:void(0)" (click)="clear()">{{ 'clear_all' | translate }}</a>
+  </div>
+  <ul class="filter-list">
+    @for(filter of filters; track filter){
+      <li>
+        <a href="javascript:void(0)">{{ filter | textConverter }} <i class="ri-close-line close-icon" (click)="remove(filter)"></i></a>
+      </li>
+    }
+  </ul>
+}

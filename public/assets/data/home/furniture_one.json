@@ -1,0 +1,90 @@
+{
+    "id": 8,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                8,
+                7,
+                5,
+                9,
+                12
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/furniture_one/furniture_one_1.png",
+            "redirect_link": {
+                "link": "classic-furnishings",
+                "link_type": "collection"
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_one/furniture_one_1.png",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_one/furniture_one_5.png",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/furniture_one/furniture_one_4.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/furniture_one/furniture_one_3.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/furniture_one/furniture_one_2.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [],
+        "featured_blogs": {
+            "tag": "recent story",
+            "title": "latest blog",
+            "status": true,
+            "blog_ids": [
+                6,
+                5,
+                4
+            ]
+        },
+        "category_product": {
+            "tag": "Exclusive Products",
+            "title": "SPECIAL PRODUCTS",
+            "status": true,
+            "category_ids": [
+                19,
+                12
+            ]
+        }
+    },
+    "slug": "furniture_one"
+}

@@ -1,0 +1,22 @@
+<div>
+  <i class="ri-equalizer-2-line"></i>
+</div>
+<div class="show-div setting">
+  <h6>{{ 'language' | translate }}</h6>
+  <ul>
+    @for(language of languages; track language.language){
+      <li>
+        <a href="javascript:void(0)" (click)="selectLanguage(language)" [class.active]="language.code == selectedLanguage.code">{{ language.language }}</a>
+      </li>
+    }
+  </ul>
+  <h6>{{ 'currency' | translate }}</h6>
+  <ul class="list-inline">
+    @for(currency of (currency$ | async)?.data; track currency.id){
+      {{selectedCurrency | json}}
+      <li>
+        <!-- <a href="javascript:void(0)" (click)="selectCurrency(currency)" [class.active]="currency.code == selectedCurrency.code">{{ currency.code }}</a> -->
+      </li>
+    }
+  </ul>
+</div>

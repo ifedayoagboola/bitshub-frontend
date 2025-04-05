@@ -1,0 +1,16 @@
+@if(attribute.attribute_values && attribute.attribute_values.length){
+  @for(attribute_value of attribute.attribute_values; track attribute_value.id){
+  <div class="form-check collection-filter-checkbox">
+    <input type="checkbox" class="form-check-input" id="attribute-{{attribute_value?.id}}"
+                  [value]="attribute_value?.slug"
+                  [checked]="checked(attribute_value?.slug!)"
+                  (change)="applyFilter($event)">
+    <label class="form-check-label color-label-box" for="attribute-{{attribute_value?.id}}">
+      @if(attribute.style === 'color'){
+        <div class="color-box" [ngStyle]="{ 'background-color' : attribute_value?.hex_color }"></div>
+      }
+      <span class="name">{{ attribute_value?.value }}</span>
+    </label>
+  </div>
+  }
+}

@@ -1,0 +1,18 @@
+<div (clickOutside)="hideDropdown()">
+  <div class="dropdown theme-form-select">
+    <app-button [class]="'btn dropdown-toggle'" [type]="'button'" [id]="'open_dropdown_standard_btn'" [spinner]="false" (click)="openDropDown()">
+      @if(selectedCurrency && selectedCurrency.code){
+        <div>
+          <span>{{ selectedCurrency.code }}</span>
+        </div>
+      }
+    </app-button>
+    <ul class="dropdown-menu dropdown-menu-end sm-dropdown-menu" [class.show]="open">
+      @for(currency of (currency$ | async)?.data; track currency.id){
+        <li>
+          <a href="javascript:void(0)" class="dropdown-item" (click)="selectCurrency(currency)" [class.active]="currency.code == selectedCurrency.code">{{ currency.code }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

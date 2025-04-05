@@ -1,0 +1,91 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Banner Section Start -->
+<section class="banner-padding banner-section ratio2_1">
+  <div class="container-fluid">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+      @if(banner?.status){
+      <div class="{{ i % 2 == 0 &&  banners.length == i + 1 ? 'col-md-12' : 'col-6' }}">
+        <div class="position-relative">
+          <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      }
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status && data?.content?.category_product?.category_ids){
+<app-theme-title [title]="data?.content?.category_product" [type]="'basic'"></app-theme-title>
+
+<section class="section-b-space category-tab-section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids"
+          [style]="'vertical'"
+          [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"></app-theme-product-tab-section>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Tab product End-->
+
+<!-- Parallax Banner Start -->
+@if(data?.content?.full_banner?.status){
+<section class="p-0 banner-sale">
+  <app-image-link [image]="data?.content?.full_banner" [placeholder]="'assets/images/full_column_banner.png'"
+    [bgImage]="false"></app-image-link>
+</section>
+}
+<!-- Parallax Banner End -->
+
+<!-- Product Slider Start -->
+@if(data?.content?.slider_products?.status){
+<section class="">
+  <div class="container">
+    <app-theme-four-column-product [data]="data?.content?.slider_products"
+      [style]="'horizontal'"></app-theme-four-column-product>
+  </div>
+</section>
+}
+<!-- Product Slider End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+<section class="instagram ratio_square">
+  <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'"></app-theme-social-media>
+</section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

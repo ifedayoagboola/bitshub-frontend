@@ -1,0 +1,52 @@
+<div class="row g-4">
+  @if(data?.product_slider_1?.status){
+    <div [ngClass]="!data?.product_slider_4?.status ? 'col-lg-4 col-sm-6' : 'col-xl-3 col-md-6' ">
+      <div class="theme-card">
+        <h5 class="title-border">{{ data?.product_slider_1?.title }}</h5>
+        <div class="offer-slider ">
+          <app-theme-product
+            [productIds]="data?.product_slider_1?.product_ids || []"
+            [style]="style">
+          </app-theme-product>
+        </div>
+      </div>
+    </div>
+  }
+  @if(data?.product_slider_2?.status){
+  <div [ngClass]="!data?.product_slider_4?.status ? 'col-lg-4 col-sm-6' : 'col-xl-3 col-md-6' ">
+    <div class="theme-card">
+      <h5 class="title-border">{{ data?.product_slider_2?.title }}</h5>
+      <div class="offer-slider">
+        <app-theme-product [productIds]="data?.product_slider_2?.product_ids || []" [style]="style">
+        </app-theme-product>
+      </div>
+    </div>
+  </div>
+  }
+  @if(data?.product_slider_3?.status){
+  <div [ngClass]="!data?.product_slider_4?.status ? 'col-lg-4 col-sm-6' : 'col-xl-3 col-md-6' ">
+    <div class="theme-card">
+      <h5 class="title-border">{{ data?.product_slider_3?.title }}</h5>
+      <div class="offer-slider">
+        <app-theme-product [productIds]="data?.product_slider_3?.product_ids || []" [style]="style">
+        </app-theme-product>
+      </div>
+    </div>
+  </div>
+  }
+  @if(data?.product_slider_4?.status){
+  <div class="col-xl-3 col-md-6">
+    <div class="theme-card">
+      <h5 class="title-border">{{ data?.product_slider_4?.title }}</h5>
+      <div class="offer-slider ">
+        <app-theme-product [productIds]="data?.product_slider_4?.product_ids || []" [style]="style"></app-theme-product>
+      </div>
+    </div>
+  </div>
+  }
+
+  @if(!(data?.product_slider_1?.product_ids?.length && data?.product_slider_2?.product_ids?.length && data?.product_slider_2?.product_ids?.length && data?.product_slider_2?.product_ids?.length)){
+    <app-no-data [text]="'no_product'">
+    </app-no-data>
+  }
+</div>

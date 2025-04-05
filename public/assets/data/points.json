@@ -1,0 +1,81 @@
+{
+    "id": 3,
+    "consumer_id": 2,
+    "balance": 1970,
+    "transactions": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 12,
+                "wallet_id": null,
+                "order_id": null,
+                "point_id": 3,
+                "amount": 39,
+                "type": "debit",
+                "detail": "Admin has debited the balance.",
+                "from": 1,
+                "created_at": "2024-06-21T10:28:45.000000Z"
+            },
+            {
+                "id": 11,
+                "wallet_id": null,
+                "order_id": null,
+                "point_id": 3,
+                "amount": 23,
+                "type": "debit",
+                "detail": "Admin has debited the balance.",
+                "from": 1,
+                "created_at": "2024-06-21T10:28:38.000000Z"
+            },
+            {
+                "id": 10,
+                "wallet_id": null,
+                "order_id": null,
+                "point_id": 3,
+                "amount": 532,
+                "type": "credit",
+                "detail": "Admin has credited the balance.",
+                "from": 1,
+                "created_at": "2024-06-21T10:28:33.000000Z"
+            },
+            {
+                "id": 9,
+                "wallet_id": null,
+                "order_id": null,
+                "point_id": 3,
+                "amount": 1500,
+                "type": "credit",
+                "detail": "Admin has credited the balance.",
+                "from": 1,
+                "created_at": "2024-06-21T10:28:25.000000Z"
+            }
+        ],
+        "first_page_url": "",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 4,
+        "total": 4
+    }
+}

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row outer-border g-0">
+    <div class="col-xl-2">
+      <ul class="nav nav-tabs nav-material flex-column nav-border" ngbNav #nav="ngbNav" [(activeId)]="active">
+        <li class="nav-item" ngbNavItem="description">
+          <a class="nav-link" ngbNavLink [class.active]="active == 'description'">{{ 'description' | translate }}</a>
+        </li>
+        @if(!product?.is_external){
+          <li ngbNavItem="review">
+            <a ngbNavLink [class.active]="active == 'review'">{{ 'review' | translate }}</a>
+          </li>
+        }
+          <li ngbNavItem="questions_answers">
+            <a ngbNavLink [class.active]="active == 'questions_answers'">{{ 'q_a' | translate }}</a>
+          </li>
+      </ul>
+    </div>
+    <div class="col-xl-10">
+      <div class="tab-content nav-material">
+        <div class="tab-pane fade show active">
+          @if(active == 'description'){
+            @if(product?.description){
+              <div class="part ckeditor-content" [innerHTML]="getTrustedHtml(product?.description)"></div>
+            }
+          }@if (active == 'review') {
+            <div class="single-product-tables">
+              <app-product-review [product]="product" [reviews]="(review$ | async)?.data || []"></app-product-review>
+            </div>
+          }@if (active == 'questions_answers') {
+            <div class="single-product-tables">
+              <app-questions-answers [product]="product!" [questionAnswers]="(question$ | async)?.data || []"></app-questions-answers>
+            </div>
+          }
+        </div>
+        <div [ngbNavOutlet]="nav" class="custom-tab"></div>
+      </div>
+    </div>
+  </div>
+</div>

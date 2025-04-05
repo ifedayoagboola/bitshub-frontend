@@ -1,0 +1,140 @@
+<!-- Home Section Start -->
+<div class="container">
+  <section class="small-section pb-0 pt-res-0">
+    <div class="home-slider">
+      <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    </div>
+  </section>
+</div>
+<!-- Home Section End -->
+
+<!-- banner section start -->
+@if(banners.length){
+  <section class="banner-padding banner-section ratio2_1">
+    <div class="container">
+      <div class="row g-sm-4 g-3">
+        @for(banner of banners; track banner.redirect_link; let i = $index){
+          @if(banner?.status){
+            <div class="{{ banners.length === 3 ? 'col-md-4 col-6' : banners.length === 2 ? 'col-6' : 'col-12' }}">
+              <div class="position-relative">
+                <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+                <div class="banner-skeleton">
+                  <div class="skeleton-content">
+                    <p class="card-text placeholder-glow row g-lg-3 g-0">
+                      <span class="col-lg-7 col-9">
+                        <span class="placeholder"></span>
+                      </span>
+                      <span class="col-lg-9 col-12">
+                        <span class="placeholder"></span>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- banner section end -->
+
+<!-- section start -->
+@if(data?.content?.categories_products?.status){
+  <section class="small-section pb-0">
+    <div class="collection-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-3 collection-filter">
+            <div class="sticky-top-section">
+              @if(data?.content?.categories_products?.left_panel?.categories?.status){
+                <div class="sidenav marketplace-sidebar svg-icon-menu wo-bg">
+                  <nav>
+                    <app-categories [categoryIds]="data?.content?.categories_products?.left_panel?.categories?.category_ids || []" [style]="'vertical'"></app-categories>
+                  </nav>
+                </div>
+              }
+
+              <div class="d-xl-block d-none">
+                @if(data?.content?.categories_products?.left_panel?.products_list?.status && data?.content?.categories_products?.left_panel?.products_list?.product_ids){
+                    <div class="theme-card demo-card">
+                      <h5 class="title-border">{{ data?.content?.categories_products?.left_panel?.products_list?.title }}</h5>
+                      <div class="offer-slider ">
+                        <app-theme-product [productIds]="data?.content?.categories_products?.left_panel?.products_list?.product_ids || []" [style]="'horizontal'"></app-theme-product>
+                      </div>
+                    </div>
+                  }
+
+                  @if(data?.content?.categories_products?.left_panel?.banner?.status){
+                    <div class="collection-sidebar-banner">
+                      <app-image-link [image]="data?.content?.categories_products?.left_panel?.banner"></app-image-link>
+                    </div>
+                  }
+                </div>
+            </div>
+          </div>
+
+          <div class="collection-content col-xl-9 p-0-xl">
+            <div class="page-main-content">
+              <!-- product section -->
+              @if(data?.content?.categories_products?.right_panel?.products_list?.status){
+                <div class="ratio_115">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12">
+                        <app-theme-title [title]="data?.content?.categories_products?.right_panel?.products_list" [type]="'icon'" [textWhite]="true" [space]="false"></app-theme-title>
+                        <div class="">
+                          <app-theme-product [productIds]="data?.content?.categories_products?.right_panel?.products_list?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+
+              <!-- two banner -->
+              <div class="pb-0 ratio2_1 small-section">
+                <div class="container">
+                  <app-theme-banner [banners]="data?.content?.categories_products?.right_panel?.offer_banner" [class]="'col-md-6'"></app-theme-banner>
+                </div>
+              </div>
+
+              <!-- tab section -->
+              @if(data?.content?.categories_products?.right_panel?.category_product?.status && data?.content?.categories_products?.right_panel?.category_product?.category_ids){
+                <div class="ratio_115 bg-title small-section pb-0 wo-bg">
+                  <div class="container">
+                    <app-theme-product-tab-section [categoryIds]="data?.content?.categories_products?.right_panel?.category_product?.category_ids" [style]="'vertical'" [tab_style]="'simple'" [title]="data?.content?.categories_products?.right_panel?.category_product"></app-theme-product-tab-section>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- section end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+<section class="blog ratio2_3 left-blog section-b-space overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space bg-light">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

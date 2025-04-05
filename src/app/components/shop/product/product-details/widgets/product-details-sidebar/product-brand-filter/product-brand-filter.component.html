@@ -1,0 +1,9 @@
+@if(brands && brands.length){
+  <ul class="category-list shop-category-list custom-sidebar-height">
+    @for(brand of brands; track brand.id){
+      <li>
+        <a href="javascript:void(0)" (click)="applyFilter(brand?.slug)">{{ brand?.name }}</a>
+      </li>
+    }
+  </ul>
+}

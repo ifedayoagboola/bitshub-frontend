@@ -1,0 +1,127 @@
+<section>
+    <div class="collection-wrapper">
+      <div class="container">
+        <div class="row ">
+            <div class="col-lg-3">
+                <div class="collection-filter product-sidebar-box">
+                    <app-product-details-sidebar [product]="product"></app-product-details-sidebar>
+                </div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="sticky-top-custom">
+                                <div class="thumbnail-image-slider">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                          <div class="product-slick position-relative">
+                                              @if(product.is_sale_enable || product.is_trending || product.is_featured){
+                                                  <ul class="product-detail-label">
+                                                    @if(product.is_sale_enable){
+                                                      <li class="soldout">{{ 'sale' | translate }}</li>
+                                                    }
+                                                    @if(product.is_trending){
+                                                      <li class="trending">{{ 'trending' | translate }}</li>
+                                                    }
+                                                    @if(product.is_featured){
+                                                      <li class="featured">{{ 'featured' | translate }}</li>
+                                                    }
+                                                  </ul>
+                                                }
+                                              <owl-carousel-o [options]="productMainThumbSlider" #owlCar id="thumbnailCarousel" (initialized)="onCarouselLoad()" (changed)="onSlideChange($event)">
+                                                @if(product.product_galleries?.length || selectedVariation && selectedVariation.variation_galleries.length){
+                                                  @for(image of (selectedVariation && selectedVariation.variation_galleries.length ? selectedVariation && selectedVariation.variation_galleries : product.product_galleries); track image.id; let i = $index){
+                                                    <ng-template carouselSlide [id]="image.id.toString()">
+                                                      @if(videType.includes(image.mime_type)){
+                                                        <div class="slider-main-img">
+                                                          <video class="w-100" controls>
+                                                            <source [src]="image ? image.original_url : ''" [type]="image.mime_type">
+                                                          </video>
+                                                        </div>
+                                                      }@else if(audioType.includes(image.mime_type)){
+                                                        <div class="slider-main-img">
+                                                          <audio controls>
+                                                            <source [src]="image ? image.original_url : ''" [type]="image.mime_type">
+                                                          </audio>
+                                                        </div>
+                                                      }@else {
+                                                        <div>
+                                                          @if(isBrowser) {
+                                                            <lib-ngx-image-zoom [zoomMode]="'click'" [thumbImage]="image.original_url" [fullImage]="image.original_url" [magnification]="2" [enableScrollZoom]="true" [enableLens]="true" [lensWidth]="300" [lensHeight]="300">
+                                                            </lib-ngx-image-zoom>
+                                                          }
+                                                        </div>
+                                                      }
+                                                    </ng-template>
+                                                  }
+                                                }
+                                              </owl-carousel-o>
+                                              @if(!product.product_galleries?.length){
+                                                <img [src]="product.product_thumbnail ? product.product_thumbnail.original_url : 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+                                              }
+
+                                              @if(product.product_type == 'digital'){
+                                                <app-product-digital-options [product]="product"></app-product-digital-options>
+                                              }
+                                              
+                                          </div>
+                                        </div>
+
+                                        @if(product.product_galleries?.length || selectedVariation && selectedVariation.variation_galleries.length){
+                                          <div class="col-12">
+                                            <div class="slider-nav ">
+                                              <owl-carousel-o [options]="productThumbSlider" #thumbnailCarousel>
+                                                @for(image of (selectedVariation && selectedVariation.variation_galleries.length ? selectedVariation && selectedVariation.variation_galleries : product.product_galleries); track image.id){
+                                                  <ng-template carouselSlide [id]="image.id.toString()">
+                                                    <div>
+                                                      <div class="slider-image" [ngClass]="{'active' : (image.id.toString() === activeSlide)}">
+                                                        @if(videType.includes(image.mime_type)){
+                                                          <i class="ri-video-line"></i>
+
+                                                          <video width="130" height="130" (click)="owlCar.to(activeSlide = image.id.toString())">
+                                                            <source [src]="image ? image.original_url : ''" [type]="image.mime_type">
+                                                          </video>
+                                                        }@else if(audioType.includes(image.mime_type)){
+                                                          <button (click)="owlCar.to(activeSlide = image.id.toString())">
+                                                            <i class="ri-music-2-line"></i>
+                                                          </button>
+                                                        }@else {
+                                                          <img [src]="image ? image.original_url : 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name" (click)="owlCar.to(activeSlide = image.id.toString())">
+                                                        }
+                                                      </div>
+                                                    </div>
+                                                  </ng-template>
+                                                }
+                                              </owl-carousel-o>
+                                            </div>
+                                          </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 rtl-text">
+                            <div class="product-page-details">
+                            <app-product-details [option]="option" [product]="product" [selectedVariation]="selectedVariation ? selectedVariation : product"></app-product-details>
+                            <app-product-content [product]="product" [option]="option" (selectedVariant)="selectedVariant($event)" [owlCar]="owlCar"></app-product-content>
+                            <app-product-information [product]="product"></app-product-information>
+                            <app-product-delivery-information [product]="product"></app-product-delivery-information>
+                            <app-payment-option [product]="product" [option]="option"></app-payment-option>
+
+                            @if(product.cross_sell_products && product.cross_sell_products.length){
+                                <app-product-bundle [product]="product"></app-product-bundle>
+                            }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <section class="tab-product product-details-contain section-b-space">
+        <app-product-details-tab [product]="product"></app-product-details-tab>
+      </section>
+    </div>
+  </section>

@@ -1,0 +1,53 @@
+<div class="card mt-0">
+  <div class="card-body">
+    <div class="top-sec">
+      <h3>{{ 'bank_details' | translate }}</h3>
+    </div>
+    <form class="themeform-auth" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-3 align-items-center">
+        <label for="bank_account_no" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'bank_account_no'| translate}}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="text" class="form-control" id="bank_account_no" placeholder="{{ 'enter_bank_account_no' | translate }}" formControlName="bank_account_no" numbersOnly>
+        </div>
+      </div>
+      <div class="row mb-3 align-items-center">
+        <label for="bank_name" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'bank_name'| translate }}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="text" class="form-control" id="bank_name" placeholder="{{ 'enter_bank_name' | translate }}" formControlName="bank_name">
+        </div>
+      </div>
+      <div class="row mb-3 align-items-center">
+        <label for="bank_holder_name" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'holder_name'| translate}}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="text" class="form-control" id="bank_holder_name" placeholder="{{ 'enter_bank_holder_name' | translate }}" formControlName="bank_holder_name">
+        </div>
+      </div>
+      <div class="row mb-3 align-items-center">
+        <label for="swift" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'swift'| translate }}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="text" class="form-control" id="swift" placeholder="{{ 'enter_swift' | translate }}" formControlName="swift">
+        </div>
+      </div>
+      <div class="row mb-3 align-items-center">
+        <label for="ifsc" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'ifsc'| translate}}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="text" class="form-control" id="ifsc" placeholder="{{ 'enter_ifsc' | translate }}" formControlName="ifsc">
+        </div>
+      </div>
+    </form>
+    <div class="mb-3 top-sec top-sec-2">
+      <h3>{{ 'paypal_details'| translate}}</h3>
+    </div>
+    <form class="themeform-auth" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-3 align-items-center">
+        <label for="paypal_email" class="form-label col-xxl-2 col-lg-12 col-md-3">{{ 'paypal_email' | translate }}</label>
+        <div class="col-xxl-10 col-lg-12 col-md-9">
+          <input type="email" class="form-control" id="paypal_email" placeholder="{{ 'enter_paypal_email' | translate }}" formControlName="paypal_email">
+        </div>
+      </div>
+      <div class="text-end">
+        <app-button [class]="'btn btn-solid'" [id]="'payout_btn'">{{ 'save'| translate}}</app-button>
+      </div>
+    </form>
+  </div>
+</div>

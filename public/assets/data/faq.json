@@ -1,0 +1,132 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 10,
+            "title": "How do I protect my personal information when shopping online?",
+            "description": "Use secure websites (look for \"https\" in the URL), avoid public Wi-Fi for sensitive transactions, regularly update passwords, and be cautious about sharing unnecessary personal information. Additionally, consider using a virtual private network (VPN) for added security, and monitor your financial statements regularly for any unauthorized transactions. Staying vigilant and adopting secure online practices is key to protecting your personal information.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:20:14.000000Z",
+            "updated_at": "2023-10-10T03:27:19.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 9,
+            "title": "What is the difference between refurbished and new products?",
+            "description": "Refurbished products have been repaired and tested to ensure functionality. They may show slight wear but are generally more affordable than new items. New products are unused and come in original packaging. When purchasing refurbished items, look for those certified by the manufacturer or a reputable third party to ensure quality and reliability.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:19:59.000000Z",
+            "updated_at": "2023-09-29T08:27:01.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 8,
+            "title": "How can I find out about product recalls?",
+            "description": "Check the product's official website, the manufacturer's website, or government websites for recalls. You can also sign up for email alerts from consumer protection organizations. Additionally, following the manufacturer and relevant product safety organizations on social media can provide timely updates on recalls and safety concerns.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:19:44.000000Z",
+            "updated_at": "2023-09-29T08:26:49.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 7,
+            "title": "Can I cancel an order after it has been placed?",
+            "description": "It depends on the retailer and the stage of processing. Quickly contact customer service to inquire about cancellation possibilities. Some retailers have a short window for order cancellations, especially if the order has already been processed or shipped. Being proactive in reaching out can increase the chances of a successful cancellation.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:19:28.000000Z",
+            "updated_at": "2023-09-29T08:26:34.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 6,
+            "title": "What should I do if a product arrives damaged?",
+            "description": "Contact the retailer's customer service immediately. Most retailers have a process for handling damaged or defective items and may offer a replacement or refund. Take clear photos of the damage and provide detailed information to expedite the resolution process. Many retailers prioritize customer satisfaction and will work to resolve the issue promptly.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:19:11.000000Z",
+            "updated_at": "2023-09-29T08:26:21.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 5,
+            "title": "How can I extend the lifespan of electronic devices?",
+            "description": "Keep devices in a cool and dry place, install software updates regularly, use protective cases, and follow manufacturer recommendations for charging. Avoid exposing devices to extreme temperatures, and consider investing in surge protectors to safeguard against electrical issues.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:18:57.000000Z",
+            "updated_at": "2023-09-29T08:24:17.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 4,
+            "title": "Are online reviews reliable for making purchasing decisions?",
+            "description": "Online reviews can be helpful, but it's essential to consider the overall sentiment and read multiple reviews. Look for detailed reviews that discuss both positive and negative aspects of the product. Consider the credibility of the source, and be aware that some reviews may be influenced by factors like personal preferences or sponsored content.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:18:43.000000Z",
+            "updated_at": "2023-09-29T08:23:22.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 3,
+            "title": "How do I find the best deals and discounts when shopping online?",
+            "description": "Subscribe to newsletters, follow retailers on social media, and use price comparison tools. Many retailers also offer discounts for first-time shoppers or during seasonal sales. Additionally, consider browser extensions that automatically apply coupon codes at checkout, maximizing your savings.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:18:31.000000Z",
+            "updated_at": "2023-09-29T08:22:16.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 2,
+            "title": "What is the return policy for most products?",
+            "description": "Return policies vary by retailer. Typically, there is a specified window (e.g., 30 days) for returns. Check the retailer's website or contact customer service for specific details. Some retailers may offer free returns, while others may deduct return shipping costs from your refund. It's crucial to review the policy before making a purchase to ensure you're comfortable with the terms.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:17:56.000000Z",
+            "updated_at": "2023-09-29T08:21:40.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 1,
+            "title": "How can I track my online order?",
+            "description": "Most online retailers provide a tracking number in your order confirmation email. You can use this number on the carrier's website to track the status and location of your package. Additionally, some carriers offer detailed tracking information, including estimated delivery times and real-time updates on the package's journey.",
+            "created_by_id": 1,
+            "status": 1,
+            "created_at": "2023-09-29T08:17:39.000000Z",
+            "updated_at": "2023-09-29T08:21:30.000000Z",
+            "deleted_at": null
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}

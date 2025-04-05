@@ -1,0 +1,122 @@
+<!-- Home Section Start -->
+<section class="small-section pt-res-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <section class="pt-0">
+          <div class="home-slider">
+            <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Service Start -->
+@if(data?.content?.services){
+  <section class="service-w-bg tools-service  pt-0">
+    <div class="container">
+      <app-theme-services [services]="data?.content?.services?.banners" [class]="'col-xl-3'"></app-theme-services>
+    </div>
+  </section>
+}
+<!-- Service End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <app-theme-title [title]="data?.content?.products_list_1" [type]="'icon'"></app-theme-title>
+          <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="options"></app-theme-product>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Banner Section Start -->
+@if(filteredBanners.length){
+<section class="pb-0 banner-section ratio2_1" [class.pt-3]="!data?.content?.products_list_1?.status">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+        @for(banner of filteredBanners; track banner.redirect_link; let i = $index){
+          @if(filteredBanners.length >= 2){
+            <div [ngClass]="(i == 0 || i == 1) ? 'col-sm-6' : (i > 1 && filteredBanners.length % 2 == 0) ? 'col-sm-6' : (i > 1 && filteredBanners.length == 5 ) ? 'col-md-4 col-sm-6' : 'col-12'">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            </div>
+          }@else {
+            <div class="col-12">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- Banner Section end -->
+
+<!-- Tab product start-->
+@if(data?.content?.category_product?.status && data?.content?.category_product?.category_ids){
+  <section class="ratio_square bg-title wo-bg">
+    <div class="container">
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'" [tab_style]="'classic'" [title]="data?.content?.category_product" [showItems]="5" [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"></app-theme-product-tab-section>
+    </div>
+  </section>
+}
+<!-- Tab Product end -->
+
+<!-- banner section start -->
+@if(data?.content?.offer_banner?.status){
+  <section class="container" [class.pt-3]="!data?.content?.category_product?.status">
+      <app-image-link [image]="data?.content?.offer_banner"></app-image-link>
+  </section>
+}
+<!-- banner section end -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_2?.status && data?.content?.products_list_2?.product_ids){
+  <section class="ratio_square">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <app-theme-title [title]="data?.content?.products_list_2" [type]="'icon'"></app-theme-title>
+        </div>
+        <div class="col-12">
+          <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true" [options]="options"></app-theme-product>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status && data?.content?.featured_blogs?.blog_ids){
+  <section class="blog section-b-space left-blog ratio3_2 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <app-theme-title [title]="data?.content?.featured_blogs" [type]="'icon'"></app-theme-title>
+        </div>
+        <div class="col-md-12">
+          <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []" [blogEffect]="'basic-effect'"></app-theme-blog>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

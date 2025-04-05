@@ -1,0 +1,7 @@
+<ul>
+  @for(category of categories; track category.id){
+    <li>
+      <a href="javascript:void(0)" [routerLink]="['/collections']" [queryParams]="{ category: category?.slug }" class="text-content">{{ category.name }}</a>
+    </li>
+  }
+</ul>

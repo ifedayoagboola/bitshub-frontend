@@ -1,0 +1,22 @@
+<div class="checkout-detail">
+  <div class="row g-md-4 g-sm-3 g-2">
+    @if(setting.payment_methods){
+      @for(payment of setting.payment_methods; track payment.name; let i = $index){
+        @if(payment?.status){
+          <div class="col-sm-6">
+            <div class="payment-option">
+              <div class="payment-category w-100">
+                <div class="form-check custom-form-check hide-check-box w-100">
+                  <input class="form-check-input" type="radio" name="payment_method" [checked]="i === 0" [id]="payment.name" (change)="set(payment.name)">
+                  <label class="form-check-label" for="{{payment.name}}">
+                    {{ (payment.title ? payment.title : payment.name) | uppercase }}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    }
+  </div>
+</div>

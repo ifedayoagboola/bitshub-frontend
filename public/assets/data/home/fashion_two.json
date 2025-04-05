@@ -1,0 +1,193 @@
+{
+    "id": 2,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                9,
+                6,
+                7,
+                5
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_two/fashion_two_2.png",
+            "redirect_link": {
+                "link": "fashion",
+                "link_type": "collection"
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_two/fashion_two_1.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/fashion_two/fashion_two_3.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/fashion_two/fashion_two_4.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/fashion_two/fashion_two_5.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_4": {
+                "status": true,
+                "image_url": "/images/theme/fashion_two/fashion_two_6.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            21,
+            20,
+            19,
+            17,
+            16,
+            15,
+            13,
+            12,
+            11,
+            9,
+            10
+        ],
+        "social_media": {
+            "title": "# Instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_one/fashion_one_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "slider_products": {
+            "status": true,
+            "product_slider_1": {
+                "title": "new products",
+                "status": true,
+                "product_ids": [
+                    21,
+                    20,
+                    19
+                ]
+            },
+            "product_slider_2": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    17,
+                    16,
+                    15
+                ]
+            },
+            "product_slider_3": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    13,
+                    12,
+                    11
+                ]
+            },
+            "product_slider_4": {
+                "title": "on sell",
+                "status": true,
+                "product_ids": [
+                    9,
+                    10,
+                    11
+                ]
+            }
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                8,
+                9,
+                10
+            ]
+        }
+    },
+    "slug": "fashion_two"
+}

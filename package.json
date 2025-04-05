@@ -1,0 +1,87 @@
+{
+  "name": "multikart-frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "dev:ssr": "ng build --watch & ng run multikart-frontend:server --watch & nodemon dist/multikart-frontend/server/server.mjs",
+    "serve:ssr": "node dist/multikart-frontend/server/server.mjs",
+    "build:ssr": "ng build && ng run multikart-frontend:server",
+    "prerender": "ng run multikart-frontend:prerender"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.0.4",
+    "@angular/common": "^19.0.4",
+    "@angular/compiler": "^19.0.4",
+    "@angular/core": "^19.0.4",
+    "@angular/forms": "^19.0.4",
+    "@angular/platform-browser": "^19.0.4",
+    "@angular/platform-browser-dynamic": "^19.0.4",
+    "@angular/platform-server": "^19.0.4",
+    "@angular/router": "^19.0.4",
+    "@angular/ssr": "^19.0.5",
+    "@ng-bootstrap/ng-bootstrap": "^18.0.0-rc.0",
+    "@ngx-loading-bar/core": "^6.0.2",
+    "@ngx-loading-bar/http-client": "^6.0.2",
+    "@ngx-loading-bar/router": "^6.0.2",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "@ngxs/storage-plugin": "^19.0.0",
+    "@ngxs/store": "^19.0.0",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "environments": "^1.2.7",
+    "express": "^4.18.2",
+    "ng-select2-component": "^16.0.0",
+    "ngx-image-zoom": "^2.1.0",
+    "ngx-owl-carousel-o": "^19.0.0",
+    "ngx-toastr": "^18.0.0",
+    "nodemon": "^3.1.9",
+    "rxjs": "~7.8.0",
+    "swiper": "^11.2.4",
+    "tslib": "^2.3.0",
+    "uninstall": "^0.0.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.0.5",
+    "@angular/cli": "^19.0.5",
+    "@angular/compiler-cli": "^19.0.4",
+    "@types/express": "^4.17.17",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
+    "jasmine-core": "~5.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.5.2"
+  },
+  "overrides": {
+    "@ngxs/devtools-plugin": {
+      "@angular/core": "$@angular/core"
+    },
+    "@ngxs/form-plugin": {
+      "@angular/core": "$@angular/core",
+      "@angular/forms": "$@angular/forms"
+    },
+    "@ngxs/logger-plugin": {
+      "@angular/core": "$@angular/core"
+    },
+    "@ngxs/router-plugin": {
+      "@angular/core": "$@angular/core",
+      "@angular/router": "$@angular/router"
+    },
+    "@ngxs/storage-plugin": {
+      "@angular/core": "$@angular/core"
+    },
+    "@ngxs/store": {
+      "@angular/core": "$@angular/core"
+    }
+  }
+}

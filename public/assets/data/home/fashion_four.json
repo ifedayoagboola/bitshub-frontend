@@ -1,0 +1,87 @@
+{
+    "id": 4,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                9,
+                8,
+                7,
+                6
+            ]
+        },
+        "home_banner": {
+            "status": false,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_four/fashion_four_1.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            16,
+            19,
+            17,
+            15
+        ],
+        "products_list": {
+            "status": true,
+            "products": {
+                "tag": "recent story",
+                "title": "trending products",
+                "status": true,
+                "product_ids": [
+                    19,
+                    17,
+                    16,
+                    15
+                ]
+            },
+            "categories": {
+                "status": true,
+                "category_ids": [
+                    8,
+                    9,
+                    10
+                ]
+            }
+        },
+        "offer_banner_1": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/fashion_four/fashion_four_2.png",
+                "redirect_link": {
+                    "link": 16,
+                    "link_type": "product",
+                    "product_ids": 16
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/fashion_four/fashion_four_3.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/fashion_four/fashion_four_4.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "offer_banner_2": {
+            "status": true,
+            "image_url": "/images/theme/fashion_four/fashion_four_5.png"
+        }
+    },
+    "slug": "fashion_four"
+}

@@ -1,0 +1,57 @@
+<div class="row g-sm-4 g-3">
+  @if(banners?.banner_1?.status){
+    <div [class]="class ? class : 'col-md-6'">
+      <a href="javascript:void(0)">
+        <app-image-link [image]="banners?.banner_1" [class]="'collection-banner'" [bgImage]="true"></app-image-link>
+      </a>
+    </div>
+  }
+  @if(banners?.banner_2?.status){
+    <div [class]="class ? class : 'col-md-6'">
+      <a href="javascript:void(0)">
+        <app-image-link [image]="banners?.banner_2" [class]="'collection-banner'" [bgImage]="true"></app-image-link>
+      </a>
+    </div>
+  }
+  @if(banners?.banner_3?.status){
+    <div [class]="class ? class : 'col-md-6'">
+      <a href="javascript:void(0)">
+        <app-image-link [image]="banners?.banner_3" [class]="'collection-banner'" [bgImage]="true"></app-image-link>
+      </a>
+    </div>
+  }
+  @if(banners?.banner_4?.status){
+    <div [class]="class ? class : 'col-md-6'">
+      <a href="javascript:void(0)">
+        <app-image-link [image]="banners?.banner_4" [class]="'collection-banner'" [bgImage]="true"></app-image-link>
+      </a>
+    </div>
+  }
+  @if(banners?.grid_banner_1?.status){
+    <div class="col-md-4">
+      <div class="collection-banner text-center">
+        <a href="javascript:void(0)">
+          <app-image-link [image]="banners?.grid_banner_1" [class]="'img-part'" [bgImage]="true"></app-image-link>
+        </a>
+      </div>
+    </div>
+  }
+  @if(banners?.grid_banner_2?.status){
+    <div class="col-md-4">
+      <div class="collection-banner text-center">
+        <a href="javascript:void(0)">
+          <app-image-link [image]="banners?.grid_banner_2" [class]="'img-part'" [bgImage]="true"></app-image-link>
+        </a>
+      </div>
+    </div>
+  }
+    @if(banners?.grid_banner_3?.status){
+    <div class="col-md-4">
+      <div class="collection-banner text-center">
+        <a href="javascript:void(0)">
+          <app-image-link [image]="banners?.grid_banner_3" [class]="'img-part'" [bgImage]="true"></app-image-link>
+        </a>
+      </div>
+    </div>
+  }
+</div>

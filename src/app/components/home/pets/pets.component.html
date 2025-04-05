@@ -1,0 +1,110 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-t-space blog-wo-bg">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->
+
+<!-- Banner section -->
+@if(filteredBanners && filteredBanners.length){
+  <section class="section-t-space ratio2_1 banner-section">
+    <div class="container">
+      <div class="row g-sm-4 g-3">
+        @for(banner of filteredBanners; track banner.redirect_link; let i = $index){
+          @if(filteredBanners.length >= 2){
+            <div [ngClass]="(filteredBanners.length == 5 && ((i == 3 || i == 4))) ? 'col-6' : (filteredBanners.length == 4 || filteredBanners.length == 2) ? 'col-6' : 'col-lg-4 col-6'">
+              <div class="position-relative">
+                <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+                <div class="banner-skeleton">
+                  <div class="skeleton-content">
+                    <p class="card-text placeholder-glow row g-lg-3 g-0">
+                      <span class="col-lg-7 col-9">
+                        <span class="placeholder"></span>
+                      </span>
+                      <span class="col-lg-9 col-12">
+                        <span class="placeholder"></span>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }@else {
+            <div class="col-12">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- Banner section end-->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_1?.status){
+  <section class="section-t-space pets-box">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.products_list_1" [type]="'jewellery'"></app-theme-title>
+      <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+    </div>
+  </section>
+}
+<!-- Product slider end -->
+
+<!-- Parallax Banner Start -->
+@if(data?.content?.parallax_banner?.status){
+  <section class="pet-parallax">
+    <div class="full-banner parallax  text-center p-center bg-size" [ngStyle]="{'background-image': 'url('+ StorageURL + data?.content?.parallax_banner?.image_url +')'}">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="banner-contain">
+              <h4>{{ data?.content?.parallax_banner?.main_title }}</h4>
+              <h3>{{ data?.content?.parallax_banner?.title }}</h3>
+              <p>{{ data?.content?.parallax_banner?.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pet-decor">
+        <img src="assets/images/dog.png" alt="dog" class="img-fluid">
+      </div>
+    </div>
+  </section>
+}
+<!-- Parallax Banner End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list_2?.status){
+<section class="section-b-space pets-box">
+  <div class="container">
+    <app-theme-title [title]="data?.content?.products_list_2" [type]="'jewellery'" [space]="false"></app-theme-title>
+    <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+  </div>
+</section>
+}
+<!-- Product slider end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status){
+  <div class="container">
+    <app-theme-title [title]="data?.content?.featured_blogs" [type]="'jewellery'"></app-theme-title>
+  </div>
+
+  <section class="section-b-space blog pt-0 blog_box ratio2_3 ">
+    <div class="container">
+      <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+    </div>
+  </section>
+}
+<!-- Blog Section End -->

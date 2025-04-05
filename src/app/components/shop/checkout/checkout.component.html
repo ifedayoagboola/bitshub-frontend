@@ -1,0 +1,597 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<section class="section-b-space checkout-section-2">
+  <div class="container">
+    <div class="checkout-page">
+      <div class="checkout-form">
+        <form>
+          <div class="row g-sm-4 g-3">
+            <div class="col-lg-7">
+              <div class="left-sidebar-checkout">
+                <div class="checkout-detail-box">
+                  @if((setting$ | async) && !(accessToken$ | async)){
+                  <div class="checkout-form-section">
+                    <div class="checkbox-main-box">
+                      <div class="checkout-title1">
+                        <h2>{{ 'account_details' | translate }}</h2>
+                      </div>
+                      <form [formGroup]="form" class="checkout-form row g-md-4 g-sm-3 g-2">
+                        <div class="col-sm-6">
+                          <div class="form-box">
+                            <label for="name" class="form-label">{{ 'name' | translate }}</label>
+                            <input type="text" class="form-control" formControlName="name" placeholder="{{ 'enter_name' | translate }}" id="name">
+                            @if(form.controls['name'].touched && form.controls['name'].errors?.['required']){
+                            <div class="invalid-feedback">
+                              {{ 'name_is_required' | translate }}
+                            </div>
+                            }
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-box">
+                            <label for="email" class="form-label">{{ 'email' | translate }}</label>
+                            <input type="email" class="form-control" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email" id="email">
+                            @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                            <div class="invalid-feedback">
+                              {{ 'email_is_required' | translate }}
+                            </div>
+                            }
+
+                            @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
+                            <div class="invalid-feedback">
+                              {{ 'invalid_email' | translate }}
+                            </div>
+                            }
+                          </div>
+                        </div>
+                        <div class="col-md-12 phone-field">
+                          <div class="form-box position-relative">
+                            <label class="form-label" for="phoneno">{{ 'phone_number' | translate }}</label>
+                            @if(isBrowser) {
+                              <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="country_code">
+                                <ng-template #template let-data="data">
+                                  <div class="country">
+                                    <div class="flag-box">
+                                      <div class="iti-flag {{data?.class}}"></div>
+                                    </div>
+                                    <span class="dial-code">{{data.code}}</span>
+                                  </div>
+                                </ng-template>
+                              </select2>
+                            }
+                            <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone">
+                          </div>
+                          @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+                          <div class="invalid-feedback">
+                            {{ 'phone_is_required' | translate }}
+                          </div>
+                          }
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-box form-checkbox">
+                            <input type="checkbox" class="form-check-input checkbox_animated" id="account" formControlName="create_account">
+                            <label class="form-check-label" for="account">{{ 'create_an_account' | translate }}?</label>
+                          </div>
+                        </div>
+                        @if(form.controls['create_account'].value){
+                        <div class="col-md-6">
+                          <div class="form-box">
+                            <label for="pass" class="form-label">{{ 'password' | translate }}</label>
+                            <input type="password" class="form-control" formControlName="password" placeholder="{{ 'enter_password' | translate }}" id="pass">
+                            @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
+                            <div class="invalid-feedback">
+                              {{ 'password_is_required' | translate }}
+                            </div>
+                            }
+                          </div>
+                        </div>
+                        }
+                      </form>
+                    </div>
+                    <div class="checkbox-main-box">
+                      <div class="checkout-title1">
+                        <h2>{{ 'shipping_details' | translate }}</h2>
+                      </div>
+                      <form [formGroup]="form" class="checkout-form">
+                        <div class="row g-md-4 g-sm-3 g-2" formGroupName="shipping_address">
+                          <div class="col-md-12">
+                            <div class="form-box">
+                              <label for="sname" class="form-label">{{ 'title' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="title" id="sname" placeholder="{{ 'enter_name' | translate }}">
+                              @if(form.get('shipping_address.title')?.touched && form.get('shipping_address.title')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'title_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-box">
+                              <label for="saddress" class="form-label">{{ 'address' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="street" id="saddress" placeholder="{{ 'enter_address' | translate }}">
+                              @if(form.get('shipping_address.street')?.touched && form.get('shipping_address.street')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'address_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="scountry" class="form-label">{{ 'country' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []" [placeholder]="'select_country' | translate" (update)="shippingCountryChange($event)" formControlName="country_id" resettable>
+                                </select2>
+                              }
+                              @if(form.get('shipping_address.country_id')?.touched && form.get('shipping_address.country_id')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'country_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="sstate" class="form-label">{{ 'state' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select" [data]="(shippingStates$ | async) ? (shippingStates$ | async)! : []" [placeholder]="'select_state' | translate" formControlName="state_id">
+                                  @if(form.get('shipping_address.state_id')?.touched && form.get('shipping_address.state_id')?.errors?.['required']){
+                                  <div class="invalid-feedback">
+                                    {{ 'state_is_required' | translate }}
+                                  </div>
+                                  }
+                                </select2>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="scity" class="form-label">{{ 'city' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="city" id="scity" placeholder="{{ 'enter_city' | translate }}">
+                              @if(form.get('shipping_address.city')?.touched && form.get('shipping_address.city')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'city_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="spincode" class="form-label">{{ 'pincode' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="pincode" id="spincode" placeholder="{{ 'enter_pincode' | translate }}">
+                              @if(form.get('shipping_address.pincode')?.touched && form.get('shipping_address.pincode')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'pincode_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-12 phone-field">
+                            <div class="form-box position-relative">
+                              <label class="form-label" for="phone">{{ 'phone_number' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="country_code">
+                                  <ng-template #template let-data="data">
+                                    <div class="country">
+                                      <div class="flag-box">
+                                        <div class="iti-flag {{data?.class}}"></div>
+                                      </div>
+                                      <span class="dial-code">{{data?.code}}</span>
+                                    </div>
+                                  </ng-template>
+                                </select2>
+                              }
+                              <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone">
+                            </div>
+                            @if(form.get('shipping_address.phone')?.touched && form.get('shipping_address.phone')?.errors?.['required']){
+                            <div class="invalid-feedback">
+                              {{ 'phone_is_required' | translate }}
+                            </div>
+                            }
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="checkbox-main-box">
+                      <div class="checkout-title1">
+                        <h2>{{ 'billing_details' | translate }}</h2>
+                      </div>
+                      <form [formGroup]="form" class="checkout-form">
+                        <div class="row g-md-4 g-sm-3 g-2" formGroupName="billing_address">
+                          @if(form.controls['shipping_address'].valid){
+                          <div class="col-md-12">
+                            <div class="form-box form-checkbox">
+                              <input type="checkbox" class="form-check-input checkbox_animated" id="same_shipping" formControlName="same_shipping">
+                              <label class="form-check-label" for="same_shipping">{{ 'same_as_shipping' | translate }}</label>
+                            </div>
+                          </div>
+                          }
+                          <div class="col-md-12">
+                            <div class="form-box">
+                              <label for="name" class="form-label">{{ 'title' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="title" id="name" placeholder="{{ 'enter_name' | translate }}">
+                              @if(form.get('billing_address.title')?.touched && form.get('billing_address.title')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'title_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-box">
+                              <label for="address" class="form-label">{{ 'address' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="street" id="address" placeholder="{{ 'enter_address' | translate }}">
+                              @if(form.get('billing_address.street')?.touched && form.get('billing_address.street')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'address_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="country" class="form-label">{{ 'country' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []" [placeholder]="'select_country' | translate" (update)="billingCountryChange($event)" formControlName="country_id" resettable>
+                                </select2>
+                              }
+                              @if(form.get('billing_address.country_id')?.touched && form.get('billing_address.country_id')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'country_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="state" class="form-label">{{ 'state' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select" [data]="(billingStates$ | async) ? (billingStates$ | async)! : []" formControlName="state_id" [placeholder]="'select_state' | translate">
+                                </select2>
+                              }
+                              @if(form.get('billing_address.state_id')?.touched && form.get('billing_address.state_id')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'state_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="city" class="form-label">{{ 'city' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="city" id="city" placeholder="{{ 'enter_city' | translate }}">
+                              @if(form.get('billing_address.city')?.touched && form.get('billing_address.city')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'city_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-box">
+                              <label for="pincode" class="form-label">{{ 'pincode' | translate }}</label>
+                              <input type="text" class="form-control" formControlName="pincode" id="pincode" placeholder="{{ 'enter_pincode' | translate }}">
+                              @if(form.get('billing_address.pincode')?.touched && form.get('billing_address.pincode')?.errors?.['required']){
+                              <div class="invalid-feedback">
+                                {{ 'pincode_is_required' | translate }}
+                              </div>
+                              }
+                            </div>
+                          </div>
+                          <div class="col-md-12 phone-field">
+                            <div class="form-box position-relative">
+                              <label class="form-label" for="phone">{{ 'phone_number' | translate }}</label>
+                              @if(isBrowser) {
+                                <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="country_code">
+                                  <ng-template #template let-data="data">
+                                    <div class="country">
+                                      <div class="flag-box">
+                                        <div class="iti-flag {{data?.class}}"></div>
+                                      </div>
+                                      <span class="dial-code">{{data.code}}</span>
+                                    </div>
+                                  </ng-template>
+                                </select2>
+                              }
+                              <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone">
+                            </div>
+                            @if(form.get('billing_address.phone')?.touched && form.get('billing_address.phone')?.errors?.['required']){
+                            <div class="invalid-feedback">
+                              {{ 'phone_is_required' | translate }}
+                            </div>
+                            }
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="checkbox-main-box">
+                      <div class="checkout-title1">
+                        <h2>{{ 'delivery_options' | translate }}</h2>
+                      </div>
+                      <app-delivery-block [setting]="(setting$ | async)!" (selectDelivery)="selectDelivery($event)"></app-delivery-block>
+                    </div>
+                    <div class="checkbox-main-box">
+                      <div class="checkout-title1">
+                        <h2>{{ 'payment_options' | translate }}</h2>
+                      </div>
+                      @if(!(setting$ | async)?.payment_methods?.length){
+                      <div class="empty-box">
+                        <h2>{{ 'no_payment_options_found' | translate }}</h2>
+                      </div>
+                      }
+                      <app-payment-block [setting]="(setting$ | async)!" (selectPaymentMethod)="selectPaymentMethod($event)">
+                      </app-payment-block>
+                    </div>
+                  </div>
+                  }
+                  @if((accessToken$ | async)){
+                  <ul>
+                    @if(!(cartDigital$ | async)){
+                    <li>
+                      <div class="checkout-box">
+                        <div class="checkout-title">
+                          <h4>{{ 'shipping_address' | translate }}</h4>
+                          <a href="javascript:void(0)" class="d-flex align-items-center fw-bold" (click)="openModal()">
+                            <i class="ri-add-line me-1"></i> {{ 'add_new' | translate }}
+                          </a>
+                        </div>
+                        <div class="checkout-detail">
+                          <app-address-block [addresses]="(user$ | async)?.address" [type]="'shipping'" (selectAddress)="selectShippingAddress($event)">
+                          </app-address-block>
+                        </div>
+                      </div>
+                    </li>
+                    }
+
+                    <li>
+                      <div class="checkout-box">
+                        <div  class="checkout-title">
+                          <h4>{{ 'billing_address' | translate }}</h4>
+                          <a href="javascript:void(0)" class="d-flex align-items-center fw-bold" (click)="openModal()">
+                            <i class="ri-add-line me-1"></i> {{ 'add_new' | translate }}
+                          </a>
+                        </div>
+                        <div class="checkout-detail">
+                          <app-address-block [addresses]="(user$ | async)?.address" [type]="'billing'" (selectAddress)="selectBillingAddress($event)">
+                          </app-address-block>
+                        </div>
+                      </div>
+                    </li>
+
+                    @if(!(cartDigital$ | async)){
+                    <li>
+                      <div class="checkout-box">
+                        <div class="checkout-title">
+                          <h4>{{ 'delivery_options' | translate }}</h4>
+                        </div>
+                        @if(!(user$ | async)){
+                        <div class="empty-box">
+                          <h2>{{ 'no_delivery_options_found' | translate }}</h2>
+                        </div>
+                        }
+                        <app-delivery-block [setting]="(setting$ | async)!" (selectDelivery)="selectDelivery($event)">
+                        </app-delivery-block>
+                      </div>
+                    </li>
+                    }
+
+                    <li>
+                      <div class="checkout-box">
+                        <div class="checkout-title">
+                          <h4>{{ 'payment_options' | translate }}</h4>
+                        </div>
+                        @if(!(user$ | async)){
+                        <div class="empty-box">
+                          <h2>{{ 'no_payment_options_found' | translate }}</h2>
+                        </div>
+                        }
+                        <app-payment-block [setting]="(setting$ | async)!" (selectPaymentMethod)="selectPaymentMethod($event)">
+                        </app-payment-block>
+                      </div>
+                    </li>
+                  </ul>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="checkout-right-box">
+                <div class="checkout-details">
+                  @if((cartItem$ | async)?.length){
+                  <div class="order-box">
+                    <div class="title-box">
+                      <h4>{{ 'summary_order' | translate }}</h4>
+                      <p>{{ 'verify_shipping_option_desc' | translate }}</p>
+                    </div>
+
+                    <ul class="qty">
+                      @for(item of cartItem$ | async; track item.id){
+                      <li>
+                        <div class="cart-image">
+                          <img [src]="item?.variation && item?.variation?.variation_image
+                                                    ? item?.variation?.variation_image?.original_url
+                                                    : item?.product?.product_thumbnail
+                                                    ? item?.product?.product_thumbnail?.original_url
+                                                    : 'assets/images/placeholder/product.png'" class="img-fluid" alt="product">
+                        </div>
+                        <div class="cart-content">
+                          <div>
+                            <h4>{{ item?.variation ? item?.variation?.name : item?.product?.name }}</h4>
+                            <h5>
+                              {{ (item?.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price : item?.product?.sale_price)! | currencySymbol }} X {{ item.quantity }}
+                            </h5>
+                          </div>
+                          <span class="text-theme">
+                            {{ (item?.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price : item?.product?.sale_price)! * item.quantity | currencySymbol }}
+                          </span>
+                        </div>
+                      </li>
+                      }
+                    </ul>
+                  </div>
+                  }@else {
+                  <app-no-data
+                    [class]="'no-data-added'"
+                    [image]="'assets/svg/empty-items.svg'"
+                    [text]="'no_cart_item_desc'">
+                  </app-no-data>
+                  }
+                </div>
+                @if((cartItem$ | async)?.length){
+                  <div class="checkout-details">
+                    <div class="order-box">
+                      <div class="title-box">
+                        <h4>{{ 'billing_summary' | translate }}</h4>
+
+                        @if((user$ | async) && checkoutTotal && (setting$ | async)?.activation?.coupon_enable){
+                          <div class="promo-code-box">
+                            @if((coupon$ | async)?.data?.length! > 2){
+                              <div class="promo-title">
+                                <h5>{{ 'promo_code' | translate }}</h5>
+                                <a (click)="couponModal()"><i class="ri-coupon-line"></i> {{ 'view_all' | translate }} </a>
+                              </div>
+                            }
+                            <div class="row g-sm-3 g-2 mb-3">
+                              @for(coupon of (coupon$ | async)?.data | slice:0:2; track coupon.id){
+                              <div class="col-md-6">
+                                <div class="coupon-box">
+                                  <div class="card-name">
+                                    <h6>{{ coupon?.title }}</h6>
+                                  </div>
+                                  <div class="coupon-content">
+                                    <div class="coupon-apply">
+                                      <h6 class="coupon-code success-color">#{{ coupon?.code }}</h6>
+                                      @if(coupon?.code){
+                                        <a href="javascript:void(0)" class="btn theme-btn border-btn copy-btn mt-0"
+                                          (click)="copyFunction(coupon.code)">
+                                          {{ 'Copy Code' | translate }}
+                                        </a>
+                                      }
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              }
+                            </div>
+                            @if(coupon && !appliedCoupon){
+                              <div class="coupon-input-box" [class.coupon-error]="couponError">
+                                <input type="text" class="form-control" [class.is-invalid]="couponError" id="coupon" #cpn placeholder="{{ 'enter_coupon_code_here'  | translate  }}...">
+                                <app-button [class]="'btn apply-button'" [type]="'button'" [id]="'coupon_apply'" [spinner]="true" (click)="cpn.value && setCoupon(cpn.value)">
+                                  {{ 'apply_now' | translate }}
+                                </app-button>
+                              </div>
+                              @if(couponError){
+                                <div class="invalid-feedback">
+                                  {{ couponError }}
+                                </div>
+                              }
+                            }
+
+                            @if(appliedCoupon){
+                              <div class="offer-apply-box">
+                                <img src="assets/images/offer.gif" class="img-fluid" alt="offer gif">
+                                <div>
+                                  <h4>
+                                    {{ 'you_saved' | translate }}
+                                    <span>{{ checkoutTotal.total.coupon_total_discount | currencySymbol }}</span>
+                                    {{ 'with_this_code' | translate }} 🎉
+                                  </h4>
+                                  <p>{{ 'coupon_applied' | translate }}</p>
+                                </div>
+                                <a href="javascript:void(0)" class="close-coupon" (click)="couponRemove()">
+                                  {{'remove'|translate}}
+                                </a>
+                              </div>
+                            }
+                          </div>
+                        }
+                      </div>
+                      <form [formGroup]="form" (ngSubmit)="placeorder()">
+                        <div class="custom-box-loader">
+                          @if(loading){
+                          <div class="box-loader">
+                            <app-loader [loaderClass]="'loader-wrapper blur-bg'"></app-loader>
+                          </div>
+                          }
+                          <ul class="sub-total">
+                            <li>{{ 'subtotal' | translate }}
+                              <span class="count">{{ (checkoutTotal ? (checkoutTotal.total.sub_total | currencySymbol) : 'not_calculated_yet' | translate ) }}</span>
+                            </li>
+
+                            @if(!(cartDigital$ | async)){
+                            <li>
+                              {{ 'shipping' | translate }}
+                              <span class="count">{{ (checkoutTotal ? (checkoutTotal.total.shipping_total | currencySymbol) : 'not_calculated_yet' | translate) }}</span>
+                            </li>
+                            }
+
+                            <li>
+                              {{ 'tax' | translate }}
+                              <span class="count">{{ (checkoutTotal ? (checkoutTotal.total.tax_total | currencySymbol) : 'not_calculated_yet' | translate ) }}</span>
+                            </li>
+
+                            @if((user$ | async) && checkoutTotal && (user$ | async)?.point?.balance && (setting$ | async)?.activation?.point_enable){
+                            <li>
+                              <h4 [class]="form.controls['points_amount'].value ? 'txt-primary fw-bold' : 'txt-muted'">
+                                {{ 'points' | translate  }}
+                              </h4>
+                              <h4 [class]="form.controls['points_amount'].value ? 'txt-primary fw-bold price' : 'txt-muted price'">
+                                {{ (checkoutTotal ? (checkoutTotal.total.convert_point_amount! | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                              </h4>
+                            </li>
+
+                            <li class="border-cls">
+                              <label class="form-check-label m-0" for="ponts">{{ 'point_text' | translate }}</label>
+                              <input class="checkbox_animated check-it" type="checkbox" id="ponts" (change)="togglePoint($event)">
+                            </li>
+                            }
+
+                            @if((user$ | async) && checkoutTotal && (user$ | async)?.wallet?.balance && (setting$ | async)?.activation?.wallet_enable){
+                              <li>
+                                <h4 [class]="form.controls['wallet_balance'].value ? 'txt-primary fw-bold' : ''">
+                                  {{ 'wallet_balance' | translate  }}
+                                </h4>
+                                <h4 [class]="form.controls['wallet_balance'].value ? 'txt-primary fw-bold price' : 'price'">
+                                  {{ (checkoutTotal ? (checkoutTotal.total.convert_wallet_balance! | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                </h4>
+                              </li>
+
+                              <li class="border-cls">
+                                <label class="form-check-label m-0" for="wallet">{{ 'wallet_text' | translate }}</label>
+                                <input class="checkbox_animated check-it" type="checkbox" id="wallet" (change)="toggleWallet($event)">
+                              </li>
+                            }
+                          </ul>
+                          <ul class="total">
+
+                            @if(appliedCoupon ||(form.get('points_amount')?.value && checkoutTotal.total.convert_point_amount) && (setting$ | async)?.activation?.point_enable || (form.get('wallet_balance')?.value && checkoutTotal.total.convert_wallet_balance) && (setting$ | async)?.activation?.wallet_enable){
+                              <li>{{ 'you_save' | translate }}
+                                <span class="count">{{ (checkoutTotal ? ( (checkoutTotal.total.total) - (checkoutTotal.total.sub_total) | currencySymbol) : 'not_calculated_yet' | translate ) }}</span>
+                              </li>
+                            }
+                            <li>{{ 'total' | translate }}
+                              <span class="count">{{ (checkoutTotal ? (checkoutTotal.total.total | currencySymbol) : 'not_calculated_yet' | translate ) }}</span>
+                            </li>
+                          </ul>
+
+                          <div class="text-end">
+                            <app-button
+                              [class]="'order-btn btn'"
+                              [id]="'place_order'"
+                              [disabled]="form.valid && checkoutTotal ? false : true">
+                              {{ 'place_order' | translate }}
+                            </app-button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

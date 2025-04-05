@@ -1,0 +1,65 @@
+{
+    "id": 3,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                9,
+                8,
+                7,
+                6,
+                47
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_three/fashion_three_1.png",
+            "redirect_link": {
+                "link": 16,
+                "link_type": "product",
+                "product_ids": 16
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/fashion_three/fashion_three_2.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            19,
+            16,
+            15,
+            17
+        ],
+        "products_list": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "product_ids": [
+                19,
+                16,
+                15,
+                17
+            ]
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                8,
+                9,
+                10
+            ]
+        }
+    },
+    "slug": "fashion_three"
+}

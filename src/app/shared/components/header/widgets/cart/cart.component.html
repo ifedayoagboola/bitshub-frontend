@@ -1,0 +1,156 @@
+<div (click)="cart == 'cart_sidebar' && cartToggle(true)">
+  <i class="ri-shopping-cart-line"></i>
+</div>
+@if((cartItem$ | async)?.length){
+  <span class="cart_qty_cls">{{ (cartItem$ | async)?.length }}</span>
+}
+  <!-- Add to cart bar -->
+  <div id="cart_side" [ngClass]="{ 'add_to_cart right right-cart-box': cart == 'cart_sidebar', 'show-div shopping-cart': cart == 'cart_mini' }" [class.open-side]="(sidebarCartOpen$ | async)">
+    <a href="javascript:void(0)" class="overlay" (click)="cartToggle(false)"></a>
+    <div class="cart-inner">
+      <div class="cart_top">
+        <h3>{{ 'my_cart' | translate }} <span>({{ (cartItem$ | async)?.length }})</span>
+        </h3>
+        @if(cart == 'cart_sidebar'){
+          <div class="close-cart">
+            <a href="javascript:void(0)" (click)="cartToggle(false)">
+              <i class="ri-close-fill"></i>
+            </a>
+          </div>
+        }
+      </div>
+
+      @if((cartItem$ | async)?.length){
+        <div class="pere-text-box success-box">
+          @if(shippingFreeAmt > cartTotal){
+            <p>
+                {{ 'spend' | translate }} <span class="shipping">{{ (shippingFreeAmt - cartTotal) | currencySymbol }}</span> {{ 'more_and_enjoy' | translate }} <span class="shipping">{{ 'free_shipping' | translate }}!</span>
+            </p>
+          }@else {
+            <p><span class="shipping">{{ 'congratulations' | translate }}!</span> {{ 'enjoy_free_shipping_on_us' | translate }}!</p>
+          }
+          <div class="progress"
+              [ngClass]="{ 'danger-progress': shippingCal <= 30, 'warning-progress': shippingCal >= 31 && shippingCal <= 80 }">
+              <div class="progress-bar progress-bar-striped progress-bar-animated"
+                  role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                  [ngStyle]="{ width: shippingCal+'%' }">
+              <i class="ri-truck-line"></i>
+              </div>
+          </div>
+        </div>
+      }
+      @if((cartItem$ | async)?.length){
+        <div class="sidebar-title">
+          <a href="javascript:void(0)" (click)="clearCart()">{{ 'clear_cart' | translate }}</a>
+        </div>
+      }
+      <div class="cart_media" [class.empty-cart]="!(cartItem$ | async)?.length">
+        <ul class="cart_product">
+          @for(item of cartItem$ | async; track item.id){
+            <li>
+              <div class="media">
+                <a href="javascript:void(0)">
+                  <img [src]="item?.variation && item?.variation?.variation_image
+                                        ? item?.variation?.variation_image?.original_url
+                                        : item?.product?.product_thumbnail
+                                        ? item?.product?.product_thumbnail?.original_url
+                                        : 'assets/images/placeholder/product.png'" class="" [alt]="item?.product?.name">
+                </a>
+                <div class="media-body">
+                  <a href="javascript:void(0)">
+                    <h4>{{ item?.variation ? item?.variation?.name : item?.product?.name }}</h4>
+                  </a>
+                  <h4 class="quantity">
+                    <span>{{ item?.quantity }} x {{ (item?.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price : item?.product?.sale_price)! | currencySymbol }}</span>
+                  </h4>
+                  @if(item?.variation){
+                    <h5 class="gram">{{ item?.variation?.selected_variation }}</h5>
+                  }
+                  <div class="qty-box">
+                    <div class="input-group">
+                      <span class="input-group-prepend">
+                        <app-button
+                          [type]="'button'"
+                          [class]="'btn quantity-left-minus'"
+                          [id]="'add-to-cart'+item.product.id"
+                          (click)="updateQuantity(item, -1)"
+                          [spinner]="false">
+                          @if(item.quantity > 1){
+                            <i class="ri-subtract-line"></i>
+                          }
+                          @if(item.quantity <= 1){
+                            <i class="ri-delete-bin-line"></i>
+                          }
+                        </app-button>
+                      </span>
+                      <input class="form-control input-number qty-input" type="number" name="quantity" [value]="item?.quantity" readonly>
+                      <span class="input-group-prepend">
+                        <app-button
+                          [type]="'button'"
+                          [class]="'btn quantity-right-plus'"
+                          [id]="'qty-left-minus'+item.product.id"
+                          (click)="updateQuantity(item, 1)"
+                          [spinner]="false">
+                          <i class="ri-add-line"></i>
+                        </app-button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="close-circle">
+                    @if(item?.variation){
+                      <app-button
+                        [class]="'edit-button close_button'"
+                        [id]="'cart_item_edit_btn'+item.product.id"
+                        [spinner]="false"
+                        [iconClass]="'ri-pencil-line'"
+                        (click)="openVariationModal(item)">
+                      </app-button>
+                    }
+                    <app-button
+                      [class]="'delete-button close_button'"
+                      [id]="'cart_item_delete_btn'+item.product.id"
+                      [spinner]="false"
+                      [iconClass]="'ri-delete-bin-line'"
+                      (click)="delete(item.id)">
+                    </app-button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          }@empty {
+            <div class="empty-cart-box">
+              <div>
+              <i class="ri-shopping-cart-line"></i>
+              <h5>{{ 'no_cart_item_desccription' | translate }}</h5>
+              </div>
+            </div>
+          }
+        </ul>
+        @if((cartItem$ | async)?.length){
+          <ul class="cart_total">
+            <li>
+              <div class="total">
+                <h5>{{ 'subtotal' | translate }} : <span>{{ (cartTotal$ | async)! | currencySymbol }}</span></h5>
+              </div>
+            </li>
+            <li>
+              <div class="buttons">
+                <a href="javascript:void(0)" class="btn view-cart" [routerLink]="['/cart']" (click)="cartToggle(false)">{{ 'view_cart' | translate }}</a>
+                <a href="javascript:void(0)" class="btn checkout" [routerLink]="['/checkout']" (click)="cartToggle(false)">{{ 'checkout' | translate }}</a>
+              </div>
+            </li>
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
+  <!-- Add to cart bar end-->
+   
+<!-- Free Shipping Celebration -->
+ @if((themeOption$ | async)?.general?.celebration_effect) {
+   <div class="confetti-wrapper" [class.show]="confetti == 1 && (sidebarCartOpen$ | async)">
+     @for(item of confettiItems; track item) {
+       <div class="confetti-{{item}}"></div>
+     }
+   </div>
+ }

@@ -1,0 +1,104 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "pending",
+            "slug": "pending",
+            "sequence": 1,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 2,
+            "name": "processing",
+            "slug": "processing",
+            "sequence": 2,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 3,
+            "name": "cancelled",
+            "slug": "cancelled",
+            "sequence": 3,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 4,
+            "name": "shipped",
+            "slug": "shipped",
+            "sequence": 4,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 5,
+            "name": "out_for_delivery",
+            "slug": "out-for-delivery",
+            "sequence": 5,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        },
+        {
+            "id": 6,
+            "name": "delivered",
+            "slug": "delivered",
+            "sequence": 6,
+            "created_by_id": "1",
+            "status": 1,
+            "system_reserve": "1",
+            "created_at": "2024-05-02T08:34:46.000000Z",
+            "updated_at": "2024-05-02T08:34:46.000000Z",
+            "deleted_at": null
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 6,
+    "prev_page_url": null,
+    "to": 6,
+    "total": 6
+}

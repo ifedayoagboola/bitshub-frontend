@@ -1,0 +1,17 @@
+<ul class="recent-blog">
+  @for(blog of blogs | slice:0:5; track blog.id){
+  <li>
+    <div class="media blog-box">
+      <div class="blog-image">
+        <img class="img-fluid lazyload" [src]="blog.blog_thumbnail ? blog.blog_thumbnail.original_url : 'assets/images/blog.png'" [alt]="blog.title">
+      </div>
+      <div class="media-body blog-content">
+        <h6>{{ blog?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</h6>
+        <a [routerLink]="['/blog/', blog?.slug]">
+          <h5 class="recent-name">{{ blog?.title }}</h5>
+        </a>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

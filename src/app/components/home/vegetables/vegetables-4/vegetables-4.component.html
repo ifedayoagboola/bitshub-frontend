@@ -1,0 +1,191 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="home-slider">
+    <app-image-link [image]="data?.content?.home_banner" [class]="'home'" [bgImage]="false"></app-image-link>
+    <div class="home-skeleton">
+      <div class="skeleton-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-sm-8 col-11">
+              <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                <span class="col-7">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-6">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- category section start -->
+@if(data?.content?.categories?.status){
+<section class="vegetables-category">
+  <div class="container">
+    <div class="vector-slide-8 ratio_square">
+      <app-categories [categoryIds]="data?.content?.categories?.category_ids || []" [style]="'vegetable'" [slider]="true"></app-categories>
+    </div>
+  </div>
+</section>
+}
+<!-- category section end -->
+
+<!-- banner section start -->
+@if(filteredBanners && filteredBanners.length){
+<section class="banner-section ratio2_1">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @for(banner of filteredBanners; track banner.redirect_link){
+      <div class="{{ filteredBanners.length === 3 ? 'col-lg-4 col-6' : filteredBanners.length === 2 ? 'col-6' : 'col-12' }}">
+        <div class="position-relative">
+          <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- banner section end -->
+
+<!-- product slider start -->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+<section class="six-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_1" [type]="'vegetable'"></app-theme-title>
+      </div>
+      <div class="col-12">
+        <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [options]="productSlider6" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product slider end -->
+
+<!-- product slider start -->
+@if(data?.content?.products_list_2?.status && data?.content?.products_list_2?.product_ids){
+<section class="six-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_2" [type]="'vegetable'"></app-theme-title>
+      </div>
+      <div class="col-12">
+        <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [options]="productSlider6" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product slider end -->
+
+<!-- banner section start -->
+@if(filteredBanners2 && filteredBanners2.length){
+<section class="gift-card-section ratio2_1 banner-section">
+  <div class="container">
+    <div class="card-box">
+      <div class="row g-sm-4 g-3">
+        @for(banner of filteredBanners2; track banner.redirect_link){
+        <div [ngClass]="filteredBanners2.length === 3 ? 'col-lg-4 col-sm-6' : filteredBanners2.length === 2 ? 'col-sm-6' : 'col-12'">
+          <app-image-link [image]="banner" [bgImage]="true" [class]="'collection-banner'"></app-image-link>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- banner section end -->
+
+<!-- product slider start -->
+@if(data?.content?.products_list_3?.status && data?.content?.products_list_3?.product_ids){
+<section class="six-items deal-product-space section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_3" [type]="'vegetable'"></app-theme-title>
+      </div>
+      <div class="col-12">
+        <app-theme-product [productIds]="data?.content?.products_list_3?.product_ids || []" [style]="'vertical'" [options]="productSlider6" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product slider end -->
+
+<!-- service section start -->
+@if(data?.content?.services){
+<section class="service-w-bg banner-padding theme-bg-service pt-0">
+  <div class="container">
+    <app-theme-services [services]="data?.content?.services?.banners"></app-theme-services>
+  </div>
+</section>
+}
+<!-- service section end -->
+
+<!-- product slider start -->
+@if(data?.content?.products_list_4?.status && data?.content?.products_list_4?.product_ids){
+<section class="six-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_4" [type]="'vegetable'"></app-theme-title>
+      </div>
+      <div class="col-12">
+        <app-theme-product [productIds]="data?.content?.products_list_4?.product_ids || []" [style]="'vertical'" [options]="productSlider6" [slider]="true"></app-theme-product>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- product slider end -->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status && data?.content?.featured_blogs?.blog_ids){
+<section class="blog left-blog ratio3_2 section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.featured_blogs" [type]="'vegetable'"></app-theme-title>
+      </div>
+      <div class="col-md-12">
+        <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Blog Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

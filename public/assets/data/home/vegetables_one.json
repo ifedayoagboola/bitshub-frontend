@@ -1,0 +1,101 @@
+{
+    "id": 18,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                28,
+                27,
+                26,
+                25,
+                23
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_one/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_one/service.png",
+                    "description": "online service for new customer"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_one/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/vegetables_one/vegtables_one_1.png",
+            "redirect_link": {
+                "link": "vegetables-fruits",
+                "link_type": "collection"
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_one/vegtables_one_1.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            55,
+            56,
+            52,
+            57,
+            54,
+            70,
+            68,
+            69,
+            67,
+            64
+        ],
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                9,
+                8,
+                7
+            ]
+        },
+        "products_list_1": {
+            "title": "trending products",
+            "status": true,
+            "product_ids": [
+                55,
+                56,
+                52,
+                57,
+                54
+            ]
+        },
+        "products_list_2": {
+            "title": "special products",
+            "status": true,
+            "product_ids": [
+                70,
+                68,
+                69,
+                67,
+                64
+            ]
+        }
+    },
+    "slug": "vegetables_one"
+}

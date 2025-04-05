@@ -1,0 +1,98 @@
+<div class="dashboard-sidebar" [class.open]="accountService.isOpenMenu">
+  <button class="btn back-btn" (click)="closeMenu()">
+    <i class="ri-close-line"></i>
+    <span>{{ 'close' | translate }}</span>
+  </button>
+  <div class="profile-top">
+    <div class="profile-top-box">
+      <div class="profile-image">
+        <div class="position-relative h-100">
+
+          @if((user$ | async)?.profile_image && (user$ | async)?.profile_image?.original_url){
+          <img [src]="(user$ | async)?.profile_image?.original_url" class="update_img" alt="profile">
+          }@else {
+          <div class="user-round">
+            <h4>{{ (user$ | async)?.name?.charAt(0)?.toString()?.toUpperCase() }}</h4>
+          </div>
+          }
+          <div class="user-icon">
+            <input type="file" (change)="uploadImage($event)" accept="image/*">
+            <i class="ri-image-edit-line d-lg-block d-none"></i>
+            <i class="ri-pencil-fill edit-icon d-lg-none"></i>
+          </div>
+        </div>
+      </div>
+
+      @if((user$ | async)?.profile_image && (user$ | async)?.profile_image?.original_url){
+      <div class="user-icon-2" (click)="uploadImage('remove')">
+        <i class="ri-close-line "></i>
+      </div>
+      }
+    </div>
+    <div class="profile-detail">
+      <h5>{{ (user$ | async)?.name | titlecase }}</h5>
+      <h6>{{ (user$ | async)?.email }}</h6>
+    </div>
+  </div>
+
+  <div class="faq-tab">
+    <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/dashboard']">
+          <i class="ri-home-line"></i> {{ 'dashboard' | translate }}
+        </a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/notifications']">
+          <i class="ri-notification-line"></i>
+         {{ 'notifications' | translate }}
+         @if(unreadNotificationCount){
+          <span class="notification-count">({{ unreadNotificationCount }})</span>
+          }
+        </a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/bank-details']">
+          <i class="ri-bank-line"></i> {{ 'bank_details' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/wallet']">
+          <i class="ri-wallet-line"></i> {{ 'my_wallet' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/point']">
+          <i class="ri-coin-line"></i> {{ 'earning_points' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/order']">
+          <i class="ri-file-text-line"></i>{{ 'my_orders' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/downloads']">
+          <i class="ri-download-2-line"></i>{{ 'downloads' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/refund']">
+          <i class="ri-money-dollar-circle-line"></i> {{ 'refund_history' | translate }}
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/addresses']">
+          <i class="ri-map-pin-line"></i> {{ 'saved_address' | translate }}
+        </a>
+      </li>
+      <li class="nav-item logout-cls" role="presentation">
+        <a href="javascript:void(0)" class="btn loagout-btn" (click)="logout()">
+          <i class="ri-logout-box-r-line"></i> {{ 'logout' | translate }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

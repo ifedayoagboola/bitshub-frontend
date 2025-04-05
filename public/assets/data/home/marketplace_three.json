@@ -1,0 +1,145 @@
+{
+    "id": 16,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                29,
+                25,
+                26,
+                27
+            ]
+        },
+        "home_banner": {
+            "status": false,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_three/marketplace_three_1.png",
+                    "redirect_link": {
+                        "link": "powerhouse-electronics",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "status": true,
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_three/marketplace_three_2.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_three/marketplace_three_4.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/marketplace_three/marketplace_three_3.png",
+                "redirect_link": {
+                    "link": "bag-emporium",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            132,
+            131,
+            130,
+            156,
+            153,
+            152,
+            161
+        ],
+        "featured_blogs": {
+            "status": true,
+            "blog_ids": [
+                3,
+                5,
+                1
+            ]
+        },
+        "categories_products": {
+            "status": true,
+            "left_panel": {
+                "banner": {
+                    "status": true,
+                    "image_url": "/images/theme/marketplace_three/marketplace_three_7.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection",
+                        "product_ids": null
+                    }
+                },
+                "categories": {
+                    "status": true,
+                    "category_ids": [
+                        41,
+                        12,
+                        7,
+                        28,
+                        84
+                    ]
+                },
+                "products_list": {
+                    "title": "new product",
+                    "status": true,
+                    "product_ids": [
+                        132,
+                        131,
+                        130
+                    ]
+                }
+            },
+            "right_panel": {
+                "offer_banner": {
+                    "banner_1": {
+                        "status": true,
+                        "image_url": "/images/theme/marketplace_three/marketplace_three_6.png",
+                        "redirect_link": {
+                            "link": "fit-gear-central",
+                            "link_type": "collection"
+                        }
+                    },
+                    "banner_2": {
+                        "status": true,
+                        "image_url": "/images/theme/marketplace_three/marketplace_three_5.png",
+                        "redirect_link": {
+                            "link": "powerhouse-electronics",
+                            "link_type": "collection"
+                        }
+                    }
+                },
+                "products_list": {
+                    "title": "deals of the day",
+                    "status": true,
+                    "product_ids": [
+                        156,
+                        153,
+                        152,
+                        161
+                    ]
+                },
+                "category_product": {
+                    "title": "Recommendations for you",
+                    "status": true,
+                    "category_ids": [
+                        7,
+                        28,
+                        118
+                    ]
+                }
+            }
+        }
+    },
+    "slug": "marketplace_three"
+}

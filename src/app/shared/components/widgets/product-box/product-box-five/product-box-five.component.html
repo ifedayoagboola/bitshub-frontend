@@ -1,0 +1,51 @@
+<div class="basic-product theme-product-4" [class.sold-out]="product.stock_status === 'out_of_stock'">
+  <div class="img-wrapper">
+    <app-image-variant [thumbnail]="selectedVariation ? selectedVariation.variation_image! : product.product_thumbnail!" [gallery_images]="product.product_galleries!" [product]="product!"></app-image-variant>
+      <ul class="trending-label">
+        @if(product.stock_status === 'out_of_stock'){
+          <li class="out_of_stock">{{ 'sold_out' | translate }}</li>
+        }
+        @if(product.is_sale_enable){
+          <li>{{ 'sale' | translate }}</li>
+        }
+        @if(product.is_featured){
+          <li>{{ 'featured' | translate }}</li>
+        }
+        @if(product.is_trending){
+          <li>{{ 'trending' | translate }}</li>
+        }
+      </ul>
+
+      <div class="color-panel coverflow">
+          <app-display-variant-attributes [product]="product" [attributes]="product.attributes || []" [showVariableType]="['color']" (selectVariation)="selectedVariant($event!)" ></app-display-variant-attributes>
+      </div>
+      <div class="cart-info">
+
+        <app-wishlist [product]="product" [class]="'wishlist-icon'"></app-wishlist>
+        <app-product-hover-action [product]="product" [showAction]="['compare', 'view']">
+            <app-cart-button [text]="''" [product]="product" [class]="'add-cart-btn'" [selectedVariation]="selectedVariation" [enableModal]="true"></app-cart-button>
+        </app-product-hover-action>
+      </div>
+  </div>
+  <div class="product-detail">
+      <a class="product-title mb-2" [routerLink]="['/product', product.slug]">
+          {{ selectedVariation ? selectedVariation.name  : product.name }}
+      </a>
+      <div class="rating-w-count">
+          <div class="rating">
+            <ngb-rating [(rate)]="product.rating_count">
+              <ng-template let-fill="fill" let-index="index">
+                <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100" ></i>
+              </ng-template>
+            </ngb-rating>
+          </div>
+          <span>({{ product.reviews_count }})</span>
+      </div>
+      <h4 class="price">{{(selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol}}
+        @if(selectedVariation ? selectedVariation.discount : product.discount){
+          <del>  {{(selectedVariation ? selectedVariation.price : product.price) | currencySymbol}} </del>
+          <span class="discounted-price"> {{selectedVariation ? selectedVariation.discount : product.discount}} % Off </span>
+        }
+      </h4>
+  </div>
+</div>

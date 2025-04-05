@@ -1,0 +1,115 @@
+<header class="left-header left-header-sm">
+  <div class="metro">
+    <div class="main-menu">
+      <div class="menu-left">
+        <div class="sidenav svg-icon-menu">
+          <nav>
+            <div>
+              <div class="sidebar-back text-start d-xl-none d-block">Back</div>
+            </div>
+            <div class="left-sidebar_center">
+              <app-categories [style]="'sidebar'" [categoryIds]="data?.content?.sidebar_category?.category_ids || []"></app-categories>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="pt-0 section-t-space">
+  <!-- Home Section Start -->
+  <section class="p-0">
+    <div class="home-slider">
+      <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+    </div>
+  </section>
+  <!-- Home Section End -->
+
+  <div class="container-fluid p-0-xl">
+    <!-- Service Start -->
+    @if(data?.content?.services){
+    <section class="service-w-bg banner-padding">
+      <div class="container-fluid">
+        <app-theme-services [services]="data?.content?.services?.banners" [class]="'col-xl-3'"></app-theme-services>
+      </div>
+    </section>
+    }
+    <!-- Service End -->
+
+    <!-- Tab product start-->
+    @if(data?.content?.category_product?.status && data?.content?.category_product?.category_ids){
+    <section class="ratio_square bg-title wo-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <app-theme-title [title]="data?.content?.category_product" [type]="'basic'" [space]="false">
+            </app-theme-title>
+          </div>
+          <div class="col">
+            <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids"
+              [style]="'vertical'" [tab_style]="'basic'" [title]="data?.content?.category_product"
+              [showItems]="5" [class]="'row row-cols-xxl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'">
+            </app-theme-product-tab-section>
+          </div>
+        </div>
+      </div>
+    </section>
+    }
+    <!-- Tab Product end -->
+
+    <!-- Banner Section Start -->
+    @if(filteredBanners.length){
+    <section class="pb-0 ratio2_1 banner-section">
+      <div class="ratio2_1">
+        <div class="container">
+          <div class="row g-sm-4 g-3">
+            @for(banner of filteredBanners; track banner.redirect_link; let i = $index){
+            <div
+              [ngClass]="filteredBanners.length == 3 ? 'col-md-4 col-sm-6' : filteredBanners.length == 2 ? 'col-sm-6' : 'col-12'">
+              <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+    }
+    <!-- Banner Section end -->
+
+    <!-- Product slider Start -->
+    @if(data?.content?.products_list?.status && data?.content?.products_list?.product_ids){
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <app-theme-title [title]="data?.content?.products_list" [type]="'basic'" [space]="false"></app-theme-title>
+            <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'"
+              [slider]="true" [options]="options"></app-theme-product>
+          </div>
+        </div>
+      </div>
+    </section>
+    }
+    <!-- Product slider end -->
+
+    <!-- Blog Section Start -->
+    @if(data?.content?.featured_blogs?.status && data?.content?.featured_blogs?.blog_ids){
+    <section class="blog left-blog ratio3_2">
+      <div class="container">
+        <app-theme-title [title]="data?.content?.featured_blogs" [type]="'basic'" [space]="false"></app-theme-title>
+        <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []" [blogEffect]="'basic-effect'"></app-theme-blog>
+      </div>
+    </section>
+    }
+    <!-- Blog Section End -->
+
+    <!-- Brand Section Start -->
+    @if(data?.content?.brand?.status){
+    <section class="section-b-space">
+      <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+    </section>
+    }
+    <!-- Brand Section End -->
+  </div>
+</div>

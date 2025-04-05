@@ -1,0 +1,109 @@
+<section>
+  <div class="collection-wrapper ratio_asos product-details-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="slider-3-product product-wrapper position-relative mb-4">
+            @if(product.is_sale_enable || product.is_trending || product.is_featured){
+              <ul class="product-detail-label">
+                <ul class="product-detail-label">
+                  @if(product.is_sale_enable){
+                    <li class="soldout">{{ 'sale' | translate }}</li>
+                  }
+                  @if(product.is_trending){
+                    <li class="trending">{{ 'trending' | translate }}</li>
+                  }
+                  @if(product.is_featured){
+                    <li class="featured">{{ 'featured' | translate }}</li>
+                  }
+                </ul>
+              </ul>
+            }
+            <owl-carousel-o [options]="productSliderLayout">
+              @if(product.product_galleries?.length || selectedVariation && selectedVariation.variation_galleries.length){
+                @for(image of (selectedVariation && selectedVariation.variation_galleries.length ? selectedVariation && selectedVariation.variation_galleries : product.product_galleries); track image.id){
+                  <ng-template carouselSlide [id]="image.id.toString()">
+                    <div>
+                      <div class="product-slider-image {{image.id}}">
+                        @if(videType.includes(image?.mime_type!)){
+                          <video class="w-100" controls>
+                            <source [src]="image ? image.original_url : ''" [type]="image?.mime_type">
+                          </video>
+                        }@else if(audioType.includes(image?.mime_type!)){
+                          <audio controls>
+                            <source [src]="image ? image.original_url : ''" [type]="image?.mime_type">
+                          </audio>
+                        }@else {
+                          <img [src]="image ?
+                                      image.original_url :
+                                      'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+                        }
+                      </div>
+                    </div>
+                  </ng-template>
+                }
+              }@else {
+                <ng-template carouselSlide [id]="'1'">
+                  <div>
+                    <div class="product-slider-image">
+                      @if(product && product.product_thumbnail){
+                        @if(videType.includes(product.product_thumbnail.mime_type!)){
+                          <video class="w-100" controls>
+                            <source [src]="product.product_thumbnail ? product.product_thumbnail.original_url : ''" [type]="product.product_thumbnail.mime_type">
+                          </video>
+                        }@else if(audioType.includes(product.product_thumbnail.mime_type!)){
+                          <audio controls>
+                            <source [src]="product.product_thumbnail ? product.product_thumbnail.original_url : ''" [type]="product.product_thumbnail.mime_type">
+                          </audio>
+                        }@else {
+                          <img [src]="product.product_thumbnail ?
+                                product.product_thumbnail.original_url :
+                                'assets/images/placeholder/product.png'" class="img-fluid" [alt]="product.name">
+                        }
+                      }
+                    </div>
+                  </div>
+                </ng-template>
+              }
+
+              
+            </owl-carousel-o>
+            @if(product.product_type == 'digital'){
+              <app-product-digital-options [product]="product"></app-product-digital-options>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxl-9 col-lg-8">
+          <div class="row g-4">
+            <div class="col-12 rtl-text">
+              <div class="product-page-details">
+                <app-product-details [option]="option" [product]="product" [selectedVariation]="selectedVariation"></app-product-details>
+                <app-product-content [product]="product" [option]="option" (selectedVariant)="selectedVariant($event)"></app-product-content>
+                <app-product-information [product]="product"></app-product-information>
+                <app-product-delivery-information [product]="product"></app-product-delivery-information>
+                <app-payment-option [product]="product" [option]="option"></app-payment-option>
+              </div>
+            </div>
+
+              @if(product.cross_sell_products && product.cross_sell_products.length){
+                <app-product-bundle [product]="product"></app-product-bundle>
+              }
+
+              <section class="tab-product product-details-contain section-b-space mt-0 px-0">
+                <app-product-details-tab [product]="product"></app-product-details-tab>
+              </section>
+
+          </div>
+        </div>
+
+        <div class="col-xxl-3 col-lg-4 d-lg-inline-block d-none">
+          <div class="collection-filter product-sidebar-box">
+            <app-product-details-sidebar [product]="product"></app-product-details-sidebar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

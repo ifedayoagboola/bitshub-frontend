@@ -1,0 +1,170 @@
+{
+    "id": 10,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                15,
+                14,
+                13,
+                12,
+                11
+            ]
+        },
+        "banner": {
+            "status": true,
+            "banner_1": {
+                "image_url": "/images/theme/furniture_three/furniture_three_6.png",
+                "redirect_link": []
+            },
+            "banner_2": {
+                "image_url": "/images/theme/furniture_three/furniture_three_7.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "image_url": "/images/theme/furniture_three/furniture_three_5.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/furniture_three/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/furniture_three/service.png",
+                    "description": "online service for new customer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/furniture_three/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/furniture_three/furniture_three_1.png",
+                    "redirect_link": {
+                        "link": "classic-furnishings",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "title": "save 30%",
+                "status": true,
+                "image_url": "/images/theme/furniture_three/furniture_three_9.png",
+                "sub_title": "Accent",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "title": "save 60%",
+                "status": true,
+                "image_url": "/images/theme/furniture_three/furniture_three_11.png",
+                "sub_title": "Stool",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "title": "save 60%",
+                "status": true,
+                "image_url": "/images/theme/furniture_three/furniture_three_10.png",
+                "sub_title": "Lounge",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            41,
+            39,
+            37,
+            36,
+            38,
+            35,
+            29,
+            28
+        ],
+        "featured_blogs": {
+            "tag": "Recent Story",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                6,
+                5,
+                4
+            ]
+        },
+        "product_list_2": {
+            "status": true,
+            "products": {
+                "product_ids": [
+                    41,
+                    39,
+                    37,
+                    36,
+                    35,
+                    29,
+                    28,
+                    38
+                ]
+            },
+            "left_panel": {
+                "status": true,
+                "image_url": "/images/theme/furniture_three/furniture_three_8.png",
+                "redirect_link": {
+                    "link": "classic-furnishings",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_list_1": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "Find Various types of quality chairs, and international standards. only with this one website you can see and buy quality chairs. immediately order the best seat.",
+            "product_ids": [
+                41,
+                39,
+                37,
+                36,
+                38
+            ]
+        },
+        "categories_icon_list": {
+            "status": true,
+            "category_ids": [
+                13,
+                14,
+                16,
+                17,
+                18,
+                19
+            ]
+        }
+    },
+    "slug": "furniture_dark"
+}

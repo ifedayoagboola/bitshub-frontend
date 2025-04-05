@@ -1,0 +1,47 @@
+  @if(filter['layout'] !== 'collection_no_sidebar' && filter['layout'] !== 'collection_top_filter' && filter['layout'] !== 'collection_sidebar_popup'){
+    <button class="filter-main-btn btn" (click)="openOffCanvasFilter(true)">
+      <i class="fa fa-filter"></i> {{ 'filter' | translate }}
+    </button>
+  }
+
+<div [ngClass]=" filter['layout'] === 'collection_sidebar_popup' ? 'popup-filter' : 'product-filter-content'">
+  <div [ngClass]=" filter['layout'] === 'collection_sidebar_popup' ? 'sidebar-popup' : 'search-count'">
+    @if(filter['layout'] === 'collection_top_filter' || filter['layout'] === 'collection_sidebar_popup'){
+      <h5 class="filter-bottom-title" (click)="openFilter()">{{ 'filter_panel' | translate }}</h5>
+    }
+    @if(filter['layout'] === 'collection_sidebar_popup'){
+      <div class="open-popup" [class.open]="isFilter">
+        <div class="collection-filter" [ngStyle]="{ 'left' : attributeService.offCanvasMenu && width < 992 ? '0' : '' }">
+          <app-collection-sidebar [filter]="filter"></app-collection-sidebar>
+        </div>
+      </div>
+    }
+  </div>
+@if(isBrowser){
+  <div class="product-page-per-view">
+    <select2 class="custom-select" [displaySearchStatus]="'hidden'" [placeholder]="'sort' | translate"
+      [value]="filter['sortBy']" [data]="sorting ? sorting : []" (update)="sortByFilter($event)">
+    </select2>
+  </div>
+  <div class="product-page-filter">
+    <select2 class="custom-select" [displaySearchStatus]="'hidden'" [value]="filter['paginate']"
+      [placeholder]="'sort_item' | translate" [data]="sortingItem ? sortingItem : []"
+      (update)="sortProductsLength($event)">
+    </select2>
+  </div>
+}
+
+  <div class="collection-grid-view">
+    <ul>
+      <li [class.active]="selectedGrid == 'collection_2_grid'" (click)="grid('collection_2_grid')"><img src="assets/images/icon/2.png" alt="sort" class="product-2-layout-view"></li>
+      <li [class.active]="selectedGrid == 'collection_3_grid'" (click)="grid('collection_3_grid')"><img src="assets/images/icon/3.png" alt="sort" class="product-3-layout-view"></li>
+      <li [class.active]="selectedGrid == 'collection_4_grid'" (click)="grid('collection_4_grid')"><img src="assets/images/icon/4.png" alt="sort" class="product-4-layout-view"></li>
+      <li [class.active]="selectedGrid == 'collection_list_view'" (click)="grid('collection_list_view')"><img src="assets/images/icon/list.png" alt="sort" class="product-6-layout-view"></li>
+    </ul>
+  </div>
+
+@if(filter['layout'] === 'collection_top_filter'){
+  <div class="collection-filter container-fluid top-filter filter-bottom-content" [class.d-block]="isFilter && width > 992" [ngStyle]="{ 'left' : attributeService.offCanvasMenu && width < 992 ? '0' : '' }">
+    <app-collection-sidebar [filter]="filter"></app-collection-sidebar>
+  </div>
+}

@@ -1,0 +1,18 @@
+@if(product?.estimated_delivery_text || (product?.return_policy_text && product?.is_return)){
+  <div class="bordered-box">
+    <h4 class="sub-title">{{ 'delivery_details' | translate }}</h4>
+    <ul class="product-offer">
+      @if(product?.estimated_delivery_text){
+        <li>
+          <i class="ri-truck-line"></i> {{ product?.estimated_delivery_text }}
+        </li>
+      }
+
+      @if(product?.return_policy_text){
+        <li>
+          <i class="ri-arrow-left-right-line"></i> {{ product?.return_policy_text }}
+        </li>
+      }
+    </ul>
+  </div>
+}

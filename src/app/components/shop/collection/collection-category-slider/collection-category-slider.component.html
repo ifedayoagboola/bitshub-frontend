@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-collection-categories [sliderOption]="categorySlider" [style]="'horizontal'">
+        </app-collection-categories>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-b-space">
+  <div class="collection-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 collection-filter" [ngStyle]="{ 'left' : attributeService.offCanvasMenu ? '0' : ''}">
+          <app-collection-sidebar [filter]="filter"></app-collection-sidebar>
+        </div>
+        <div class="collection-content col-lg-9">
+          <div class="page-main-content">
+            <div class="collection-product-wrapper">
+              <app-collection-products [filter]="filter"></app-collection-products>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

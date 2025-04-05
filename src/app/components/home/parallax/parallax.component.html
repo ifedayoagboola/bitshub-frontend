@@ -1,0 +1,9 @@
+<div class="parallax-cls">
+  @if(filteredBanners && filteredBanners.length){
+    @for(banner of filteredBanners; track banner.title; let i = $index){
+      <section class="p-0">
+        <app-theme-parallax-banner [banners]="banner" [class]="'parallax-layout'" [text_right]="i % 2 != 0 ? true : false"></app-theme-parallax-banner>
+      </section>
+    }
+  }
+</div>

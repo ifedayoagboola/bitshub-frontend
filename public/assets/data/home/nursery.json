@@ -1,0 +1,132 @@
+{
+    "id": 47,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                37
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_1.png",
+                    "redirect_link": {
+                        "link": "green-haven-nursery",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_2.png",
+                    "redirect_link": {
+                        "link": "green-haven-nursery",
+                        "link_type": "collection"
+                    }
+                }
+            ],
+            "background_image": "/images/theme/nursery/nursery_bg.png"
+        },
+        "products_ids": [
+            188,
+            194,
+            187,
+            180,
+            175
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/nursery/nursery_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "title": "trendnig products",
+            "status": true,
+            "product_ids": [
+                188,
+                194,
+                187,
+                180,
+                175
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "latest blog",
+            "status": true,
+            "blog_ids": [
+                21,
+                20,
+                19
+            ]
+        },
+        "category_product": {
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                61,
+                62,
+                63
+            ]
+        }
+    },
+    "slug": "nursery"
+}

@@ -1,0 +1,212 @@
+/*=====================
+    Theme tab css
+==========================*/
+.theme-tab {
+  position: relative;
+
+  .tab-content {
+    display: none;
+
+    &[style="display: block;"] {
+
+      .product-box,
+      .tab-box {
+        animation: zoomIn 300ms ease-in-out;
+      }
+    }
+
+    .product-tab {
+      .tab-box {
+        .product-box2 {
+          background-color: $white;
+          padding: 15px;
+
+          @media (max-width: 768px) {
+            padding: 10px;
+          }
+
+          a {
+            overflow: hidden;
+            margin-right: 15px;
+
+            img {
+              height: 250px;
+              width: 200px;
+              object-fit: cover;
+              transition: all 0.5s ease;
+
+              @media (max-width: 1366px) {
+                height: 170px;
+                width: 170px;
+              }
+
+              @media (max-width: 768px) {
+                height: 140px;
+                width: 130px;
+              }
+
+              @media (max-width: 576px) {
+                height: 110px;
+                width: 100px;
+                padding-right: 8px;
+              }
+            }
+          }
+
+          .media {
+            .media-body {
+              >a {
+                display: block;
+              }
+
+              .rating {
+                margin-top: 0;
+
+                span {
+                  margin-right: 1px;
+                }
+              }
+
+              a {
+                h6 {
+                  margin-right: 35px;
+                  line-height: 17px;
+                  margin-top: 5px;
+                  margin-bottom: 0;
+                }
+              }
+
+              h4 {
+                font-size: 20px;
+                margin-top: 5px;
+                font-weight: 700;
+                color: $dark-font;
+                margin-bottom: 0;
+
+                @media (max-width: 1366px) {
+                  font-size: 16px;
+                }
+              }
+
+              .color-variant {
+                li {
+                  display: inline-block;
+                  height: 20px;
+                  width: 20px;
+                  border-radius: 100%;
+                  margin-right: 2px;
+                  margin-top: 20px;
+                  transition: all 0.1s ease;
+                  margin-bottom: 0;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .product-box2 {
+            img {
+              transform: scale(1.03);
+              transition: all 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tab-title,
+  .tab-title2 {
+    text-align: center;
+    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+    margin-bottom: 30px;
+    margin-top: -6px;
+
+    .current {
+      a {
+        color: var(--theme-color);
+        font-weight: 600;
+      }
+    }
+
+    li {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    a {
+      color: $grey-dark;
+      text-transform: uppercase;
+    }
+
+    &.border-title {
+      li {
+        border-left: 1px solid $gray;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  .tab-title2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: -8px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border: 1px solid $border-grey;
+      width: 100%;
+      left: 0;
+      top: 17px;
+      z-index: -1;
+    }
+
+    .current {
+      background-color: $white;
+
+      a {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.tab-bg {
+  position: relative;
+  z-index: 1;
+  padding: calc(30px + (70 - 30) * ((100vw - 320px) / (1920 - 320))) calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+  &.tab-grey-bg {
+    background-color: $grey-lighter;
+    width: 100%;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--theme-color);
+    opacity: 0.09;
+    z-index: -1;
+  }
+
+  .theme-tab {
+    .tab-title {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.pt-cls-slider {
+  padding-top: 10px;
+}

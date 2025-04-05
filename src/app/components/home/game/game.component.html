@@ -1,0 +1,136 @@
+<!-- Home slider -->
+<section class="p-0 effect-cls">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home slider end -->
+
+
+<!-- category section -->
+@if(data?.content?.offer_banner_1?.banner_1?.status || data?.content?.offer_banner_1?.banner_2?.status){
+<section class="pb-0 banner-section ratio_45">
+  <div class="container">
+    <div class="row g-4">
+      @if(data?.content?.offer_banner_1?.banner_1?.status){
+      <div [ngClass]="data?.content?.offer_banner_1?.banner_2?.status ? 'col-6' : 'col-12'">
+        <div class="position-relative">
+          <app-image-link [image]="data?.content?.offer_banner_1?.banner_1" [bgImage]="false"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      @if(data?.content?.offer_banner_1?.banner_2?.status){
+      <div [ngClass]="data?.content?.offer_banner_1?.banner_1?.status ? 'col-6' : 'col-12'">
+        <div class="position-relative">
+          <app-image-link [image]="data?.content?.offer_banner_1?.banner_2" [bgImage]="false"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}
+<!-- category section end -->
+
+
+<!-- Product tab slider -->
+@if(data?.content?.category_product?.status){
+<app-theme-title [title]="data?.content?.category_product" [type]="'basic'"></app-theme-title>
+<section class="section-b-space category-tab-section pt-0 ratio_asos">
+  <div class="container">
+    <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'">
+    </app-theme-product-tab-section>
+  </div>
+</section>
+}
+<!-- Product tab slider End -->
+
+
+<!-- timer banner start -->
+@if(data?.content?.offer_banner_2?.status){
+<section class="p-0 banner-sale">
+  <div class="container">
+    <app-image-link [image]="data?.content?.offer_banner_2" [bgImage]="false"></app-image-link>
+  </div>
+</section>
+}
+<!-- timer banner end-->
+
+
+<!-- product slider -->
+@if(data?.content?.slider_products?.status){
+<section class="section-b-space">
+  <div class="container">
+    <app-theme-four-column-product [data]="data?.content?.slider_products" [style]="'horizontal'">
+    </app-theme-four-column-product>
+  </div>
+</section>
+}
+<!-- product slider end -->
+
+
+<!-- Parallax section start -->
+@if(data?.content?.parallax_banner?.status && data?.content?.parallax_banner?.image_url){
+<section class="p-0 game-parallax effect-cls">
+  <div class="full-banner parallax text-center p-center text-center bg-size"
+    [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.parallax_banner?.image_url +')'}">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="banner-contain">
+            <h2>{{ data?.content?.parallax_banner?.main_title }}</h2>
+            <h3>{{data?.content?.parallax_banner?.title}}</h3>
+            <h4>{{ data?.content?.parallax_banner?.sub_title }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Parallax section end -->
+
+
+<!-- Paragraph-->
+@if(data?.content?.products_list?.status){
+<div class="title1">
+  <app-theme-title [title]="data?.content?.products_list" [type]="'basic'"></app-theme-title>
+  <div class="container">
+    <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'"
+      [slider]="true"></app-theme-product>
+  </div>
+</div>
+}
+<!-- Paragraph end -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

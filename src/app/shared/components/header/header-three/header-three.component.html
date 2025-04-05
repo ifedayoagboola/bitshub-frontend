@@ -1,0 +1,72 @@
+<header class="header-style-1" [ngClass]="stick && sticky ? 'sticky fixed' : ''">
+  @if(data?.header?.page_top_bar_enable){
+    <app-top-bar [data]="data"></app-top-bar>
+  }
+  <div class="bg-light-xl">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="main-menu">
+            <div class="menu-left">
+              <div class="toggle-nav" (click)="mainMenuOpen()">
+                <i class="ri-menu-line sidebar-bar">
+                </i>
+              </div>
+              <div class="brand-logo me-lg-4 me-0">
+                <app-header-logo [logo]="logo"></app-header-logo>
+              </div>
+              <nav class="navbar navbar-expand-sm navbar-light pe-0 d-none d-lg-block">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav category-nav me-auto pt-0">
+                    @for(category of categories; track category.id){
+                      <li class="nav-item" [class.active]="activeCategory == category.id">
+                        <a class="nav-link" href="javascript:void(0)">{{ category.name }}</a>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="menu-right pull-right">
+              <div>
+                <div class="icon-nav">
+                  <ul>
+                    <li class="onhover-div">
+                      <app-search></app-search>
+                    </li>
+                    <li class="onhover-div">
+                      <a href="javascript:void(0)" [routerLink]="['/wishlist']">
+                        <i class="ri-heart-line">
+                        </i>
+                      </a>
+                    </li>
+                    <li class="onhover-div">
+                      <app-cart></app-cart>
+                    </li>
+                    <li class="onhover-div onhover-dropdown mobile-cart">
+                      <app-user-profile></app-user-profile>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top-cls">
+    <div class="container">
+      <div class="col-12">
+        <nav id="main-nav">
+          <ul id="main-menu" class="sm pixelstrap sm-horizontal">
+            <app-menu [class]="'main-navbar classic-header'"></app-menu>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

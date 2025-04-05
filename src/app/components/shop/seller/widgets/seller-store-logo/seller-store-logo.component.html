@@ -1,0 +1,7 @@
+<a [routerLink]="['/seller/store/', store.slug]">
+  @if(store.store_logo){
+    <img [src]="store.store_logo.original_url" [alt]="store.store_name" class="img-fluid">
+  }@else {
+    <h1 class="vendor-text">{{ store.store_name.charAt(0)!.toString().toUpperCase() }}</h1>
+  }
+</a>

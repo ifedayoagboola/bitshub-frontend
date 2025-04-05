@@ -1,0 +1,77 @@
+<div class="counter-section">
+  <div class="welcome-msg">
+    <h4>{{ 'hello' | translate }}, {{ (user$ | async)?.name! | titlecase }} !</h4>
+    <p>{{ 'welcome_text' | translate }}</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="counter-box">
+        <img src="assets/images/icon/dashboard/account1.png" class="img-fluid">
+        <div>
+          <h3>{{ ((user$ | async)?.wallet ? (user$ | async)?.wallet?.balance : 0) | currencySymbol }}</h3>
+          <h5>{{ 'balance'| translate}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="counter-box">
+        <img src="assets/images/icon/dashboard/account2.png" class="img-fluid">
+        <div>
+          <h3>{{ (user$ | async)?.point ? (user$ | async)?.point?.balance : 0 }}</h3>
+          <h5>{{ 'total_points'| translate}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="counter-box">
+        <img src="assets/images/icon/dashboard/account3.png" class="img-fluid">
+        <div>
+          <h3>{{ (user$ | async)?.orders_count ? (user$ | async)?.orders_count : 0 }}</h3>
+          <h5>{{ 'total_orders'| translate}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-account box-info">
+    <div class="box-head">
+      <h4>{{ 'account_information' | translate }}</h4>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="box">
+          <ul class="box-content">
+            <li>
+              <h6>{{ 'name'| translate}}: {{ (user$ | async)?.name | titlecase }}</h6>
+            </li>
+            <li>
+              <h6>{{ 'phone'| translate}}: +{{ (user$ | async)?.country_code }} {{ (user$ | async)?.phone }}</h6>
+            </li>
+
+            @if(address){
+              <li>
+                <h6>{{ 'address'| translate}}: {{ address.street }}
+                                              {{ address.city }}, {{ address.state.name }},
+                                              {{ address.country.name }} {{ address.pincode }}</h6>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="box mt-3">
+      <div class="box-head">
+        <h4>{{ 'login_details' | translate }}</h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h6>{{ 'email'| translate}} : {{ (user$ | async)?.email }}</h6>
+          <a href="javascript:void(0)" (click)="openModal('profile')">{{ 'edit' | translate }}</a>
+        </div>
+        <div class="col-sm-6">
+          <h6>{{ 'password'| translate}} : ●●●●●●</h6>
+          <a href="javascript:void(0)" (click)="openModal('password')">{{ 'edit' | translate }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

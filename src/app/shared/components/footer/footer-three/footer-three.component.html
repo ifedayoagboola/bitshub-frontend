@@ -1,0 +1,82 @@
+<footer class="footer-style-1" [ngStyle]="{'background-color': data?.footer?.bg_color }" >
+  <section class="section-b-space darken-layout" >
+    <div class="container">
+      <div class="row footer-theme g-md-5 g-2">
+        <div class="col-xl-3 col-lg-5 col-md-6 sub-title">
+          <div>
+            <app-footer-logo [logo]="logo"></app-footer-logo>
+            <app-footer-about [data]="data"></app-footer-about>
+            <app-footer-contact [data]="data" [class]="'contact-list'" [title]="false"></app-footer-contact>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-3 col-md-4 col-md-6" (click)="toggle('categories')">
+          <div class="sub-title">
+            <div class="footer-title" [class.show]="active['categories']">
+              <h4>{{ 'categories' | translate }}</h4>
+            </div>
+            <div class="footer-content">
+              <app-footer-categories [categoryIds]="data?.footer?.footer_categories || []"></app-footer-categories>
+              <!-- No Data -->
+               @if(!data?.footer?.footer_categories?.length) {
+                 <app-no-data [class]="'no-data-footer'" [text]="'no_category_found'"></app-no-data>
+               }
+            </div>
+          </div>
+        </div>
+        <div class="col-xl col-lg-3 col-md-3" (click)="toggle('useful_link')">
+          <div class="sub-title">
+            <div class="footer-title" [class.show]="active['useful_link']">
+              <h4>{{ 'useful_links' | translate }}</h4>
+            </div>
+            <div class="footer-content">
+              <app-footer-links [links]="data?.footer?.useful_link || []"></app-footer-links>
+              <!-- No Data -->
+               @if(!data?.footer?.useful_link?.length) {
+                 <app-no-data [class]="'no-data-footer'" [text]="'no_link_found'"></app-no-data>
+               }
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-3" (click)="toggle('help_center')">
+          <div class="sub-title">
+            <div class="footer-title" [class.show]="active['help_center']">
+              <h4>{{ 'help_center' | translate }}</h4>
+            </div>
+            <div class="footer-content">
+              <app-footer-links [links]="data?.footer?.help_center || []"></app-footer-links>
+              <!-- No Data -->
+               @if(!data?.footer?.help_center?.length) {
+                 <app-no-data [class]="'no-data-footer'" [text]="'no_link_found'"></app-no-data>
+               }
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <app-footer-news-letter [newsLetterStyle]="'classic'">
+            @if(data?.footer?.social_media_enable){
+              <app-footer-social-links [data]="data"></app-footer-social-links>
+            }
+          </app-footer-news-letter>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="sub-footer dark-subfooter">
+    <div class="container">
+      <div class="row">
+        @if(data?.footer?.footer_copyright){
+          <div class="col-xl-6 col-md-6 col-sm-12">
+            <app-footer-copyright [data]="data"></app-footer-copyright>
+          </div>
+        }
+        @if(data?.footer?.payment_option_image_url){
+          <div class="col-xl-6 col-md-6 col-sm-12">
+            <div class="payment-card-bottom">
+              <app-footer-payment-options [data]="data"></app-footer-payment-options>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

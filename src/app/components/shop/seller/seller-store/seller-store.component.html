@@ -1,0 +1,78 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="seller-grid-section">
+  <div class="container">
+    <div class="row g-4">
+      @if(storeService.skeletonLoader){
+        <div class="section-b-space row g-sm-4 g-3">
+          @for(item of skeletonItems; track item){
+            <div class="col-xxl-4 col-md-6">
+              <app-skeleton-seller></app-skeleton-seller>
+            </div>
+          }
+        </div>
+      }@else {
+        @if((store$ | async)?.data?.length){
+          @for(store of (store$ | async)?.data; track store.id){
+            <div class="col-xxl-4 col-md-6">
+              <div class="seller-grid-box seller-grid-box-1">
+                <div class="grid-image">
+                  <div class="image">
+                    <app-seller-store-logo [store]="store"></app-seller-store-logo>
+                  </div>
+                  <div class="contain-name">
+                    <div>
+                      <div class="since-number">
+                        <app-seller-store-rating [store]="store"></app-seller-store-rating>
+                      </div>
+                      <h3>{{ store.store_name | titlecase }}</h3>
+                    </div>
+                    <app-seller-store-product-count [store]="store"></app-seller-store-product-count>
+                  </div>
+                </div>
+                <div class="grid-contain">
+                  <div class="seller-contact-details">
+                    <app-seller-contact-details [store]="store"></app-seller-contact-details>
+                  </div>
+                  <div class="seller-category">
+                    <a [routerLink]="['/seller/store/', store.slug]" class="btn btn-solid">
+                      {{ 'visit_store' | translate }} <i class="ri-arrow-right-line ms-2"></i>
+                    </a>
+                    <app-seller-store-products [store]="store"></app-seller-store-products>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        }@else {
+          <!-- No Data -->
+          <app-no-data
+            [class]="'no-data-added collection-no-data'"
+            [image]="'assets/svg/empty-items.svg'"
+            [text]="'no_store'"
+            [description]="'no_store_desc'">
+          </app-no-data>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+@if((store$ | async)?.data?.length && !storeService.skeletonLoader){
+  <div class="product-pagination section-b-space">
+    <div class="theme-pagination-block">
+      <div class="row">
+        <div class="col-xl-6 col-md-6 col-sm-12">
+          <nav aria-label="Page navigation">
+            <app-pagination
+              [total]="totalItems"
+              [currentPage]="filter['page']"
+              [pageSize]="filter['paginate']"
+              (setPage)="setPaginate($event)">
+            </app-pagination>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+}

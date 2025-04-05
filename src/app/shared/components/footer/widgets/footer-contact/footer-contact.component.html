@@ -1,0 +1,26 @@
+<ul [ngClass]="class">
+  @if(data?.footer?.about_address){
+    <li>
+      @if(icon){
+        <i class="ri-map-pin-line"></i>
+      }
+      {{ data?.footer?.about_address }}
+    </li>
+  }
+  @if(data?.footer?.support_number){
+    <li>
+      @if(icon){
+        <i class="ri-phone-line"></i>
+      }
+      {{ 'call_us' | translate }}: {{ data?.footer?.support_number }}
+    </li>
+  }
+  @if(data?.footer?.about_email){
+    <li>
+      @if(icon){
+        <i class="ri-mail-line"></i>
+      }
+      {{ 'email_us' | translate }}: {{ data?.footer?.about_email }}
+    </li>
+  }
+</ul>

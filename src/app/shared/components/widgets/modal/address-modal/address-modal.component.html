@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h3 class="fw-semibold"> {{ (!address ? 'add_address' : 'edit_address') | translate  }}</h3>
+  <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'address_modal_close_btn'" (click)="modal.close('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+</div>
+<form [formGroup]="form" class="" (ngSubmit)="submit()">
+  <div class="modal-body">
+    <div class="row g-sm-4 g-2">
+      <div class="col-xxl-12">
+        <div class="form-box">
+          <label class="form-label" for="pname">{{ 'title' | translate }}</label>
+          <input class="form-control" id="title" type="text" placeholder="{{ 'enter_title' | translate }}" formControlName="title" />
+          @if(form.controls['title'].touched && form.controls['title'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'title_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-box">
+          <label class="form-label" for="address1">{{ 'address' | translate }}</label>
+          <input class="form-control" id="address" type="text" placeholder="{{ 'enter_address' | translate }}" formControlName="street" />
+          @if(form.controls['street'].touched && form.controls['street'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'street_address_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-12 phone-field">
+        <div class="form-box">
+          <label class="form-label" for="address1">{{ 'phone_number' | translate }}</label>
+          <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes" formControlName="country_code">
+            <ng-template #template let-data="data">
+              <div class="country">
+                <div class="flag-box">
+                  <div class="iti-flag {{data?.class}}"></div>
+                </div>
+                <span class="dial-code">{{data?.code}}</span>
+              </div>
+            </ng-template>
+          </select2>
+          <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone">
+          @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'phone_number_is_required' | translate }}
+            </div>
+          }
+
+          @if(form.controls['phone'].touched && form.controls['phone'].errors?.['pattern']){
+            <div class="invalid-feedback">
+              {{ 'phone_number_is_invalid' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-box">
+          <label class="form-label" for="address1">{{ 'country' | translate }}</label>
+          <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []" [placeholder]="'select_country' | translate" formControlName="country_id" (update)="countryChange($event)" resettable>
+          </select2>
+          @if(form.controls['country_id'].touched && form.controls['country_id'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'country_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-box">
+          <label class="form-label" for="state">{{ 'state' | translate }}</label>
+          <select2 class="custom-select" [data]="(states$ | async) ? (states$ | async)! : []" [placeholder]="'select_state' | translate" formControlName="state_id">
+          </select2>
+          @if(form.controls['state_id'].touched && form.controls['state_id'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'state_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-box">
+          <label class="form-label" for="city">{{ 'city' | translate }}</label>
+          <input class="form-control" id="city" type="text" placeholder="{{ 'enter_city' | translate }}" formControlName="city" />
+          @if(form.controls['city'].touched && form.controls['city'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'city_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-box">
+          <label class="form-label" for="pincode">{{ 'pincode' | translate }}</label>
+          <input class="form-control" id="pincode" type="text" placeholder="{{ 'enter_pincode' | translate }}" formControlName="pincode" numbersOnly />
+          @if(form.controls['pincode'].touched && form.controls['pincode'].errors?.['required']){
+            <div class="invalid-feedback">
+              {{ 'pincode_is_required' | translate }}
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <app-button [class]="'btn btn-outline btn-md fw-bold'" [type]="'button'" [spinner]="false" [id]="'cancel_addres_btn'" (click)="modal.close('Cancel')">
+        {{ 'cancel' | translate }}
+      </app-button>
+      <app-button [class]="'btn btn-solid'" [id]="'submit_address_btn'">
+        {{ 'submit' | translate }}
+      </app-button>
+    </div>
+  </div>
+</form>

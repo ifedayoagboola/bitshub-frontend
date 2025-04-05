@@ -1,0 +1,181 @@
+{
+    "id": 13,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                29,
+                28,
+                27,
+                26,
+                25,
+                20,
+                18
+            ]
+        },
+        "banner": {
+            "main_banner": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_2.png",
+                "redirect_link": {
+                    "link": 391,
+                    "link_type": "product",
+                    "product_ids": 391
+                }
+            },
+            "grid_banner_1": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_3.png",
+                "redirect_link": {
+                    "link": 88,
+                    "link_type": "product",
+                    "product_ids": 88
+                }
+            },
+            "grid_banner_2": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_4.png",
+                "redirect_link": {
+                    "link": 88,
+                    "link_type": "product",
+                    "product_ids": 88
+                }
+            },
+            "grid_banner_3": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_5.png",
+                "redirect_link": {
+                    "link": 92,
+                    "link_type": "product",
+                    "product_ids": 92
+                }
+            }
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "Free Shipping",
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/service.png",
+                    "description": "Free Shipping World Wide"
+                },
+                {
+                    "title": "24 X 7 Service",
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/service.png",
+                    "description": "Online Service For 24 X 7"
+                },
+                {
+                    "title": "Festival Offer",
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/service.png",
+                    "description": "New Online Special Festival Offer"
+                },
+                {
+                    "title": "Online Payment",
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/service.png",
+                    "description": "New Online Special Festival Offer"
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/electronic_three_1.png",
+                    "redirect_link": {
+                        "link": "powerhouse-electronics",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/electronic_three/electronic_three_1.png",
+                    "redirect_link": {
+                        "link": 207,
+                        "link_type": "product"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            92,
+            91,
+            90,
+            87,
+            84,
+            391,
+            88,
+            86,
+            85,
+            83
+        ],
+        "offer_banner_1": {
+            "status": true,
+            "image_url": "/images/theme/electronic_three/electronic_three_6.png",
+            "redirect_link": {
+                "link": "powerhouse-electronics",
+                "link_type": "collection"
+            }
+        },
+        "offer_banner_2": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_8.png",
+                "redirect_link": {
+                    "link": "powerhouse-electronics",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/electronic_three/electronic_three_7.png",
+                "redirect_link": {
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_list_1": {
+            "title": "deals of the day",
+            "status": true,
+            "product_ids": [
+                92,
+                91,
+                90,
+                87,
+                84
+            ]
+        },
+        "category_product_1": {
+            "status": true,
+            "products": {
+                "status": true,
+                "product_ids": [
+                    88,
+                    86,
+                    85,
+                    83
+                ]
+            },
+            "categories": {
+                "status": true,
+                "category_ids": [
+                    26,
+                    27,
+                    51,
+                    52
+                ]
+            }
+        },
+        "category_product_2": {
+            "title": "recommended for you",
+            "status": true,
+            "category_ids": [
+                51,
+                52
+            ]
+        }
+    },
+    "slug": "electronics_three"
+}

@@ -1,0 +1,420 @@
+/**=====================
+     Reset css
+==========================**/
+section,
+.section-t-space {
+  padding-top: 70px;
+}
+
+.section-b-space {
+  padding-bottom: 70px;
+}
+
+.large-section {
+  padding-top: calc(45px + (120 - 45) * ((100vw - 320px) / (1920 - 320)));
+  padding-bottom: calc(45px + (120 - 45) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.title-light {
+  .title-inner3 {
+    color: $white;
+  }
+}
+
+input {
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+hr {
+  &.style1 {
+    width: 75px;
+    height: 3px;
+    margin-top: 13px;
+    background-color: var(--theme-color);
+    border-top-color: var(--theme-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.small-section {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.banner-padding {
+  padding-top: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.border-section {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.border-b {
+  border-bottom: 1px solid $border-color;
+}
+
+.dark-layout {
+  background-color: $grey-dark;
+}
+
+.light-layout {
+  background-color: $grey-lighter;
+}
+
+.bg-grey {
+  background-color: $grey-about;
+
+  .brand-slider-box {
+    .logo-block {
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+.bg_cls {
+  background-color: #f8f8f8;
+}
+
+del {
+  font-size: 14px;
+  color: $font-grey;
+  font-weight: 400;
+}
+
+.position-unset {
+  position: unset !important;
+}
+
+[data-notify="progressbar"] {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+
+.progress-bar {
+  background-color: #19a340;
+}
+
+.bg-theme {
+  background-color: var(--theme-color);
+  background-color: var(--theme-color2);
+}
+
+.theme-color {
+  color: var(--theme-color) !important;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+
+  .media-body {
+    flex: 1;
+  }
+}
+
+.form-check {
+  display: flex;
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: flex;
+}
+
+.breadcrumb {
+  padding: 0.75rem 1rem;
+}
+
+.ckeditor-content {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.7;
+  }
+
+  ul,
+  ol {
+    padding-left: 2rem;
+
+    li {
+      display: list-item;
+      line-height: 1.7;
+      color: #777 !important;
+
+      +li {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  p {
+    color: #777 !important;
+    line-height: 1.7;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .table {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-left: none;
+
+    th {
+      background: rgba(0, 0, 0, 0.05);
+      font-weight: 700;
+    }
+
+    td,
+    th {
+      border-bottom: 1px solid #ddd;
+      padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))) calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+      border-left: 1px solid #ddd;
+    }
+
+    > :not(caption)>*>* {
+      border-bottom: none;
+    }
+  }
+
+  blockquote {
+    border-left: 5px solid #1aa488;
+    font-style: italic;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    p {
+      margin-bottom: 0;
+
+      +p {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.sticky-top-section {
+  position: sticky;
+  top: 150px;
+  z-index: 1;
+}
+
+.bg-size {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  background-position: center;
+
+  >img {
+    display: none !important;
+  }
+}
+
+.owl-carousel {
+  z-index: 0;
+}
+
+.future-box {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.ng-invalid {
+  .invalid-feedback {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+.position-sticky-top {
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+}
+
+.product-detail-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  display: inline-flex;
+  gap: 10px;
+  flex-direction: column;
+
+  li {
+    font-size: 13px;
+    background-color: rgba(236, 137, 81, 0.11);
+    color: var(--theme-color);
+    padding: 4px 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    width: max-content;
+    letter-spacing: 0.1em;
+    word-spacing: 3px;
+
+    &.soldout {
+      background-color: rgba(95, 95, 95, 0.13);
+      color: #5f5f5f;
+    }
+
+    &.featured {
+      background-color: #fff;
+      color: var(--theme-color);
+    }
+  }
+}
+
+.form-control {
+  &:focus {
+    border-color: #ddd;
+  }
+}
+
+@media (min-width: 992px) {
+  .w-lg-50 {
+    width: 50% !important;
+  }
+}
+
+option:disabled {
+  color: #b5b5b5;
+}
+
+@media (min-width: 1630px) {
+  .large-container {
+    .container {
+      max-width: 1610px;
+    }
+  }
+}
+
+@media (min-width: 1572px) {
+  .md-container {
+    .container {
+      max-width: 1514px;
+    }
+  }
+}
+
+.row-empty-cls {
+  &:empty {
+    margin: 0;
+  }
+}
+
+.toast-container {
+  .ngx-toastr {
+    border-radius: 0;
+    margin: 6px auto;
+    background-size: 19px;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem 0.75rem 45px;
+    background-position: 12px center;
+
+    &.toast-success {
+      background-image: none;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+
+      &::before {
+        content: "\eb7b";
+        @include font;
+        font-size: 19px;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--theme-color) 0%, var(--theme-color2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-border-radius {
+  border-radius: calc(7px + (18 - 7) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.table,
+table {
+  margin-bottom: 0;
+
+  > :not(caption) {
+    >* {
+      >* {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+
+.alert {
+  border-radius: 0;
+}
+
+.empty-box {
+	text-align: center;
+	img {
+		width: 40px;
+		opacity: 1;
+	}
+	h2 {
+		font-size: 22px;
+		color: #bfbfbf;
+		font-weight: 500;
+		text-align: center;
+		padding: 14px 0 30px;
+	}
+}

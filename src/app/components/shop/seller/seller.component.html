@@ -1,0 +1,144 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<!-- about section start -->
+@if(data?.seller?.about?.status){
+  <section class="about-page seller-section section-b-space">
+    <div class="container">
+      <div class="row">
+        @if(data?.seller?.about?.image_url){
+          <div class="col-lg-12">
+            <div class="banner-section banner-box">
+              <img [src]="StorageURL + data?.seller?.about?.image_url" class="img-fluid lazyload w-100" [alt]="data?.seller?.about?.title">
+            </div>
+          </div>
+        }
+        <div class="col-sm-12">
+          <div class="banner-content">
+            <h4>{{ data?.seller?.about?.title }}</h4>
+            <p>
+              {{ data?.seller?.about?.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}<!-- about section end -->
+
+<!-- service section start -->
+@if(data?.seller?.services?.status){
+  <div class="container">
+    <section class="service section-b-space pt-0 ">
+      <div class="row partition4 ">
+        <div class="col-lg-3 col-md-6">
+          <div class="service-block1">
+            @if(data?.seller?.services?.service_1?.image_url){
+              <div class="service-svg">
+                <img src="{{ StorageURL + data?.seller?.services?.service_1?.image_url }}" class="img-fluid" alt="{{ data?.seller?.services?.service_1?.title }}">
+              </div>
+            }
+            <h4>{{ data?.seller?.services?.service_1?.title }}</h4>
+            <p>{{ data?.seller?.services?.service_1?.description }}</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="service-block1">
+            @if(data?.seller?.services?.service_2?.image_url){
+              <div class="service-svg">
+                <img src="{{ StorageURL + data?.seller?.services?.service_2?.image_url }}" class="img-fluid" alt="{{ data?.seller?.services?.service_2?.title }}">
+              </div>
+            }
+            <h4>{{ data?.seller?.services?.service_2?.title }}</h4>
+            <p>{{ data?.seller?.services?.service_2?.description }}</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="service-block1">
+            @if(data?.seller?.services?.service_3?.image_url){
+              <div class="service-svg">
+                <img src="{{ StorageURL + data?.seller?.services?.service_3?.image_url }}" class="img-fluid" alt="{{ data?.seller?.services?.service_1?.title }}">
+              </div>
+            }
+            <h4>{{ data?.seller?.services?.service_3?.title }}</h4>
+            <p>{{ data?.seller?.services?.service_3?.description }}</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="service-block1">
+            @if(data?.seller?.services?.service_4?.image_url){
+              <div class="service-svg">
+                <img src="{{ StorageURL + data?.seller?.services?.service_4?.image_url }}" class="img-fluid" alt="{{ data?.seller?.services?.service_1?.title }}">
+              </div>
+            }
+            <h4>{{ data?.seller?.services?.service_4?.title }}</h4>
+            <p>{{ data?.seller?.services?.service_4?.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+}
+<!-- service section end -->
+
+<!-- how to start section start -->
+@if(data?.seller?.steps?.status){
+  <section class="section-b-space become-vendor">
+    <div class="container">
+      <h4>{{ data?.seller?.steps?.title }}</h4>
+      <div class="step-bg">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="step-box">
+              <div>
+                <div class="steps">{{ '1' | translate }}</div>
+                <h4>{{ data?.seller?.steps?.step_1?.title }}</h4>
+                <p>{{ data?.seller?.steps?.step_1?.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="step-box">
+              <div>
+                <div class="steps">{{ '2' | translate }}</div>
+                <h4>{{ data?.seller?.steps?.step_2?.title }}</h4>
+                <p>{{ data?.seller?.steps?.step_2?.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="step-box">
+              <div>
+                <div class="steps">{{ '3' | translate }}</div>
+                <h4>{{ data?.seller?.steps?.step_3?.title }}</h4>
+                <p>{{ data?.seller?.steps?.step_3?.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+<!-- how to start section end -->
+
+<!-- start selling section start -->
+@if(data?.seller?.start_selling?.status){
+  <section class="start-selling section-b-space">
+    <div class="container">
+      <div class="col">
+        <div>
+          <h4>{{ data?.seller?.start_selling?.title }}</h4>
+          <p>
+            {{ data?.seller?.start_selling?.description }}
+          </p>
+          @if(data?.general?.seller_register_url){
+            <a href="{{data?.general?.seller_register_url}}" class="btn btn-solid btn-sm">{{ 'start_selling' | translate }}</a>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+}

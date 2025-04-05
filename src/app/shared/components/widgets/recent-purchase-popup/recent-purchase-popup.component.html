@@ -1,0 +1,21 @@
+@if(product){
+  <div class="media recently-purchase" [class.show]="popup_enable ? show : popup_enable">
+    <img [src]="product.product_thumbnail ?
+                    product.product_thumbnail.original_url :
+                    'assets/images/placeholder/product.png'" alt="product">
+    <div class="media-body">
+      <div>
+        <div class="title">
+          {{ 'someone_recently_purchased' | translate }}
+        </div>
+        <a [routerLink]="['/product/', product.slug]">
+          <span class="product-name">
+            {{ product.name }}
+          </span>
+        </a>
+        <small class="timeAgo">{{ min }} {{ 'minutes_ago' | translate }}</small>
+      </div>
+    </div>
+    <a href="javascript:void(0)" (click)="closePopup()" class="close-popup ri-close-fill"></a>
+  </div>
+}

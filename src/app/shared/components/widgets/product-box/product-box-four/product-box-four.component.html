@@ -1,0 +1,37 @@
+<div class="basic-product theme-product-3" [class.sold-out]="product.stock_status === 'out_of_stock'">
+  <div class="img-wrapper">
+      @if(product.discount){
+        <div class="ribbon-round">{{ product.discount }}%</div>
+      }
+      <app-image-variant [thumbnail]="product.product_thumbnail!" [gallery_images]="product.product_galleries!" [product]="product!"></app-image-variant>
+      <div class="cart-info">
+        <app-wishlist [product]="product" [class]="'wishlist-icon'"></app-wishlist>
+        <app-product-hover-action [product]="product" [showAction]="['compare', 'view']"></app-product-hover-action>
+      </div>
+  </div>
+  <div class="product-detail">
+      @if(product && product.slug){
+        <a class="product-title"  [routerLink]="['product', product.slug]">
+            {{ product.name }}
+        </a>
+      }
+
+      <div class="rating-w-count">
+          <div class="rating">
+            <ngb-rating [(rate)]="product.rating_count">
+              <ng-template let-fill="fill" let-index="index">
+                <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100" ></i>
+              </ng-template>
+            </ngb-rating>
+          </div>
+          <span>({{ product.reviews_count }})</span>
+      </div>
+      <h4 class="price">
+        {{ (product.sale_price) | currencySymbol }}
+        @if(product.discount){
+          <del> {{ (product.price) | currencySymbol }} </del>
+        }
+      </h4>
+      <app-cart-button [text]="'add_to_cart'" [product]="product" [class]="'add-cart-btn'" [iconClass]="' '"  [enableModal]="true"></app-cart-button>
+  </div>
+</div>

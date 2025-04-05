@@ -1,0 +1,162 @@
+{
+    "id": 44,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                28,
+                25,
+                24,
+                27,
+                26
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/goggles/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/goggles/service.png",
+                    "description": "online service for new customer"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/goggles/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/goggles/goggles_6.png",
+            "redirect_link": {
+                "link": "reading-glasses",
+                "link_type": "collection"
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_1.png",
+                    "redirect_link": {
+                        "link": "reading-glasses",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_2.png",
+                    "redirect_link": {
+                        "link": "reading-glasses",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/goggles/goggles_5.png",
+                "redirect_link": {
+                    "link": "reading-glasses",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/goggles/goggles_4.png",
+                "redirect_link": {
+                    "link": "reading-glasses",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/goggles/goggles_3.png",
+                "redirect_link": {
+                    "link": "reading-glasses",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            186,
+            185,
+            176,
+            183
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/goggles/goggles_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "our collection",
+            "title": "special product",
+            "status": true,
+            "description": "Explore the world in style with GogglesDemo, your go-to destination for premium eyewear. Discover a wide range of fashionable goggles and sunglasses, designed to cater to every taste and need. Enjoy unbeatable prices, exceptional quality, and fast shipping on all orders. Shop now and elevate your look with GogglesDemo!",
+            "product_ids": [
+                186,
+                185,
+                176,
+                183
+            ]
+        },
+        "category_product": {
+            "status": true,
+            "category_ids": [
+                56,
+                57
+            ]
+        }
+    },
+    "slug": "goggles"
+}

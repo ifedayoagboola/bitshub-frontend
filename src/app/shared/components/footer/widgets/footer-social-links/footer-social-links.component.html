@@ -1,0 +1,31 @@
+@if(data?.footer?.facebook || data?.footer?.twitter || data?.footer?.instagram || data?.footer?.pinterest){
+  <div class="footer-social">
+    <ul>
+      @if(data?.footer?.facebook){
+        <li>
+          <a href="{{ data?.footer?.facebook }}" target="_blank">
+            <i class="ri-facebook-fill"></i>
+          </a>
+        </li>
+      }@if(data?.footer?.twitter){
+        <li>
+          <a href="{{ data?.footer?.twitter }}" target="_blank">
+            <i class="ri-twitter-fill"></i>
+          </a>
+        </li>
+      }@if(data?.footer?.instagram){
+        <li>
+          <a href="{{ data?.footer?.instagram }}" target="_blank">
+            <i class="ri-instagram-fill"></i>
+          </a>
+        </li>
+      }@if(data?.footer?.pinterest){
+        <li>
+          <a href="{{ data?.footer?.pinterest }}" target="_blank">
+            <i class="ri-pinterest-fill"></i>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+}

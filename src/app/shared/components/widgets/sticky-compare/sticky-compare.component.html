@@ -1,0 +1,7 @@
+@if(!!(compareTotal$ | async)){
+  <div class="compare-fix">
+    <a [routerLink]="['/compare']">
+      <h5>{{ 'compare' | translate }} <span>({{ (compareTotal$ | async) }})</span></h5>
+    </a>
+  </div>
+}

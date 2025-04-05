@@ -1,0 +1,55 @@
+/**=====================
+    Portfolio css
+==========================**/
+.portfolio-section {
+  overflow: hidden;
+
+  #form1 {
+    padding-bottom: 20px;
+  }
+
+  &.metro-section {
+    .product-box {
+      .product-detail {
+        opacity: 0;
+        position: absolute;
+        background-color: $white;
+        padding: 10px;
+        transition: all 0.5s ease;
+        width: 65%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -10px;
+        text-align: center;
+
+        h6 {
+          color: #525252;
+          padding-top: 0;
+          margin-top: -2px;
+          font-size: 17px;
+          font-weight: 600;
+        }
+
+        h4 {
+          font-weight: 400;
+          color: #797979;
+          font-size: 16px;
+        }
+
+        &.default-view {
+          opacity: 1;
+          bottom: 15px;
+        }
+      }
+
+      &:hover {
+        .product-detail {
+          opacity: 1;
+          transition: all 0.5s ease;
+          bottom: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<!-- Home Section Start -->
+<section class="pt-0">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Banner Section Start -->
+<section class="ratio2_3 banner-section">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @for(banner of banners; track banner.redirect_link; let i = $index){
+      @if(banner?.status){
+      <div [ngClass]="banners.length === 3 ? 'col-md-4 col-sm-6' : banners.length === 2 ? 'col-6' : 'col-12'">
+        <div class="position-relative">
+          <app-image-link [image]="banner" [bgImage]="true"></app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+      }
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Category Product Start -->
+@if(data?.content?.category_product?.status && data?.content?.category_product?.category_ids){
+<section class="section-b-space category-tab-section ratio_square">
+  <div class="container">
+    <app-theme-title [title]="data?.content?.category_product" [type]="'standard'"></app-theme-title>
+
+    <div class="row">
+      <div class="col">
+        <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids"
+          [style]="'vertical'"></app-theme-product-tab-section>
+      </div>
+    </div>
+  </div>
+</section>
+}
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

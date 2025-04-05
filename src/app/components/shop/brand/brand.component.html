@@ -1,0 +1,26 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+   <section class="brand-section">
+    <div class="container">
+      <div class="brand-box">
+        @if(brand.brand_banner && brand.brand_banner.original_url){
+            <img [src]="brand.brand_banner && brand.brand_banner.original_url" class="img-fluid w-100">
+        } @else {
+            <h2>{{ brand.name }}</h2>
+        }
+    </div>
+    </div>
+  </section>
+   <section class="section-b-space brand-product-box-section">
+    <div class="collection-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="collection-product-wrapper"> 
+              <app-collection-products [filter]="filter" [gridCol]="'collection_4_grid'"></app-collection-products>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

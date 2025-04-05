@@ -1,0 +1,46 @@
+<header class="header-tools header-style" [class]="!  (stick && sticky) ? class : ''" [ngClass]="stick && sticky ? 'sticky fixed' : ''">
+  <div class="logo-menu-part">
+    <div class="container border-bottom-0">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="main-menu">
+            <div class="menu-left">
+              <div class="toggle-nav" (click)="mainMenuOpen()">
+                <i class="ri-menu-line sidebar-bar"></i>
+              </div>
+              <div class="brand-logo">
+                <app-header-logo [logo]="logo"></app-header-logo>
+              </div>
+            </div>
+            <div class="menu-right pull-right">
+              <app-menu></app-menu>
+              <div class="top-header">
+                <ul class="header-dropdown">
+                  <li class="mobile-wishlist"><a href="javascript:void(0)"><i class="ri-heart-line"></i></a></li>
+                  <li class="onhover-dropdown mobile-account">
+                    <app-user-profile></app-user-profile>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="icon-nav">
+                  <ul>
+                    <li class="onhover-div mobile-search">
+                      <app-search></app-search>
+                    </li>
+                    <li class="onhover-div mobile-setting">
+                      <app-settings></app-settings>
+                    </li>
+                    <li class="onhover-div mobile-cart">
+                      <app-cart></app-cart>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

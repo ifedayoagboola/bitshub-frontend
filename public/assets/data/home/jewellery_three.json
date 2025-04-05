@@ -1,0 +1,200 @@
+{
+    "id": 25,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                41,
+                40,
+                42
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/jewellery_three/jewellery_three_1.png",
+            "redirect_link": {
+                "link": "radiant-ornaments",
+                "link_type": "collection"
+            }
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_5.png",
+                    "redirect_link": {
+                        "link": "radiant-ornaments",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/jewellery_three/jewellery_three_4.png",
+                "redirect_link": {
+                    "link": "radiant-ornaments",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/jewellery_three/jewellery_three_3.png",
+                "redirect_link": {
+                    "link": "radiant-ornaments",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/jewellery_three/jewellery_three_2.png",
+                "redirect_link": {
+                    "link": "radiant-ornaments",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            200,
+            202,
+            211,
+            196,
+            198,
+            206,
+            203
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/jewellery_three/jewellery_three_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "title": "top collection",
+            "status": true,
+            "description": "Explore a world where exquisite design and expert craftsmanship coexist, with each piece of jewelry telling a tale.",
+            "product_ids": [
+                200,
+                202,
+                211,
+                196
+            ]
+        },
+        "featured_blogs": {
+            "title": "latest news",
+            "status": true,
+            "blog_ids": [
+                44,
+                43,
+                45
+            ]
+        },
+        "product_banner": {
+            "status": true,
+            "left_panel": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    198,
+                    206,
+                    196
+                ]
+            },
+            "right_panel": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    200,
+                    203,
+                    202
+                ]
+            },
+            "center_panel": {
+                "status": true,
+                "image_url": "/images/theme/jewellery_three/jewellery_three_6.png",
+                "redirect_link": {
+                    "link": "radiant-ornaments",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "category_product": {
+            "title": "Top Collection",
+            "status": true,
+            "category_ids": [
+                65,
+                67
+            ]
+        }
+    },
+    "slug": "jewellery_three"
+}

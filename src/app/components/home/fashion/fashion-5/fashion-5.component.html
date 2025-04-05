@@ -1,0 +1,94 @@
+<!-- Home slider -->
+@if(data?.content?.home_banner?.status){
+<div class="home-slider-container">
+  <section class="p-0">
+    <div class="home-slider">
+      <app-image-link [image]="data?.content?.home_banner" [class]="'home'" [bgImage]="true"></app-image-link>
+      <div class="home-skeleton">
+        <div class="skeleton-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 col-sm-8 col-11">
+                <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+                  <span class="col-7">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-9">
+                    <span class="placeholder"></span>
+                  </span>
+                  <span class="col-6">
+                    <span class="placeholder"></span>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+}
+<!-- Home slider end -->
+
+<!-- category section start -->
+@if(data?.content?.categories?.status){
+<section class="section-b-space">
+  <div class="container">
+    <app-theme-title [title]="data?.content?.categories" [type]="'classic'"></app-theme-title>
+
+    <app-categories [style]="'basic'" [categoryIds]="data?.content?.categories?.category_ids || []"
+      [slider]="false"></app-categories>
+  </div>
+</section>
+}
+<!-- category section end -->
+
+<!-- Deals Banner Section Start -->
+@if(data?.content?.deals_banner?.status){
+  <section class="pt-0">
+    <div class="container">
+      <app-image-link [image]="data?.content?.deals_banner" [class]="'img-fluid w-100'"></app-image-link>
+    </div>
+  </section>
+}
+<!-- Deals Banner Section End -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status){
+  <app-theme-title [title]="data?.content?.category_product" [type]="'basic'"></app-theme-title>
+  <section class="section-b-space category-tab-section pt-0">
+    <div class="container">
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'">
+      </app-theme-product-tab-section>
+    </div>
+  </section>
+  }
+  <!-- Tab product End-->
+
+<!-- Banner Section Start -->
+@if(data?.content?.offer_banner?.status){
+<section class="pt-0">
+  <div class="container">
+    <app-image-link [image]="data?.content?.offer_banner" [class]="'img-fluid w-100'"></app-image-link>
+  </div>
+</section>
+}
+<!-- Banner Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+<section class="instagram insta-style ratio_square section-b-space">
+  <app-theme-social-media [media]="data?.content?.social_media || []" [options]="SocialMediaSlider"
+    [class]="'container'" [type]="'classic'"></app-theme-social-media>
+</section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

@@ -1,0 +1,12 @@
+  <div class="modal-header">
+    <h3 class="fw-semibold">{{ 'size_chart' | translate }}</h3>
+    <app-button
+      [class]="'btn btn-close'"
+      [id]="'profile_modal_close_btn'"
+      (click)="modal.close('Cross click')"
+      [iconClass]="'ri-close-line'">
+    </app-button>
+  </div>
+  <div class="modal-body">
+    <img [src]="image && image.original_url" class="img-fluid w-100" alt="chart">
+  </div>

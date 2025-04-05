@@ -1,0 +1,148 @@
+@if(type == 'basic'){
+<div class="title1" [class.section-t-space]="space">
+  @if(title.tag){
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  }
+  <h2 class="title-inner1" [ngClass]="class">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner1"></h2>
+</div>
+@if(title.description){
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">{{ title.description }}</p>
+        <p class="skeleton-text-p">
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+}
+}@else if(type == 'simple'){
+<div class="title1 wo-border" [class.section-t-space]="space">
+  @if(title.tag){
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  }
+  <h2 class="title-inner1 font-cormorant">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner1"></h2>
+</div>
+@if(title.description){
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">{{ title.description }}</p>
+        <p class="skeleton-text-p">
+          <span></span>
+          <span></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+}
+}@else if (type == 'classic') {
+<div class="title2 text-start">
+  <h2 class="title-inner2 p-0">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner2 p-0"></h2>
+</div>
+}@else if(type == 'standard'){
+<div class="title2">
+  @if(title.tag){
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  }
+  <h2 class="title-inner2">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner1 mx-auto"></h2>
+</div>
+}@else if(type == 'premium'){
+<div class="title4">
+  @if(title.tag){
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  }
+  <h2 class="title-inner4">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner4 mx-auto"></h2>
+  <div class="line"><span></span></div>
+</div>
+}@else if(type == 'digital'){
+<div class="title1 wo-border section-t-space">
+  <h4>{{ title.tag }}</h4>
+  <h2 class="title-inner1 font-courgette">{{ title.title }}</h2>
+</div>
+}@else if(type == 'luxury'){
+<div class="title3">
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  <h2 class="title-inner3">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner3 mx-auto"></h2>
+  <div class="line"></div>
+</div>
+@if(title.description){
+<div class="about-text">
+  <p>{{ title.description }}</p>
+  <p class="skeleton-text-p">
+    <span></span>
+    <span></span>
+  </p>
+</div>
+}
+}@else if (type == 'fraunces') {
+<div class="title6" [class.section-t-space]="space">
+  <h2 class="font-fraunces" [class.text-white]="textWhite">{{ title.title }}</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center" [class.text-white]="textWhite">{{ title.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+}@else if (type == 'icon'){
+<div class="title-basic">
+  <h2 class="title font-fraunces">
+    <i class="ri-flashlight-line"></i>
+    {{ title.title }}
+  </h2>
+  <h2 class="skeleton-text-h2 title font-fraunces"></h2>
+</div>
+}@else if(type == 'vegetable'){
+<div class="title8">
+  <h2>{{ title.title }}</h2>
+  <p>{{ title.sub_title }}</p>
+</div>
+}@else if(type == 'jewellery'){
+<div class="title1 title5">
+  <h4>{{ title.tag }}</h4>
+  <h4 class="skeleton-text-h4"></h4>
+  <h2 class="title-inner1">{{ title.title }}</h2>
+  <h2 class="skeleton-text-h2 title-inner1"></h2>
+  <hr role="tournament6">
+</div>
+@if(title.description){
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="product-para">
+        <p class="text-center">{{ title.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+}
+}
+@else if(type == 'single_product') {
+  <div class="title1 title7">
+    <div [innerHTML]="getTitle(title.title || '')"></div>
+  </div>
+}
+@else if(type == 'borderless'){
+<h2 class="title-borderless">{{ title.title }}</h2>
+}

@@ -1,0 +1,9 @@
+<div class="footer-logo">
+  <a [routerLink]="['/']">
+    @if(logo){
+      <img [src]="logo" class="img-fluid" alt="logo">
+    }@else {
+      <h2 class="f-w-600">{{ (setting$ | async)?.general?.site_name ? (setting$ | async)?.general?.site_name : 'Logo' }}</h2>
+    }
+  </a>
+</div>

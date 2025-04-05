@@ -1,0 +1,34 @@
+@if(type == 'button_link'){
+  @if(data?.redirect_link?.link_type === 'external_url'){
+    @if(data?.redirect_link?.link){
+      <a href="{{ data?.redirect_link?.link }}" [class]="class">{{ data.button_text }}</a>
+    }@else {
+      <a href="javascript:void(0)" [class]="class">{{ data.button_text }}</a>
+    }
+  }@else if(data?.redirect_link?.link_type === 'collection') {
+    @if(data?.redirect_link?.link){
+      <a [routerLink]="['/category', data?.redirect_link?.link]" [class]="class">{{ data.button_text }}</a>
+    }@else {
+      <a href="javascript:void(0)" [class]="class">{{ data.button_text }}</a>
+    }
+  }@else if(data?.redirect_link?.link_type === 'product'){
+    @if(data?.product_slug){
+      <a [routerLink]="['/product/', data?.product_slug]" [class]="class">{{ data.button_text }}</a>
+    }
+  }
+}@else {
+  <button
+    [class]="class ? class : ''"
+    [id]="id"
+    [type]="type"
+    [class.disabled]="disabled || ((spinnerStatus$ | async) && buttonId == id)"
+    [disabled]="disabled || ((spinnerStatus$ | async) && buttonId == id)"
+    (click)="onClick(id)">
+    <div [ngClass]="{ 'position-relative spinning' : spinner && (spinnerStatus$ | async) && buttonId && buttonId == id }">
+      @if(iconClass){
+        <i class="{{ iconClass }}"></i>
+      }
+      <ng-content></ng-content>
+    </div>
+  </button>
+}

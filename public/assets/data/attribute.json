@@ -1,0 +1,756 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 18,
+            "name": "Number",
+            "style": "rectangle",
+            "slug": "number",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-06-09T06:35:28.000000Z",
+            "updated_at": "2024-06-09T06:35:28.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 76,
+                    "value": "5",
+                    "hex_color": null,
+                    "slug": "5",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 77,
+                    "value": "6",
+                    "hex_color": null,
+                    "slug": "6",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 78,
+                    "value": "7",
+                    "hex_color": null,
+                    "slug": "7",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 79,
+                    "value": "8",
+                    "hex_color": null,
+                    "slug": "8",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 80,
+                    "value": "9",
+                    "hex_color": null,
+                    "slug": "9",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 81,
+                    "value": "10",
+                    "hex_color": null,
+                    "slug": "10",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 82,
+                    "value": "11",
+                    "hex_color": null,
+                    "slug": "11",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 83,
+                    "value": "12",
+                    "hex_color": null,
+                    "slug": "12",
+                    "attribute_id": "18",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-09T06:35:28.000000Z",
+                    "updated_at": "2024-06-09T06:35:28.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "ML",
+            "style": "dropdown",
+            "slug": "ml",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-17T03:31:23.000000Z",
+            "updated_at": "2024-05-17T03:31:23.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 73,
+                    "value": "100 ML",
+                    "hex_color": null,
+                    "slug": "100-ml",
+                    "attribute_id": "17",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-17T03:31:23.000000Z",
+                    "updated_at": "2024-05-17T03:31:23.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 74,
+                    "value": "50 ML",
+                    "hex_color": null,
+                    "slug": "50-ml",
+                    "attribute_id": "17",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-17T03:31:23.000000Z",
+                    "updated_at": "2024-05-17T03:31:23.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 75,
+                    "value": "20 ML",
+                    "hex_color": null,
+                    "slug": "20-ml",
+                    "attribute_id": "17",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-17T03:31:23.000000Z",
+                    "updated_at": "2024-05-17T03:31:23.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "GB",
+            "style": "rectangle",
+            "slug": "gb",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-16T04:06:30.000000Z",
+            "updated_at": "2024-05-16T04:06:30.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 67,
+                    "value": "128 GB",
+                    "hex_color": null,
+                    "slug": "128-gb",
+                    "attribute_id": "16",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:06:30.000000Z",
+                    "updated_at": "2024-05-16T04:06:30.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 68,
+                    "value": "256 GB",
+                    "hex_color": null,
+                    "slug": "256-gb",
+                    "attribute_id": "16",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:06:30.000000Z",
+                    "updated_at": "2024-05-16T04:06:30.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 69,
+                    "value": "512 GB",
+                    "hex_color": null,
+                    "slug": "512-gb",
+                    "attribute_id": "16",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:06:30.000000Z",
+                    "updated_at": "2024-05-16T04:06:30.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "License",
+            "style": "rectangle",
+            "slug": "license",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-04T05:43:59.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 32,
+                    "value": "Regular",
+                    "hex_color": null,
+                    "slug": "regular",
+                    "attribute_id": "9",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 33,
+                    "value": "Extended",
+                    "hex_color": null,
+                    "slug": "extended",
+                    "attribute_id": "9",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Litre",
+            "style": "dropdown",
+            "slug": "litre",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-04T05:43:59.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 34,
+                    "value": "5 Litre",
+                    "hex_color": null,
+                    "slug": "5-litre",
+                    "attribute_id": "10",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 35,
+                    "value": "10 Litre",
+                    "hex_color": null,
+                    "slug": "10-litre",
+                    "attribute_id": "10",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Color",
+            "style": "color",
+            "slug": "color",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-04T05:43:59.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 36,
+                    "value": "Red",
+                    "hex_color": "#f00000",
+                    "slug": "red",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 37,
+                    "value": "Black",
+                    "hex_color": "#000000",
+                    "slug": "black",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-15T05:23:27.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 38,
+                    "value": "Purple",
+                    "hex_color": "#ac69d8",
+                    "slug": "purple",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 39,
+                    "value": "White",
+                    "hex_color": "#ffffff",
+                    "slug": "white",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 40,
+                    "value": "Green",
+                    "hex_color": "#2f9348",
+                    "slug": "green",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 41,
+                    "value": "Yellow",
+                    "hex_color": "#ffd500",
+                    "slug": "yellow",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 42,
+                    "value": "Blue",
+                    "hex_color": "#0084ff",
+                    "slug": "blue",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 43,
+                    "value": "Orange",
+                    "hex_color": "#ff8800",
+                    "slug": "orange",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:45:06.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 59,
+                    "value": "Brown",
+                    "hex_color": "#883f3f",
+                    "slug": "brown-2",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T12:19:46.000000Z",
+                    "updated_at": "2024-05-04T12:19:46.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 70,
+                    "value": "Blue",
+                    "hex_color": "#515461",
+                    "slug": "blue-3",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:20:12.000000Z",
+                    "updated_at": "2024-05-16T04:20:12.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 71,
+                    "value": "Black",
+                    "hex_color": "#4e4d4b",
+                    "slug": "black-3",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:20:12.000000Z",
+                    "updated_at": "2024-05-16T04:20:12.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 72,
+                    "value": "Natural",
+                    "hex_color": "#b9ba99",
+                    "slug": "natural",
+                    "attribute_id": "11",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-16T04:20:12.000000Z",
+                    "updated_at": "2024-05-16T04:23:05.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Chest",
+            "style": "radio",
+            "slug": "chest",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-06-22T05:19:45.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 44,
+                    "value": "32 B",
+                    "hex_color": null,
+                    "slug": "32-b",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 45,
+                    "value": "32 C",
+                    "hex_color": null,
+                    "slug": "32-c",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 46,
+                    "value": "34 B",
+                    "hex_color": null,
+                    "slug": "34-b",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 47,
+                    "value": "34 C",
+                    "hex_color": null,
+                    "slug": "34-c",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 84,
+                    "value": "36 B",
+                    "hex_color": null,
+                    "slug": "36-b",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-22T05:19:45.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 85,
+                    "value": "36 C",
+                    "hex_color": null,
+                    "slug": "36-c",
+                    "attribute_id": "12",
+                    "created_by_id": "1",
+                    "created_at": "2024-06-22T05:19:45.000000Z",
+                    "updated_at": "2024-06-22T05:19:45.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Colour",
+            "style": "image",
+            "slug": "colour",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-04T05:43:59.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 48,
+                    "value": "Burgundy",
+                    "hex_color": null,
+                    "slug": "burgundy",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 49,
+                    "value": "Brown",
+                    "hex_color": null,
+                    "slug": "brown",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 50,
+                    "value": "White",
+                    "hex_color": null,
+                    "slug": "white-2",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 60,
+                    "value": "Grey",
+                    "hex_color": null,
+                    "slug": "grey",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 61,
+                    "value": "Pink",
+                    "hex_color": null,
+                    "slug": "pink",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 62,
+                    "value": "Purple",
+                    "hex_color": null,
+                    "slug": "purple-2",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 63,
+                    "value": "Blue",
+                    "hex_color": null,
+                    "slug": "blue-2",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 64,
+                    "value": "Green",
+                    "hex_color": null,
+                    "slug": "green-2",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 65,
+                    "value": "Beige",
+                    "hex_color": null,
+                    "slug": "beige",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 66,
+                    "value": "Black",
+                    "hex_color": null,
+                    "slug": "black-2",
+                    "attribute_id": "13",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-08T12:25:58.000000Z",
+                    "updated_at": "2024-05-08T12:25:58.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Size",
+            "style": "circle",
+            "slug": "size",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-15T10:27:05.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 51,
+                    "value": "S",
+                    "hex_color": null,
+                    "slug": "s",
+                    "attribute_id": "14",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 52,
+                    "value": "M",
+                    "hex_color": null,
+                    "slug": "m",
+                    "attribute_id": "14",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 53,
+                    "value": "L",
+                    "hex_color": null,
+                    "slug": "l",
+                    "attribute_id": "14",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 54,
+                    "value": "XL",
+                    "hex_color": null,
+                    "slug": "xl",
+                    "attribute_id": "14",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 55,
+                    "value": "XXL",
+                    "hex_color": null,
+                    "slug": "xxl",
+                    "attribute_id": "14",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Weight",
+            "style": "rectangle",
+            "slug": "weight",
+            "status": 1,
+            "created_by_id": "1",
+            "created_at": "2024-05-04T05:43:59.000000Z",
+            "updated_at": "2024-05-04T05:43:59.000000Z",
+            "deleted_at": null,
+            "attribute_values": [
+                {
+                    "id": 56,
+                    "value": "1 KG",
+                    "hex_color": null,
+                    "slug": "1-kg",
+                    "attribute_id": "15",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 57,
+                    "value": "5 KG",
+                    "hex_color": null,
+                    "slug": "5-kg",
+                    "attribute_id": "15",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                },
+                {
+                    "id": 58,
+                    "value": "10 KG",
+                    "hex_color": null,
+                    "slug": "10-kg",
+                    "attribute_id": "15",
+                    "created_by_id": "1",
+                    "created_at": "2024-05-04T05:43:59.000000Z",
+                    "updated_at": "2024-05-04T05:43:59.000000Z",
+                    "deleted_at": null
+                }
+            ]
+        }
+    ],
+    "first_page_url": "",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 10,
+    "total": 10
+}

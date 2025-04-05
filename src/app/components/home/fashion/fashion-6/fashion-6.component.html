@@ -1,0 +1,235 @@
+<!-- Home Section Start -->
+<section class="p-0">
+  <div class="center-home-slider sm-size home-slider layout-7">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- collection banner Start -->
+@if(data?.content?.offer_banner?.status){
+<section class="banner-padding ratio2_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 d-lg-block d-none">
+        <div class="position-relative h-100">
+          <app-image-link [image]="data?.content?.offer_banner?.banner_1" [class]="'h-100'" [bgImage]="true">
+          </app-image-link>
+          <div class="banner-skeleton">
+            <div class="skeleton-content">
+              <p class="card-text placeholder-glow row g-lg-3 g-0">
+                <span class="col-lg-7 col-9">
+                  <span class="placeholder"></span>
+                </span>
+                <span class="col-lg-9 col-12">
+                  <span class="placeholder"></span>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="row g-md-4 g-3">
+          <div class="col-md-4 col-6">
+            <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_2" [class]="'img-part'" [bgImage]="true">
+              </app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_3" [class]="'img-part'" [bgImage]="true">
+              </app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_4" [class]="'img-part'" [bgImage]="true">
+              </app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_5" [class]="'img-part'" [bgImage]="true">
+              </app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="position-relative">
+              <app-image-link [image]="data?.content?.offer_banner?.banner_6" [class]="'img-part'" [bgImage]="true">
+              </app-image-link>
+              <div class="banner-skeleton">
+                <div class="skeleton-content">
+                  <p class="card-text placeholder-glow row g-lg-3 g-0">
+                    <span class="col-lg-7 col-9">
+                      <span class="placeholder"></span>
+                    </span>
+                    <span class="col-lg-9 col-12">
+                      <span class="placeholder"></span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- collection banner End -->
+
+<!-- product section start-->
+@if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+<app-theme-title [title]="data?.content?.products_list_1" [type]="'basic'"></app-theme-title>
+
+<section class="section-b-space pt-0 ratio_square">
+  <div class="container">
+    <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'"
+      [class]="'row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3'"></app-theme-product>
+  </div>
+</section>
+}
+<!-- product section end-->
+
+<!-- Parallax banner -->
+@if(data?.content?.product_banner?.status){
+<section class="section-b-space bg-size"
+  [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.product_banner?.image_url +')'}">
+  <img [src]="StorageURL+data?.content?.product_banner?.image_url" [alt]="data?.content?.product_banner?.image_url"
+    class="bg-img  ">
+  <div class="ratio_square">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="theme-card card-border bg-white">
+            <h5 class="title-border">{{ data?.content?.product_banner?.product_slider_1?.title }}</h5>
+            <div class="offer-slider ">
+              <app-theme-product [productIds]="data?.content?.product_banner?.product_slider_1?.product_ids || []"
+                [style]="'horizontal'">
+              </app-theme-product>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Parallax banner end -->
+
+<!-- product section start-->
+@if(data?.content?.products_list_2?.status){
+  @if(data?.content?.products_list_2?.products?.product_ids){
+  <app-theme-title [title]="data?.content?.products_list_2?.products" [type]="'basic'"></app-theme-title>
+  }
+
+  <section class="pt-0 ratio_square">
+    <div class="container">
+      <div class="row">
+        <div
+          [ngClass]="data?.content?.products_list_2?.right_panel?.status ? 'col-lg-9 col-md-8 col-sm-7 col-6' : 'col-lg-12 col-md-8 col-sm-7 col-6'">
+          <app-theme-product [productIds]="data?.content?.products_list_2?.products?.product_ids || []"
+            [style]="'vertical'" [slider]="true" [options]="options">
+          </app-theme-product>
+        </div>
+        @if(data?.content?.products_list_2?.right_panel?.status){
+        <div class="col-lg-3 col-md-4 col-sm-5 col-6 images">
+          <app-image-link [image]="data?.content?.products_list_2?.right_panel" [class]="'h-100'" [bgImage]="true">
+          </app-image-link>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+<!-- product section end-->
+
+<!-- Blog Section Start -->
+@if(data?.content?.featured_blogs?.status && data?.content?.featured_blogs?.blog_ids){
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-theme-title [title]="data?.content?.featured_blogs" [type]="'basic'"></app-theme-title>
+    </div>
+  </div>
+</div>
+
+
+<section class="blog pt-0 ratio2_3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-theme-blog [blogIds]="data?.content?.featured_blogs?.blog_ids || []"></app-theme-blog>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Blog Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+<section class="instagram ratio_square">
+  <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'"></app-theme-social-media>
+</section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+<section class="section-b-space">
+  <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+</section>
+}
+<!-- Brand Section End -->

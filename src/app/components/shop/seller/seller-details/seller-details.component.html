@@ -1,0 +1,93 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- vendor cover start -->
+ @if(selectedStore){
+
+   @if(selectedStore.store_cover){
+     <div class="vendor-cover">
+       <div class="bg-size" [ngStyle]="{ 'background-image': 'url('+ selectedStore.store_cover.original_url +')'}">
+         <img [src]="selectedStore.store_cover.original_url" alt="" class="bg-img lazyload">
+       </div>
+     </div>
+   }
+   <!-- vendor cover end -->
+   
+   <!-- section start -->
+   <section class="vendor-profile" [ngClass]="selectedStore.store_cover && selectedStore.store_cover.original_url ? 'pt-0' : 'mt-0 section-t-space'">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-12">
+           <div class="profile-left">
+             <div class="profile-image">
+               <div>
+                 <app-seller-store-logo [store]="selectedStore"></app-seller-store-logo>
+   
+                 <h3>{{ selectedStore.store_name | titlecase }}</h3>
+                 <div class="rating">
+                   <ngb-rating [(rate)]="selectedStore.rating_count">
+                     <ng-template let-fill="fill" let-index="index">
+                       <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+                     </ng-template>
+                   </ngb-rating>
+                   <h6>({{ selectedStore.reviews_count }} {{ 'review' | translate }})</h6>
+                 </div>
+               </div>
+             </div>
+             <div class="profile-detail">
+               <div>
+                 <p [innerHTML]="selectedStore.description"></p>
+               </div>
+             </div>
+             <div class="vendor-contact">
+               <app-seller-store-social-media [store]="selectedStore">
+   
+                 <h6>{{ 'any_query' | translate }}:</h6>
+                 <ul class="vendor-details">
+                   @if(!selectedStore.hide_vendor_phone && selectedStore.vendor){
+                   <li>
+                     <i class="ri-smartphone-line"></i>
+                     <h5>+{{ selectedStore.vendor.country_code }} {{ selectedStore.vendor.phone }}</h5>
+                   </li>
+                   }
+   
+                   @if(!selectedStore.hide_vendor_email && selectedStore.vendor){
+                   <li>
+                     <i class="ri-mail-line"></i>
+                     <h5>
+                       <a href="mailto:{{selectedStore.vendor.email}}">{{ selectedStore.vendor.email }}</a>
+                     </h5>
+                   </li>
+                   }
+                 </ul>
+               </app-seller-store-social-media>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <!-- Section ends -->
+   
+   <!-- collection section start -->
+   <section class="section-b-space">
+     <div class="container">
+       <div class="row">
+         <!-- [ngStyle]="{ 'left' : attributeService.offCanvasMenu ? '0' : ''}" -->
+         <div class="col-sm-3 collection-filter">
+           <app-collection-sidebar [filter]="filter"></app-collection-sidebar>
+         </div>
+         <div class="col">
+           <div class="collection-wrapper">
+             <div class="collection-content ratio_asos">
+               <div class="page-main-content">
+                 <div class="collection-product-wrapper">
+                   <app-collection-products [filter]="filter"></app-collection-products>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+  </section>
+ }
+<!-- collection section end -->

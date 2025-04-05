@@ -1,0 +1,85 @@
+<div class="row g-3">
+  @if((wallet$ | async)?.transactions?.data?.length){
+  <div class="col-12">
+    <div class="card ">
+      <div class="card-body">
+        <div class="total-box mt-0">
+         <div class="total-contain wallet-bg">
+           <div class="wallet-point-box">
+            <div class="total-image">
+              <img src="assets/images/svg/wallet.svg" alt="wallet">
+             </div>
+             <div class="total-detail">
+              <div class="total-box">
+               <h5>{{ 'wallet_balance'| translate}}</h5>
+               <h3>{{ ((wallet$ | async) ? (wallet$ | async)?.balance! : 0) | currencySymbol }}</h3>
+              </div>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+  <div class="col-12">
+    <div class="card dashboard-table mt-0">
+      <div class="card-body">
+        @if((wallet$ | async)?.transactions?.data?.length){
+        <div class="total-box mt-0">
+          <div class="wallet-table">
+            <div class="table-responsive">
+              <table class="table cart-table order-table">
+                <thead>
+                  <tr class="table-head">
+                    <th>{{ 'date'| translate}}</th>
+                    <th>{{ 'amount'| translate}}</th>
+                    <th>{{ 'remark'| translate}}</th>
+                    <th>{{ 'status'| translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for(transaction of (wallet$ | async)?.transactions?.data; track transaction.id; let i = $index){
+                  <tr>
+                    <td>{{ transaction?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</td>
+                    <td>{{ transaction?.amount | currencySymbol }}</td>
+                    <td>{{ transaction?.detail }}</td>
+                    <td>
+                      <div class="badge rounded-0 bg-{{transaction?.type}} custom-badge">
+                        <span>{{ transaction?.type | titlecase }}</span></div>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+          @if((wallet$ | async)?.transactions?.data?.length){
+          <div class="product-pagination">
+            <div class="theme-pagination-block">
+              <div class="row">
+                <div class="col-xl-6 col-md-6 col-sm-12">
+                  <nav aria-label="Page navigation">
+                    <app-pagination [total]="(wallet$ | async)?.transactions?.total || 0" [currentPage]="filter['page']"
+                      [pageSize]="filter['paginate']" (setPage)="setPaginate($event)">
+                    </app-pagination>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        }@else {
+        <app-no-data
+          [class]="'no-data-added'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_transaction'"
+          [description]="'no_wallet_balance'">
+        </app-no-data>
+        }
+      </div>
+    </div>
+  </div>
+</div>

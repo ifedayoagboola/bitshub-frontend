@@ -1,0 +1,201 @@
+{
+    "id": 21,
+    "content": {
+        "brand": {
+            "status": false,
+            "brand_ids": [
+                28,
+                27,
+                26,
+                25,
+                29
+            ]
+        },
+        "services": {
+            "status": null,
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/service.png",
+                    "description": "super sale upto 50% off"
+                },
+                {
+                    "title": "online pay",
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/service.png",
+                    "description": "online payment avaible"
+                }
+            ]
+        },
+        "categories": {
+            "status": true,
+            "category_ids": [
+                175,
+                170,
+                171,
+                172,
+                173,
+                174,
+                176
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "image_url": "/images/theme/vegetables_four/vegetables_four_1.png",
+            "redirect_link": {
+                "link": "vegetables-fruits",
+                "link_type": "collection",
+                "product_ids": 18
+            }
+        },
+        "products_ids": [
+            18,
+            70,
+            69,
+            68,
+            67,
+            66,
+            56,
+            55,
+            54,
+            53,
+            52,
+            65,
+            64,
+            62,
+            63,
+            61,
+            58,
+            57
+        ],
+        "featured_blogs": {
+            "title": "shop by category",
+            "status": true,
+            "blog_ids": [
+                7,
+                8,
+                9
+            ]
+        },
+        "offer_banner_1": {
+            "status": false,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_2.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_3.png",
+                    "redirect_link": {
+                        "link": "vegetables",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_4.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner_2": {
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_7.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_6.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/vegetables_four/vegetables_four_5.png",
+                    "redirect_link": {
+                        "link": "vegetables-fruits",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_list_1": {
+            "title": "Vegetables",
+            "status": true,
+            "sub_title": "atta, dal, rice and more",
+            "product_ids": [
+                70,
+                69,
+                68,
+                67,
+                66
+            ]
+        },
+        "products_list_2": {
+            "title": "Vegetables",
+            "status": true,
+            "sub_title": "atta, dal, rice and more",
+            "product_ids": [
+                56,
+                55,
+                54,
+                53,
+                52
+            ]
+        },
+        "products_list_3": {
+            "title": "Lowest Price Vegetables",
+            "status": true,
+            "sub_title": "atta, dal, rice and more",
+            "product_ids": [
+                65,
+                64,
+                62,
+                63,
+                61
+            ]
+        },
+        "products_list_4": {
+            "title": "Vegetables",
+            "status": true,
+            "sub_title": "atta, dal, rice and more",
+            "product_ids": [
+                58,
+                57,
+                67,
+                68,
+                64
+            ]
+        }
+    },
+    "slug": "vegetables_four"
+}

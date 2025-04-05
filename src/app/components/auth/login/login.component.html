@@ -1,0 +1,42 @@
+<div class="auth-title">
+  <h3>{{ 'sign_in' | translate }}</h3>
+  <p>{{ 'login_text' | translate }}</p>
+</div>
+<app-alert></app-alert>
+@if(loginForm){
+  <form class="auth-form-box" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="auth-box mb-3">
+        <label for="email" class="form-label">{{ 'email' | translate }}</label>
+        <input type="text" class="form-control" id="email" placeholder="{{ 'email' | translate }}" formControlName="email">
+        @if(loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['required']){
+            <div class="invalid-feedback">
+            {{ 'email_is_required' | translate }}
+            </div>
+        }@else if(loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['email']){
+            <div class="invalid-feedback">
+            {{ 'invalid_email' | translate }}
+            </div>
+        }
+    </div>
+    <div class="auth-box mb-3">
+        <label for="password" class="form-label">{{ 'password' | translate }}</label>
+        <input type="password" class="form-control" id="password" placeholder="{{ 'enter_password' | translate }}" formControlName="password">
+        @if(loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']){
+          <div class="invalid-feedback">
+            {{ 'password_is_required' | translate }}
+          </div>
+        }
+        <a href="javascript:void(0)" class="forgot" (click)="action('email')">{{ 'forgot_password' | translate }}?</a>
+    </div>
+    <app-button [class]="'btn'" [type]="'submit'" [id]="'login_btn'" [spinner]="true">{{'login' | translate}}</app-button>
+  </form>
+}
+<div class="divider">
+  <span>{{ 'or' | translate }}</span>
+</div>
+<p class="create">{{ 'no_account' | translate }}? <a href="javascript:void(0)" (click)="action('register')">{{ 'register_here' | translate }}</a></p>
+
+@if((setting$ | async)?.activation?.login_number){
+  <app-button [class]="'btn number-btn'" [id]="'login_btn'" [iconClass]="'ri-smartphone-line'" [spinner]="true" (click)="loginWithNumber()">{{'login_with_number' | translate}}</app-button>
+}
+

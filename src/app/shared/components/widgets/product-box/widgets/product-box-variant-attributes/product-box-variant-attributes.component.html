@@ -1,0 +1,86 @@
+@for(attribute of attributes; track i;let i = $index){
+  @if(attribute?.style == 'dropdown' || isAllVariantStyleDropdown){
+    <select id="input-state-{{i}}" class="form-control form-select" #selectedValue (change)="setVariant(product.variations, attribute.attribute_values[$any($event.target).value])">
+      <option selected disabled>{{ 'choose' | translate }} {{ attribute?.name }}</option>
+      @for(value of attribute.attribute_values; track attributeIndex; let attributeIndex = $index;){
+        @if(attributeValues && attributeValues.includes(value.id)){
+          <option [selected]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)" [value]="attributeIndex" [disabled]="soldOutAttributesIds.includes(value.id)">
+            {{ value?.value }}
+          </option>
+        }
+      }
+    </select>
+  }
+  @else if(attribute?.style == 'radio'){
+    <div class="d-flex digital-price">
+      @for(value of attribute.attribute_values; ; track attributeIndex; let attributeIndex = $index;){
+        @if(attributeValues && attributeValues.includes(value.id)){
+          <div class="form-check" (mouseleave)="removeVariation()">
+            <input type="radio" class="form-check-input" [id]="'radio-' + i + '-' + attributeIndex" [name]="'radio-group-' + i" [value]="attributeIndex" [checked]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)" [disabled]="soldOutAttributesIds.includes(value.id)" [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }" (change)="setVariant(product.variations, attribute.attribute_values[$any($event.target).value])" (mouseover)="setVariant(product.variations, value, 'hover')" />
+            <label [for]="'radio-' + i + '-' + attributeIndex" class="form-check-label mb-0">{{ value?.value }} </label>
+            @if(showPrice){
+              <h5 class="sold text-content ms-auto">
+                <span class="theme-color price">{{ value.sale_price | currencySymbol }}</span>
+                @if(product.discount){
+                  <del>{{ value.price }}</del>
+                }
+              </h5>
+            }
+          </div>
+        }
+      }
+    </div>
+  }
+  @else if(attribute.style == 'image_price'){
+    @for(value of attribute.attribute_values; ; track attributeIndex; let attributeIndex = $index;){
+      @if(attributeValues && attributeValues.includes(value.id)){
+
+        <li class=""  [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)" [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }">
+          <a>
+            <ng-template #tipContent>{{ value?.name }} / {{ value?.sale_price | currencySymbol }}</ng-template>
+            <button  [ngbTooltip]="tipContent">
+              <img style="width: 50px" [src]="value?.variation_image ? value?.variation_image?.original_url : 'assets/images/placeholder/product.png'" (mouseover)="!soldOutAttributesIds.includes(value.id) && setVariant(product.variations, value, 'hover')"  (click)="setVariant(product.variations, value)">
+            </button>
+          </a>
+        </li>
+      }
+    }
+  }
+  @else if(attribute?.style == 'color'){
+    <ul class="circle general-variant {{attribute?.style}}">
+      @for(value of attribute.attribute_values; track value.hex_color){
+        @if(attributeValues && attributeValues.includes(value.id)){
+          <li
+            [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+            [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }"
+            placement="top"
+            (mouseleave)="removeVariation()"
+            [ngStyle]="{ 'background-color': value.hex_color }"
+            (click)="setVariant(product.variations, value)"
+            (mouseover)="setVariant(product.variations, value, 'hover')">
+          </li>
+        }
+      }
+    </ul>
+  }@else {
+    <ul class="general-variant {{attribute?.style}}">
+      @for(value of attribute.attribute_values; track attributeIndex; let attributeIndex = $index;){
+        @if(attributeValues && attributeValues.includes(value.id)){
+          <li
+            [class.active]="variantIds.includes(value.id) && !soldOutAttributesIds.includes(value.id)"
+            [ngClass]="{ 'disabled': soldOutAttributesIds.includes(value.id) }"
+            (mouseleave)="removeVariation()">
+
+            @if(attribute?.style == 'image'){
+              <img [src]="value?.variation_image ? value?.variation_image?.original_url : 'assets/images/placeholder/product.png'" (click)="setVariant(product.variations, value)" (mouseover)="setVariant(product.variations, value, 'hover')">
+            }@else {
+              <app-button [id]="'value_btn'" [type]="'button'" [spinner]="false" (mouseover)="setVariant(product.variations, value, 'hover')" (click)="setVariant(product.variations, value)">
+                {{ value?.value }}
+              </app-button>
+            }
+          </li>
+        }
+      }
+    </ul>
+  }
+}

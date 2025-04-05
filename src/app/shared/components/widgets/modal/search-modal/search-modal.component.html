@@ -1,0 +1,60 @@
+<div class="modal-header">
+     <h3>{{'search_in_store' | translate}}</h3>
+     <button class="btn btn-close" type="button">
+      <i class="ri-close-line"></i>
+   </button>
+   <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'search_modal_close_btn'" (click)="modal.dismiss('Cross click')">
+    <i class="ri-close-line"></i>
+  </app-button>
+  </div>
+  
+  <div class="modal-body">
+    <div class="search-box">
+      <input type="text" class="form-control" [placeholder]="typedText+'|'" [formControl]="search">
+      <i class="ri-search-2-line"></i>
+    </div>
+    <div class="search-category-box">
+      <ul class="search-category-skeleton">
+        @if(categoryService.searchSkeleton){
+          <li class="text-secondary">{{'top_search' | translate}}:</li>
+          @for(item of skeletonItems; track item){
+            <li class="skeleton-loader"></li>
+          }
+        } @else {
+          @if((searchCategory$ | async)?.length){
+            <li class="text-secondary">{{'top_search' | translate}}:</li>
+          }
+          @for(category of (searchCategory$ | async); track category.id){
+            <li>
+              <a [routerLink]="['/category/', category?.slug]" (click)="modal.dismiss('Cross click')">
+                {{ category.name }}
+              </a>
+          </li>
+          }
+        }
+      </ul>
+    </div>
+    <div class="mt-sm-4 mt-3 mb-2">
+      <h3 class="search-title">{{'most_searched' | translate}}</h3>
+       <div class="row row-cols-xl-4 row-cols-md-3 row-cols-2 g-sm-4 g-3 row-empty-cls">
+        @if(productService.searchSkeleton){
+          @for(item of skeletonItems; track item){
+            <app-skeleton-product-box></app-skeleton-product-box>
+          }
+        } @else {
+          @for(product of products; track product.id){
+            <app-product-box [product]="product" [style]="'vertical'" (click)="modal.dismiss('Cross click')"></app-product-box>
+          } 
+        }
+      </div>
+      @if(!productService.searchSkeleton && !products.length){
+        <app-no-data
+          [class]="'no-data-added collection-no-data'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_product'"
+          [description]="'no_product_desc'">
+        </app-no-data>
+      }
+    </div>
+  </div>
+  

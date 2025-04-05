@@ -1,0 +1,15 @@
+@for(number of numbers; track number; let i = $index){
+  <div class="form-check collection-filter-checkbox">
+    <input type="checkbox" class="form-check-input"
+      id="rating-{{numbers[numbers.length-i-1]}}"
+      [value]="numbers[numbers.length-i-1]"
+      [checked]="checked(numbers[numbers.length-i-1].toString())"
+      (change)="applyFilter($event)">
+    <div class="form-check-label">
+      <div class="product-rating">
+        <ngb-rating [rate]="numbers[numbers.length-i-1]"></ngb-rating>
+      </div>
+      <span class="text-content">({{numbers[numbers.length-i-1]}} {{ 'star' | translate }})</span>
+    </div>
+  </div>
+}

@@ -1,0 +1,141 @@
+{
+    "id": 50,
+    "content": {
+        "brand": [],
+        "categories": {
+            "title": "Our Categories",
+            "status": true,
+            "category_ids": [
+                129,
+                130,
+                131,
+                132,
+                133
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_1.png",
+                    "redirect_link": {
+                        "link": "surfboard",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_4.png",
+                    "redirect_link": {
+                        "link": 443,
+                        "link_type": "product"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_3.png",
+                    "redirect_link": {
+                        "link": "surfboard",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            443,
+            441,
+            440,
+            439,
+            438
+        ],
+        "social_media": {
+            "title": "# INSTAGRAM",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/surfboard/surfboard_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "New Product",
+            "title": "Our Top Surfing Boards",
+            "status": true,
+            "product_ids": [
+                443,
+                441,
+                440,
+                439,
+                438
+            ]
+        },
+        "category_product": {
+            "tag": "New",
+            "title": "Our Product",
+            "status": true,
+            "category_ids": [
+                129,
+                130,
+                131
+            ]
+        }
+    },
+    "slug": "surfboard"
+}

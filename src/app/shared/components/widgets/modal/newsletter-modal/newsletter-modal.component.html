@@ -1,0 +1,38 @@
+<ng-template #newsletterModal let-modal>
+  <div class="modal-body">
+    <div class="modal-content open">
+      <div class="d-flex">
+        <div class="right-content w-lg-50 w-100">
+         <div>
+          <div class="auth-title">
+            <h2>{{themeOption.popup.news_letter.title }}</h2>
+            <p>{{themeOption.popup.news_letter.description }}</p>
+          </div>
+          <form class="auth-form needs-validation" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"[formGroup]="newsLetterForm" (ngSubmit)="submit()">
+          <div class="form-group mx-sm-3 text-center mb-0">
+            <input type="email" class="form-control mb-3 input-padding" placeholder="{{'enter_email_address' | translate}}" formControlName="email">
+              @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['required']){
+              <div class="invalid-feedback">
+                {{ 'email_is_required' | translate }}
+              </div>
+              }
+
+              @if(newsLetterForm.controls['email'].touched && newsLetterForm.controls['email'].errors?.['email']){
+              <div class="invalid-feedback">
+                {{ 'invalid_email' | translate }}
+              </div>
+              }
+              <app-button [class]="'btn btn-solid'" [id]="'subscribe'" [spinner]="true">
+                <span class="d-sm-inline-block d-none">{{ 'subscribe' | translate }}</span>
+              </app-button>
+            </div>
+          </form>
+         </div>
+        </div> 
+        <div class="left-img w-lg-50 d-lg-block d-none">
+          <img [src]="themeOption.popup.news_letter.image_url ? storageURL+themeOption.popup.news_letter.image_url : 'assets/images/placeholder/auth.png'">
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,56 @@
+@if(banners){
+  @if(filteredBanners && filteredBanners.length > 1) {
+    <owl-carousel-o [options]="options">
+      @for(banner of filteredBanners; track i; let i = $index){
+        @if(banner.status && banner.image_url){
+          @if(videoType.includes(banner && banner.image_url && banner.image_url.substring(banner.image_url.lastIndexOf('.') + 1))){
+            <ng-template carouselSlide>
+              <div class="slider-contain" id="block" style="width: 100%; position: relative;" data-vide-options="position: 0% 50%">
+                <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;">
+                  <video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 0%; transform: translate(0%, -50%); visibility: visible; opacity: 1; width: 1907px; height: auto;">
+                    <source [src]="StorageURL+banner.image_url" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </ng-template>
+          }@else {
+            <ng-template carouselSlide>
+                <app-image-link [class]="'home'" [image]="banner" [bgImage]="false" [placeholder]="'assets/images/placeholder/banner.png'"></app-image-link>
+            </ng-template>
+          }
+        }
+      }
+    </owl-carousel-o>
+  } @else {
+    @if(filteredBanners.length && filteredBanners[0].image_url && videoType.includes(filteredBanners[0].image_url.substring(filteredBanners[0].image_url.lastIndexOf('.') + 1))){
+      <div class="slider-contain" id="block" style="width: 100%; position: relative;" data-vide-options="position: 0% 50%">
+        <div style="position: absolute; z-index: -1; inset: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 0% 50%; background-image: none;"><video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 0%; transform: translate(0%, -50%); visibility: visible; opacity: 1; width: 1907px; height: auto;">
+            <source [src]="StorageURL+filteredBanners[0].image_url" type="video/mp4">
+          </video></div>
+      </div>
+    }@else {
+      <app-image-link [class]="'home'" [image]="filteredBanners[0]"  [placeholder]="'assets/images/placeholder/banner.png'" [bgImage]="false"></app-image-link>
+    }
+  }
+}
+<div class="home-skeleton">
+  <div class="skeleton-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-sm-8 col-11">
+          <p class="card-text placeholder-glow row g-lg-4 g-sm-3 g-2">
+            <span class="col-7">
+              <span class="placeholder"></span>
+            </span>
+            <span class="col-9">
+              <span class="placeholder"></span>
+            </span>
+            <span class="col-6">
+              <span class="placeholder"></span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

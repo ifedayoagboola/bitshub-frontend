@@ -1,0 +1,219 @@
+{
+    "id": 55,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                29,
+                28,
+                27,
+                26,
+                25
+            ]
+        },
+        "coupons": {
+            "status": true,
+            "coupon_ids": [
+                6,
+                4,
+                5,
+                3
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_1.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "categories_1": {
+            "status": true,
+            "category_ids": [
+                8,
+                9,
+                10,
+                30,
+                32,
+                136
+            ]
+        },
+        "categories_2": {
+            "status": true,
+            "category_ids": [
+                18,
+                2,
+                5,
+                3,
+                22,
+                4
+            ]
+        },
+        "offer_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_3.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_2.png",
+                    "redirect_link": {
+                        "link": "fit-gear-central",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_4.png",
+                    "redirect_link": {
+                        "link": "bag-emporium",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_5.png",
+                    "redirect_link": {
+                        "link": "shoes",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_6.png",
+                    "redirect_link": {
+                        "link": "fashion",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            458,
+            451,
+            352,
+            445,
+            370
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/gradient/gradient_insta_8.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "product_ids": [
+                458,
+                451,
+                352,
+                445,
+                370
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                39,
+                38,
+                37,
+                2
+            ]
+        },
+        "parallax_banner": {
+            "banner_1": {
+                "title": "fashion trends",
+                "status": true,
+                "image_url": "/images/theme/gradient/gradient_7.png",
+                "sub_title": "special offer",
+                "main_title": "2018"
+            },
+            "banner_2": {
+                "title": "fashion trends",
+                "status": true,
+                "image_url": "/images/theme/gradient/gradient_8.png",
+                "sub_title": "special offer",
+                "main_title": "2018"
+            }
+        },
+        "category_product": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                8,
+                29
+            ]
+        }
+    },
+    "slug": "gradient"
+}

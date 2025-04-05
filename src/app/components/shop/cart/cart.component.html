@@ -1,0 +1,138 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<!--section start-->
+<section class="cart-section section-b-space">
+  <div class="container">
+      @if((cartItem$ | async)?.length){
+        <div class="row">
+          <div class="col-sm-12 table-responsive">
+            <table class="table cart-table">
+              <thead>
+                <tr class="table-head">
+                  <th scope="col">{{ 'image' | translate }}</th>
+                  <th scope="col">{{ 'product_name' | translate }}</th>
+                  <th scope="col">{{ 'price' | translate }}</th>
+                  <th scope="col">{{ 'quantity' | translate }}</th>
+                  <th scope="col">{{ 'total' | translate }}</th>
+                  <th scope="col">{{ 'action' | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(item of cartItem$ | async; track item.id){
+                  <tr>
+                    <td>
+                      <a [routerLink]="['/product/', item?.product?.slug]" class="product-image">
+                        <img [src]="item?.variation && item?.variation?.variation_image
+                                    ? item?.variation?.variation_image?.original_url
+                                    : item?.product?.product_thumbnail
+                                    ? item?.product?.product_thumbnail?.original_url
+                                    : 'assets/images/placeholder/product.png'" class="img-fluid" [alt]="item?.product?.name">
+                      </a>
+                    </td>
+                    <td>
+                      <a [routerLink]="['/product/', item.product.slug]">
+                        {{item?.variation ? item.variation.name : item?.product?.name}}
+                      </a>
+                      <div class="mobile-cart-content row">
+                        <div class="col">
+                          <div class="qty-box">
+                            <div class="input-group">
+                              <span class="input-group-prepend">
+                                <app-button [id]="'quantity-left-minus'" [class]="'btn quantity-left-minus'" [iconClass]="'ri-arrow-left-s-line'" [spinner]="false" (click)="updateQuantity(item,-1)">
+                                </app-button>
+                              </span>
+                              <input type="text" name="quantity" class="form-control input-number" value="{{ item.quantity }}" readonly>
+                              <span class="input-group-prepend">
+                                <app-button [id]="'quantity-left-plus'" [class]="'btn quantity-left-plus'" [iconClass]="'ri-arrow-right-s-line'" [spinner]="false" (click)="updateQuantity(item,1)">
+                                </app-button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col table-price">
+                          <h2 class="td-color">{{ (item?.variation ? item?.variation?.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price) | currencySymbol }}
+                            @if(item?.product?.discount){
+                              <del>{{ (item?.variation ? item?.variation?.price : item?.product?.price) | currencySymbol }}</del>
+                            }
+                          </h2>
+                          <h6 class="theme-color d-md-inline-block d-none">{{ (item.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price!) * item.quantity | currencySymbol }}</h6>
+                        </div>
+                        <div class="col">
+                          <h2 class="td-color"><a href="javascript:void(0)" class="icon remove-btn" (click)="delete(item.id)"><i class="ri-close-line"></i></a>
+                          </h2>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="table-price">
+                      <h2>{{ (item?.variation ? item?.variation?.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price) | currencySymbol }}
+                        @if(item?.product?.discount){
+                          <del>{{ (item?.variation ? item?.variation?.price : item?.product?.price) | currencySymbol }}</del>
+                        }
+                      </h2>
+
+                      @if(item.product.discount){
+                        <h6 class="theme-color">
+                          {{ 'you_save' | translate }} : {{ ((item.variation ? item.variation.price
+                                                        : item.product.price) - (item.variation
+                                                        ? item.variation.sale_price
+                                                        : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price!)) | currencySymbol }}
+                        </h6>
+                      }
+                    </td>
+                    <td>
+                      <div class="qty-box">
+                        <div class="input-group justify-content-center">
+                          <span class="input-group-prepend">
+                            <app-button [id]="'quantity-left-minus'" [class]="'btn quantity-left-minus'" [iconClass]="'ri-arrow-left-s-line'" [spinner]="false" (click)="updateQuantity(item,-1)">
+                            </app-button>
+                          </span>
+                          <input type="text" name="quantity" class="form-control input-number" value="{{ item.quantity }}" readonly>
+                          <span class="input-group-prepend">
+                            <app-button [id]="'quantity-left-plus'" [class]="'btn quantity-left-plus'" [iconClass]="'ri-arrow-right-s-line'" [spinner]="false" (click)="updateQuantity(item,1)">
+                            </app-button>
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h2 class="td-color">{{ (item.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price!) * item.quantity | currencySymbol }}</h2>
+                    </td>
+                    <td>
+                      <a href="javascript:void(0)" class="icon remove-btn" (click)="delete(item.id)">
+                        <i class="ri-close-line"></i>
+                      </a>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+               <tfoot>
+                  <tr>
+                    <td class="d-md-table-cell d-none" colspan="4">{{ 'total_price' | translate }} :</td>
+                    <td class="d-md-none">{{ 'total_price' | translate }} :</td>
+                    <td>
+                      <h2>{{ (cartTotal$ | async) || 0 | currencySymbol }}</h2>
+                    </td>
+                  </tr>
+                </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="row cart-buttons">
+          <div class="col-6">
+            <a href="javascript:void(0)" class="btn" [routerLink]="['/collections/']">{{ 'continue_shopping' | translate }}</a>
+          </div>
+          <div class="col-6">
+            <a href="javascript:void(0)" class="btn" [routerLink]="['/checkout/']">{{ 'check_out' | translate }}</a>
+          </div>
+        </div>
+      }@else {
+        <app-no-data
+          [class]="'no-data-added'"
+          [image]="'assets/svg/empty-items.svg'"
+          [text]="'no_item'"
+          [description]="'no_cart_item_desc'">
+        </app-no-data>
+      }
+    </div>
+</section>
+<!--section end-->

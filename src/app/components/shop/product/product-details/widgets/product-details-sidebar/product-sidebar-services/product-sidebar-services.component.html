@@ -1,0 +1,15 @@
+@if(filteredServices && filteredServices.length){
+  <div class="collection-filter-block">
+    <div class="product-service">
+      @for(service of filteredServices; track service.redirect_link){
+        <div class="media">
+          <img [src]="StorageURL + service.image_url">
+          <div class="media-body">
+            <h4>{{ service.title }}</h4>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}

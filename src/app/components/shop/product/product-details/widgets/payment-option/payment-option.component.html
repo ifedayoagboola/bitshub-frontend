@@ -1,0 +1,17 @@
+@if(option?.product?.safe_checkout && product.safe_checkout){
+  <div class="dashed-border-box">
+    <h4 class="sub-title">{{ 'guaranteed_safe_checkout' | translate }}</h4>
+    @if(option?.product?.safe_checkout_image){
+      <img [src]="StorageURL+option?.product?.safe_checkout_image" class="img-fluid">
+    }
+  </div>
+}
+
+<div class="dashed-border-box">
+@if(option?.product?.secure_checkout && product.secure_checkout){
+  <h4 class="sub-title">{{ 'secure_checkout' | translate }}</h4>
+  @if(option?.product?.secure_checkout_image){
+    <img [src]="StorageURL+option?.product?.secure_checkout_image" class="img-fluid">
+  }
+}
+</div>

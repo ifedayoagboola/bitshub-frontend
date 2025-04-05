@@ -1,0 +1,72 @@
+<header class="header-style-5"  [class]="!  (stick && sticky) ? class : ''" [ngClass]="stick && sticky ? 'sticky fixed' : ''">
+  <div class="mobile-fix-option"></div>
+  @if(data?.header?.page_top_bar_enable){
+    <app-top-bar [data]="data"></app-top-bar>
+  }
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="main-menu">
+          <div class="menu-left">
+            <div class="toggle-nav" (click)="mainMenuOpen()">
+              <i class="ri-menu-line sidebar-bar">
+              </i>
+            </div>
+            <div class="brand-logo">
+              <app-header-logo [logo]="logo"></app-header-logo>
+            </div>
+          </div>
+          <div>
+            <app-search [style]="'simple'"></app-search>
+          </div>
+          <div class="menu-right pull-right">
+            <div>
+              <div class="icon-nav">
+                <ul>
+                  <li class="onhover-div">
+                    <a href="javascript:void(0)" [routerLink]="['/wishlist']">
+                      <i class="ri-heart-line">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="onhover-div">
+                    <app-cart></app-cart>
+                  </li>
+                  <li class="onhover-div onhover-dropdown mobile-cart">
+                    <app-user-profile></app-user-profile>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-part bottom-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 position-relative">
+          <div class="category-menu d-none d-xl-block h-100">
+            <div id="toggle-sidebar" class="toggle-sidebar" (click)="toggle()">
+              <i class="ri-menu-line sidebar-bar"></i>
+              <h5 class="mb-0">{{ 'shop_by_category' | translate }}</h5>
+            </div>
+          </div>
+          <div class="sidenav fixed-sidebar marketplace-sidebar svg-icon-menu" [ngStyle]="{ 'display' : categoryFilter ? 'block' : ''}">
+            <app-header-categories [categoryIds]="data?.header?.category_ids || []"></app-header-categories>
+            <!-- Sidebar -->
+          </div>
+        </div>
+        <div class="col-xxl-7 col-xl-9 position-unset">
+          <app-menu [class]="'main-navbar main-nav-center text-start'"></app-menu>
+        </div>
+        <div class="col d-none d-xxl-inline-block">
+          <div class="header-options">
+            <app-notice [content]="data?.header?.top_bar_content"></app-notice>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

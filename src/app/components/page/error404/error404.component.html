@@ -1,0 +1,24 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="p-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="error-section">
+          <h1>{{ '404' | translate }}</h1>
+          <h2>{{ (themeOption$ | async)?.error_page?.error_page_content }}</h2>
+
+          @if((themeOption$ | async)?.error_page?.back_button_enable){
+            <app-button
+              [class]="'btn btn-solid'"
+              [id]="'back_button'"
+              [spinner]="false"
+              (click)="back()">
+              {{ (themeOption$ | async)?.error_page?.back_button_text }}
+            </app-button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

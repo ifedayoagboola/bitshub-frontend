@@ -1,0 +1,68 @@
+<div class="card dashboard-table mt-0">
+  <div class="card-body">
+    <div class="top-sec">
+      <h3>{{ 'my_orders' | translate }}</h3>
+    </div>
+    @if((order$ | async)?.data?.length){
+      <div class="total-box mt-0">
+        <div class="wallet-table mt-0">
+          <div class="table-responsive">
+            <table class="table cart-table order-table">
+              <thead>
+                <tr class="table-head">
+                  <th>{{ 'order_number'  | translate }}</th>
+                  <th>{{ 'date'  | translate }}</th>
+                  <th>{{ 'amount'  | translate }}</th>
+                  <th>{{ 'payment_status'  | translate }}</th>
+                  <th>{{ 'payment_method'  | translate }}</th>
+                  <th>{{ 'option'  | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(order of (order$ | async)?.data ;track order; let i = $index){
+                  <tr>
+                    <td><span class="fw-bolder">#{{order.order_number}}</span></td>
+                    <td>{{ order?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</td>
+                    <td>{{ order?.total | currencySymbol }}</td>
+                    <td>
+                      <div class="badge rounded-0 bg-{{order?.payment_status?.toLowerCase()}} custom-badge">
+                        <span>{{ order?.payment_status | titlecase }}</span>
+                      </div>
+                    </td>
+                    <td>{{ order?.payment_method?.toUpperCase() }}</td>
+                    <td><a [routerLink]="['/account/order/details', order.order_number]"><i class="ri-eye-line"></i></a></td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+        @if((order$ | async)?.data?.length){
+        <div class="product-pagination">
+          <div class="theme-pagination-block">
+            <div class="row">
+              <div class="col-xl-6 col-md-6 col-sm-12">
+                <nav aria-label="Page navigation">
+                  <app-pagination
+                    [total]="(order$ | async)?.total || 0"
+                    [currentPage]="filter['page']"
+                    [pageSize]="filter['paginate']"
+                    (setPage)="setPaginate($event)">
+                  </app-pagination>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    }@else {
+      <app-no-data
+        [class]="'no-data-added'"
+        [image]="'assets/svg/empty-items.svg'"
+        [text]="'no_order'"
+        [description]="'no_order_yet'">
+      </app-no-data>
+    }
+  </div>
+</div>

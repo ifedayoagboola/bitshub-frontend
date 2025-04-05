@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3 class="fw-semibold"> {{ 'apply_coupon' | translate }}</h3>
+    <app-button [class]="'btn btn-close'" [spinner]="false" [id]="'address_modal_close_btn'" (click)="modal.close('Cross click')">
+      <i class="ri-close-line"></i>
+    </app-button>
+</div>
+<div class="modal-body">
+  <div class="row g-3">
+    @if(couponService.skeletonLoader){
+      <app-skeleton-offer></app-skeleton-offer>
+    } @else {
+      @for(coupon of (coupon$ |async)?.data; track coupon.id){
+        <div class="col-md-6">
+          <div class="coupon-box">
+            <div class="coupon-name">
+              <div class="card-name">
+                <div>
+                  <h5 class="fw-semibold dark-text">{{ coupon?.title }}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="coupon-content">
+              <p>{{ coupon.description }}</p>
+              <div class="coupon-apply">
+                <h6 class="coupon-code success-color">#{{ coupon?.code }}</h6>
+  
+                @if(coupon?.code){
+                  <a href="javascript:void(0)" class="btn theme-btn border-btn copy-btn mt-0"
+                    (click)="copyFunction(coupon.code)">
+                    {{ 'copy_code' | translate }}
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <h5>{{'coupon_not_available' | translate}}</h5>
+      }
+    }
+  </div>
+</div>

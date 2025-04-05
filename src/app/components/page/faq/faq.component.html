@@ -1,0 +1,35 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="faq-section section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        @if((faq$ | async )?.data?.length){
+          <div class="accordion faq-accordion" ngbAccordion [closeOthers]="true">
+            @for(faq of (faq$ | async )?.data; track faq.id; let i = $index){
+              <div ngbAccordionItem [collapsed]="i !== 0">
+                <div ngbAccordionHeader>
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" ngbAccordionButton>{{ faq.title }}</button>
+                  </h5>
+                </div>
+                <div class="collapse show" ngbAccordionCollapse>
+                  <div class="card-body" ngbAccordionBody>
+                    <p>{{ faq.description }}</p>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }@else {
+          <!-- No Data -->
+          <app-no-data
+            [class]="'no-data-added collection-no-data'" [image]="'assets/svg/empty-items.svg'"
+            [text]="'no_faq'"
+            [description]="'no_faq_desc'">
+          </app-no-data>
+        }
+        </div>
+      </div>
+    </div>
+  </section>

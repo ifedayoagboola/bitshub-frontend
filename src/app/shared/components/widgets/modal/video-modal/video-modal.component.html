@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header p-0">
+    <app-button [class]="'btn btn-close'" [id]="'profile_modal_close_btn'" (click)="modal.close('Cross click')"
+      [iconClass]="'ri-close-line'">
+    </app-button>
+  </div>
+  <div class="modal-body p-3 d-flex align-items-center justify-content-center">
+    @if(video_url){
+      @if(type == 'video'){
+      <video autoplay="true" loop="true" class="w-100 h-100">
+        <source [src]="(video_url)" type="video/mp4">
+      </video>
+    }@else if(type == 'audio'){
+      <audio controls autoplay="false" loop="true">
+        <source [src]="(video_url)" type="audio/mp3">
+      </audio>
+      }
+    }
+  </div>
+</div>

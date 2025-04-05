@@ -1,0 +1,74 @@
+<!-- Home Section Start -->
+<section class="p-0 height-100">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- category start-->
+@if(data?.content?.categories?.status){
+  <div class="container">
+    <section class="section-b-space border-section border-top-0 border-bottom-0">
+      <app-categories [style]="'standard'" [categoryIds]="data?.content?.categories?.category_ids || []" [slider]="true"></app-categories>
+    </section>
+  </div>
+}
+<!-- category end -->
+
+<!-- Product Section start -->
+@if(data?.content?.products_list?.status){
+<app-theme-title [title]="data?.content?.products_list" [type]="'jewellery'"></app-theme-title>
+
+<section class="section-b-space pt-0 j-box">
+  <div class="container">
+    <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+  </div>
+</section>
+}
+<!-- product section end -->
+
+<!-- Service Start -->
+@if(data?.content?.services){
+  <div class="container" [class.section-t-space]="!data?.content?.products_list?.status">
+    <section class="pt-0 service section-b-space">
+      <app-theme-services [services]="data?.content?.services?.banners" [class]="'col-lg-3 col-md-6'" [type]="'simple'"></app-theme-services>
+    </section>
+  </div>
+}
+<!-- Service End -->
+
+<!-- Full Banner Start -->
+@if(data?.content?.full_banner?.status){
+  <section class="p-0">
+    <app-image-link [image]="data?.content?.full_banner" [placeholder]="'assets/images/full_column_banner.png'" [bgImage]="false"></app-image-link>
+  </section>
+}
+<!-- Full Banner End -->
+
+<!-- Tab product Start-->
+@if(data?.content?.category_product?.status){
+  <section class="section-t-space j-box">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.category_product" [type]="'jewellery'"></app-theme-title>
+      <app-theme-product-tab-section [categoryIds]="data?.content?.category_product?.category_ids" [style]="'vertical'"></app-theme-product-tab-section>
+    </div>
+  </section>
+  }
+<!-- Tab product End-->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram section-b-space ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container'" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="section-b-space">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->

@@ -1,0 +1,47 @@
+<div>
+  <h6>{{ 'follow_us' | translate }}:</h6>
+  <div class="footer-social">
+    <ul>
+      @if(store.facebook){
+        <li>
+          <a href="{{ store.facebook }}" target="_blank">
+            <i class="ri-facebook-fill"></i>
+          </a>
+        </li>
+      }
+
+      @if(store.twitter){
+        <li>
+          <a href="{{ store.twitter }}" target="_blank">
+            <i class="ri-twitter-fill"></i>
+          </a>
+        </li>
+      }
+
+      @if(store.instagram){
+        <li>
+          <a href="{{ store.instagram }}" target="_blank">
+            <i class="ri-instagram-fill"></i>
+          </a>
+        </li>
+      }
+
+      @if(store.youtube){
+        <li>
+          <a href="{{ store.youtube }}" target="_blank">
+            <i class="ri-youtube-fill"></i>
+          </a>
+        </li>
+      }
+
+      @if(store.pinterest){
+        <li>
+          <a href="{{ store.pinterest }}" target="_blank">
+            <i class="ri-pinterest-fill"></i>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+  <ng-content></ng-content>
+</div>

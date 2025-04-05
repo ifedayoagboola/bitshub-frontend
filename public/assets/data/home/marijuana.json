@@ -1,0 +1,140 @@
+{
+    "id": 33,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                27,
+                26,
+                25,
+                23,
+                24
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "on orders over $50"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "instantly pay online"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "Our service is available 24/7"
+                },
+                {
+                    "title": "fast & efficient",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "fast and qualitative product"
+                }
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/marijuana_1.png",
+                    "redirect_link": {
+                        "link": "beverages",
+                        "link_type": null
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "tag": "about me",
+            "title": "welcome to multi store",
+            "banner": {
+                "banner_1": {
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/marijuana_3.png",
+                    "redirect_link": {
+                        "link": "marijuana",
+                        "link_type": "collection"
+                    }
+                },
+                "banner_2": {
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/marijuana_2.png",
+                    "redirect_link": {
+                        "link_type": "collection"
+                    }
+                }
+            },
+            "status": true,
+            "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+        },
+        "products_ids": [
+            329,
+            333,
+            336,
+            341
+        ],
+        "products_list": {
+            "tag": "special offer",
+            "title": "new products",
+            "status": true,
+            "product_ids": [
+                329,
+                333,
+                336,
+                341
+            ]
+        },
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                48,
+                47,
+                46
+            ]
+        },
+        "details_section": {
+            "banners": [
+                {
+                    "title": "19+ Only",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "Only persons aged 19 and above are legally permitted to purchase and consume marijuana."
+                },
+                {
+                    "title": "30g limit",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "Individuals are allowed to possess up to 30 grams of marijuana in public."
+                },
+                {
+                    "title": "trusted source",
+                    "status": true,
+                    "image_url": "/images/theme/marijuana/service.png",
+                    "description": "Information on marijuana laws and regulations should be obtained from government websites or reputable legal resources."
+                }
+            ]
+        },
+        "category_product": {
+            "tag": "our shop",
+            "title": "Buy Marijuana",
+            "status": true,
+            "image_url": "/images/theme/marijuana/marijuana_4.jpg",
+            "category_ids": [
+                104,
+                105,
+                106
+            ]
+        }
+    },
+    "slug": "marijuana"
+}

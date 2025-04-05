@@ -1,0 +1,63 @@
+<div class="card dashboard-table mt-0">
+  <div class="card-body">
+    <div class="top-sec">
+      <h3>{{ 'refund' | translate }}</h3>
+    </div>
+
+    @if((refund$ | async)?.data?.length){
+      <div class="total-box mt-0">
+        <div class="wallet-table mt-0">
+          <div class="table-responsive">
+            <table class="table cart-table order-table">
+                <thead>
+                  <tr class="table-head">
+                    <th>{{ 'order' | translate }}</th>
+                    <th>{{ 'status' | translate }}</th>
+                    <th class="reason-table">{{ 'reason' | translate }}</th>
+                    <th>{{ 'created_at' | translate }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                @for(refund of (refund$ | async)?.data; track refund.id; let i = $index){
+                  <tr>
+                    <td><span class="fw-bolder">#{{ refund?.order?.order_number }}</span></td>
+                    <td>
+                      <div class="status-{{refund?.status}}"><span>{{ refund?.status | titlecase }}</span></div>
+                    </td>
+                    <td class="reason-table">{{ refund?.reason }}</td>
+                    <td>{{ refund?.created_at | date: 'dd MMM yyyy' }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+        @if((refund$ | async)?.data?.length){
+        <div class="product-pagination">
+          <div class="theme-pagination-block">
+            <div class="row">
+              <div class="col-xl-6 col-md-6 col-sm-12">
+                <nav aria-label="Page navigation">
+                  <app-pagination
+                    [total]="(refund$ | async)?.total || 0"
+                    [currentPage]="filter['page']"
+                    [pageSize]="filter['paginate']"
+                    (setPage)="setPaginate($event)">
+                  </app-pagination>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    }@else {
+      <app-no-data
+        [class]="'no-data-added'"
+        [image]="'assets/svg/empty-items.svg'"
+        [text]="'no_refund'"
+        [description]="'no_refund_yet'">
+      </app-no-data>
+    }
+  </div>
+</div>

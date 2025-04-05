@@ -1,0 +1,28 @@
+@if(menu.link_type === 'sub'){
+  <h5 class="dropdown-header ">{{ menu.title }}</h5>
+}@else {
+  @if(menu.link_type === 'link' && menu.is_target_blank === 0){
+    <a class="dropdown-item" (click)="redirect(menu.path)">
+      {{ menu.title}}
+      @if(menu.badge_text){
+        <label class="menu-label {{ menu.badge_color }}">{{ menu.badge_text | translate }}</label>
+      }
+    </a>
+  }
+  @if(menu.is_target_blank === 1){
+    <a href="{{ menu.path }}" class="dropdown-item" target="_blank">
+      {{ menu.title }}
+      @if(menu.badge_text){
+        <label class="menu-label {{ menu.badge_color }}">{{ menu.badge_text | translate }}</label>
+      }
+    </a>
+  }
+}
+
+@if(menu.child){
+  <ul>
+    @for(link of menu.child; track link.id){
+      <app-link-box [menu]="link"></app-link-box>
+    }
+  </ul>
+}

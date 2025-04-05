@@ -1,0 +1,122 @@
+{
+    "id": 7,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+            ]
+        },
+        "home_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_seven/fashion_seven_1.png",
+            "redirect_link": {
+                "link": "fit-gear-central",
+                "link_type": "collection"
+            }
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/fashion_seven/fashion_seven_7.png",
+                "redirect_link": {
+                    "link": 96,
+                    "link_type": "product",
+                    "product_ids": 96
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/fashion_seven/fashion_seven_6.png",
+                "redirect_link": {
+                    "link": "fashion",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "products_ids": [
+            160,
+            158,
+            154,
+            178,
+            162,
+            96
+        ],
+        "product_banner": {
+            "status": true,
+            "image_url": "/images/theme/fashion_seven/fashion_seven_5.png",
+            "product_ids": [
+                160,
+                158,
+                154
+            ]
+        },
+        "products_list_1": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "button_text": "load more",
+            "category_id": [
+                28
+            ],
+            "description": "Discover the latest trends and styles at Fir-Gear Central, your ultimate destination for contemporary fashion. Shop now for high-quality apparel that combines comfort with cutting-edge design.",
+            "more_button": true
+        },
+        "products_list_2": {
+            "status": true,
+            "products": {
+                "product_ids": [
+                    158,
+                    178,
+                    162
+                ]
+            },
+            "left_panel": {
+                "title": "Biggest offer of the sale",
+                "status": true,
+                "button_text": "view all product",
+                "description": "Discover the latest trends and styles at Fir-Gear Central, your ultimate destination for contemporary fashion. Shop now for high-quality apparel that combines comfort with cutting-edge design.",
+                "more_button": true,
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection",
+                    "product_ids": 160
+                }
+            }
+        },
+        "featured_banners": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/fashion_seven/fashion_seven_2.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/fashion_seven/fashion_seven_3.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/fashion_seven/fashion_seven_4.png",
+                "redirect_link": {
+                    "link": "fit-gear-central",
+                    "link_type": "collection"
+                }
+            }
+        }
+    },
+    "slug": "fashion_seven"
+}

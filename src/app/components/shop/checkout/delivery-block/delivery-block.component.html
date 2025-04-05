@@ -1,0 +1,56 @@
+<div class="checkout-detail">
+  <div class="row g-4">
+    @if(setting.delivery){
+      <div class="col-xxl-6">
+        <div class="delivery-option">
+          <div class="delivery-category">
+            <div class="shipment-detail w-100">
+              <div class="form-check custom-form-check hide-check-box">
+                <input class="form-check-input" type="radio" name="standard" id="standard" [checked]="true" (change)="setDeliveryDescription(setting.delivery.default.title+ ' | ' +setting.delivery.default.description, 'standard')">
+                <label class="form-check-label" for="standard">
+                  {{ setting.delivery.default.title }} | {{ setting.delivery.default.description }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if(setting.delivery.same_day_delivery){
+      <div class="col-xxl-6">
+        <div class="delivery-option">
+          <div class="delivery-category">
+            <div class="shipment-detail w-100">
+              <div class="form-check mb-0 custom-form-check show-box-checked">
+                <input class="form-check-input" type="radio" name="standard" id="future" (change)="setDeliveryDescription(setting.delivery.same_day.title+ ' | ' +setting.delivery.same_day.description, 'same_day')">
+                <label class="form-check-label" for="future">
+                  {{ setting.delivery.same_day.title }} | {{ setting.delivery.same_day.description }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if(setting.delivery.same_day_delivery){
+      <div class="col-12 future-box" [class.show]="deliveryType && deliveryType == 'same_day'">
+        <div class="future-option">
+          <div class="delivery-items">
+            <div>
+              <h4>{{ 'select_timing_slot' | translate }}:</h4>
+              <ul>
+                @for(intervals of setting.delivery.same_day_intervals; track intervals.title; let i = $index){
+                  <li [class.active]="selectedIndex && (i + 1) == selectedIndex" (click)="setDeliveryInterval(intervals.description!, (i + 1))">
+                    <a href="javascript:void(0)">{{intervals.description}}</a>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

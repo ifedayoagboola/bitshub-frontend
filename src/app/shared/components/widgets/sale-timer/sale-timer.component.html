@@ -1,0 +1,17 @@
+@if(remainingTime){
+  <div class="bordered-box sale-timer-box">
+    @if(title){
+      <h4 class="sub-title">
+        <span class="clock"></span>
+        {{ title }}</h4>
+    }
+    <div class="timer">
+      <p id="demo">
+        <span>{{ remainingTime.days }}<span class="padding-l">:</span><span class="timer-cal">{{ 'days' | translate }}</span></span>
+        <span>{{ remainingTime.hours }}<span class="padding-l">:</span><span class="timer-cal">{{ 'hrs' | translate }}</span></span>
+        <span>{{ remainingTime.minutes }}<span class="padding-l">:</span><span class="timer-cal">{{ 'min' | translate }}</span></span>
+        <span>{{ remainingTime.seconds }}<span class="timer-cal">{{ 'sec' | translate }}</span></span>
+      </p>
+    </div>
+  </div>
+}

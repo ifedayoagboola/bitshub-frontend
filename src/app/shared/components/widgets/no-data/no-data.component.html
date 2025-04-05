@@ -1,0 +1,9 @@
+<div [class]="class">
+  @if(image){
+    <img [src]="image" class="img-fluid" alt="no-data">
+  }
+  <h4>{{ text | translate }}</h4>
+  @if(description){
+    <p>{{ description | translate }}</p>
+  }
+</div>

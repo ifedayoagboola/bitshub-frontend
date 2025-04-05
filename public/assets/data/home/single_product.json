@@ -1,0 +1,206 @@
+{
+    "id": 54,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                33,
+                32,
+                31
+            ]
+        },
+        "services": {
+            "status": true,
+            "left_panel": {
+                "title": "STRONG OBSERVATIONS WITH A GLANCE.",
+                "status": true,
+                "description": "Exceptionally accurate health monitoring that kept Saty informed. Reminders to stay vigilant for unusual findings in your health data."
+            },
+            "right_panel": {
+                "banners": [
+                    {
+                        "title": "Blood-oxygen",
+                        "status": true,
+                        "image_url": "/images/theme/single_product/2.png",
+                        "description": "The blood-oxygen monitoring your SpO2 levels, providing valuable insights into your overall respiratory health."
+                    },
+                    {
+                        "title": "Heart Rate",
+                        "status": true,
+                        "image_url": "/images/theme/single_product/2.png",
+                        "description": "This function assists you in tracking your progress over time, understanding your heart rate zones, and optimising your exercise."
+                    },
+                    {
+                        "title": "Water Resistance",
+                        "status": true,
+                        "image_url": "/images/theme/single_product/2.png",
+                        "description": "This degree of water resistance gives you the assurance that your smartwatch will follow you on all of your adventures."
+                    }
+                ]
+            }
+        },
+        "grid_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/single_product/grid-banner-1.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/single_product/grid-banner-2.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            },
+            "banner_3": {
+                "status": true,
+                "image_url": "/images/theme/single_product/grid-banner-3.png",
+                "redirect_link": {
+                    "link": "time-sphere",
+                    "link_type": "collection"
+                }
+            }
+        },
+        "home_banner": {
+            "title": "EVERYTHING YOU WANT NEED AND MORE",
+            "status": true,
+            "button_text": "Shop Now",
+            "description": "A versatile and innovative device that seamlessly integrates with your daily life. With features like fitness tracking, heart rate monitoring, and sleep analysis.",
+            "show_button": true,
+            "banner_image": "/images/theme/single_product/1.png",
+            "redirect_link": {
+                "link": "time-sphere",
+                "link_type": "collection"
+            }
+        },
+        "testimonial": {
+            "title": "Some comment from our user",
+            "status": true,
+            "banners": [
+                {
+                    "name": "Albert Flores",
+                    "review": "I've tried several smartwatches, but this one stands out for its exceptional performance and design. The seamless connectivity with my smartphone ensures I receive all important notifications without any delays.",
+                    "status": true,
+                    "image_url": "/images/theme/single_product/testimonials.png"
+                },
+                {
+                    "name": "Theresa Webb",
+                    "review": "“The smartwatch has been a game-changer for me. From the moment I put it on, I was impressed by its sleek design and intuitive interface. The fitness tracking features are incredibly detailed",
+                    "status": true,
+                    "image_url": "/images/theme/single_product/testimonials.png"
+                },
+                {
+                    "name": "Cody Fisher",
+                    "review": "I was skeptical about getting a smartwatch, but this one exceeded all my expectations. It seamlessly syncs with my phone, delivering notifications and updates right to my wrist.",
+                    "status": true,
+                    "image_url": "/images/theme/single_product/testimonials.png"
+                },
+                {
+                    "name": "Robert Fox",
+                    "review": "I love how it tracks my sleep patterns, exercise, and heart rate, providing valuable insights into my health. The notification system is flawless, ensuring I never miss a call or message.",
+                    "status": true,
+                    "image_url": "/images/theme/single_product/testimonials.png"
+                },
+                {
+                    "name": "Savannah Nguyen",
+                    "review": "As someone who values both functionality and style, this smartwatch ticks all the boxes. The user               interface is incredibly user-friendly, and the customization options allow me to tailor it to my               needs.",
+                    "status": true,
+                    "image_url": "/images/theme/single_product/testimonials.png"
+                }
+            ]
+        },
+        "products_ids": [
+            389,
+            391,
+            388,
+            387
+        ],
+        "social_media": {
+            "title": "# INSTAGRAM",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/single_product/social-media.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "product_video": {
+            "image": "/images/theme/single_product/product-vedio-1.png",
+            "video": "",
+            "status": true
+        },
+        "products_list": {
+            "title": "TIME TO FIND YOUR WATCH",
+            "status": true,
+            "product_ids": [
+                391,
+                389,
+                388,
+                387
+            ]
+        },
+        "single_product": {
+            "title": "Limited time deal Buy Now",
+            "status": true,
+            "product_ids": 389
+        }
+    },
+    "slug": "single_product"
+}

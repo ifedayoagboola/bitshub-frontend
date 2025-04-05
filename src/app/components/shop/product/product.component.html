@@ -1,0 +1,58 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+@if(layout == 'product_thumbnail' || layout == 'product_right_sidebar'){
+  <app-product-thumbnail [product]="product" [option]="themeOptions$ | async" [layout]="layout"></app-product-thumbnail>
+}
+
+@if(layout == 'product_images'){
+  <app-product-images [product]="product" [option]="themeOptions$ | async"></app-product-images>
+}
+
+@if(layout == 'product_slider'){
+  <app-product-slider [product]="product" [option]="themeOptions$ | async"></app-product-slider>
+}
+
+@if(layout == 'product_sticky'){
+  <app-product-sticky [product]="product" [option]="themeOptions$ | async"></app-product-sticky>
+}
+
+@if(layout == 'product_accordion'){
+  <app-product-accordion [product]="product" [option]="themeOptions$ | async"></app-product-accordion>
+}
+
+@if(layout == 'product_no_sidebar'){
+  <app-product-no-sidebar [product]="product" [option]="themeOptions$ | async"></app-product-no-sidebar>
+}
+
+@if(layout == 'product_sidebar_right'){
+  <app-product-sidebar-right [product]="product" [option]="themeOptions$ | async"></app-product-sidebar-right>
+}
+
+@if(layout == 'product_sidebar_left'){
+  <app-product-sidebar-left [product]="product" [option]="themeOptions$ | async"></app-product-sidebar-left>
+}
+
+@if(layout == 'product_thumbnail_image_outside'){
+  <app-product-thumbnail-outside-images [product]="product" [option]="themeOptions$ | async"></app-product-thumbnail-outside-images>
+}
+
+@if(layout == 'vertical_tab'){
+  <app-product-vertical-tab [product]="product" [option]="themeOptions$ | async"></app-product-vertical-tab>
+}
+
+@if(layout == 'product_column_thumbnail'){
+  <app-product-three-column-thumbnail-bottom [product]="product" [option]="themeOptions$ | async"></app-product-three-column-thumbnail-bottom>
+}
+
+<!-- Related Products -->
+@if(product && product.related_products.length){
+  <section class="section-b-space ratio_asos pt-0">
+    <app-related-product [product]="product$ | async"></app-related-product>
+  </section>
+}
+
+<!-- Sticky Cart Box Start -->
+@if((themeOptions$ | async)?.product?.sticky_checkout){
+  <app-sticky-checkout [product]="product"></app-sticky-checkout>
+}
+<!-- Sticky Cart Box End -->

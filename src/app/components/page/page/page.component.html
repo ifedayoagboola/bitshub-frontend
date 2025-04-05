@@ -1,0 +1,11 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<section class="section-b-space ckeditor-content">
+  <div class="container">
+
+    @if(pageService.skeletonLoader){
+      <app-skeleton-page></app-skeleton-page>
+    }@else {
+      <div [innerHTML]="(selectedPage$ | async)?.content"></div>
+    }
+  </div>
+</section>

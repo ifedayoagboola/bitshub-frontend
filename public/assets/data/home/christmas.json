@@ -1,0 +1,158 @@
+{
+    "id": 31,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                29,
+                28,
+                27,
+                26,
+                25,
+                21
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-offer-banner.png",
+                    "redirect_link": {
+                        "link": "beverages"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            368,
+            367,
+            365,
+            361
+        ],
+        "social_media": {
+            "title": "#  instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/christmas/christmas-insta-1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "product_ids": [
+                368,
+                367,
+                365,
+                361
+            ]
+        },
+        "featured_blogs": {
+            "title": "from the blog",
+            "status": true,
+            "blog_ids": [
+                54,
+                53,
+                52
+            ]
+        },
+        "offer_banner_1": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/christmas/christmas-offer-banner.png",
+                "redirect_link": []
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/christmas/christmas-offer-banner.png",
+                "redirect_link": []
+            }
+        },
+        "offer_banner_2": {
+            "status": true,
+            "image_url": "/images/theme/christmas/christmas-offer-banner-1.png",
+            "redirect_link": {
+                "link": "fashion",
+                "link_type": "collection"
+            }
+        },
+        "offer_banner_3": {
+            "status": true,
+            "image_url": "/images/theme/christmas/christmas-offer-banner.png",
+            "redirect_link": []
+        },
+        "category_product_1": {
+            "tag": "exclusive products",
+            "title": "special products",
+            "status": true,
+            "category_ids": [
+                109,
+                110
+            ]
+        },
+        "category_product_2": {
+            "title": "top category",
+            "status": true,
+            "category_ids": [
+                108,
+                111
+            ]
+        }
+    },
+    "slug": "christmas"
+}

@@ -1,0 +1,45 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="section-b-space">
+  <div class="container w-100">
+    <div class="row">
+      <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
+        <div class="order-search-content">
+          <h3>{{ 'order_tracking' | translate }}</h3>
+          <p>{{ 'order_tracking_description' | translate }}</p>
+          <div class="input-box">
+            <form class="row g-4" [formGroup]="form" (ngSubmit)="submit()">
+              <div class="col-12">
+                <div class="form-floating theme-form-floating log-in-form">
+                  <input type="text" class="form-control" id="order_number" formControlName="order_number" placeholder="{{ 'order_number' | translate }}">
+                  <label for="order_number">{{ 'order_number' | translate }}</label>
+                </div>
+
+                @if(form.controls['order_number'].touched && form.controls['order_number'].errors?.['required']){
+                  <div class="invalid-feedback">
+                    {{ 'order_number_is_required' | translate }}
+                  </div>
+                }
+              </div>
+              <div class="col-12">
+                <div class="form-floating theme-form-floating log-in-form">
+                  <input type="email" class="form-control" id="email" formControlName="email_or_phone" placeholder="{{ 'enter_email_or_phone' | translate }}">
+                  <label for="email">{{ 'enter_email_or_phone' | translate }}</label>
+                </div>
+
+                @if(form.controls['email_or_phone'].touched && form.controls['email_or_phone'].errors?.['required']){
+                  <div class="invalid-feedback">
+                    {{ 'email_or_phone_is_required' | translate }}
+                  </div>
+                }
+              </div>
+              <div class="col-12">
+                <app-button [id]="'track_btn'" [class]="'btn btn-solid'">{{ 'track' | translate }}</app-button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

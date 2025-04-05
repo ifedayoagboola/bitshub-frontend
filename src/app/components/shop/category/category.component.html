@@ -1,0 +1,24 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="section-b-space">
+    <div class="collection-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 collection-filter" >
+            <app-collection-sidebar [filter]="filter" [hideFilter]="['category']"></app-collection-sidebar>
+          </div>
+          <div class="collection-content col-lg-9">
+            <div class="page-main-content">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="collection-product-wrapper">
+                    <app-collection-products [filter]="filter"></app-collection-products>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

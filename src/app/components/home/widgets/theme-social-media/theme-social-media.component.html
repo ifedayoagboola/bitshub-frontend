@@ -1,0 +1,35 @@
+<div [ngClass]="class ? class : 'container-fluid p-0'">
+  <div class="row m-0">
+    <div class="col-md-12 p-0">
+      @if(type){
+        <app-theme-title [title]="media" [type]="type"></app-theme-title>
+      }
+      <div class="slide-7">
+        <owl-carousel-o [options]="options">
+          @for(media of media.banners; track i; let i = $index){
+            @if(media.status){
+              <ng-template carouselSlide>
+                <div>
+                  <a [href]="media.redirect_link.link"  target="_blank">
+                    <div class="instagram-box bg-size" [ngStyle]="{'background-image': 'url(' + StorageURL+media.image_url + ')'}">
+                      <img [src]="StorageURL+media.image_url" class="bg-img" alt="img">
+                      <div class="overlay">
+                        <i class="ri-instagram-line"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </ng-template>
+            }
+          }
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>
+@if(!media.banners?.length){
+  <app-no-data
+  [class]="'no-data-added'"
+  [text]="'no_media'">
+  </app-no-data>
+}

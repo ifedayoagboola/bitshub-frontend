@@ -1,0 +1,38 @@
+<div class="row g-sm-4 g-3">
+  @for(service of filteredServices; track service.title){
+    @if(type == 'simple'){
+      <div [ngClass]="filteredServices.length == 4 ? 'col-xl-3 col-sm-6' : filteredServices.length == 3 ? 'col-lg-4 col-sm-6' : filteredServices.length == 2 ? 'col-sm-6' : 'col-12'">
+        <div class="service-block1">
+            <img [src]="StorageURL+service.image_url" [alt]="service.title">
+            <div class="service-skeleton-img"></div>
+            <h4>{{ service.title }}</h4>
+            <h4 class="skeleton-content-h4"></h4>
+            <p>{{ service.description }}</p>
+            <p class="skeleton-content-p"></p>
+        </div>  
+      </div>
+    }@else {
+      <div [ngClass]="filteredServices.length == 4 ? 'col-xl-3 col-sm-6' : filteredServices.length == 3 ? 'col-lg-4 col-sm-6' : filteredServices.length == 2 ? 'col-sm-6' : 'col-12'">
+        <div class="service-block">
+          <div class="media">
+            <img [src]="StorageURL+service.image_url" [alt]="service.title">
+            <div class="skeleton-img-box"></div>
+            <div class="media-body">
+              <h4>{{ service.title }}</h4>
+              <h4 class="skeleton-content-h4"></h4>
+              <p>{{ service.description }}</p>
+              <p class="skeleton-content-p"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>
+
+@if(!filteredServices.length){
+  <app-no-data
+    [class]="'no-data-added'"
+    [text]="'no_service'">
+  </app-no-data>
+}

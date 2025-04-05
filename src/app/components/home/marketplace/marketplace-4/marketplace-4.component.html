@@ -1,0 +1,175 @@
+<!-- Home Section Start -->
+<section class="p-0 layout-7">
+  <div class="home-slider">
+    <app-theme-home-slider [banners]="data?.content?.home_banner"></app-theme-home-slider>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- Service Start -->
+@if(data?.content?.services){
+  <section class="banner-padding absolute-banner pb-0 tools-service">
+    <div class="container">
+      <div class="absolute-bg">
+        <app-theme-services [services]="data?.content?.services?.banners" [class]="'col-lg-3 col-md-6'"></app-theme-services>
+      </div>
+    </div>
+  </section>
+}
+<!-- Service End -->
+
+<!-- product slider start -->
+<section class="section-b-space">
+  <div class="container">
+    <div class="row">
+      @if(data?.content?.products_list_1?.status && data?.content?.products_list_1?.product_ids){
+        <div class="col-12">
+          <app-theme-title [title]="data?.content?.products_list_1" [type]="'icon'"></app-theme-title>
+        </div>
+        <div class="col-12">
+          <app-theme-product [productIds]="data?.content?.products_list_1?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- product slider end -->
+
+<!-- product section start-->
+<section class="pt-0 section-b-space">
+  <div class="container">
+    <div class="row">
+      @if(data?.content?.product_banner_1?.left_panel?.status){
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+          <app-image-link [image]="data?.content?.product_banner_1?.left_panel" [bgImage]="true" [class]="'h-100'"></app-image-link>
+        </div>
+      }
+
+      @if(data?.content?.product_banner_1?.right_panel?.status){
+        <div class="col-md-8" [ngClass]="data?.content?.product_banner_1?.left_panel?.status ? 'col-lg-9 col-sm-6 col-6' : 'col-12'">
+          <app-theme-product [productIds]="data?.content?.product_banner_1?.right_panel?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- product section end-->
+
+<!-- Parallax banner -->
+@if(data?.content?.slider_products?.status){
+<section class="section-b-space bg-size" [ngStyle]="{'background-image': 'url('+ StorageURL+data?.content?.slider_products?.image_url +')'}">
+  <img [src]="StorageURL + data?.content?.slider_products?.image_url" alt="" class="bg-img  ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="theme-card card-border bg-white">
+            <h5 class="title-border">{{ data?.content?.slider_products?.product_slider_1?.title }}</h5>
+            <div class="offer-slider ">
+              <app-theme-product [productIds]="data?.content?.slider_products?.product_slider_1?.product_ids || []" [style]="'horizontal'">
+              </app-theme-product>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+}
+<!-- Parallax banner end -->
+
+<!-- product slider start -->
+<section>
+  <div class="container">
+    <div class="row">
+      @if(data?.content?.products_list_2?.status && data?.content?.products_list_2?.product_ids){
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_2" [type]="'icon'"></app-theme-title>
+      </div>
+      <div class="col-12">
+        <app-theme-product [productIds]="data?.content?.products_list_2?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- product slider end -->
+
+<!--center product slider -->
+<section class="section-b-space">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      @if(data?.content?.product_banner_2?.left_panel?.status){
+      <div class="col-lg-4">
+        <div class="theme-card card-border">
+          <h5 class="title-border">{{ data?.content?.product_banner_2?.left_panel?.title }}</h5>
+          <div class="offer-slider ">
+            <app-theme-product [productIds]="data?.content?.product_banner_2?.left_panel?.product_ids || []" [style]="'horizontal'"></app-theme-product>
+          </div>
+        </div>
+      </div>
+      }
+
+      <div class="col-lg-4 center-slider border-0 ratio2_3">
+        <app-theme-banner [banners]="data?.content?.product_banner_2?.center_panel" [class]="'col-md-12'"></app-theme-banner>
+      </div>
+
+      @if(data?.content?.product_banner_2?.right_panel?.status){
+      <div class="col-lg-4">
+        <div class="theme-card card-border">
+          <h5 class="title-border">{{ data?.content?.product_banner_2?.right_panel?.title }}</h5>
+          <div class="offer-slider ">
+            <app-theme-product [productIds]="data?.content?.product_banner_2?.right_panel?.product_ids || []" [style]="'horizontal'"></app-theme-product>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- center product slider end -->
+
+<!-- product section start-->
+<section class="pt-0">
+  <div class="container">
+    <div class="row section-b-space">
+      @if(data?.content?.product_banner_3?.left_panel?.status){
+      <div class="col-lg-3 col-md-4 col-sm-5 col-6">
+        <app-image-link [image]="data?.content?.product_banner_3?.left_panel" [bgImage]="true" [class]="'h-100'"></app-image-link>
+      </div>
+      }
+
+      @if(data?.content?.product_banner_3?.right_panel?.status){
+      <div class="col-md-8" [ngClass]="data?.content?.product_banner_3?.left_panel?.status ? 'col-lg-9 col-sm-6 col-6' : 'col-12'">
+        <app-theme-product [productIds]="data?.content?.product_banner_3?.right_panel?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+      }
+    </div>
+
+    <div class="row">
+      @if(data?.content?.products_list_3?.status && data?.content?.products_list_3?.product_ids){
+      <div class="col-12">
+        <app-theme-title [title]="data?.content?.products_list_3" [type]="'icon'"></app-theme-title>
+      </div>
+      <div class="col">
+        <app-theme-product [productIds]="data?.content?.products_list_3?.product_ids || []" [style]="'vertical'" [slider]="true"></app-theme-product>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<!-- product section end-->
+
+<!-- Brand Section Start -->
+@if(data?.content?.brand?.status){
+  <section class="tools-brand">
+    <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []" [bgLight]="true"></app-theme-brand>
+  </section>
+}
+<!-- Brand Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+  <section class="instagram ratio_square">
+    <app-theme-social-media [media]="data?.content?.social_media || []" [type]="'borderless'"></app-theme-social-media>
+  </section>
+}
+<!-- Social Media Section End -->

@@ -1,0 +1,59 @@
+<div class="basic-product theme-product-1" [class.sold-out]="product.stock_status === 'out_of_stock'">
+  <div class="overflow-hidden">
+    <div class="img-wrapper">
+      @if(product.is_trending || product.is_sale_enable || product.is_featured){
+        <div class="ribbon" [ngClass]="product.is_sale_enable ? 'sale-tag' : product.is_featured ? 'featured-tag' : product.is_trending ? 'trending-tag' : '' ">
+          <span>{{ (product.is_sale_enable ? 'sale' : product.is_featured ? 'featured' : product.is_trending ? 'trending' : '' ) | translate }}</span>
+        </div>
+      }
+        <app-image-variant
+        [thumbnail]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_thumbnail!"
+        [gallery_images]="product.product_galleries!"
+        [product]="product!"></app-image-variant>
+        <div class="rating-label"><i class="ri-star-s-fill"></i> <span>{{ product.reviews_count }}</span>
+        </div>
+        <div class="cart-info">
+          <a href="javascript:void(0)" title="Add to Wishlist" class="wishlist-icon" [class.theme-color]="product.is_wishlist" (click)="addToWishlist(product)">
+            <i class="ri-heart-{{ product.is_wishlist ? 'fill' : 'line' }}"></i>
+          </a>
+          <app-product-hover-action [product]="product" [showAction]="['compare', 'view']">
+            <app-cart-button [product]="product" [selectedVariation]="selectedVariation" [enableModal]="true"></app-cart-button>
+          </app-product-hover-action>
+        </div>
+    </div>
+    <div class="product-detail">
+        <div>
+            <div class="brand-w-color">
+                @if(product.brand){
+                  <a class="product-title" [routerLink]="['/brand', product.brand.slug]">
+                      {{ product.brand.name }}
+                  </a>
+                }
+                <div class="color-panel">
+                  <app-display-variant-attributes [product]="product" [attributes]="product.attributes || []" [showVariableType]="['color', 'image']" (selectVariation)="selectedVariant($event!)" ></app-display-variant-attributes>
+                </div>
+            </div>
+            @if(product.slug){
+              <a [routerLink]="['product', product.slug]">
+                <h6>
+                  {{ selectedVariation ? selectedVariation.name  : product.name }}
+                </h6>
+              </a>
+            }
+            <h4 class="price">{{ (selectedVariation ? selectedVariation.sale_price : product.sale_price) | currencySymbol }}
+              @if(selectedVariation ? selectedVariation.discount : product.discount){
+                <del> {{ (selectedVariation ? selectedVariation.price : product.price) | currencySymbol }} </del><span class="discounted-price"> {{ selectedVariation ? selectedVariation.discount : product.discount }}% Off </span>
+              }
+            </h4>
+        </div>
+        <ul class="offer-panel">
+            <li><span class="offer-icon"><i class="ri-discount-percent-fill"></i></span>
+                {{ 'limited_time_offer' | translate }}: {{ product.discount }}% {{ 'off' | translate }}</li>
+            <li><span class="offer-icon"><i class="ri-discount-percent-fill"></i></span>
+                {{ 'limited_time_offer' | translate }}: {{ product.discount }}% {{ 'off' | translate }}</li>
+            <li><span class="offer-icon"><i class="ri-discount-percent-fill"></i></span>
+                {{ 'limited_time_offer' | translate }}: {{ product.discount }}% {{ 'off' | translate }}</li>
+        </ul>
+    </div>
+  </div>
+</div>

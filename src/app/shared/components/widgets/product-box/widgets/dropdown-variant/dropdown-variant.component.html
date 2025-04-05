@@ -1,0 +1,10 @@
+<div class="product-right product-page-details">
+  <select class="form-control form-select" (change)="getSelectedVariant($event)">
+    <option selected disabled>{{ 'choose' | translate }}</option>
+    @for(item of result; track item.label; let i = $index){
+      <option [value]="(item.value) | json" [selected]="checkVariant(item.value, i)" [disabled]="!item.value.status ||  item.value.stock_status === 'out_of_stock'">
+        {{ item.label }}
+      </option>
+    }
+  </select>
+</div>

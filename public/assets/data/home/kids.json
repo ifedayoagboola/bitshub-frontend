@@ -1,0 +1,179 @@
+{
+    "id": 38,
+    "content": {
+        "brand": {
+            "status": true,
+            "brand_ids": [
+                28,
+                25,
+                29,
+                27,
+                26
+            ]
+        },
+        "full_banner": {
+            "status": true,
+            "image_url": "/images/theme/kids/kids_4.png",
+            "redirect_link": []
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_1.png",
+                    "redirect_link": {
+                        "link": "baby-essentials",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banner_1": {
+                "status": true,
+                "image_url": "/images/theme/kids/kids_3.png",
+                "redirect_link": {
+                    "link": "baby-essentials",
+                    "link_type": "collection"
+                }
+            },
+            "banner_2": {
+                "status": true,
+                "image_url": "/images/theme/kids/kids_2.png",
+                "redirect_link": []
+            }
+        },
+        "products_ids": [
+            263,
+            261,
+            258,
+            252,
+            257,
+            256,
+            254,
+            251,
+            250,
+            248,
+            246,
+            245,
+            240,
+            249,
+            244,
+            239
+        ],
+        "social_media": {
+            "title": "# instagram",
+            "status": true,
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_7.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_6.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_5.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_4.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_3.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_2.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/kids/kids_insta_1.png",
+                    "redirect_link": {
+                        "link": "https://instagram.com/",
+                        "link_type": "external_url"
+                    }
+                }
+            ]
+        },
+        "products_list": {
+            "tag": "special offer",
+            "title": "top collection",
+            "status": true,
+            "description": "We will foster imaginative thinking and help your youngster reach their full potential. Joining us is interesting and entertaining!",
+            "product_ids": [
+                263,
+                261,
+                258,
+                252
+            ]
+        },
+        "slider_products": {
+            "status": true,
+            "product_slider_1": {
+                "title": "new product",
+                "status": true,
+                "product_ids": [
+                    257,
+                    256,
+                    254
+                ]
+            },
+            "product_slider_2": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    251,
+                    250,
+                    248
+                ]
+            },
+            "product_slider_3": {
+                "title": "best seller",
+                "status": true,
+                "product_ids": [
+                    246,
+                    245,
+                    240
+                ]
+            },
+            "product_slider_4": {
+                "title": "on sale",
+                "status": true,
+                "product_ids": [
+                    249,
+                    244,
+                    239
+                ]
+            }
+        }
+    },
+    "slug": "kids"
+}

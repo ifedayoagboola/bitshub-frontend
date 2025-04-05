@@ -1,0 +1,171 @@
+{
+    "id": 28,
+    "content": {
+        "brand": {
+            "brand_ids": [
+                28,
+                27,
+                26,
+                25,
+                29
+            ]
+        },
+        "services": {
+            "banners": [
+                {
+                    "title": "free shipping",
+                    "status": true,
+                    "image_url": "/images/theme/medical/service.png",
+                    "description": "free shipping world wide"
+                },
+                {
+                    "title": "24 X 7 service",
+                    "status": true,
+                    "image_url": "/images/theme/medical/service.png",
+                    "description": "online service for 24 X 7"
+                },
+                {
+                    "title": "festival offer",
+                    "status": true,
+                    "image_url": "/images/theme/medical/service.png",
+                    "description": "new online special festival offer"
+                },
+                {
+                    "title": "online payment",
+                    "status": true,
+                    "image_url": "/images/theme/medical/service.png",
+                    "description": "new online special festival offer"
+                }
+            ]
+        },
+        "categories": {
+            "status": true,
+            "category_ids": [
+                80,
+                81,
+                82,
+                83
+            ]
+        },
+        "home_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_1.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "offer_banner": {
+            "banners": [
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_2.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_3.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_6.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_5.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                },
+                {
+                    "status": true,
+                    "image_url": "/images/theme/medical/medical_4.png",
+                    "redirect_link": {
+                        "link": "medical-essentials",
+                        "link_type": "collection"
+                    }
+                }
+            ]
+        },
+        "products_ids": [
+            262,
+            260,
+            259,
+            253,
+            268,
+            264
+        ],
+        "featured_blogs": {
+            "tag": "recent stroy",
+            "title": "latest blog",
+            "status": true,
+            "blog_ids": [
+                18,
+                17,
+                16
+            ]
+        },
+        "category_product": {
+            "title": "top category",
+            "status": true,
+            "category_ids": [
+                81,
+                82
+            ]
+        },
+        "column_banner_product": {
+            "status": true,
+            "offer_banner_1": {
+                "status": true,
+                "image_url": "/images/theme/medical/medical_8.png",
+                "redirect_link": {
+                    "link": "medical-essentials",
+                    "link_type": "collection"
+                }
+            },
+            "offer_banner_2": {
+                "status": true,
+                "image_url": "/images/theme/medical/medical_7.png",
+                "redirect_link": {
+                    "link": "medical-essentials",
+                    "link_type": "collection"
+                }
+            },
+            "product_list_1": {
+                "title": "feature product",
+                "status": true,
+                "product_ids": [
+                    262,
+                    260,
+                    259
+                ]
+            },
+            "product_list_2": {
+                "title": "on sale",
+                "status": true,
+                "product_ids": [
+                    253,
+                    268,
+                    264
+                ]
+            }
+        }
+    },
+    "slug": "medical"
+}

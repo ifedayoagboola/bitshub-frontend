@@ -1,0 +1,18 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<section class="blog-detail-page section-b-space ratio2_3">
+  <div class="container">
+    <div class="blog-detail">
+      <img [src]="((blog$ | async)?.blog_thumbnail
+                    ? (blog$ | async)?.blog_thumbnail?.original_url
+                    : 'assets/images/blog.png' )" class="img-fluid" [alt]="(blog$ | async)?.title">
+                    <h3>{{ (blog$ | async)?.title }}</h3>
+                    <ul class="post-social">
+                      <li>{{ (blog$ | async)?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</li>
+                      <li>{{ 'posted_by' | translate }} : {{ (blog$ | async)?.created_by?.name }}</li>
+                    </ul>
+    </div>
+    <div class="blog-detail-contain ckeditor-content" [innerHTML]="(blog$ | async)?.content"></div>
+
+  </div>
+</section>

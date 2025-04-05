@@ -1,0 +1,123 @@
+
+@if(product.status){
+    <!-- Variants -->
+    <app-variant-attributes [product]="product" [attributes]="product.attributes || []" (selectVariation)="selectVariation($event!)" [owlCar]="owlCar" [variant_hover]="variant_hover"></app-variant-attributes>
+
+    <!-- Wholesales Product -->
+    @if(product.wholesales.length && !product_variation){
+      <app-product-wholesales [product]="product"></app-product-wholesales>
+      <h4>{{ 'total_price' | translate }}: <span class="theme-color">{{ totalPrice | currencySymbol }}</span></h4>
+    }
+
+    <!-- Quantity -->
+    @if(!product.is_external){
+      <div class="product-buttons">
+        <div>
+          <div class="qty-section">
+            <div class="qty-box">
+              <div class="input-group">
+                <span class="input-group-prepend">
+                  <app-button
+                    [id]="'quantity-left-minus'+product.id"
+                    [class]="'btn quantity-left-minus'"
+                    [iconClass]="'ri-arrow-left-s-line'"
+                    [spinner]="false"
+                    (click)="updateQuantity(-1)">
+                  </app-button>
+                </span>
+
+                <input type="text" name="quantity" class="form-control input-number" [value]="productQty">
+
+                <span class="input-group-prepend">
+                  <app-button
+                    [id]="'quantity-left-plus'+product.id"
+                    [class]="'btn quantity-left-plus'"
+                    [iconClass]="'ri-arrow-right-s-line'"
+                    [spinner]="false"
+                    (click)="updateQuantity(1)">
+                  </app-button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="product-buy-btn-group">
+            @if(((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty ) || (!selectedVariation && product.quantity >= productQty))){
+              <app-button
+                [class]="'btn btn-animation btn-solid hover-solid scroll-button buy-button'"
+                [id]="'addcartbtnVariation'+product.id"
+                [spinner]="true"
+                [type]="'button'"
+                (click)="addToCart(product)">
+                <div class="d-inline-block ring-animation">
+                  <i class="ri-shopping-cart-line me-1"></i>
+                </div>
+                {{ 'add_to_cart' | translate }}
+              </app-button>
+            }@else {
+              <app-button
+                [class]="'btn btn-animation btn-solid hover-solid scroll-button buy-button'"
+                [id]="'soldoutbtnproductcontain'"
+                [spinner]="false"
+                [disabled]="true"
+                [spinner]="false"
+                [type]="'button'">
+                {{ ((selectedVariation && selectedVariation.status && selectedVariation.quantity < productQty) || (!selectedVariation && product.quantity < productQty) ? 'out_of_stock' : 'add_to_cart') | translate }}
+              </app-button>
+          }
+            <app-button
+              [class]="'btn btn-solid buy-button'"
+              [id]="'buynowbtn'+product.id"
+              [disabled]="((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty) || (!selectedVariation && product.quantity >= productQty)) ? false : true"
+              (click)="((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty) || (!selectedVariation && product.quantity >= productQty)) && addToCart(product, true)">
+              {{ 'buy_now' | translate }}
+            </app-button>
+          </div>
+      </div>
+    }@else {
+      <app-button
+      [id]="'externalBtn'+product.id"
+      [class]="'btn btn-solid rounded-3'"
+      (click)="externalProductLink(product.external_url)">
+        {{ product.external_button_text ? product.external_button_text : 'buy_now' | translate }}
+      </app-button>
+    }
+
+    <div class="buy-box compare-box">
+      @if(!product_variation){
+        <a href="javascript:void(0)" (click)="addToWishlist(product)">
+          <i class="ri-heart-{{ product.is_wishlist ? 'fill' : 'line' }}"></i>
+          <span>{{ 'add_to_wishlist' | translate }}</span>
+        </a>
+      }
+
+      <a href="javascript:void(0)" (click)="addToCompare(product)">
+        <i class="ri-refresh-line"></i>
+        <span>{{ 'add_to_compare' | translate }}</span>
+      </a>
+
+      @if(product.social_share && option?.product?.social_share){
+        <a href="javascript:void(0)" (click)="openModal(product)">
+          <i class="ri-share-line"></i>
+          <span>{{ 'share' | translate }}</span>
+        </a>
+      }
+    </div>
+
+
+    @if(product && product.quantity && product.quantity <= 10){
+      <div class="left-progressbar">
+        <h6>{{ 'please_hurry_only' | translate }} {{ product.quantity }} {{ 'left_in_stock' | translate }}</h6>
+        <div role="progressbar" class="progress" [ngClass]="{ 'danger-progress': product.quantity <= 2, 'warning-progress': product.quantity >= 3 && product.quantity <= 7 }">
+          <div class="progress-bar" [ngStyle]="{ width: (product.quantity * 100) / 10+'%' }"></div>
+        </div>
+      </div>
+    }
+
+
+  <!-- Sale -->
+  @if(product.sale_starts_at && product.sale_expired_at){
+    <app-sale-timer [startDate]="product.sale_starts_at" [endDate]="product.sale_expired_at" [title]="'sales_ends_in' | translate"></app-sale-timer>
+  }
+}

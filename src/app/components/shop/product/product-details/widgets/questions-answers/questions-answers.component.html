@@ -1,0 +1,61 @@
+<div class="post-question-box">
+  <h4>{{ 'have_doubts_regarding_this_product' | translate }} ?
+    <a href="javascript:void(0)" (click)="openModal(product)">{{ 'post_your_question' | translate }}</a>
+  </h4>
+</div>
+
+<div class="question-answer">
+  @if(questionAnswers.length){
+    <ul>
+      @for(qna of questionAnswers; track qna.id; let i = $index){
+        <li>
+          <div class="question-box">
+            <h5>{{ 'q' | translate }}{{ i + 1 }}</h5>
+            <h6 class="font-weight-bold que">{{ qna?.question }}</h6>
+            <ul class="link-dislike-box">
+              @if(qna?.consumer_id === (user$ | async)?.id && !qna?.answer){
+                <li>
+                  <a href="javascript:void(0)" (click)="openModal(product, qna)">
+                    <span><i class="ri-edit-fill"></i></span>
+                  </a>
+                </li>
+              }
+
+              @if(qna?.answer){
+                <li>
+                  <a href="javascript:void(0)" (click)="isLogin && feedback(qna, 'liked')">
+                    <span><i class="ri-thumb-up-{{ isLogin ? qna.reaction == 'liked' ? 'fill' : 'line'  : 'fill' }}" [class.theme-color]="qna.reaction == 'liked'"></i> {{ qna.total_likes }}</span>
+                  </a>
+                </li>
+              }
+
+              @if(qna?.answer){
+                <li>
+                  <a href="javascript:void(0)" (click)="isLogin && feedback(qna, 'disliked')">
+                    <span><i class="ri-thumb-down-{{ isLogin ? qna.reaction == 'disliked' ? 'fill' : 'line'  : 'fill' }}" [class.theme-color]="qna.reaction == 'disliked'"></i> {{ qna.total_dislikes }}</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+          <div class="answer-box">
+            @if(qna?.answer){
+              <div class="answer-box">
+                <h5>{{ 'a' | translate }}{{ i + 1 }}</h5>
+                <p class="ans">{{ qna?.answer }} </p>
+              </div>
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  }
+
+  @if(!questionAnswers.length){
+    <app-no-data
+      [class]="'no-data-added'"
+      [text]="'no_question'"
+      [description]="'no_question_desc'">
+    </app-no-data>
+  }
+</div>

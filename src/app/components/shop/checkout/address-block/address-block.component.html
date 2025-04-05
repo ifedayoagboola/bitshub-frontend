@@ -1,0 +1,46 @@
+<div class="row g-3">
+  @for(address of addresses; track address.id; let i = $index){
+    <div class="col-xxl-6 col-lg-12 col-md-6">
+      <label for="adddress-{{type}}-{{i}}">
+        <div class="delivery-address-box">
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="{{address.id}}" name="adddress-{{type}}" id="adddress-{{type}}-{{i}}" [checked]="i === 0" (change)="set($event)">
+            </div>
+            <ul class="delivery-address-detail">
+              <li>
+                <h4>{{ address?.title }}</h4>
+              </li>
+              <li>
+                <p class="text-content">
+                  <span class="text-title">{{ 'address' | translate }}: </span>
+                  {{ address?.street }}, {{ address?.city }}, {{ address?.state?.name }},
+                  {{ address?.country?.name }}
+                </p>
+              </li>
+              @if(address.pincode){
+                <li>
+                  <h6 class="text-content">
+                    <span class="text-title">{{ 'pin_code' | translate }}:</span> {{ address?.pincode }}
+                  </h6>
+                </li>
+              }
+
+              @if(address.phone){
+                <li>
+                  <h6 class="text-content mb-0">
+                    <span class="text-title">{{ 'phone' | translate }} :</span> +{{ address?.country_code }} {{ address?.phone }}
+                  </h6>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  }@empty {
+    <div class="empty-box">
+      <h2>{{ 'no_address' | translate }}</h2>
+    </div>
+  }
+</div>

@@ -1,0 +1,34 @@
+@if(brands && brands.length > 5){
+<div class="theme-form search-box">
+  <input type="text" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" class="form-control">
+</div>
+}
+
+@if(brands && brands.length){
+  <ul class="shop-category-list custom-sidebar-height">
+    @for(brand of brands | filter: searchText: ''; track brand.id){
+      <li>
+        <div class="form-check collection-filter-checkbox">
+          <input type="checkbox" class="form-check-input"
+            id="brand-{{brand?.id}}"
+            [value]="brand?.slug"
+            [checked]="checked(brand?.slug!)"
+            (change)="applyFilter($event)">
+          <label class="form-check-label" for="brand-{{brand?.id}}">{{ brand?.name }}</label>
+        </div>
+      </li>
+    }
+  </ul>
+
+  @if((brands | filter: searchText:'subcategories').length === 0){
+    <div class="search-not-found-box">
+      <h5>{{ 'no_brand' | translate }}</h5>
+    </div>
+  }
+}
+
+<!-- No Data -->
+@if(brands && !brands.length){
+<app-no-data [class]="'no-data-added'" [text]="'no_brand'">
+</app-no-data>
+}

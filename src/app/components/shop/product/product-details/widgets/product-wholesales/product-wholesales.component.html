@@ -1,0 +1,22 @@
+<table class="table mt-2 mb-4 modal-table">
+  <thead>
+    <tr>
+      <th class="border-top-0">{{ 'min_qty' | translate }}</th>
+      <th class="border-top-0">{{ 'max_qty' | translate }}</th>
+      <th class="border-top-0">
+        {{ (product?.wholesale_price_type == 'fixed' ? 'unit_price' : 'percentage' ) | translate }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(wholesale of product?.wholesales; track wholesale.id){
+      <tr>
+        <td>{{ wholesale.min_qty }}</td>
+        <td>{{ wholesale.max_qty }}</td>
+        <td>
+          {{ (product?.wholesale_price_type == 'fixed'? (wholesale.value | currencySymbol) : wholesale.value +'% Off') }}
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

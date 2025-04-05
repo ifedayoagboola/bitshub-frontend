@@ -1,0 +1,56 @@
+@if(product_box_style == 'single_product'){
+  <div class="deal-box">
+    <div class="deal-image">
+      <app-image-variant
+        [thumbnail]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_thumbnail!"
+        [gallery_images]="selectedVariation && selectedVariation.variation_image ? selectedVariation.variation_image! : product.product_galleries!"
+        [product]="product!">
+      </app-image-variant>
+    </div>
+    <div class="deal-content">
+      @if(product.brand){
+        <a class="product-title"  [routerLink]="['/brand', product.brand.slug]">
+          <h5 class="gradient-text">{{ product.brand.name }}</h5>
+        </a>
+      }
+      <a [routerLink]="['/product/', product.slug]">
+        <h2>{{ selectedVariation ? selectedVariation.name  : product.name }}</h2>
+      </a>
+
+      @if(product.short_description){
+        <p>{{ product.short_description }}</p>
+      }
+
+      <app-product-box-variant-attributes [product]="product" [attributes]="product.attributes || []"  (selectVariation)="selectedVariant($event)"></app-product-box-variant-attributes>
+
+      <app-cart-button [class]="'btn gradient-btn'" [text]="'Add To Cart'" [product]="product" [selectedVariation]="selectedVariation"></app-cart-button>
+
+    </div>
+  </div>
+}@else {
+  <div class="media">
+    <a href="javascript:void(0)" [routerLink]="['/product/', product.slug]">
+      <img class="img-fluid" [src]="product.product_thumbnail ? product.product_thumbnail.original_url : 'assets/images/placeholder/product.png'" [alt]="product.name">
+    </a>
+    <div class="media-body align-self-center">
+      <div class="rating">
+        <ngb-rating [(rate)]="product.rating_count">
+          <ng-template let-fill="fill" let-index="index">
+            <i class="ri-star{{ fill === 100 ? '-fill' : '-line' }}" [class.filled]="fill === 100"></i>
+          </ng-template>
+        </ngb-rating>
+      </div>
+      <a [routerLink]="['/product/', product.slug]">
+        <h6>{{ product.name }}</h6>
+      </a>
+      <h4>
+        @if(product.discount){
+          {{ product.sale_price | currencySymbol }}
+          <del>{{ product.price | currencySymbol }}</del>
+        }@else{
+          {{ product.price | currencySymbol }}
+        }
+      </h4>
+    </div>
+  </div>
+}

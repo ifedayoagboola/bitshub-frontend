@@ -1,0 +1,119 @@
+<div class="theme-tab">
+  @if(tab_style == 'simple'){
+    <div class="bg-title-part mt-0">
+      <div class="title-basic mb-0">
+        <h2 class="title">{{ title?.title }}</h2>
+      </div>
+      <ul class="tabs tab-title w-bg">
+        @for(category of categories; track category.id){
+          <li [class.current]="activeCategory == category.id">
+            <a href="javascript:void(0)" (click)="changeTab(category)">{{ category.name }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  }@else if(tab_style == 'classic'){
+    <div class="bg-title-part">
+      <h5 class="title-border">{{ title?.title }}</h5>
+      <ul class="tabs tab-title">
+        @for(category of categories; track category.id){
+          <li [class.current]="activeCategory == category.id">
+            <a href="javascript:void(0)" (click)="changeTab(category)">{{ category.name }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  }@else if(tab_style == 'premium'){
+    <div class="left-side">
+      <div class="left-tab-title">
+        <h4>{{ title?.tag }}</h4>
+        <h3>{{ title?.title }}</h3>
+      </div>
+      <ul class="tabs tab-title">
+        @for(category of categories; track category.id){
+          <li [class.current]="activeCategory == category.id">
+            <a href="javascript:void(0)" (click)="changeTab(category)">{{ category.name }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+  @else {
+    <ul class="tabs" [ngClass]="tab_title_class ? tab_title_class : 'tab-title'">
+      @for(category of categories; track category.id){
+        <li [class.current]="activeCategory == category.id">
+          <a href="javascript:void(0)" (click)="changeTab(category)">{{ category.name }}</a>
+        </li>
+      }
+    </ul>
+  }
+  <div class="tab-content-cls">
+    <div id="tab-4" class="tab-content active default" [ngStyle]="{ 'display' : 'block'}">
+      @if(slider){
+        <div class="product-4 product-m" [class]="!slider ? class : ''">
+          @if(productService.skeletonCategoryProductLoader){
+            <owl-carousel-o [options]="options">
+              @for(item of skeletonItems; track item){
+                <ng-template carouselSlide>
+                  <app-skeleton-product-box></app-skeleton-product-box>
+                </ng-template>
+              }
+            </owl-carousel-o>
+          } @else {
+            @if((product$ | async)?.length){
+              <owl-carousel-o [options]="options">
+                @for(product of (product$ | async); track product.id){
+                  <ng-template carouselSlide>
+                    <app-product-box [product]="product" [style]="style"></app-product-box>
+                  </ng-template>
+                }
+              </owl-carousel-o>
+            }
+            @if(!(product$ | async)?.length){
+              <app-no-data
+                [class]="'no-data-added'"
+                [text]="'no_product'">
+              </app-no-data>
+            }
+          }
+        </div>
+      }@else {
+          @if(product$){
+            <div [class]="class" [class.product-tab]="product_box_style == 'horizontal'"  [class]="class">
+              @if(style == 'horizontal' && product_box_style == 'horizontal'){
+                @if(productService.skeletonCategoryProductLoader){
+                  @for(item of skeletonItems; track item){
+                    <app-skeleton-product-box [style]="product_box_style"></app-skeleton-product-box>
+                  }
+                } @else {
+                  @for(product of (product$ | async); track product.id){
+                    <div class="tab-box">
+                      <div class="product-box2">
+                        <app-product-box [product]="product" [style]="style"></app-product-box>
+                      </div>
+                    </div>
+                  }
+                }
+              }@else {
+                @if(productService.skeletonCategoryProductLoader){
+                  @for(item of skeletonItems; track item){
+                    <app-skeleton-product-box></app-skeleton-product-box>
+                  }
+                } @else {
+                  @for(product of (product$ | async); track product.id){
+                    <app-product-box [product]="product" [style]="style"></app-product-box>
+                  }
+                }
+              }
+            </div>
+          }
+          @if(!(product$ | async)?.length && !productService.skeletonCategoryProductLoader){
+            <app-no-data
+              [class]="'no-data-added'"
+              [text]="'no_product'">
+            </app-no-data>
+          }
+        }
+    </div>
+  </div>
+</div>

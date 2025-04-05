@@ -1,0 +1,10 @@
+{
+    "id": 49,
+    "content": {
+        "video": {
+            "status": true,
+            "video_url": "/images/theme/video_slider/video_slider.png"
+        }
+    },
+    "slug": "video"
+}

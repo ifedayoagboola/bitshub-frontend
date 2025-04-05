@@ -1,0 +1,167 @@
+<!-- Home Section Start -->
+ @if(data?.content?.home_banner?.status){
+   <section class="p-0 height-85 single-home bg-size" style="background-image: url('assets/images/single-product/bg.jpg');">
+     <div class="container">
+       <div class="home-content">
+         <div [innerHTML]="getText(data?.content?.home_banner?.title || '')"></div>
+         <p>{{ data?.content?.home_banner?.description }}</p>
+         @if(data?.content?.home_banner?.show_button){
+          <app-button 
+                [data]="data?.content?.home_banner"
+                [type]="'button_link'"
+                [class]="'btn gradient-btn'"
+                >
+          </app-button>
+         }
+       </div>
+       <div class="home-img d-md-flex d-none">
+         <img [src]="StorageURL+data?.content?.home_banner?.banner_image" class="img-fluid" alt="">
+       </div>
+     </div>
+   </section>
+ }
+<!-- Home Section End -->
+
+<!-- About Us Section Start -->
+ @if(data?.content?.services?.status){
+   <section class="single-about-us">
+     <div class="container">
+       <div class="row g-3">
+        @if(data?.content?.services?.left_panel?.status){
+          <div class="col-lg-6">
+            <div class="about-left-box">
+              <h2>{{ data?.content?.services?.left_panel?.title }}</h2>
+              <h4>{{ data?.content?.services?.left_panel?.description }}</h4>
+            </div>
+          </div>
+        }
+
+        @if(filteredServices && filteredServices.length){
+          <div class="col-lg-6">
+            <ul class="about-right-box">
+              @for(service of filteredServices; track service.title){
+                <li class="right-box">
+                  <div class="about-img">
+                    <img [src]="StorageURL+service.image_url" class="img-fluid" alt="">
+                  </div>
+                  <div class="about-content">
+                    <h4>{{ service.title }}</h4>
+                    <p>{{ service.description }}</p>
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+       </div>
+     </div>
+   </section>
+ }
+<!-- About Us Section End -->
+
+<!-- Banner Section Start -->
+<section class="single-banner-section">
+  <div class="container">
+    <div class="row g-sm-4 g-3">
+      <div class="col-md-6">
+        <app-image-link [image]="data?.content?.grid_banner?.banner_1" [class]="'custom-border-radius'" [bgImage]="false"></app-image-link>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-sm-4 g-3">
+          <div class="col-12">
+            <app-image-link [image]="data?.content?.grid_banner?.banner_2" [class]="'custom-border-radius'" [bgImage]="false"></app-image-link>
+          </div>
+          <div class="col-12">
+            <app-image-link [image]="data?.content?.grid_banner?.banner_3" [class]="'custom-border-radius mt-xl-2'" [bgImage]="false"></app-image-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Banner Section End -->
+
+<!-- Video section start -->
+ @if(data?.content?.product_video?.status){
+   <section class="video-section">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-12">
+           <a href="javascript:void(0)">
+             <div class="video-img custom-border-radius overflow-hidden">
+               <img [src]="StorageURL+data?.content?.product_video?.image" alt="" class="img-fluid">
+               @if(data?.content?.product_video?.video){
+                 <div class="play-btn" (click)="openModal(StorageURL+data?.content?.product_video?.video || '', 'video')"><span><i class="ri-play-fill"></i></span></div>
+               }
+             </div>
+           </a>
+         </div>
+       </div>
+     </div>
+   </section>
+ }
+<!-- Video section End -->
+
+<!-- Deal Product start -->
+<section class="deal-section">
+  <div class="container">
+    <app-theme-product [productIds]="singleProductIds" [style]="'horizontal'" [product_box_style]="'single_product'"></app-theme-product>
+  </div>
+</section>
+<!-- Deal Product End -->
+
+<!-- Product slider Start -->
+@if(data?.content?.products_list?.status && data?.content?.products_list?.product_ids){
+  <section class="deal-section">
+    <div class="container">
+      <app-theme-title [title]="data?.content?.products_list" [type]="'single_product'"></app-theme-title>
+      <app-theme-product [productIds]="data?.content?.products_list?.product_ids || []" [style]="'vertical'"
+        [slider]="true"></app-theme-product>
+    </div>
+  </section>
+  }
+  <!-- Product slider end -->
+
+<!-- Comment Section start -->
+ @if(data?.content?.testimonial?.status && filteredTestimonial && filteredTestimonial.length){
+   <section class="comment-section">
+     <div class="container">
+      <app-theme-title [title]="data?.content?.testimonial" [type]="'single_product'"></app-theme-title>
+   
+       <div class="row comment-list-box g-4 justify-content-center">
+        @for(testimonial of filteredTestimonial; track testimonial.name){
+          <div class="col-xl-4 col-sm-6">
+            <div class="comment-box">
+              <div class="profile-name">
+                <img [src]="StorageURL+testimonial.image_url" class="img-fluid" alt="">
+                <h4>{{ testimonial.name }}</h4>
+              </div>
+              <div class="profile-detail">
+                <p>{{ testimonial.review }}
+                </p>
+              </div>
+            </div>
+          </div>
+        }
+       </div>
+     </div>
+   </section>
+ }
+<!-- Comment Section End -->
+
+<!-- Social Media Section Start -->
+@if(data?.content?.social_media?.banners?.length && data?.content?.social_media?.status){
+    <section class="instagram ratio_square">
+      <app-theme-social-media [media]="data?.content?.social_media || []" [class]="'container-fluid'" [type]="'single_product'">
+      </app-theme-social-media>
+    </section>
+  }
+  <!-- Social Media Section End -->
+  
+  <!-- Brand Section Start -->
+  @if(data?.content?.brand?.status){
+    <section class="section-b-space single-brand-section">
+      <app-theme-brand [brandIds]="data?.content?.brand?.brand_ids || []"></app-theme-brand>
+    </section>
+  }
+  <!-- Brand Section End -->
