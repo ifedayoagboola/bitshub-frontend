@@ -2,29 +2,6 @@
     <app-header-one [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-one>
   }
   
-  @if(style == 'header_two'){
-    <app-header-two [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-two>
-  }
-  @if(style == 'header_three'){
-    <app-header-three [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-three>
-  }
-  @if(style == 'header_four'){
-    <app-header-four [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-four>
-  }
-  
-  @if(style == 'header_five'){
-    <app-header-five [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-five>
-  }
-  @if(style == 'header_six'){
-    <app-header-six [path]="path" [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-six>
-  }
-  @if(style == 'header_seven'){
-    <app-header-seven [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-seven>
-  }
-  @if(style == 'header_eight'){
-    <app-header-eight [data]="(themeOption$ | async)" [sticky]="sticky" [logo]="logo"></app-header-eight>
-  }
-  
   @if(!(routes && routes.includes('product'))){
     <app-mobile-menu></app-mobile-menu>
   }

@@ -18,8 +18,7 @@ import { MobileMenuComponent } from './widgets/mobile-menu/mobile-menu.component
 
 @Component({
     selector: 'app-header',
-    imports: [CommonModule, HeaderOneComponent, HeaderTwoComponent, HeaderThreeComponent, HeaderFourComponent,
-        HeaderFiveComponent, HeaderSixComponent, HeaderSevenComponent, HeaderEightComponent, MobileMenuComponent],
+    imports: [CommonModule, HeaderOneComponent, MobileMenuComponent],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
@@ -55,80 +54,7 @@ export class HeaderComponent {
 
   setHeader() {
     if(this.path){
-      if(
-        this.path == 'fashion_one' ||
-        this.path == 'fashion_two' ||
-        this.path == 'fashion_three' ||
-        this.path == 'fashion_four' ||
-        this.path == 'electronics_two' ||
-        this.path == 'jewellery_three' ||
-        this.path == 'bag' ||
-        this.path == 'watch' ||
-        this.path == 'kids' ||
-        this.path == 'beauty' ||
-        this.path == 'goggles' ||
-        this.path == 'video_slider' ||
-        this.path == 'gradient' ||
-        this.path == 'left_sidebar' ||
-        this.path == 'parallax' || this.path == 'vegetables_three' ||
-        this.path == 'fashion_seven'
-      ) {
-        this.style = "header_one";
-      }
-      else if(this.path == 'fashion_five'){
-        this.style = 'header_three';
-      }
-      else if(this.path == 'fashion_six' || this.path == 'jewellery_two' || this.path == 'medical' || this.path == 'perfume' || this.path == 'nursery'){
         this.style = 'header_one';
-      }
-      else if(this.path == 'furniture_dark' || this.path == 'jewellery_one' || this.path == 'christmas' || this.path == 'digital_download' || this.path == 'single_product'){
-        this.style = 'header_four';
-      }
-      else if(this.path == 'furniture_one' || this.path == 'shoes'){
-        this.style = 'header_five'
-      }
-      else if(this.path == 'furniture_two'){
-        this.style = 'header_six';
-      }
-      else if(this.path == 'electronics_one'){
-        this.style = "header_one";
-      }
-      else if(this.path == 'electronics_three' || this.path == 'books' || this.path == 'pets' ){
-        this.style = 'header_six'
-      }
-      else if(this.path == 'marketplace_one'){
-        this.style = 'header_one';
-      }
-      else if(this.path == 'marketplace_two'){
-        this.style = 'header_six';
-      }
-      else if(this.path == 'marketplace_three'){
-        this.style = 'header_six';
-      }
-      else if(this.path == 'marketplace_four'){
-        this.style = 'header_six';
-      }
-      else if(this.path == 'vegetables_one'){
-        this.style = 'header_five';
-      }
-      else if(this.path == 'vegetables_two'){
-        this.style = 'header_six'
-      }
-      else if(this.path == 'vegetables_four'){
-        this.style = 'header_two';
-      }
-      else if(this.path == 'marijuana'){
-        this.style = 'header_five'
-      }
-      else if(this.path == 'bicycle'){
-        this.style = 'header_seven';
-      }
-      else if(this.path == 'tools'){
-        this.style = 'header_one';
-      }
-      else if(this.path == 'video' || this.path == 'full_page'){
-        this.style = 'header_eight';
-      }
     }
     else if(!this.path){
       this.themeOption$.subscribe(theme => {

@@ -13,8 +13,7 @@ import { CurrencyComponent } from '../../header/widgets/currency/currency.compon
 
 @Component({
     selector: 'app-top-bar',
-    imports: [CommonModule, RouterModule, TranslateModule,
-        LanguageComponent, CurrencyComponent],
+    imports: [CommonModule, RouterModule, TranslateModule],
     templateUrl: './top-bar.component.html',
     styleUrl: './top-bar.component.scss'
 })
