@@ -18,7 +18,7 @@ import { MobileMenuComponent } from './widgets/mobile-menu/mobile-menu.component
 
 @Component({
     selector: 'app-header',
-    imports: [CommonModule, HeaderOneComponent, MobileMenuComponent],
+    imports: [CommonModule, HeaderTwoComponent, MobileMenuComponent],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })
