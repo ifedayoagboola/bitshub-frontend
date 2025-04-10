@@ -3,11 +3,11 @@
         "general": {
             "mode": "light-only",
             "site_url": "https://angular.pixelstrap.net/multikart-rest/",
-            "copyright": "Copyright 2024 © Multikart theme by pixelstrap",
-            "site_name": "Multikart",
-            "site_title": "Multikart Marketplace: Where Vendors Shine Together",
-            "site_tagline": "Shop Unique, Sell Exceptional – Multikart's Multi-Vendor Universe.",
-            "default_timezone": "Asia/Kolkata",
+            "copyright": "Copyright 2024 © Bitshub theme by pixelstrap",
+            "site_name": "Bitshub",
+            "site_title": "Bitshub Marketplace: Where Vendors Shine Together",
+            "site_tagline": "Shop Unique, Sell Exceptional – Bitshub's Multi-Vendor Universe.",
+            "default_timezone": "Lagos/Nigeria",
             "favicon_image_id": 10,
             "min_order_amount": 0,
             "dark_logo_image_id": 3948,
@@ -81,7 +81,7 @@
         "delivery": {
             "default": {
                 "title": "Standard Delivery",
-                "description": "Approx 5 to 7 Days"
+                "description": "Approx 1 to 3 Days"
             },
             "same_day": {
                 "title": "Express Delivery",

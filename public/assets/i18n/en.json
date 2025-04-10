@@ -316,7 +316,7 @@
   "rtl": "RTL",
   "demos": "Demos",
   "suit_for_any_type_of_online_store": "Suit For Any Type Of Online Store",
-  "welcome_to": "Welcome to Our store",
+  "welcome_to": "Welcome to",
   "start_selling": "Start Selling",
   "any_query": "if you have any query",
   "follow_us": "Follow Us",
@@ -422,5 +422,7 @@
   "no_link_found": "No link found",
   "no_category_found": "No category found",
   "more_and_enjoy": "More And Enjoy",
-  "free_shipping": "Free Shiping"
+  "free_shipping": "Free Shiping",
+  "register_shop": "Become a seller"
+
 }
