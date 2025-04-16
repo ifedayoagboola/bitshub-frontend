@@ -164,7 +164,7 @@
             "play_store_url": "https://play.google.com/store/apps",
             "support_number": "123-456-7898",
             "footer_copyright": true,
-            "copyright_content": "© Copyright - Bitshubg Ltd. All Rights Reserved.",
+            "copyright_content": "© Copyright - Bitshub Ltd. All Rights Reserved.",
             "footer_categories": [
                 74,
                 41,
@@ -202,13 +202,13 @@
         },
         "seller": {
             "about": {
-                "title": "Start Your Business With Multikart & Reach Customers Across The World...",
+                "title": "Start Your Business With Bitshub & Reach Customers Across The World...",
                 "status": true,
                 "image_url": "/images/placeholder/seller/seller_banner.png",
                 "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\n\nOn the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
             },
             "steps": {
-                "title": "Doing Business On Multikart Is Really Easy",
+                "title": "Doing Business On Bitshub Is Really Easy",
                 "status": true,
                 "step_1": {
                     "title": "List your products & Get support service provider",
@@ -224,7 +224,7 @@
                 }
             },
             "services": {
-                "title": "WHY SELL ON MULTIKART?",
+                "title": "WHY SELL ON BITSHUB?",
                 "status": true,
                 "service_1": {
                     "title": "lowest cost",
