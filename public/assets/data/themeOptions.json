@@ -313,7 +313,7 @@
         },
         "about_us": {
             "team": {
-                "title": "Multikart Team Member",
+                "title": "Bitshub Team Member",
                 "status": true,
                 "members": [
                     {
@@ -353,7 +353,7 @@
                         "profile_image_url": "/images/placeholder/about-us/member.png"
                     }
                 ],
-                "sub_title": "Our Creative Team Multikart"
+                "sub_title": "Our Creative Team Bitshub"
             },
             "about": {
                 "title": "Sed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium",
