@@ -96,7 +96,7 @@
             "instagram": "https://instagram.com/",
             "pinterest": "https://pinterest.com/",
             "sub_title": "Never Miss Anything From Store By Signing Up To Our Newsletter.",
-            "about_email": "Support@Multikart.com",
+            "about_email": "Support@bitshub.com",
             "help_center": [
                 {
                     "id": 1,
@@ -441,12 +441,12 @@
             },
             "detail_3": {
                 "icon": "ri-mail-fill",
-                "text": "support@multikart.com",
+                "text": "support@bitshub.com",
                 "label": "Email"
             },
             "detail_4": {
                 "icon": "ri-cellphone-fill",
-                "text": "support@multikart.com",
+                "text": "support@bitshub.com",
                 "label": "Fax"
             },
             "imageUrl": null,
