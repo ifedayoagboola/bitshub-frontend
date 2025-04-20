@@ -268,7 +268,7 @@
             "celebration_effect": true,
             "language_direction": "ltr",
             "exit_tagline_enable": true,
-            "seller_register_url": "https://angular.pixelstrap.net/multikart-rest"
+            "seller_register_url": "https://angular.pixelstrap.net/bitshub-rest"
         },
         "product": {
             "services": {
