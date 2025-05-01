@@ -16,27 +16,27 @@
             "status": null,
             "banners": [
                 {
-                    "title": "free shipping",
+                    "title": "fast shipping",
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "image_url": "/images/theme/marketplace_four/shipping_60x60.png",
                     "description": "free shipping world wide"
                 },
                 {
-                    "title": "24 X 7 service",
+                    "title": "24 X 7 support",
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "image_url": "/images/theme/marketplace_four/support_60x60.png",
                     "description": "online service for 24 X 7"
                 },
                 {
-                    "title": "festival offer",
+                    "title": "Best deals",
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "image_url": "/images/theme/marketplace_four/best_deals_60x60.jpg",
                     "description": "new online special festival offer"
                 },
                 {
-                    "title": "online payment",
+                    "title": "Secure payment",
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/service.png",
+                    "image_url": "/images/theme/marketplace_four/secure_payment_60x60.jpg",
                     "description": "new online special festival offer"
                 }
             ]
@@ -46,7 +46,7 @@
             "banners": [
                 {
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/marketplace_four_1.png",
+                    "image_url": "/images/theme/marketplace_four/home_banner_1920x660.jpg",
                     "redirect_link": {
                         "link": "fashion",
                         "link_type": "collection"
