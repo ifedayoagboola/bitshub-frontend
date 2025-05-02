@@ -3,7 +3,7 @@
     "data": [
         {
             "id": 74,
-            "name": "Baby Essentials",
+            "name": "Computers & Tablets",
             "slug": "baby-essentials",
             "description": "Discover our selection of baby essentials, including soft blankets, gentle skincare, cozy clothing, and safe feeding gear. Designed for comfort and convenience, our products ensure your little one's needs are met with the utmost care. Start your parenting journey with the best in quality and safety.",
             "category_image_id": null,
@@ -138,7 +138,7 @@
         },
         {
             "id": 41,
-            "name": "Bag Emporium",
+            "name": "Gaming & Accessories",
             "slug": "bag-emporium",
             "description": "Discover luxury and functionality with Bag Emporium's curated collection of stylish bags. From chic totes to versatile backpacks, find the perfect accessory to complement your everyday style. Crafted with quality materials, our bags are designed to elevate any outfit while keeping your essentials organized.",
             "category_image_id": null,
@@ -273,7 +273,7 @@
         },
         {
             "id": 162,
-            "name": "Bags",
+            "name": "Computer Components",
             "slug": "bags",
             "description": "Explore the world of bags, from trendy totes to functional backpacks. Discover tips for choosing the perfect bag for any occasion, stylish recommendations, and how to care for your collection. Whether you’re a fashionista or a practical shopper, find insights to match your needs and elevate your style.",
             "category_image_id": null,
@@ -299,7 +299,7 @@
         },
         {
             "id": 142,
-            "name": "Books",
+            "name": "Computer Components",
             "slug": "books-2",
             "description": "Delve into the captivating world of literature with our blog on books. From timeless classics to contemporary page-turners, we explore the magic of storytelling, offer insightful reviews, and share recommendations across genres. Let's embark on a journey through the boundless realms of imagination that books offer.",
             "category_image_id": null,
