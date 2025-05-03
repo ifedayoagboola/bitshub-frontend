@@ -60,7 +60,7 @@
                               @if(menu.mega_menu_type === 'side_banner'){
                                 <div class="col-9">
                                   <div class="row">
-                                     @for(megaMenu of menu.child; track megaMenu.id){
+                                     @for(megaMenu of menu.child; track megaMenu.id + megaMenu.title){
                                         <div class="dropdown-column col-xl-4 mb-4">
                                            <app-link-box [menu]="megaMenu"></app-link-box>
                                         </div>
@@ -68,7 +68,7 @@
                                   </div>
                                </div>
                               }@else {
-                                @for(megaMenu of menu.child; track megaMenu.id){
+                                @for(megaMenu of menu.child; track megaMenu.id + megaMenu.title){
                                    <div class="dropdown-column col-xl-3 mb-4">
                                       <app-link-box [menu]="megaMenu"></app-link-box>
                                    </div>
