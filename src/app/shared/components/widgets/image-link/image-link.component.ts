@@ -25,6 +25,10 @@ export class ImageLinkComponent {
 
   public StorageURL = environment.storageURL;
 
+  logEvent(){
+    console.log('logEvent');
+  }
+
   ngOnChanges(change: SimpleChanges){
     if(change['image']?.currentValue && typeof(change['image']?.currentValue?.redirect_link?.link) === 'number'){
       this.product$.subscribe(res => {
@@ -36,6 +40,8 @@ export class ImageLinkComponent {
       })
 
     }
+
+    console.log(this.image);
   }
 
   getProductSlug(id: number, products: Product[]){

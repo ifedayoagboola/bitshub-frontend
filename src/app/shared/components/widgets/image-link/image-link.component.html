@@ -20,7 +20,7 @@
 
 @else if(image?.redirect_link?.link_type === 'collection'){
   @if(image?.redirect_link?.link){
-    <a [routerLink]="['/category', image?.redirect_link?.link]" >
+    <a [routerLink]="['/category', image?.redirect_link?.link]">
       @if(bgImage){
         <div class="bg-size" [ngClass]="class" [ngStyle]="{'background-image': 'url(' + (image?.image_url ? StorageURL+image?.image_url : placeholder) + ')'}">
           @if(banner_details){

@@ -185,9 +185,9 @@
         },
         "slider_products": {
             "status": true,
-            "image_url": "/images/theme/marketplace_four/marketplace_four_3.png",
+            "image_url": "/images/theme/marketplace_four/banner_1920x510.jpg",
             "product_slider_1": {
-                "title": "new product",
+                "title": "new products",
                 "status": true,
                 "product_ids": [
                     297,
@@ -198,8 +198,8 @@
         "product_banner_1": {
             "status": true,
             "left_panel": {
-                "status": "/images/theme/marketplace_four/marketplace_four_2.png",
-                "image_url": "/images/theme/marketplace_four/marketplace_four_2.png",
+                "status": "/images/theme/marketplace_four/ad_330x390.png",
+                "image_url": "/images/theme/marketplace_four/ad_330x390.png",
                 "redirect_link": {
                     "link": "bag-emporium",
                     "link_type": "collection",
@@ -221,7 +221,7 @@
         "product_banner_2": {
             "status": true,
             "left_panel": {
-                "title": "new product",
+                "title": "new products",
                 "status": true,
                 "product_ids": [
                     239,
@@ -230,7 +230,7 @@
                 ]
             },
             "right_panel": {
-                "title": "feature product",
+                "title": "feature products",
                 "status": true,
                 "product_ids": [
                     321,
@@ -241,7 +241,7 @@
             "center_panel": {
                 "banner_1": {
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/marketplace_four_4.png",
+                    "image_url": "/images/theme/marketplace_four/ad_1_440x270.jpg",
                     "redirect_link": {
                         "link_type": "collection",
                         "product_ids": null
@@ -249,7 +249,7 @@
                 },
                 "banner_2": {
                     "status": true,
-                    "image_url": "/images/theme/marketplace_four/marketplace_four_5.png",
+                    "image_url": "/images/theme/marketplace_four/ad_2_440x270.jpg",
                     "redirect_link": {
                         "link_type": "collection",
                         "product_ids": null
@@ -261,7 +261,7 @@
             "status": true,
             "left_panel": {
                 "status": true,
-                "image_url": "/images/theme/marketplace_four/marketplace_four_6.png",
+                "image_url": "/images/theme/marketplace_four/ad_3_330x390.jpg",
                 "redirect_link": {
                     "link": "surfboard",
                     "link_type": "collection",
